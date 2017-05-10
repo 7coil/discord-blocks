@@ -1,0 +1,342 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="j8.sX[,|,]^5RNQxWysu" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">on_message</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="ySR0T@qS1iev2_f|f#)c">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="w)K*nWu8.U*oc?,1^);`">
+            <field name="TEXT">when</field>
+            <next>
+              <block type="field_variable" id="2me9;Gt|9XIu9ga_Kzf;">
+                <field name="TEXT">client</field>
+                <field name="FIELDNAME">client</field>
+                <next>
+                  <block type="field_static" id="!D;[r-O?gS?f0tLm0JKb">
+                    <field name="TEXT">sees a message being </field>
+                    <next>
+                      <block type="field_dropdown" id="Y:t#|f9hu:7x2Mkp6Fnc">
+                        <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                        <field name="FIELDNAME">event</field>
+                        <field name="USER0">added</field>
+                        <field name="CPU0">message</field>
+                        <field name="USER1">deleted</field>
+                        <field name="CPU1">messageDelete</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="nsbEql1/fb(4OY#b)L1T">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="s+F,DdXJDXW]^M.d+l|=">
+                <field name="TEXT">put info into</field>
+                <next>
+                  <block type="field_variable" id="3.fWi,1Xt-MBkh4}(.sN">
+                    <field name="TEXT">message</field>
+                    <field name="FIELDNAME">message</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_statement" id="PgoI|p-95V(1VnZB8pC!">
+                <field name="INPUTNAME">function</field>
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="|.^70]ak7K;,O@^8)[jq">
+                    <field name="TEXT">then</field>
+                  </block>
+                </statement>
+                <value name="TYPE">
+                  <shadow type="type_null" id="@=@vd.ISrL/C94Vg!rfO"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="_B@gie_`^dcT%bs?j4~%" deletable="false" movable="false">
+        <field name="TEXT">Triggered when a message is recieved</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="aqD8GC6!IH.83_EGmKvZ" deletable="false" movable="false">
+        <field name="TEXT">https://moustacheminer.com/</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="d.hq}-:tm)9YA^4xaW!m"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="N6vK[,ejB|8(j?h8(hx}"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="7-|Y1m%Y!1D/U1BV(H]N">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="2ZpEN[94Fjx]7*:Y1rRm" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTTOM"></mutation>
+    <field name="NAME">client_login</field>
+    <field name="INLINE">EXT</field>
+    <field name="CONNECTIONS">BOTTOM</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="H$g#HRg3UO.5dtL+=8SP">
+        <field name="INPUTNAME">token</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="vbo|aA3g(?iBH7RVGL1d">
+            <field name="TEXT">Create</field>
+            <next>
+              <block type="field_variable" id="]l%gR!f4.dGf?7MqSY^Q">
+                <field name="TEXT">client</field>
+                <field name="FIELDNAME">client</field>
+                <next>
+                  <block type="field_static" id="g=jRxBR]M5]jOS@ks%j?">
+                    <field name="TEXT">with token</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="9icXqF!gS.6kt!s|AvS|"></shadow>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="hNXlfSRLpm{fBvElJaal" deletable="false" movable="false">
+        <field name="TEXT">Log into Discord</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="W1E;,6gOBEDNfH[iSP|I" deletable="false" movable="false">
+        <field name="TEXT">https://discordapp.com/developers/applications/me</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="^J_;O4DHrRQi#nE6?p+S"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="vm+1$i002I0,tBt(=!1M">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="iQ~AGtBD#0j*A=y)VF7k" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">message_reply</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="tC1~d=zYtkV[J`axTwii">
+        <field name="INPUTNAME">reply</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="}O%D;AFOGnwhYmFQc^wQ">
+            <field name="TEXT">Reply to</field>
+            <next>
+              <block type="field_variable" id="79XhN.?RXW@;}KBL)fUv">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">message</field>
+                <next>
+                  <block type="field_static" id="A5?_1,2kTXN@7XbHHdCn">
+                    <field name="TEXT">with</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="yvO2T$ExV()R@Ol-4@Lm"></shadow>
+          <block type="type_string" id="8$b4vJU}+pHn-S,Ks36D"></block>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="f=zvhH}`JsjH]WJW$th9" deletable="false" movable="false">
+        <field name="TEXT">Reply to the message with a string</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="tpm[)[5$u$J`+NmC..By" deletable="false" movable="false">
+        <field name="TEXT">https://moustacheminer.com/</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r00U8*#D!8JMMhVhB;#k"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="j(K]]wklNwo)#WM*am5s"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="o4ds}ahk?Wt_Q/#qM?Ef">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="j8.sX[,|,]^5RNQxWysu" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">on_client</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="ySR0T@qS1iev2_f|f#)c">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="w)K*nWu8.U*oc?,1^);`">
+            <field name="TEXT">when</field>
+            <next>
+              <block type="field_variable" id="2me9;Gt|9XIu9ga_Kzf;">
+                <field name="TEXT">client</field>
+                <field name="FIELDNAME">client</field>
+                <next>
+                  <block type="field_static" id="!D;[r-O?gS?f0tLm0JKb">
+                    <field name="TEXT">is ready</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="PgoI|p-95V(1VnZB8pC!">
+            <field name="INPUTNAME">function</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="|.^70]ak7K;,O@^8)[jq">
+                <field name="TEXT">then</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="@=@vd.ISrL/C94Vg!rfO"></shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="_B@gie_`^dcT%bs?j4~%" deletable="false" movable="false">
+        <field name="TEXT">Triggered when the client is ready</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="aqD8GC6!IH.83_EGmKvZ" deletable="false" movable="false">
+        <field name="TEXT">https://moustacheminer.com/</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="d.hq}-:tm)9YA^4xaW!m"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="N6vK[,ejB|8(j?h8(hx}"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="7-|Y1m%Y!1D/U1BV(H]N">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="iN7,LV_61U,xqf_K*tV!" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">beginsWith</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="O9rSA}gyl]Is=K4qQ(Fm">
+        <field name="INPUTNAME">string</field>
+        <field name="ALIGN">LEFT</field>
+        <value name="TYPE">
+          <shadow type="type_null" id="*=-6}zs+jN?Q[=RR@;^V"></shadow>
+          <block type="type_string" id="6_9?^[txV5(xG-yOD[7e"></block>
+        </value>
+        <next>
+          <block type="input_value" id="CB_H)of2yL%awLv6t[Fp">
+            <field name="INPUTNAME">begins</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="~K;|Cs?{z!8.57fT0m;T">
+                <field name="TEXT">begins with</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="-Aj}FDO=LC^7:er}V@Sk"></shadow>
+              <block type="type_string" id="?ld@^oje^Pg54lSd7oSI"></block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="WjG3B09*`iH$|bs$:wl%" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="HTx]aqlJKADE/w2Q(yTk" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="z6})dKPu;#1G3UUaPFWA"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="t/3*CDt|dF]sWs,RHRvx">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="0V?W(`;/N]ih_*]033n:" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">message.content</field>
+    <field name="INLINE">EXT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="O#o/9p$PGS5lEhL#RMVk">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
+            <field name="TEXT">content of</field>
+            <next>
+              <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">message</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="N.h-e-AI/jU6wlj~J?Dc" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="qF/:GxFM^npkdjk6j26~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="!mx~,?XW3WoT[cM.C,AO"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=");3OQlQ/)ITI8z@~`f]i">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block></xml>
