@@ -35,3 +35,16 @@ var Discord = require('discord.js');
 	output += Blockly.JavaScript.workspaceToCode(workspace);
 	code.innerHTML = output;
 }
+
+function saveCode() {
+	var xml = Blockly.Xml.workspaceToDom(workspace);
+	var xml_text = Blockly.Xml.domToText(xml);
+	prompt("Copy the XML to your clipboard and save it ALL for later", xml_text);
+}
+
+function loadCode() {
+	var xml_text = prompt("Insert your XML saved extract", xml_text);
+	if (!xml_text) return;
+	var xml = Blockly.Xml.textToDom(xml_text);
+	Blockly.Xml.domToWorkspace(xml, workspace);
+}
