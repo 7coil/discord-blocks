@@ -19,6 +19,15 @@ var Discord = require('discord.js');
  * Copyright 2012 Google Inc.
  * Copyright 2017 hydrabolt
  *
+ * Read the Apache Licence (which should be the same) for each
+ * respective piece of software used in the following links:
+ *
+ * https://github.com/lepon01/discordblocks/blob/master/LICENCE.TXT
+ * https://github.com/google/blockly/blob/master/LICENSE
+ * https://github.com/hydrabolt/discord.js/blob/master/LICENSE
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  * The software below is not part of the above licence, and is
  * licenced under the owner's choice.
  */
