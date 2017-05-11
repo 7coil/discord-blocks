@@ -1,0 +1,262 @@
+<!--
+
+	The following code is licenced under the MIT Licence
+
+	MIT License
+
+	Copyright (c) 2017 7coil (admin@moustacheminer.com)
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+-->
+
+<xml xmlns="http://www.w3.org/1999/xhtml">
+	<block type="client_login" id="o0Dc)_dFJF-Ui;4_fV@(" x="38" y="54">
+		<field name="client">client</field>
+		<value name="token">
+			<shadow type="text" id="M~c,Rd}0xZAGt~D4HbPS">
+				<field name="TEXT"></field>
+			</shadow>
+		</value>
+		<next>
+			<block type="variables_set" id="j}#OT?p66$q(!V@-(,bJ">
+				<field name="VAR">permissions</field>
+				<value name="VALUE">
+					<block type="math_number" id="irRdyDsQ_PDn;Y7bLkjA">
+						<field name="NUM">0</field>
+					</block>
+				</value>
+				<next>
+					<block type="math_change" id="oYPpikjwDW5QM}cg]+Q^">
+						<field name="VAR">permissions</field>
+						<value name="DELTA">
+							<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+								<field name="NUM">1</field>
+							</shadow>
+							<block type="add_perm" id="FWTNFE[^Rv}{*M*R=DgK">
+								<field name="permission">0x00000800	</field>
+							</block>
+						</value>
+						<next>
+							<block type="math_change" id="hq%Y[^Z7PJ7kew)@)vcv">
+								<field name="VAR">permissions</field>
+								<value name="DELTA">
+									<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+										<field name="NUM">1</field>
+									</shadow>
+									<block type="add_perm" id="GWqbS0.jLKug#u06CoYd">
+										<field name="permission">0x00001000</field>
+									</block>
+								</value>
+								<next>
+									<block type="math_change" id="ss]%a`f0fbyo/%mqk~T6">
+										<field name="VAR">permissions</field>
+										<value name="DELTA">
+											<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+												<field name="NUM">1</field>
+											</shadow>
+											<block type="add_perm" id=":a-3`WS]95@DKiX?tsR=">
+												<field name="permission">0x00000400</field>
+											</block>
+										</value>
+										<next>
+											<block type="math_change" id="UN$F/tnzW2zdGpox~(BT">
+												<field name="VAR">permissions</field>
+												<value name="DELTA">
+													<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+														<field name="NUM">1</field>
+													</shadow>
+													<block type="add_perm" id="JfId8p4S)trJ`r~k?D{G">
+														<field name="permission">0x04000000</field>
+													</block>
+												</value>
+												<next>
+													<block type="math_change" id="Q[;^7Ipt;vgbFeroGp72">
+														<field name="VAR">permissions</field>
+														<value name="DELTA">
+															<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+																<field name="NUM">1</field>
+															</shadow>
+															<block type="add_perm" id="~ip{Nw0GaVd=f=;^v,[]">
+																<field name="permission">0x00100000</field>
+															</block>
+														</value>
+														<next>
+															<block type="math_change" id="!0y.+l28pPFbtS|}2eA.">
+																<field name="VAR">permissions</field>
+																<value name="DELTA">
+																	<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+																		<field name="NUM">1</field>
+																	</shadow>
+																	<block type="add_perm" id="A`Fe[V731`a#:#eO?O[{">
+																		<field name="permission">0x00200000</field>
+																	</block>
+																</value>
+																<next>
+																	<block type="math_change" id="evA9kn4Yt,_;kfRb7=Fg">
+																		<field name="VAR">permissions</field>
+																		<value name="DELTA">
+																			<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+																				<field name="NUM">1</field>
+																			</shadow>
+																			<block type="add_perm" id="[IRd.~.FC2~.F{]gw:|2">
+																				<field name="permission">0x00000040</field>
+																			</block>
+																		</value>
+																		<next>
+																			<block type="math_change" id="D-Aw};cew1N:i$f6:jgH">
+																				<field name="VAR">permissions</field>
+																				<value name="DELTA">
+																					<shadow type="math_number" id="}NxYF(cjqxA4;jbubI3K">
+																						<field name="NUM">1</field>
+																					</shadow>
+																					<block type="add_perm" id="JjmvqO?nmZL,Xe8T1Xx}">
+																						<field name="permission">0x00004000</field>
+																					</block>
+																				</value>
+																				<next>
+																					<block type="on_client" id="jgCCb.esPIMUgJR_zUqx">
+																						<field name="client">client</field>
+																						<statement name="function">
+																							<block type="console_log" id="3X8Vt},V4tchaD#RrOfR">
+																								<value name="string">
+																									<shadow type="text" id="T8Spv-bR??khcrmE%m:x">
+																										<field name="TEXT">Hello world!</field>
+																									</shadow>
+																									<block type="invite_link" id="a7?,`Yxmi.Z9Q#~8o#SL">
+																										<field name="client">client</field>
+																										<field name="permissions">permissions</field>
+																									</block>
+																								</value>
+																							</block>
+																						</statement>
+																						<next>
+																							<block type="on_message" id="YBr4?QjnKFh]v14r|nPD">
+																								<field name="client">client</field>
+																								<field name="event">message</field>
+																								<field name="message">message</field>
+																								<statement name="function">
+																									<block type="controls_if" id="tC$iMV9,e8L`%S!PZR~k">
+																										<mutation elseif="1"></mutation>
+																										<value name="IF0">
+																											<block type="beginswith" id="KddlT/Iy5(}NB]urXVW/">
+																												<value name="string">
+																													<block type="text_changeCase" id="2I2|A]2_*T6+[O$^ziT0">
+																														<field name="CASE">LOWERCASE</field>
+																														<value name="TEXT">
+																															<shadow type="text" id="KLr1]Wps/.R40xr1+4A+">
+																																<field name="TEXT">abc</field>
+																															</shadow>
+																															<block type="message" id="CI!z!6,K5@w]lj/;TG_k">
+																																<field name="variable">content</field>
+																																<field name="message">message</field>
+																															</block>
+																														</value>
+																													</block>
+																												</value>
+																												<value name="begins">
+																													<block type="text" id="iF4-XWa$Nb02_WjVW03T">
+																														<field name="TEXT">!invite</field>
+																													</block>
+																												</value>
+																											</block>
+																										</value>
+																										<statement name="DO0">
+																											<block type="message_reply" id="{vkjWp/e(WyktEbWqtIM">
+																												<field name="message">message</field>
+																												<value name="reply">
+																													<shadow type="text" id="yFl(i*Z381-@?#A}Y,KD">
+																														<field name="TEXT">Hello world!</field>
+																													</shadow>
+																													<block type="invite_link" id="lN1QHzojAlYeTJ/]Z1_N">
+																														<field name="client">client</field>
+																														<field name="permissions">permissions</field>
+																													</block>
+																												</value>
+																												<next>
+																													<block type="message_reply" id="bU:^[N*2ILHa7ZqV{8MP">
+																														<field name="message">message</field>
+																														<value name="reply">
+																															<shadow type="text" id="+A3`Zg[MHHy]J*Ns+/A~">
+																																<field name="TEXT">Made in DiscordBlocks, at http://mss.ovh/db</field>
+																															</shadow>
+																														</value>
+																													</block>
+																												</next>
+																											</block>
+																										</statement>
+																										<value name="IF1">
+																											<block type="beginswith" id="9Ipwzs2-G1V4t-y9:R%*">
+																												<value name="string">
+																													<block type="text_changeCase" id="goPd%~Z}:BJ{!s`.///?">
+																														<field name="CASE">LOWERCASE</field>
+																														<value name="TEXT">
+																															<shadow type="text" id="KLr1]Wps/.R40xr1+4A+">
+																																<field name="TEXT">abc</field>
+																															</shadow>
+																															<block type="message" id="-ddg,A0#q=WAyE._]rI{">
+																																<field name="variable">content</field>
+																																<field name="message">message</field>
+																															</block>
+																														</value>
+																													</block>
+																												</value>
+																												<value name="begins">
+																													<block type="text" id="o1*LVkt.s#*63k{=HWGe">
+																														<field name="TEXT">!discordblocks</field>
+																													</block>
+																												</value>
+																											</block>
+																										</value>
+																										<statement name="DO1">
+																											<block type="message_reply" id="3/H.%[{46|KC;6G_6KlI">
+																												<field name="message">message</field>
+																												<value name="reply">
+																													<shadow type="text" id="`x*I+RHLZ?+]%K%9t#B)">
+																														<field name="TEXT">Hello world!</field>
+																													</shadow>
+																												</value>
+																											</block>
+																										</statement>
+																									</block>
+																								</statement>
+																							</block>
+																						</next>
+																					</block>
+																				</next>
+																			</block>
+																		</next>
+																	</block>
+																</next>
+															</block>
+														</next>
+													</block>
+												</next>
+											</block>
+										</next>
+									</block>
+								</next>
+							</block>
+						</next>
+					</block>
+				</next>
+			</block>
+		</next>
+	</block>
+</xml>
