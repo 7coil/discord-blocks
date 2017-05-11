@@ -299,21 +299,101 @@
         <field name="HUE">230</field>
       </block>
     </value>
+  </block><block type="factory_base" id="vKu_YdH7@DF}DuJzo@r|" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">console.log</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_value" id="YFHQLLIay:]mZ![q1+p(">
+        <field name="INPUTNAME">string</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Ob(R9M{mPZPK@_GypVuE">
+            <field name="TEXT">log to console</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="_GQ6;V$Yq[pqjb?2#OvP"></shadow>
+          <block type="type_null" id="t(vGQrdHC1s55f/Hs6Du"></block>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="~E!w/QR*K:T7c0h_Di(#" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="q/.l|Ho;g[956:lCBG1J" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="X}YBZ_i]6*mWOt}#=L*u"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="GZStIi|+#!hF(VHSg/Df"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="7TO[8`=$LYZUv#8G0FZ9">
+        <mutation colour="#5b5ba5"></mutation>
+        <field name="HUE">240</field>
+      </block>
+    </value>
   </block><block type="factory_base" id="0V?W(`;/N]ih_*]033n:" deletable="false" movable="false" x="0" y="0">
     <mutation connections="LEFT"></mutation>
-    <field name="NAME">message.content</field>
+    <field name="NAME">message</field>
     <field name="INLINE">EXT</field>
     <field name="CONNECTIONS">LEFT</field>
     <statement name="INPUTS">
       <block type="input_dummy" id="O#o/9p$PGS5lEhL#RMVk">
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
-            <field name="TEXT">content of</field>
+          <block type="field_dropdown" id="D!Rn{S6G5FmP|1:9V)v:">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">variable</field>
+            <field name="USER0">content</field>
+            <field name="CPU0">content</field>
+            <field name="USER1">author ID</field>
+            <field name="CPU1">author.id</field>
+            <field name="USER2">message ID</field>
+            <field name="CPU2">id</field>
+            <field name="USER3">channel ID</field>
+            <field name="CPU3">channel.id</field>
+            <field name="USER4">guild ID</field>
+            <field name="CPU4">guild.id</field>
+            <field name="USER5">author's username</field>
+            <field name="CPU5">author.username</field>
+            <field name="USER6">author's nickname</field>
+            <field name="CPU6">member.nickname</field>
+            <field name="USER7">author's discriminator</field>
+            <field name="CPU7">author.discriminator</field>
+            <field name="USER8">author's usertag</field>
+            <field name="CPU8">author.tag</field>
+            <field name="USER9">author's icon URL</field>
+            <field name="CPU9">member.displayAvatarURL</field>
+            <field name="USER10">author's default icon URL</field>
+            <field name="CPU10">member.defaultAvatarURL</field>
+            <field name="USER11">channel's name</field>
+            <field name="CPU11">channel.name</field>
+            <field name="USER12">guild's name</field>
+            <field name="CPU12">guild.name</field>
+            <field name="USER13">guild's AFK voice channel</field>
+            <field name="CPU13">guild.afkChannelID</field>
+            <field name="USER14">guild's icon URL</field>
+            <field name="CPU14">guild.iconURL</field>
+            <field name="USER15">guild's region</field>
+            <field name="CPU15">guild.region</field>
             <next>
-              <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">message</field>
+              <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
+                <field name="TEXT">of</field>
+                <next>
+                  <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
+                    <field name="TEXT">message</field>
+                    <field name="FIELDNAME">message</field>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -322,7 +402,7 @@
     </statement>
     <value name="TOOLTIP">
       <block type="text" id="N.h-e-AI/jU6wlj~J?Dc" deletable="false" movable="false">
-        <field name="TEXT"></field>
+        <field name="TEXT">Get string data of message</field>
       </block>
     </value>
     <value name="HELPURL">
@@ -335,8 +415,76 @@
     </value>
     <value name="COLOUR">
       <block type="colour_hue" id=");3OQlQ/)ITI8z@~`f]i">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
+        <mutation colour="#5b8ca5"></mutation>
+        <field name="HUE">200</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="0V?W(`;/N]ih_*]033n:" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">client</field>
+    <field name="INLINE">EXT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="O#o/9p$PGS5lEhL#RMVk">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="D!Rn{S6G5FmP|1:9V)v:">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">variable</field>
+            <field name="USER0">ping</field>
+            <field name="CPU0">ping</field>
+            <field name="USER1">ready timestamp</field>
+            <field name="CPU1">readyTimestamp</field>
+            <field name="USER2">status</field>
+            <field name="CPU2">status</field>
+            <field name="USER3">token</field>
+            <field name="CPU3">token</field>
+            <field name="USER4">uptime</field>
+            <field name="CPU4">uptime</field>
+            <field name="USER5">ID</field>
+            <field name="CPU5">user.id</field>
+            <field name="USER6">username</field>
+            <field name="CPU6">user.username</field>
+            <field name="USER7">discriminator</field>
+            <field name="CPU7">user.discriminator</field>
+            <field name="USER8">usertag</field>
+            <field name="CPU8">user.tag</field>
+            <field name="USER9">icon URL</field>
+            <field name="CPU9">user.displayAvatarURL</field>
+            <field name="USER10">default icon URL</field>
+            <field name="CPU10">user.defaultAvatarURL</field>
+            <next>
+              <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
+                <field name="TEXT">of</field>
+                <next>
+                  <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
+                    <field name="TEXT">client</field>
+                    <field name="FIELDNAME">client</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="N.h-e-AI/jU6wlj~J?Dc" deletable="false" movable="false">
+        <field name="TEXT">Get data of client</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="qF/:GxFM^npkdjk6j26~" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="!mx~,?XW3WoT[cM.C,AO"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=");3OQlQ/)ITI8z@~`f]i">
+        <mutation colour="#5b8ca5"></mutation>
+        <field name="HUE">200</field>
       </block>
     </value>
   </block></xml>

@@ -1,11 +1,11 @@
-var code = document.getElementById('code');
-
 var workspace = Blockly.inject('blocklyDiv', {
 	media: 'media/',
 	toolbox: document.getElementById('toolbox')
 });
 
 function getCode() {
+	var code = document.getElementById('code');
+
 	var output = `
 var Discord = require('discord.js');
 /*
