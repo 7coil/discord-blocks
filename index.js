@@ -42,6 +42,12 @@ function saveCode() {
 	prompt("Copy the XML to your clipboard and save it ALL for later", xml_text);
 }
 
+function runCode() {
+	var w = window.open("runtime.html");
+
+	w.js = Blockly.JavaScript.workspaceToCode(workspace);
+}
+
 function loadCode() {
 	var xml_text = prompt("Insert your XML saved extract", xml_text);
 	if (!xml_text) return;
