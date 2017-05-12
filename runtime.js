@@ -1,11 +1,3 @@
-if (typeof js == "undefined") {
-	console.log("No javascript code was supplied!");
-} else {
-	eval(js);
-}
-
-
-
 (function () {
     var old = console.log;
     var logger = document.getElementById('log');
@@ -17,6 +9,13 @@ if (typeof js == "undefined") {
         }
     }
 })();
+
+if (typeof js == "undefined") {
+	console.log("No javascript code was supplied!");
+} else {
+	eval(js);
+}
+
 
 window.addEventListener("unhandledrejection", function(err) {
 	console.dir(err);
