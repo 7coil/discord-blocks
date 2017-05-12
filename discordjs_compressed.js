@@ -163,6 +163,21 @@ exports.Errors = {
   INVALID_TOKEN: 'An invalid token was provided.',
 };
 
+const AllowedImageFormats = [
+  'webp',
+  'png',
+  'jpg',
+  'gif',
+];
+
+const AllowedImageSizes = [
+  128,
+  256,
+  512,
+  1024,
+  2048,
+];
+
 const Endpoints = exports.Endpoints = {
   User: userID => {
     if (userID.id) userID = userID.id;
@@ -178,9 +193,9 @@ const Endpoints = exports.Endpoints = {
       Note: id => `${base}/notes/${id}`,
       Mentions: (limit, roles, everyone, guildID) =>
         `${base}/mentions?limit=${limit}&roles=${roles}&everyone=${everyone}${guildID ? `&guild_id=${guildID}` : ''}`,
-      Avatar: (root, hash) => {
+      Avatar: (root, hash, format, size) => {
         if (userID === '1') return hash;
-        return Endpoints.CDN(root).Avatar(userID, hash);
+        return Endpoints.CDN(root).Avatar(userID, hash, format, size);
       },
     };
   },
@@ -206,7 +221,7 @@ const Endpoints = exports.Endpoints = {
       settings: `${base}/settings`,
       auditLogs: `${base}/audit-logs`,
       Emoji: emojiID => `${base}/emojis/${emojiID}`,
-      Icon: (root, hash) => Endpoints.CDN(root).Icon(guildID, hash),
+      Icon: (root, hash, format, size) => Endpoints.CDN(root).Icon(guildID, hash, format, size),
       Splash: (root, hash) => Endpoints.CDN(root).Splash(guildID, hash),
       Role: roleID => `${base}/roles/${roleID}`,
       Member: memberID => {
@@ -262,8 +277,24 @@ const Endpoints = exports.Endpoints = {
     return {
       Emoji: emojiID => `${root}/emojis/${emojiID}.png`,
       Asset: name => `${root}/assets/${name}`,
-      Avatar: (userID, hash) => `${root}/avatars/${userID}/${hash}.${hash.startsWith('a_') ? 'gif' : 'png'}?size=2048`,
-      Icon: (guildID, hash) => `${root}/icons/${guildID}/${hash}.jpg`,
+      Avatar: (userID, hash, format = 'default', size) => {
+        if (format === 'default') format = hash.startsWith('a_') ? 'gif' : 'webp';
+        if (!AllowedImageFormats.includes(format)) throw new Error(`Invalid image format: ${format}`);
+        if (size && !AllowedImageSizes.includes(size)) throw new RangeError(`Invalid size: ${size}`);
+        return `${root}/avatars/${userID}/${hash}.${format}${size ? `?size=${size}` : ''}`;
+      },
+      Icon: (guildID, hash, format = 'default', size) => {
+        if (format === 'default') format = 'webp';
+        if (!AllowedImageFormats.includes(format)) throw new Error(`Invalid image format: ${format}`);
+        if (size && !AllowedImageSizes.includes(size)) throw new RangeError(`Invalid size: ${size}`);
+        return `${root}/icons/${guildID}/${hash}.${format}${size ? `?size=${size}` : ''}`;
+      },
+      AppIcon: (clientID, hash, format = 'default', size) => {
+        if (format === 'default') format = 'webp';
+        if (!AllowedImageFormats.includes(format)) throw new Error(`Invalid image format: ${format}`);
+        if (size && !AllowedImageSizes.includes(size)) throw new RangeError(`Invalid size: ${size}`);
+        return `${root}/app-icons/${clientID}/${hash}.${format}${size ? `?size=${size}` : ''}`;
+      },
       Splash: (guildID, hash) => `${root}/splashes/${guildID}/${hash}.jpg`,
     };
   },
@@ -667,7 +698,7 @@ exports.Colors = {
   NOT_QUITE_BLACK: 0x23272A,
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 1 */
@@ -1111,7 +1142,7 @@ module.exports = Collection;
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {const snekfetch = __webpack_require__(38);
+/* WEBPACK VAR INJECTION */(function(Buffer) {const snekfetch = __webpack_require__(39);
 const Constants = __webpack_require__(0);
 const ConstantsHttp = Constants.DefaultOptions.http;
 
@@ -3125,87 +3156,6 @@ function isnan (val) {
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Long = __webpack_require__(34);
-
-// Discord epoch (2015-01-01T00:00:00.000Z)
-const EPOCH = 1420070400000;
-let INCREMENT = 0;
-
-/**
- * A container for useful snowflake-related methods.
- */
-class SnowflakeUtil {
-  constructor() {
-    throw new Error(`The ${this.constructor.name} class may not be instantiated.`);
-  }
-
-  /**
-   * A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z
-   * ```
-   * If we have a snowflake '266241948824764416' we can represent it as binary:
-   *
-   * 64                                          22     17     12          0
-   *  000000111011000111100001101001000101000000  00001  00000  000000000000
-   *       number of ms since Discord epoch       worker  pid    increment
-   * ```
-   * @typedef {string} Snowflake
-   */
-
-  /**
-   * Generates a Discord snowflake.
-   * <info>This hardcodes the worker ID as 1 and the process ID as 0.</info>
-   * @returns {Snowflake} The generated snowflake
-   */
-  static generate() {
-    if (INCREMENT >= 4095) INCREMENT = 0;
-    const BINARY = `${pad((Date.now() - EPOCH).toString(2), 42)}0000100000${pad((INCREMENT++).toString(2), 12)}`;
-    return Long.fromString(BINARY, 2).toString();
-  }
-
-  /**
-   * A deconstructed snowflake.
-   * @typedef {Object} DeconstructedSnowflake
-   * @property {number} timestamp Timestamp the snowflake was created
-   * @property {Date} date Date the snowflake was created
-   * @property {number} workerID Worker ID in the snowflake
-   * @property {number} processID Process ID in the snowflake
-   * @property {number} increment Increment in the snowflake
-   * @property {string} binary Binary representation of the snowflake
-   */
-
-  /**
-   * Deconstructs a Discord snowflake.
-   * @param {Snowflake} snowflake Snowflake to deconstruct
-   * @returns {DeconstructedSnowflake} Deconstructed snowflake
-   */
-  static deconstruct(snowflake) {
-    const BINARY = pad(Long.fromString(snowflake).toString(2), 64);
-    const res = {
-      timestamp: parseInt(BINARY.substring(0, 42), 2) + EPOCH,
-      workerID: parseInt(BINARY.substring(42, 47), 2),
-      processID: parseInt(BINARY.substring(47, 52), 2),
-      increment: parseInt(BINARY.substring(52, 64), 2),
-      binary: BINARY,
-    };
-    Object.defineProperty(res, 'date', {
-      get: function get() { return new Date(this.timestamp); },
-      enumerable: true,
-    });
-    return res;
-  }
-}
-
-function pad(v, n, c = '0') {
-  return String(v).length >= n ? String(v) : (String(c).repeat(n) + v).slice(-n);
-}
-
-module.exports = SnowflakeUtil;
-
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -3378,10 +3328,6 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -3392,6 +3338,87 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Long = __webpack_require__(35);
+
+// Discord epoch (2015-01-01T00:00:00.000Z)
+const EPOCH = 1420070400000;
+let INCREMENT = 0;
+
+/**
+ * A container for useful snowflake-related methods.
+ */
+class SnowflakeUtil {
+  constructor() {
+    throw new Error(`The ${this.constructor.name} class may not be instantiated.`);
+  }
+
+  /**
+   * A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z
+   * ```
+   * If we have a snowflake '266241948824764416' we can represent it as binary:
+   *
+   * 64                                          22     17     12          0
+   *  000000111011000111100001101001000101000000  00001  00000  000000000000
+   *       number of ms since Discord epoch       worker  pid    increment
+   * ```
+   * @typedef {string} Snowflake
+   */
+
+  /**
+   * Generates a Discord snowflake.
+   * <info>This hardcodes the worker ID as 1 and the process ID as 0.</info>
+   * @returns {Snowflake} The generated snowflake
+   */
+  static generate() {
+    if (INCREMENT >= 4095) INCREMENT = 0;
+    const BINARY = `${pad((Date.now() - EPOCH).toString(2), 42)}0000100000${pad((INCREMENT++).toString(2), 12)}`;
+    return Long.fromString(BINARY, 2).toString();
+  }
+
+  /**
+   * A deconstructed snowflake.
+   * @typedef {Object} DeconstructedSnowflake
+   * @property {number} timestamp Timestamp the snowflake was created
+   * @property {Date} date Date the snowflake was created
+   * @property {number} workerID Worker ID in the snowflake
+   * @property {number} processID Process ID in the snowflake
+   * @property {number} increment Increment in the snowflake
+   * @property {string} binary Binary representation of the snowflake
+   */
+
+  /**
+   * Deconstructs a Discord snowflake.
+   * @param {Snowflake} snowflake Snowflake to deconstruct
+   * @returns {DeconstructedSnowflake} Deconstructed snowflake
+   */
+  static deconstruct(snowflake) {
+    const BINARY = pad(Long.fromString(snowflake).toString(2), 64);
+    const res = {
+      timestamp: parseInt(BINARY.substring(0, 42), 2) + EPOCH,
+      workerID: parseInt(BINARY.substring(42, 47), 2),
+      processID: parseInt(BINARY.substring(47, 52), 2),
+      increment: parseInt(BINARY.substring(52, 64), 2),
+      binary: BINARY,
+    };
+    Object.defineProperty(res, 'date', {
+      get: function get() { return new Date(this.timestamp); },
+      enumerable: true,
+    });
+    return res;
+  }
+}
+
+function pad(v, n, c = '0') {
+  return String(v).length >= n ? String(v) : (String(c).repeat(n) + v).slice(-n);
+}
+
+module.exports = SnowflakeUtil;
 
 
 /***/ }),
@@ -4162,7 +4189,7 @@ var objectKeys = Object.keys || function (obj) {
 module.exports = Duplex;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(35);
+var processNextTick = __webpack_require__(36);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -4171,7 +4198,7 @@ util.inherits = __webpack_require__(10);
 /*</replacement>*/
 
 var Readable = __webpack_require__(59);
-var Writable = __webpack_require__(37);
+var Writable = __webpack_require__(38);
 
 util.inherits(Duplex, Readable);
 
@@ -4222,7 +4249,7 @@ function forEach(xs, f) {
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 
 /**
  * Represents any channel on Discord.
@@ -4297,7 +4324,7 @@ module.exports = Channel;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 const Permissions = __webpack_require__(9);
 const util = __webpack_require__(22);
 
@@ -4664,7 +4691,7 @@ module.exports = Role;
 const TextBasedChannel = __webpack_require__(23);
 const Constants = __webpack_require__(0);
 const Presence = __webpack_require__(11).Presence;
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 
 /**
  * Represents a user on Discord.
@@ -4767,12 +4794,18 @@ class User {
 
   /**
    * A link to the user's avatar
-   * @type {?string}
-   * @readonly
+   * @param {string} [format='webp'] One of `webp`, `png`, `jpg`, `gif`. If no format is provided, it will be `gif`
+   * for animated avatars or otherwise `webp`
+   * @param {number} [size=128] One of `128`, '256', `512`, `1024`, `2048`
+   * @returns {?string} avatarURL
    */
-  get avatarURL() {
+  avatarURL(format, size) {
     if (!this.avatar) return null;
-    return Constants.Endpoints.User(this).Avatar(this.client.options.http.cdn, this.avatar);
+    if (typeof format === 'number') {
+      size = format;
+      format = 'default';
+    }
+    return Constants.Endpoints.User(this).Avatar(this.client.options.http.cdn, this.avatar, format, size);
   }
 
   /**
@@ -4792,7 +4825,7 @@ class User {
    * @readonly
    */
   get displayAvatarURL() {
-    return this.avatarURL || this.defaultAvatarURL;
+    return this.avatarURL() || this.defaultAvatarURL;
   }
 
   /**
@@ -4972,7 +5005,7 @@ module.exports = User;
 
 const Constants = __webpack_require__(0);
 const Collection = __webpack_require__(3);
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 
 /**
  * Represents a custom emoji.
@@ -6412,7 +6445,7 @@ function objectToString(o) {
 exports = module.exports = __webpack_require__(59);
 exports.Stream = exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(37);
+exports.Writable = __webpack_require__(38);
 exports.Duplex = __webpack_require__(13);
 exports.Transform = __webpack_require__(60);
 exports.PassThrough = __webpack_require__(85);
@@ -7009,7 +7042,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(6)))
 
 /***/ }),
 /* 23 */
@@ -7575,7 +7608,7 @@ exports.EOL = '\n';
 /* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Long = __webpack_require__(34);
+const Long = __webpack_require__(35);
 const User = __webpack_require__(16);
 const Role = __webpack_require__(15);
 const Emoji = __webpack_require__(17);
@@ -7584,7 +7617,7 @@ const GuildMember = __webpack_require__(18);
 const Constants = __webpack_require__(0);
 const Collection = __webpack_require__(3);
 const Util = __webpack_require__(4);
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 
 /**
  * Represents a guild (or a server) on Discord.
@@ -7830,13 +7863,27 @@ class Guild {
   }
 
   /**
-   * The URL to this guild's icon
-   * @type {?string}
+   * Gets the URL to this guild's icon
+   * @param {string} [format='webp'] One of `webp`, `png`, `jpg`, `gif`
+   * @param {number} [size=128] One of `128`, '256', `512`, `1024`, `2048`
+   * @returns {?string}
+   */
+  iconURL(format, size) {
+    if (!this.icon) return null;
+    if (typeof format === 'number') {
+      size = format;
+      format = 'default';
+    }
+    return Constants.Endpoints.Guild(this).Icon(this.client.options.http.cdn, this.icon, format, size);
+  }
+
+  /**
+   * Gets the acronym that shows up in place of a guild icon
+   * @type {string}
    * @readonly
    */
-  get iconURL() {
-    if (!this.icon) return null;
-    return Constants.Endpoints.Guild(this).Icon(this.client.options.http.cdn, this.icon);
+  get nameAcronym() {
+    return this.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '');
   }
 
   /**
@@ -8999,7 +9046,8 @@ module.exports = GuildChannel;
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
+const Constants = __webpack_require__(0);
 
 /**
  * Represents an OAuth2 Application.
@@ -9041,12 +9089,6 @@ class OAuth2Application {
      * @type {string}
      */
     this.icon = data.icon;
-
-    /**
-     * The app's icon URL
-     * @type {string}
-     */
-    this.iconURL = `https://cdn.discordapp.com/app-icons/${this.id}/${this.icon}.jpg`;
 
     /**
      * The app's RPC origins
@@ -9121,6 +9163,21 @@ class OAuth2Application {
    */
   get createdAt() {
     return new Date(this.createdTimestamp);
+  }
+
+  /**
+   * A link to the application's icon
+   * @param {string} [format='webp'] One of `webp`, `png`, `jpg`, `gif`.
+   * @param {number} [size=128] One of `128`, '256', `512`, `1024`, `2048`
+   * @returns {?string} URL to the icon
+   */
+  iconURL(format, size) {
+    if (!this.icon) return null;
+    if (typeof format === 'number') {
+      size = format;
+      format = 'default';
+    }
+    return Constants.Endpoints.CDN(this.client.options.http.cdn).AppIcon(this.id, this.icon, format, size);
   }
 
   /**
@@ -9372,10 +9429,16 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 29 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Channel = __webpack_require__(14);
@@ -9561,7 +9624,7 @@ module.exports = GroupDMChannel;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 /**
@@ -9616,7 +9679,7 @@ module.exports = ReactionEmoji;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const path = __webpack_require__(28);
@@ -9702,6 +9765,7 @@ class Webhook {
    * @property {boolean} [disableEveryone=this.client.options.disableEveryone] Whether or not @everyone and @here
    * should be replaced with plain-text
    * @property {FileOptions|string} [file] A file to send with the message
+   * @property {FileOptions[]|string[]} [files] Files to send with the message
    * @property {string|boolean} [code] Language for optional codeblock formatting to apply
    * @property {boolean|SplitOptions} [split=false] Whether or not the message should be split into multiple messages if
    * it exceeds the character limit. If an object is provided, these are the options for splitting the message.
@@ -9709,7 +9773,7 @@ class Webhook {
 
   /**
    * Send a message with this webhook.
-   * @param {StringResolvable} content The content to send
+   * @param {StringResolvable} [content] The content to send
    * @param {WebhookMessageOptions} [options={}] The options to provide
    * @returns {Promise<Message|Message[]>}
    * @example
@@ -9725,6 +9789,7 @@ class Webhook {
     } else if (!options) {
       options = {};
     }
+
     if (options.file) {
       if (options.files) options.files.push(options.file);
       else options.files = [options.file];
@@ -9743,14 +9808,17 @@ class Webhook {
             file.name = 'file.jpg';
           }
         }
+        options.files[i] = file;
       }
-      return this.client.resolver.resolveBuffer(options.file.attachment).then(file =>
-        this.client.rest.methods.sendWebhookMessage(this, content, options, {
-          file,
-          name: options.file.name,
+
+      return Promise.all(options.files.map(file =>
+        this.client.resolver.resolveBuffer(file.attachment).then(buffer => {
+          file.file = buffer;
+          return file;
         })
-      );
+      )).then(files => this.client.rest.methods.sendWebhookMessage(this, content, options, files));
     }
+
     return this.client.rest.methods.sendWebhookMessage(this, content, options);
   }
 
@@ -9848,7 +9916,7 @@ module.exports = Webhook;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const Collection = __webpack_require__(3);
@@ -10032,7 +10100,7 @@ module.exports = Collector;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10148,7 +10216,7 @@ exports.allocUnsafeSlow = function allocUnsafeSlow(size) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -11366,7 +11434,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11414,10 +11482,10 @@ function nextTick(fn, arg1, arg2, arg3) {
   }
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11428,7 +11496,7 @@ exports.encode = exports.stringify = __webpack_require__(83);
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11441,7 +11509,7 @@ exports.encode = exports.stringify = __webpack_require__(83);
 module.exports = Writable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(35);
+var processNextTick = __webpack_require__(36);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -11471,7 +11539,7 @@ var Stream = __webpack_require__(61);
 
 var Buffer = __webpack_require__(5).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(33);
+var bufferShim = __webpack_require__(34);
 /*</replacement>*/
 
 util.inherits(Writable, Stream);
@@ -11976,87 +12044,82 @@ function CorkedRequest(state) {
     }
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(99).setImmediate))
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Snekfetch = __webpack_require__(93);
-
-// const ENV_VAR = '__SNEKFETCH_SYNC_REQUEST';
-// let first = true;
-//
-// for (let method of Snekfetch.METHODS) {
-//   method = method === 'M-SEARCH' ? 'msearch' : method.toLowerCase();
-//   Snekfetch[`${method}Sync`] = (url, options = {}) => {
-//     if (first) {
-//       first = false;
-//       console.error(
-//         'Performing sync requests is a really stupid thing to do. ' +
-//         'https://www.google.com/search?q=why+sync+requests+are+bad+nodejs'
-//       );
-//     }
-//     options.url = url;
-//     options.method = method;
-//     const cp = require('child_process');
-//     const result = JSON.parse(
-//       cp.execSync(`node ${__dirname}/index.js`, {
-//         env: { [ENV_VAR]: JSON.stringify(options) },
-//       }).toString(),
-//       (k, v) => {
-//         if (v === null) return v;
-//         if (v.type === 'Buffer' && Array.isArray(v.data)) return new Buffer(v.data);
-//         if (v.__CONVERT_TO_ERROR) {
-//           const e = new Error();
-//           for (const key of Object.keys(v)) {
-//             if (key === '__CONVERT_TO_ERROR') continue;
-//             e[key] = v[key];
-//           }
-//           return e;
-//         }
-//         return v;
-//       }
-//     );
-//     if (result.error) throw result.error;
-//     return result;
-//   };
-// }
-//
-// if (process.env[ENV_VAR]) {
-//   const options = JSON.parse(process.env[ENV_VAR]);
-//   const request = Snekfetch[options.method](options.url);
-//   if (options.headers) request.set(options.headers);
-//   if (options.body) request.send(options.body);
-//   request.end((err, res = {}) => {
-//     if (err) {
-//       const alt = {};
-//       for (const name of Object.getOwnPropertyNames(err)) alt[name] = err[name];
-//       res.error = alt;
-//       res.error.__CONVERT_TO_ERROR = true;
-//     }
-//     // circulars
-//     res.request = null;
-//     process.stdout.write(JSON.stringify(res));
-//   });
-// }
-
-module.exports = Snekfetch;
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(99).setImmediate))
 
 /***/ }),
 /* 39 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(__dirname, Buffer, process) {const Snekfetch = __webpack_require__(93);
 
+const ENV_VAR = '__SNEKFETCH_SYNC_REQUEST';
+let first = true;
+
+for (let method of Snekfetch.METHODS) {
+  method = method === 'M-SEARCH' ? 'msearch' : method.toLowerCase();
+  Snekfetch[`${method}Sync`] = (url, options = {}) => {
+    if (first) {
+      first = false;
+      console.error(
+        'Performing sync requests is a really stupid thing to do. ' +
+        'https://www.google.com/search?q=why+sync+requests+are+bad+nodejs'
+      );
+    }
+    options.url = url;
+    options.method = method;
+    const cp = __webpack_require__(29);
+    const result = JSON.parse(
+      cp.execSync(`node ${__dirname}/index.js`, {
+        env: { [ENV_VAR]: JSON.stringify(options) },
+      }).toString(),
+      (k, v) => {
+        if (v === null) return v;
+        if (v.type === 'Buffer' && Array.isArray(v.data)) return new Buffer(v.data);
+        if (v.__CONVERT_TO_ERROR) {
+          const e = new Error();
+          for (const key of Object.keys(v)) {
+            if (key === '__CONVERT_TO_ERROR') continue;
+            e[key] = v[key];
+          }
+          return e;
+        }
+        return v;
+      }
+    );
+    if (result.error) throw result.error;
+    return result;
+  };
+}
+
+if (process.env[ENV_VAR]) {
+  const options = JSON.parse(process.env[ENV_VAR]);
+  const request = Snekfetch[options.method](options.url);
+  if (options.headers) request.set(options.headers);
+  if (options.body) request.send(options.body);
+  request.end((err, res = {}) => {
+    if (err) {
+      const alt = {};
+      for (const name of Object.getOwnPropertyNames(err)) alt[name] = err[name];
+      res.error = alt;
+      res.error.__CONVERT_TO_ERROR = true;
+    }
+    // circulars
+    res.request = null;
+    process.stdout.write(JSON.stringify(res));
+  });
+}
+
+module.exports = Snekfetch;
+
+/* WEBPACK VAR INJECTION */}.call(exports, "node_modules/snekfetch", __webpack_require__(5).Buffer, __webpack_require__(6)))
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {const path = __webpack_require__(28);
-const fs = __webpack_require__(39);
-const snekfetch = __webpack_require__(38);
+const fs = __webpack_require__(29);
+const snekfetch = __webpack_require__(39);
 
 const Constants = __webpack_require__(0);
 const convertToBuffer = __webpack_require__(4).convertToBuffer;
@@ -12066,7 +12129,7 @@ const Guild = __webpack_require__(25);
 const Channel = __webpack_require__(14);
 const GuildMember = __webpack_require__(18);
 const Emoji = __webpack_require__(17);
-const ReactionEmoji = __webpack_require__(30);
+const ReactionEmoji = __webpack_require__(31);
 
 /**
  * The DataResolver identifies different objects and tries to resolve a specific piece of information from them, e.g.
@@ -12391,7 +12454,7 @@ module.exports = ClientDataResolver;
 
 module.exports = {
 	"name": "discord.js",
-	"version": "11.2.0",
+	"version": "12.0.0",
 	"description": "A powerful library for interacting with the Discord API",
 	"main": "./src/index",
 	"types": "./typings/index.d.ts",
@@ -12994,7 +13057,7 @@ module.exports = DMChannel;
 /***/ (function(module, exports, __webpack_require__) {
 
 const Collection = __webpack_require__(3);
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 
 const Targets = {
   GUILD: 'GUILD',
@@ -13521,7 +13584,7 @@ module.exports = MessageAttachment;
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Collector = __webpack_require__(32);
+const Collector = __webpack_require__(33);
 const util = __webpack_require__(22);
 
 /**
@@ -14142,7 +14205,7 @@ class MessageMentions {
 MessageMentions.EVERYONE_PATTERN = /@(everyone|here)/g;
 
 /**
- * Regular expression that globally matches user mentions like `<#81440962496172032>`
+ * Regular expression that globally matches user mentions like `<@81440962496172032>`
  * @type {RegExp}
  */
 MessageMentions.USERS_PATTERN = /<@!?[0-9]+>/g;
@@ -14168,7 +14231,7 @@ module.exports = MessageMentions;
 
 const Collection = __webpack_require__(3);
 const Emoji = __webpack_require__(17);
-const ReactionEmoji = __webpack_require__(30);
+const ReactionEmoji = __webpack_require__(31);
 
 /**
  * Represents a reaction to a message.
@@ -14421,7 +14484,7 @@ module.exports = PermissionOverwrites;
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Collector = __webpack_require__(32);
+const Collector = __webpack_require__(33);
 const Collection = __webpack_require__(3);
 
 /**
@@ -14783,7 +14846,7 @@ module.exports = Array.isArray || function (arr) {
 module.exports = Readable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(35);
+var processNextTick = __webpack_require__(36);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -14810,7 +14873,7 @@ var Stream = __webpack_require__(61);
 
 var Buffer = __webpack_require__(5).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(33);
+var bufferShim = __webpack_require__(34);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -15713,7 +15776,7 @@ function indexOf(xs, x) {
   }
   return -1;
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 60 */
@@ -16308,7 +16371,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(36);
+    querystring = __webpack_require__(37);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -17346,7 +17409,7 @@ module.exports = RequestHandler;
 /* WEBPACK VAR INJECTION */(function(Buffer) {const browser = __webpack_require__(24).platform() === 'browser';
 const EventEmitter = __webpack_require__(12);
 const Constants = __webpack_require__(0);
-const zlib = __webpack_require__(39);
+const zlib = __webpack_require__(29);
 const PacketManager = __webpack_require__(144);
 const erlpack = (function findErlpack() {
   try {
@@ -18397,13 +18460,13 @@ module.exports = Client;
  * @param {string} info The debug information
  */
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Webhook = __webpack_require__(31);
+const Webhook = __webpack_require__(32);
 const RESTManager = __webpack_require__(68);
 const ClientDataResolver = __webpack_require__(40);
 const Constants = __webpack_require__(0);
@@ -19840,7 +19903,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 
 var Buffer = __webpack_require__(5).Buffer;
 /*<replacement>*/
-var bufferShim = __webpack_require__(33);
+var bufferShim = __webpack_require__(34);
 /*</replacement>*/
 
 module.exports = BufferList;
@@ -19919,7 +19982,7 @@ module.exports = __webpack_require__(21).Transform
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
@@ -20113,7 +20176,7 @@ module.exports = __webpack_require__(37);
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(6)))
 
 /***/ }),
 /* 91 */
@@ -20131,23 +20194,23 @@ module.exports = {
 				"spec": ">=3.1.0 <4.0.0",
 				"type": "range"
 			},
-			"/srv/www/node/test/webpack/discord.js"
+			"/home/travis/build/hydrabolt/discord.js"
 		]
 	],
 	"_from": "snekfetch@>=3.1.0 <4.0.0",
-	"_id": "snekfetch@3.1.6",
+	"_id": "snekfetch@3.1.2",
 	"_inCache": true,
 	"_location": "/snekfetch",
 	"_nodeVersion": "7.9.0",
 	"_npmOperationalInternal": {
-		"host": "packages-12-west.internal.npmjs.com",
-		"tmp": "tmp/snekfetch-3.1.6.tgz_1493569353717_0.8596337598282844"
+		"host": "packages-18-east.internal.npmjs.com",
+		"tmp": "tmp/snekfetch-3.1.2.tgz_1492882967312_0.8088863184675574"
 	},
 	"_npmUser": {
-		"name": "snek",
-		"email": "me@gus.host"
+		"name": "crawl",
+		"email": "icrawltogo@gmail.com"
 	},
-	"_npmVersion": "4.5.0",
+	"_npmVersion": "4.2.0",
 	"_phantomChildren": {},
 	"_requested": {
 		"raw": "snekfetch@^3.1.0",
@@ -20161,11 +20224,11 @@ module.exports = {
 	"_requiredBy": [
 		"/"
 	],
-	"_resolved": "https://registry.npmjs.org/snekfetch/-/snekfetch-3.1.6.tgz",
-	"_shasum": "3090d5cd3f5bc1e456f8aafa5024f64b7ca5b1e0",
+	"_resolved": "https://registry.npmjs.org/snekfetch/-/snekfetch-3.1.2.tgz",
+	"_shasum": "3422a9191c1bb6610867db88e669db0b5adb7f42",
 	"_shrinkwrap": null,
 	"_spec": "snekfetch@^3.1.0",
-	"_where": "/srv/www/node/test/webpack/discord.js",
+	"_where": "/home/travis/build/hydrabolt/discord.js",
 	"author": {
 		"name": "Gus Caplan",
 		"email": "me@gus.host"
@@ -20178,10 +20241,10 @@ module.exports = {
 	"devDependencies": {},
 	"directories": {},
 	"dist": {
-		"shasum": "3090d5cd3f5bc1e456f8aafa5024f64b7ca5b1e0",
-		"tarball": "https://registry.npmjs.org/snekfetch/-/snekfetch-3.1.6.tgz"
+		"shasum": "3422a9191c1bb6610867db88e669db0b5adb7f42",
+		"tarball": "https://registry.npmjs.org/snekfetch/-/snekfetch-3.1.2.tgz"
 	},
-	"gitHead": "b03a6bb7d3b73ac3a4b27c7cfffcfbaa87d38700",
+	"gitHead": "a79f6867d21ca58ffe6fc59eb77b06f257f8ad29",
 	"homepage": "https://github.com/GusCaplan/snekfetch#readme",
 	"license": "MIT",
 	"main": "index.js",
@@ -20189,10 +20252,6 @@ module.exports = {
 		{
 			"name": "crawl",
 			"email": "icrawltogo@gmail.com"
-		},
-		{
-			"name": "hydrabolt",
-			"email": "amishshah.2k@gmail.com"
 		},
 		{
 			"name": "snek",
@@ -20207,7 +20266,7 @@ module.exports = {
 		"url": "git+https://github.com/GusCaplan/snekfetch.git"
 	},
 	"scripts": {},
-	"version": "3.1.6"
+	"version": "3.1.2"
 };
 
 /***/ }),
@@ -20230,7 +20289,7 @@ class FormData {
     if (filename) {
       str += `; filename="${filename}"`;
       mimetype = 'application/octet-stream';
-      const extname = path.extname(filename).slice(1);
+      const extname = path.extname(filename);
       if (extname) mimetype = mime.lookup(extname);
     }
 
@@ -20269,8 +20328,8 @@ module.exports = FormData;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {__webpack_require__(62);
-const zlib = __webpack_require__(39);
-const qs = __webpack_require__(36);
+const zlib = __webpack_require__(29);
+const qs = __webpack_require__(37);
 const http = __webpack_require__(63);
 const https = __webpack_require__(79);
 const URL = __webpack_require__(65);
@@ -20323,7 +20382,7 @@ class Snekfetch extends Stream.Readable {
   send(data) {
     if (this.request.res) throw new Error('Cannot modify data after being sent!');
     if (data !== null && typeof data === 'object') {
-      const header = this._getHeader('content-type');
+      const header = this.request.getHeader('content-type');
       let serialize;
       if (header) {
         if (header.includes('json')) serialize = JSON.stringify;
@@ -20454,7 +20513,7 @@ class Snekfetch extends Stream.Readable {
 
   _read() {
     this.resume();
-    if (this.response) return;
+    if (this.request.res) return;
     this.catch((err) => this.emit('error', err));
   }
 
@@ -20475,23 +20534,10 @@ class Snekfetch extends Stream.Readable {
 
   _addFinalHeaders() {
     if (!this.request) return;
-    if (!this._getHeader('user-agent')) {
+    if (!this.request.getHeader('user-agent')) {
       this.set('User-Agent', `snekfetch/${Snekfetch.version} (${Package.repository.url.replace(/\.?git/, '')})`);
     }
     if (this.request.method !== 'HEAD') this.set('Accept-Encoding', 'gzip, deflate');
-  }
-
-  get response() {
-    return this.request.res || this.request._response || null;
-  }
-
-  _getHeader(header) {
-    // https://github.com/jhiesey/stream-http/pull/77
-    try {
-      return this.request.getHeader(header);
-    } catch (err) {
-      return null;
-    }
   }
 }
 
@@ -22230,10 +22276,8 @@ ClientRequest.prototype.setHeader = function (name, value) {
 }
 
 ClientRequest.prototype.getHeader = function (name) {
-	var header = this._headers[name.toLowerCase()]
-	if (header)
-		return header.value
-	return null
+	var self = this
+	return self._headers[name.toLowerCase()].value
 }
 
 ClientRequest.prototype.removeHeader = function (name) {
@@ -22454,7 +22498,7 @@ var unsafeHeaders = [
 	'via'
 ]
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer, __webpack_require__(8), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer, __webpack_require__(8), __webpack_require__(6)))
 
 /***/ }),
 /* 98 */
@@ -22643,7 +22687,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 	}
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7), __webpack_require__(5).Buffer, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(5).Buffer, __webpack_require__(8)))
 
 /***/ }),
 /* 99 */
@@ -22940,7 +22984,7 @@ const Emoji = __webpack_require__(17);
 const TextChannel = __webpack_require__(56);
 const VoiceChannel = __webpack_require__(57);
 const GuildChannel = __webpack_require__(26);
-const GroupDMChannel = __webpack_require__(29);
+const GroupDMChannel = __webpack_require__(30);
 
 class ClientDataManager {
   constructor(client) {
@@ -24172,7 +24216,7 @@ module.exports = UserUpdateAction;
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const snekfetch = __webpack_require__(38);
+const snekfetch = __webpack_require__(39);
 const Constants = __webpack_require__(0);
 
 class APIRequest {
@@ -24228,13 +24272,13 @@ module.exports = APIRequest;
 /* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const querystring = __webpack_require__(36);
-const long = __webpack_require__(34);
+const querystring = __webpack_require__(37);
+const long = __webpack_require__(35);
 const Permissions = __webpack_require__(9);
 const Constants = __webpack_require__(0);
 const Endpoints = Constants.Endpoints;
 const Collection = __webpack_require__(3);
-const Snowflake = __webpack_require__(6);
+const Snowflake = __webpack_require__(7);
 const Util = __webpack_require__(4);
 
 const User = __webpack_require__(16);
@@ -24242,11 +24286,11 @@ const GuildMember = __webpack_require__(18);
 const Message = __webpack_require__(19);
 const Role = __webpack_require__(15);
 const Invite = __webpack_require__(46);
-const Webhook = __webpack_require__(31);
+const Webhook = __webpack_require__(32);
 const UserProfile = __webpack_require__(183);
 const OAuth2Application = __webpack_require__(27);
 const Channel = __webpack_require__(14);
-const GroupDMChannel = __webpack_require__(29);
+const GroupDMChannel = __webpack_require__(30);
 const Guild = __webpack_require__(25);
 const VoiceRegion = __webpack_require__(184);
 const GuildAuditLogs = __webpack_require__(45);
@@ -25335,7 +25379,7 @@ UserAgentManager.DEFAULT = {
 
 module.exports = UserAgentManager;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 143 */
@@ -26591,8 +26635,8 @@ module.exports = {
   Constants: __webpack_require__(0),
   EvaluatedPermissions: __webpack_require__(9),
   Permissions: __webpack_require__(9),
-  Snowflake: __webpack_require__(6),
-  SnowflakeUtil: __webpack_require__(6),
+  Snowflake: __webpack_require__(7),
+  SnowflakeUtil: __webpack_require__(7),
   Util: Util,
   util: Util,
   version: __webpack_require__(41).version,
@@ -26606,11 +26650,11 @@ module.exports = {
   Channel: __webpack_require__(14),
   ClientUser: __webpack_require__(42),
   ClientUserSettings: __webpack_require__(43),
-  Collector: __webpack_require__(32),
+  Collector: __webpack_require__(33),
   DMChannel: __webpack_require__(44),
   Emoji: __webpack_require__(17),
   Game: __webpack_require__(11).Game,
-  GroupDMChannel: __webpack_require__(29),
+  GroupDMChannel: __webpack_require__(30),
   Guild: __webpack_require__(25),
   GuildAuditLogs: __webpack_require__(45),
   GuildChannel: __webpack_require__(26),
@@ -26628,14 +26672,14 @@ module.exports = {
   PartialGuildChannel: __webpack_require__(53),
   PermissionOverwrites: __webpack_require__(54),
   Presence: __webpack_require__(11).Presence,
-  ReactionEmoji: __webpack_require__(30),
+  ReactionEmoji: __webpack_require__(31),
   ReactionCollector: __webpack_require__(55),
   RichEmbed: __webpack_require__(73),
   Role: __webpack_require__(15),
   TextChannel: __webpack_require__(56),
   User: __webpack_require__(16),
   VoiceChannel: __webpack_require__(57),
-  Webhook: __webpack_require__(31),
+  Webhook: __webpack_require__(32),
 };
 
 if (__webpack_require__(24).platform() === 'browser') window.Discord = module.exports; // eslint-disable-line no-undef
