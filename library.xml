@@ -487,4 +487,233 @@
         <field name="HUE">200</field>
       </block>
     </value>
+  </block><block type="factory_base" id="iQ~AGtBD#0j*A=y)VF7k" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">message_methods</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="B8HEB*55jR!GypO!NC1v">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id=".e9x{Lm14[Cawsp79q*5">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">methods</field>
+            <field name="USER0">delete</field>
+            <field name="CPU0">delete</field>
+            <field name="USER1">pin</field>
+            <field name="CPU1">pin</field>
+            <field name="USER2">unpin</field>
+            <field name="CPU2">unpin</field>
+            <next>
+              <block type="field_variable" id="K.ACMG^|=pfFYYgHnxK+">
+                <field name="TEXT">message</field>
+                <field name="FIELDNAME">message</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="f=zvhH}`JsjH]WJW$th9" deletable="false" movable="false">
+        <field name="TEXT">Delete, pin or unpin a message</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="tpm[)[5$u$J`+NmC..By" deletable="false" movable="false">
+        <field name="TEXT">https://moustacheminer.com/</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r00U8*#D!8JMMhVhB;#k"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="j(K]]wklNwo)#WM*am5s"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="o4ds}ahk?Wt_Q/#qM?Ef">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=":I?[RCNNKa;?#4@ejgTa" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">invite_link</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="m0{LmPS]+2Ke@WGw3_)Z">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="befsT.KC/N7o*$fMl5ZK">
+            <field name="TEXT">get invite for</field>
+            <next>
+              <block type="field_variable" id="^aCyaC(2~mqBCj*q0PM|">
+                <field name="TEXT">client</field>
+                <field name="FIELDNAME">client</field>
+                <next>
+                  <block type="field_static" id="}0jKudmd+:`}*~$a82D#">
+                    <field name="TEXT">with</field>
+                    <next>
+                      <block type="field_variable" id="3$f$40%E9P1Wp#?-CJ-y">
+                        <field name="TEXT">permissions</field>
+                        <field name="FIELDNAME">permissions</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="0{@cK#A7@?mvS?Z{t(XV" deletable="false" movable="false">
+        <field name="TEXT">Generate an invite link for a bot account with the variable "permissions".</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="C,!^$ZlD)V?u~dir9O^Q" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="R-1Qdc]f%^rU2Kij`nIP"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="r:Y;aLH1dh2rtv|.^wKV">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id=":I?[RCNNKa;?#4@ejgTa" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">add_perm</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="-S{(jlE_(bn:Qr6.%#}S">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id=";N|)6$|/`Ej9#Qz_Pnp:">
+            <field name="TEXT">permission</field>
+            <next>
+              <block type="field_dropdown" id="kh{a1?RcLE%8|($E7}Ez">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">permission</field>
+                <field name="USER0">Allows creation of instant invites</field>
+                <field name="CPU0">0x00000001</field>
+                <field name="USER1">Allows kicking members</field>
+                <field name="CPU1">0x00000002</field>
+                <field name="USER2">Allows banning members</field>
+                <field name="CPU2">0x00000004</field>
+                <field name="USER3">Allows all permissions and bypass channel permission overwrites</field>
+                <field name="CPU3">0x00000008</field>
+                <field name="USER4">Allows management and editing of channels</field>
+                <field name="CPU4">0x00000010</field>
+                <field name="USER5">Allows management and editing of the guild</field>
+                <field name="CPU5">0x00000020</field>
+                <field name="USER6">Allows for the addition of reactions to messages</field>
+                <field name="CPU6">0x00000040</field>
+                <field name="USER7">Allows reading messages in a channel. The channel will not appear for users without this permission</field>
+                <field name="CPU7">0x00000400</field>
+                <field name="USER8">Allows for sending messages in a channel.</field>
+                <field name="CPU8">0x00000800	</field>
+                <field name="USER9">Allows for sending of /tts messages</field>
+                <field name="CPU9">0x00001000</field>
+                <field name="USER10">Allows for deletion of other users messages</field>
+                <field name="CPU10">0x00002000</field>
+                <field name="USER11">Links sent by this user will be auto-embedded</field>
+                <field name="CPU11">0x00004000</field>
+                <field name="USER12">Allows for uploading images and files</field>
+                <field name="CPU12">0x00008000</field>
+                <field name="USER13">Allows for reading of message history</field>
+                <field name="CPU13">0x00010000</field>
+                <field name="USER14">Allows for using the @everyone tag to notify all users in a channel, and the @here tag to notify all online users in a channel</field>
+                <field name="CPU14">0x00020000</field>
+                <field name="USER15">Allows the usage of custom emojis from other servers</field>
+                <field name="CPU15">0x00040000</field>
+                <field name="USER16">Allows for joining of a voice channel</field>
+                <field name="CPU16">0x00100000</field>
+                <field name="USER17">Allows for speaking in a voice channel</field>
+                <field name="CPU17">0x00200000</field>
+                <field name="USER18">Allows for muting members in a voice channel</field>
+                <field name="CPU18">0x00400000</field>
+                <field name="USER19">Allows for deafening of members in a voice channel</field>
+                <field name="CPU19">0x00800000</field>
+                <field name="USER20">Allows for moving of members between voice channels</field>
+                <field name="CPU20">0x01000000</field>
+                <field name="USER21">Allows for using voice-activity-detection in a voice channel</field>
+                <field name="CPU21">0x02000000</field>
+                <field name="USER22">Allows for modification of own nickname</field>
+                <field name="CPU22">0x04000000</field>
+                <field name="USER23">Allows for modification of other users nicknames</field>
+                <field name="CPU23">0x08000000</field>
+                <field name="USER24">Allows management and editing of roles</field>
+                <field name="CPU24">0x10000000</field>
+                <field name="USER25">Allows management and editing of webhooks</field>
+                <field name="CPU25">0x20000000</field>
+                <field name="USER26">Allows management and editing of emojis</field>
+                <field name="CPU26">0x40000000</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="0{@cK#A7@?mvS?Z{t(XV" deletable="false" movable="false">
+        <field name="TEXT">Get the constant for each permission which can be added to the "permission" variable</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="C,!^$ZlD)V?u~dir9O^Q" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="~~7_EC@g!5G`hb|7s2i~"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="r:Y;aLH1dh2rtv|.^wKV">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="]r!?/g@}5bo=jp[=R|2g" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">date_isostring</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="Sd7Ut*J,gZzn-3+DWv|a">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="_KhE_soX5i5NZ1sN+1gW">
+            <field name="TEXT">iso date</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="9a{4xrltoySPib.[Jg;_" deletable="false" movable="false">
+        <field name="TEXT">Get the current ISO Date</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="sxuTU~lht0CR`v.mht7h" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="%Y[~FBAG5gjljnJWj;H9"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="`.ySxfaZ`JO`5x[7Jt%L">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
   </block></xml>

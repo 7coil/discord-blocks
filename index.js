@@ -38,7 +38,7 @@ var Discord = require('discord.js');
 
 function saveCode() {
 	var xml = Blockly.Xml.workspaceToDom(workspace);
-	var xml_text = Blockly.Xml.domToText(xml);
+	var xml_text = Blockly.Xml.domToPrettyText(xml);
 	prompt("Copy the XML to your clipboard and save it ALL for later", xml_text);
 }
 
