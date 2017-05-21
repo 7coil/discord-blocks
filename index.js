@@ -1,11 +1,11 @@
+var code = document.getElementById('code');
+
 var workspace = Blockly.inject('blocklyDiv', {
 	media: 'media/',
 	toolbox: document.getElementById('toolbox')
 });
 
 function getCode() {
-	var code = document.getElementById('code');
-
 	var output = `
 var Discord = require('discord.js');
 /*
@@ -39,7 +39,7 @@ var Discord = require('discord.js');
 function saveCode() {
 	var xml = Blockly.Xml.workspaceToDom(workspace);
 	var xml_text = Blockly.Xml.domToPrettyText(xml);
-	prompt("Copy the XML to your clipboard and save it ALL for later", xml_text);
+	code.innerHTML = xml_text;
 }
 
 function runCode() {
