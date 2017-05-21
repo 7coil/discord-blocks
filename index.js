@@ -39,7 +39,7 @@ var Discord = require('discord.js');
 function saveCode() {
 	var xml = Blockly.Xml.workspaceToDom(workspace);
 	var xml_text = Blockly.Xml.domToPrettyText(xml);
-	code.innerHTML = xml_text;
+	code.innerHTML = escapeHtml(xml_text);
 }
 
 function runCode() {
@@ -54,3 +54,13 @@ function loadCode() {
 	var xml = Blockly.Xml.textToDom(xml_text);
 	Blockly.Xml.domToWorkspace(xml, workspace);
 }
+
+//http://stackoverflow.com/questions/6234773/can-i-escape-html-special-chars-in-javascript
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ }
