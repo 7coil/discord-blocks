@@ -1,717 +1,1076 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="j8.sX[,|,]^5RNQxWysu" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">on_message</field>
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="Cm22!3U{04/1+i$rLYrm" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_Constructor</field>
     <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
+    <field name="CONNECTIONS">LEFT</field>
     <statement name="INPUTS">
-      <block type="input_dummy" id="ySR0T@qS1iev2_f|f#)c">
+      <block type="input_value" id="-DmS}t)bVa9u#`0N?4vb">
+        <field name="INPUTNAME">NAME</field>
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_static" id="w)K*nWu8.U*oc?,1^);`">
-            <field name="TEXT">when</field>
-            <next>
-              <block type="field_variable" id="2me9;Gt|9XIu9ga_Kzf;">
-                <field name="TEXT">client</field>
-                <field name="FIELDNAME">client</field>
-                <next>
-                  <block type="field_static" id="!D;[r-O?gS?f0tLm0JKb">
-                    <field name="TEXT">sees a message being </field>
-                    <next>
-                      <block type="field_dropdown" id="Y:t#|f9hu:7x2Mkp6Fnc">
-                        <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
-                        <field name="FIELDNAME">event</field>
-                        <field name="USER0">added</field>
-                        <field name="CPU0">message</field>
-                        <field name="USER1">deleted</field>
-                        <field name="CPU1">messageDelete</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-        <next>
-          <block type="input_dummy" id="nsbEql1/fb(4OY#b)L1T">
-            <field name="ALIGN">LEFT</field>
-            <statement name="FIELDS">
-              <block type="field_static" id="s+F,DdXJDXW]^M.d+l|=">
-                <field name="TEXT">put info into</field>
-                <next>
-                  <block type="field_variable" id="3.fWi,1Xt-MBkh4}(.sN">
-                    <field name="TEXT">message</field>
-                    <field name="FIELDNAME">message</field>
-                  </block>
-                </next>
-              </block>
-            </statement>
-            <next>
-              <block type="input_statement" id="PgoI|p-95V(1VnZB8pC!">
-                <field name="INPUTNAME">function</field>
-                <field name="ALIGN">LEFT</field>
-                <statement name="FIELDS">
-                  <block type="field_static" id="|.^70]ak7K;,O@^8)[jq">
-                    <field name="TEXT">then</field>
-                  </block>
-                </statement>
-                <value name="TYPE">
-                  <shadow type="type_null" id="@=@vd.ISrL/C94Vg!rfO"></shadow>
-                </value>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="_B@gie_`^dcT%bs?j4~%" deletable="false" movable="false">
-        <field name="TEXT">Triggered when a message is recieved</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="aqD8GC6!IH.83_EGmKvZ" deletable="false" movable="false">
-        <field name="TEXT">https://moustacheminer.com/</field>
-      </block>
-    </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="d.hq}-:tm)9YA^4xaW!m"></shadow>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="N6vK[,ejB|8(j?h8(hx}"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="7-|Y1m%Y!1D/U1BV(H]N">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="2ZpEN[94Fjx]7*:Y1rRm" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTTOM"></mutation>
-    <field name="NAME">client_login</field>
-    <field name="INLINE">EXT</field>
-    <field name="CONNECTIONS">BOTTOM</field>
-    <statement name="INPUTS">
-      <block type="input_value" id="H$g#HRg3UO.5dtL+=8SP">
-        <field name="INPUTNAME">token</field>
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="vbo|aA3g(?iBH7RVGL1d">
-            <field name="TEXT">Create</field>
-            <next>
-              <block type="field_variable" id="]l%gR!f4.dGf?7MqSY^Q">
-                <field name="TEXT">client</field>
-                <field name="FIELDNAME">client</field>
-                <next>
-                  <block type="field_static" id="g=jRxBR]M5]jOS@ks%j?">
-                    <field name="TEXT">with token</field>
-                  </block>
-                </next>
-              </block>
-            </next>
+          <block type="field_static" id="X[+Yk))8^K^PsRbs{-*D">
+            <field name="TEXT">new discord client</field>
           </block>
         </statement>
         <value name="TYPE">
-          <shadow type="type_null" id="9icXqF!gS.6kt!s|AvS|"></shadow>
+          <shadow type="type_null" id="e4nPwr%^uMF_a*@YsA/="></shadow>
+          <block type="type_other" id="IV_Tz!xB+g=:%=u7?Rj,">
+            <field name="TYPE">ClientOptions</field>
+          </block>
         </value>
       </block>
     </statement>
     <value name="TOOLTIP">
-      <block type="text" id="hNXlfSRLpm{fBvElJaal" deletable="false" movable="false">
-        <field name="TEXT">Log into Discord</field>
+      <block type="text" id="Y.7Js6hilDw9V_6gjEM9" deletable="false" movable="false">
+        <field name="TEXT"></field>
       </block>
     </value>
     <value name="HELPURL">
-      <block type="text" id="W1E;,6gOBEDNfH[iSP|I" deletable="false" movable="false">
-        <field name="TEXT">https://discordapp.com/developers/applications/me</field>
+      <block type="text" id="=*~mVq71l=hO#HlwMtL6" deletable="false" movable="false">
+        <field name="TEXT"></field>
       </block>
     </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="^J_;O4DHrRQi#nE6?p+S"></shadow>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="qDNaH(#OQ{1]S.)DSg7i"></shadow>
+      <block type="type_other" id="daMuvXvT7{qQ*]Xfpu}?">
+        <field name="TYPE">Client</field>
+      </block>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="vm+1$i002I0,tBt(=!1M">
+      <block type="colour_hue" id="r:9|mgd|fD!DaU.vK~(y">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>
     </value>
-  </block><block type="factory_base" id="iQ~AGtBD#0j*A=y)VF7k" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">message_reply</field>
+  </block><block type="factory_base" id="ls?1**o@~wSgC:mf!Thg" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">ClientOptions</field>
     <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
+    <field name="CONNECTIONS">LEFT</field>
     <statement name="INPUTS">
-      <block type="input_value" id="tC1~d=zYtkV[J`axTwii">
-        <field name="INPUTNAME">reply</field>
+      <block type="input_dummy" id="mF0rWIcfv}qU8GfH,5Sf">
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_static" id="}O%D;AFOGnwhYmFQc^wQ">
-            <field name="TEXT">Reply to</field>
-            <next>
-              <block type="field_variable" id="79XhN.?RXW@;}KBL)fUv">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">message</field>
-                <next>
-                  <block type="field_static" id="A5?_1,2kTXN@7XbHHdCn">
-                    <field name="TEXT">with</field>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-        <value name="TYPE">
-          <shadow type="type_null" id="yvO2T$ExV()R@Ol-4@Lm"></shadow>
-          <block type="type_string" id="8$b4vJU}+pHn-S,Ks36D"></block>
-        </value>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="f=zvhH}`JsjH]WJW$th9" deletable="false" movable="false">
-        <field name="TEXT">Reply to the message with a string</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="tpm[)[5$u$J`+NmC..By" deletable="false" movable="false">
-        <field name="TEXT">https://moustacheminer.com/</field>
-      </block>
-    </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="r00U8*#D!8JMMhVhB;#k"></shadow>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="j(K]]wklNwo)#WM*am5s"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="o4ds}ahk?Wt_Q/#qM?Ef">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="j8.sX[,|,]^5RNQxWysu" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">on_client</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="ySR0T@qS1iev2_f|f#)c">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="w)K*nWu8.U*oc?,1^);`">
-            <field name="TEXT">when</field>
-            <next>
-              <block type="field_variable" id="2me9;Gt|9XIu9ga_Kzf;">
-                <field name="TEXT">client</field>
-                <field name="FIELDNAME">client</field>
-                <next>
-                  <block type="field_static" id="!D;[r-O?gS?f0tLm0JKb">
-                    <field name="TEXT">is ready</field>
-                  </block>
-                </next>
-              </block>
-            </next>
+          <block type="field_static" id="5DkS!3Aj_ajd035!(#SB">
+            <field name="TEXT">with client options</field>
           </block>
         </statement>
         <next>
-          <block type="input_statement" id="PgoI|p-95V(1VnZB8pC!">
-            <field name="INPUTNAME">function</field>
+          <block type="input_statement" id="hO{hj`-qDovNN`)gt5@n">
+            <field name="INPUTNAME">NAME</field>
             <field name="ALIGN">LEFT</field>
-            <statement name="FIELDS">
-              <block type="field_static" id="|.^70]ak7K;,O@^8)[jq">
-                <field name="TEXT">then</field>
-              </block>
-            </statement>
             <value name="TYPE">
-              <shadow type="type_null" id="@=@vd.ISrL/C94Vg!rfO"></shadow>
+              <shadow type="type_null" id="4CNfju`5f^~Mv0apuAG}"></shadow>
+              <block type="type_other" id="-,S75~lRQ*UYG`oVsN[)">
+                <field name="TYPE">ClientOption</field>
+              </block>
             </value>
           </block>
         </next>
       </block>
     </statement>
     <value name="TOOLTIP">
-      <block type="text" id="_B@gie_`^dcT%bs?j4~%" deletable="false" movable="false">
-        <field name="TEXT">Triggered when the client is ready</field>
+      <block type="text" id="ZJF@-NhpF7]4`aB$x4hk" deletable="false" movable="false">
+        <field name="TEXT">The options given to the constructor to make the client</field>
       </block>
     </value>
     <value name="HELPURL">
-      <block type="text" id="aqD8GC6!IH.83_EGmKvZ" deletable="false" movable="false">
-        <field name="TEXT">https://moustacheminer.com/</field>
+      <block type="text" id="ab%UkGITV=ZHUq;[]#mA" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
       </block>
     </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="d.hq}-:tm)9YA^4xaW!m"></shadow>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="N6vK[,ejB|8(j?h8(hx}"></shadow>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id=",k{7_%x2OE$v:}@(g1k*"></shadow>
+      <block type="type_other" id="w8#zT/k=U.;[e[q.HhLA">
+        <field name="TYPE">ClientOptions</field>
+      </block>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="7-|Y1m%Y!1D/U1BV(H]N">
+      <block type="colour_hue" id="P5*yh(XR1a~E~.G}PIqb">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>
     </value>
-  </block><block type="factory_base" id="iN7,LV_61U,xqf_K*tV!" deletable="false" movable="false" x="0" y="0">
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_messageCacheMaxSize	</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">message cache size</field>
+            <next>
+              <block type="field_number" id="`[de;ilqeB^Ua;mXUBHG">
+                <field name="VALUE">200</field>
+                <field name="FIELDNAME">size</field>
+                <field name="MIN">-1</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Maximum number of messages to cache per channel (-1 for unlimited - don\'t do this without message sweeping, otherwise memory usage will climb indefinitely)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_shardCount</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">number of shards</field>
+            <next>
+              <block type="field_number" id="`[de;ilqeB^Ua;mXUBHG">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">count</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Total number of shards</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_shardId</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">id of shard</field>
+            <next>
+              <block type="field_number" id="`[de;ilqeB^Ua;mXUBHG">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">id</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">ID of the shard to run</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_apiRequestMethod</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">api request via</field>
+            <next>
+              <block type="field_dropdown" id="^m8SeL^94NI8:svJ-p$2">
+                <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                <field name="FIELDNAME">method</field>
+                <field name="USER0">sequential</field>
+                <field name="CPU0">sequential</field>
+                <field name="USER1">burst</field>
+                <field name="CPU1">burst</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">One of sequential or burst. The sequential handler executes all requests in the order they are triggered, whereas the burst handler runs multiple in parallel, and doesn\'t provide the guarantee of any particular order. Burst mode is more likely to hit a 429 ratelimit error by its nature, and is therefore slightly riskier to use.</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_messageCacheLifetime</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">message cache time</field>
+            <next>
+              <block type="field_number" id="`[de;ilqeB^Ua;mXUBHG">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">time</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">How long a message should stay in the cache until it is considered sweepable (in seconds, 0 for forever)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_messageSweepInterval	</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">message sweep inteval</field>
+            <next>
+              <block type="field_number" id="`[de;ilqeB^Ua;mXUBHG">
+                <field name="VALUE">0</field>
+                <field name="FIELDNAME">interval</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">How frequently to remove messages from the cache that are older than the message cache lifetime (in seconds, 0 for never)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_fetchAllMembers</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="ABuac2Qy.uE^;(k#znTM">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">members</field>
+            <field name="USER0">don't</field>
+            <field name="CPU0">false</field>
+            <field name="USER1">do</field>
+            <field name="CPU1">true</field>
+            <next>
+              <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+                <field name="TEXT">cache guild members</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Whether to cache all guild members and users upon startup, as well as upon joining a guild (should be avoided whenever possible)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_disableEveryone</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="ABuac2Qy.uE^;(k#znTM">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">everyone</field>
+            <field name="USER0">don't</field>
+            <field name="CPU0">false</field>
+            <field name="USER1">do</field>
+            <field name="CPU1">true</field>
+            <next>
+              <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+                <field name="TEXT">disable @everyone</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Default value for MessageOptions#disableEveryone</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_sync</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_dropdown" id="ABuac2Qy.uE^;(k#znTM">
+            <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+            <field name="FIELDNAME">sync</field>
+            <field name="USER0">don't</field>
+            <field name="CPU0">false</field>
+            <field name="USER1">do</field>
+            <field name="CPU1">true</field>
+            <next>
+              <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+                <field name="TEXT">sync periodically</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Whether to periodically sync guilds (for user accounts)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_restWsBridgeTimeout</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">REST timeout after</field>
+            <next>
+              <block type="field_number" id="#?^)zpG%Vv?EfR64W!g`">
+                <field name="VALUE">5000</field>
+                <field name="FIELDNAME">timeout</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="|5n[4qA1Xh~ru4Bw?SXD">
+                    <field name="TEXT">milliseconds</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Maximum time permitted between REST responses and their corresponding websocket events</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">ClientOption_restTimeOffset</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="LL[R;}CBc/%f8+|i:2^X">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="z0mfBzMY3qM,n/Q_@z4|">
+            <field name="TEXT">add</field>
+            <next>
+              <block type="field_number" id="#?^)zpG%Vv?EfR64W!g`">
+                <field name="VALUE">500</field>
+                <field name="FIELDNAME">extra</field>
+                <field name="MIN">0</field>
+                <field name="MAX">Infinity</field>
+                <field name="PRECISION">0</field>
+                <next>
+                  <block type="field_static" id="|5n[4qA1Xh~ru4Bw?SXD">
+                    <field name="TEXT">extra milliseconds between REST requests</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Extra time in millseconds to wait before continuing to make REST requests (higher values will reduce rate-limiting errors on bad connections)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/typedef/ClientOptions</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="r5|A(Vl`P~1cItZp2.Q]"></shadow>
+      <block type="type_other" id="s_B)xZ58S%*,$0J^Gzav">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="$On}+XY4=jgrwNR,oBZq"></shadow>
+      <block type="type_other" id="ZZa,_V$-QUz1Nm#n2Rs?">
+        <field name="TYPE">ClientOption</field>
+      </block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
     <mutation connections="LEFT"></mutation>
-    <field name="NAME">beginsWith</field>
+    <field name="NAME">Client_browser</field>
     <field name="INLINE">INT</field>
     <field name="CONNECTIONS">LEFT</field>
     <statement name="INPUTS">
-      <block type="input_value" id="O9rSA}gyl]Is=K4qQ(Fm">
-        <field name="INPUTNAME">string</field>
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
         <field name="ALIGN">LEFT</field>
-        <value name="TYPE">
-          <shadow type="type_null" id="*=-6}zs+jN?Q[=RR@;^V"></shadow>
-          <block type="type_string" id="6_9?^[txV5(xG-yOD[7e"></block>
-        </value>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">is</field>
+          </block>
+        </statement>
         <next>
-          <block type="input_value" id="CB_H)of2yL%awLv6t[Fp">
-            <field name="INPUTNAME">begins</field>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
             <field name="ALIGN">LEFT</field>
-            <statement name="FIELDS">
-              <block type="field_static" id="~K;|Cs?{z!8.57fT0m;T">
-                <field name="TEXT">begins with</field>
-              </block>
-            </statement>
             <value name="TYPE">
-              <shadow type="type_null" id="-Aj}FDO=LC^7:er}V@Sk"></shadow>
-              <block type="type_string" id="?ld@^oje^Pg54lSd7oSI"></block>
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+            <next>
+              <block type="input_dummy" id="yH2VNhnzr1(*{`Iu3oak">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="GD;pUR}Ks`-$pc;hAS`@">
+                    <field name="TEXT">in a web browser</field>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Whether the client is in a browser environment</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=browser</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_boolean" id="k3Xu^}DF^K$oojp2D,1Z"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_ping</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get ping of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
             </value>
           </block>
         </next>
       </block>
     </statement>
     <value name="TOOLTIP">
-      <block type="text" id="WjG3B09*`iH$|bs$:wl%" deletable="false" movable="false">
-        <field name="TEXT"></field>
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Average heartbeat ping of the websocket, obtained by averaging the Client#pings property</field>
       </block>
     </value>
     <value name="HELPURL">
-      <block type="text" id="HTx]aqlJKADE/w2Q(yTk" deletable="false" movable="false">
-        <field name="TEXT"></field>
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=ping</field>
       </block>
     </value>
     <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="z6})dKPu;#1G3UUaPFWA"></shadow>
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_number" id="QE~]5t.}XM#EO{-VvQA+"></block>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="t/3*CDt|dF]sWs,RHRvx">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>
     </value>
-  </block><block type="factory_base" id="vKu_YdH7@DF}DuJzo@r|" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">console.log</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_pings</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
     <statement name="INPUTS">
-      <block type="input_value" id="YFHQLLIay:]mZ![q1+p(">
-        <field name="INPUTNAME">string</field>
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
         <field name="ALIGN">LEFT</field>
         <statement name="FIELDS">
-          <block type="field_static" id="Ob(R9M{mPZPK@_GypVuE">
-            <field name="TEXT">log to console</field>
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get last three pings of</field>
           </block>
         </statement>
-        <value name="TYPE">
-          <shadow type="type_null" id="_GQ6;V$Yq[pqjb?2#OvP"></shadow>
-          <block type="type_null" id="t(vGQrdHC1s55f/Hs6Du"></block>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Previous heartbeat pings of the websocket (most recent first, limited to three elements)</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=pings</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_list" id="Ic,ha3-BZ/^^O%K9);Rv"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_readytimestamp</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get startup timestamp of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Timestamp of the time the client was last READY at</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=readyTimestamp</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_number" id="OpZ4d8dx;7tZp_`IH@Z`"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_status</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get status of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Current status of the client\'s connection to Discord</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=status</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_number" id="bjY7eGSz##b:F[K2TiCf"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_token</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get token of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">Authorization token for the logged in user/bot - THIS SHOULD BE KEPT PRIVATE AT ALL TIMES</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=token</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_string" id=",kOiBerH$7T_=cbQZpO*"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_uptime</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get uptime of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">How long it has been since the client last entered the READY state</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=uptime</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_number" id="YCYHa3p@!KXf1)a`YvWv"></block>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HD+Bt1$0|`x:/m*u(=3N" deletable="false" movable="false" x="0" y="0">
+    <mutation connections="LEFT"></mutation>
+    <field name="NAME">Client_user</field>
+    <field name="INLINE">INT</field>
+    <field name="CONNECTIONS">LEFT</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="JI`?$mRT`sj_pxfOLIGV">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="Lva0e3ux1nq4P3NyNP$1">
+            <field name="TEXT">get user of</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_value" id="{vhWpk7-#I3Dxc._Bg4G">
+            <field name="INPUTNAME">client</field>
+            <field name="ALIGN">LEFT</field>
+            <value name="TYPE">
+              <shadow type="type_null" id="]#6R!;vX/#g:.,P]CWbf"></shadow>
+              <block type="type_other" id="UD:jd{yHu/%26E@/wkph">
+                <field name="TYPE">Client</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="d@@lUsM@mDinOVyVgU?R" deletable="false" movable="false">
+        <field name="TEXT">User that the client is logged in as</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="K0%|$=[I^^]40@3L@0CI" deletable="false" movable="false">
+        <field name="TEXT">https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=user</field>
+      </block>
+    </value>
+    <value name="OUTPUTTYPE">
+      <shadow type="type_null" id="-n$)`{E72tQN--2]|(d="></shadow>
+      <block type="type_group" id="iQK6F@w#1RFfx]2Qk|XX">
+        <mutation types="2"></mutation>
+        <value name="TYPE0">
+          <block type="type_other" id="n{m.s#/BGz+{`Mn0Lar3">
+            <field name="TYPE">ClientUser</field>
+          </block>
+        </value>
+        <value name="TYPE1">
+          <block type="type_other" id="Vao0dx}WLsftcDJ[d).N">
+            <field name="TYPE">User</field>
+          </block>
         </value>
       </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="~E!w/QR*K:T7c0h_Di(#" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="q/.l|Ho;g[956:lCBG1J" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="X}YBZ_i]6*mWOt}#=L*u"></shadow>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="GZStIi|+#!hF(VHSg/Df"></shadow>
     </value>
     <value name="COLOUR">
-      <block type="colour_hue" id="7TO[8`=$LYZUv#8G0FZ9">
-        <mutation colour="#5b5ba5"></mutation>
-        <field name="HUE">240</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="0V?W(`;/N]ih_*]033n:" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">message</field>
-    <field name="INLINE">EXT</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="O#o/9p$PGS5lEhL#RMVk">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_dropdown" id="D!Rn{S6G5FmP|1:9V)v:">
-            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
-            <field name="FIELDNAME">variable</field>
-            <field name="USER0">content</field>
-            <field name="CPU0">content</field>
-            <field name="USER1">author ID</field>
-            <field name="CPU1">author.id</field>
-            <field name="USER2">message ID</field>
-            <field name="CPU2">id</field>
-            <field name="USER3">channel ID</field>
-            <field name="CPU3">channel.id</field>
-            <field name="USER4">guild ID</field>
-            <field name="CPU4">guild.id</field>
-            <field name="USER5">author's username</field>
-            <field name="CPU5">author.username</field>
-            <field name="USER6">author's nickname</field>
-            <field name="CPU6">member.nickname</field>
-            <field name="USER7">author's discriminator</field>
-            <field name="CPU7">author.discriminator</field>
-            <field name="USER8">author's usertag</field>
-            <field name="CPU8">author.tag</field>
-            <field name="USER9">author's icon URL</field>
-            <field name="CPU9">member.displayAvatarURL</field>
-            <field name="USER10">author's default icon URL</field>
-            <field name="CPU10">member.defaultAvatarURL</field>
-            <field name="USER11">channel's name</field>
-            <field name="CPU11">channel.name</field>
-            <field name="USER12">guild's name</field>
-            <field name="CPU12">guild.name</field>
-            <field name="USER13">guild's AFK voice channel</field>
-            <field name="CPU13">guild.afkChannelID</field>
-            <field name="USER14">guild's icon URL</field>
-            <field name="CPU14">guild.iconURL</field>
-            <field name="USER15">guild's region</field>
-            <field name="CPU15">guild.region</field>
-            <next>
-              <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
-                <field name="TEXT">of</field>
-                <next>
-                  <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
-                    <field name="TEXT">message</field>
-                    <field name="FIELDNAME">message</field>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="N.h-e-AI/jU6wlj~J?Dc" deletable="false" movable="false">
-        <field name="TEXT">Get string data of message</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="qF/:GxFM^npkdjk6j26~" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="!mx~,?XW3WoT[cM.C,AO"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id=");3OQlQ/)ITI8z@~`f]i">
-        <mutation colour="#5b8ca5"></mutation>
-        <field name="HUE">200</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="0V?W(`;/N]ih_*]033n:" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">client</field>
-    <field name="INLINE">EXT</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="O#o/9p$PGS5lEhL#RMVk">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_dropdown" id="D!Rn{S6G5FmP|1:9V)v:">
-            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
-            <field name="FIELDNAME">variable</field>
-            <field name="USER0">ping</field>
-            <field name="CPU0">ping</field>
-            <field name="USER1">ready timestamp</field>
-            <field name="CPU1">readyTimestamp</field>
-            <field name="USER2">status</field>
-            <field name="CPU2">status</field>
-            <field name="USER3">token</field>
-            <field name="CPU3">token</field>
-            <field name="USER4">uptime</field>
-            <field name="CPU4">uptime</field>
-            <field name="USER5">ID</field>
-            <field name="CPU5">user.id</field>
-            <field name="USER6">username</field>
-            <field name="CPU6">user.username</field>
-            <field name="USER7">discriminator</field>
-            <field name="CPU7">user.discriminator</field>
-            <field name="USER8">usertag</field>
-            <field name="CPU8">user.tag</field>
-            <field name="USER9">icon URL</field>
-            <field name="CPU9">user.displayAvatarURL</field>
-            <field name="USER10">default icon URL</field>
-            <field name="CPU10">user.defaultAvatarURL</field>
-            <next>
-              <block type="field_static" id="klJX}(5;O%X,:).]wMpq">
-                <field name="TEXT">of</field>
-                <next>
-                  <block type="field_variable" id="txlAH%iq*zQi]p{;us1!">
-                    <field name="TEXT">client</field>
-                    <field name="FIELDNAME">client</field>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="N.h-e-AI/jU6wlj~J?Dc" deletable="false" movable="false">
-        <field name="TEXT">Get data of client</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="qF/:GxFM^npkdjk6j26~" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="!mx~,?XW3WoT[cM.C,AO"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id=");3OQlQ/)ITI8z@~`f]i">
-        <mutation colour="#5b8ca5"></mutation>
-        <field name="HUE">200</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="iQ~AGtBD#0j*A=y)VF7k" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="BOTH"></mutation>
-    <field name="NAME">message_methods</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">BOTH</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="B8HEB*55jR!GypO!NC1v">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_dropdown" id=".e9x{Lm14[Cawsp79q*5">
-            <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
-            <field name="FIELDNAME">methods</field>
-            <field name="USER0">delete</field>
-            <field name="CPU0">delete</field>
-            <field name="USER1">pin</field>
-            <field name="CPU1">pin</field>
-            <field name="USER2">unpin</field>
-            <field name="CPU2">unpin</field>
-            <next>
-              <block type="field_variable" id="K.ACMG^|=pfFYYgHnxK+">
-                <field name="TEXT">message</field>
-                <field name="FIELDNAME">message</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="f=zvhH}`JsjH]WJW$th9" deletable="false" movable="false">
-        <field name="TEXT">Delete, pin or unpin a message</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="tpm[)[5$u$J`+NmC..By" deletable="false" movable="false">
-        <field name="TEXT">https://moustacheminer.com/</field>
-      </block>
-    </value>
-    <value name="TOPTYPE">
-      <shadow type="type_null" id="r00U8*#D!8JMMhVhB;#k"></shadow>
-    </value>
-    <value name="BOTTOMTYPE">
-      <shadow type="type_null" id="j(K]]wklNwo)#WM*am5s"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="o4ds}ahk?Wt_Q/#qM?Ef">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id=":I?[RCNNKa;?#4@ejgTa" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">invite_link</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="m0{LmPS]+2Ke@WGw3_)Z">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="befsT.KC/N7o*$fMl5ZK">
-            <field name="TEXT">get invite for</field>
-            <next>
-              <block type="field_variable" id="^aCyaC(2~mqBCj*q0PM|">
-                <field name="TEXT">client</field>
-                <field name="FIELDNAME">client</field>
-                <next>
-                  <block type="field_static" id="}0jKudmd+:`}*~$a82D#">
-                    <field name="TEXT">with</field>
-                    <next>
-                      <block type="field_variable" id="3$f$40%E9P1Wp#?-CJ-y">
-                        <field name="TEXT">permissions</field>
-                        <field name="FIELDNAME">permissions</field>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="0{@cK#A7@?mvS?Z{t(XV" deletable="false" movable="false">
-        <field name="TEXT">Generate an invite link for a bot account with the variable "permissions".</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="C,!^$ZlD)V?u~dir9O^Q" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="R-1Qdc]f%^rU2Kij`nIP"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="r:Y;aLH1dh2rtv|.^wKV">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id=":I?[RCNNKa;?#4@ejgTa" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">add_perm</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="-S{(jlE_(bn:Qr6.%#}S">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id=";N|)6$|/`Ej9#Qz_Pnp:">
-            <field name="TEXT">permission</field>
-            <next>
-              <block type="field_dropdown" id="kh{a1?RcLE%8|($E7}Ez">
-                <mutation options="[&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;,&quot;text&quot;]"></mutation>
-                <field name="FIELDNAME">permission</field>
-                <field name="USER0">Allows creation of instant invites</field>
-                <field name="CPU0">0x00000001</field>
-                <field name="USER1">Allows kicking members</field>
-                <field name="CPU1">0x00000002</field>
-                <field name="USER2">Allows banning members</field>
-                <field name="CPU2">0x00000004</field>
-                <field name="USER3">Allows all permissions and bypass channel permission overwrites</field>
-                <field name="CPU3">0x00000008</field>
-                <field name="USER4">Allows management and editing of channels</field>
-                <field name="CPU4">0x00000010</field>
-                <field name="USER5">Allows management and editing of the guild</field>
-                <field name="CPU5">0x00000020</field>
-                <field name="USER6">Allows for the addition of reactions to messages</field>
-                <field name="CPU6">0x00000040</field>
-                <field name="USER7">Allows reading messages in a channel. The channel will not appear for users without this permission</field>
-                <field name="CPU7">0x00000400</field>
-                <field name="USER8">Allows for sending messages in a channel.</field>
-                <field name="CPU8">0x00000800	</field>
-                <field name="USER9">Allows for sending of /tts messages</field>
-                <field name="CPU9">0x00001000</field>
-                <field name="USER10">Allows for deletion of other users messages</field>
-                <field name="CPU10">0x00002000</field>
-                <field name="USER11">Links sent by this user will be auto-embedded</field>
-                <field name="CPU11">0x00004000</field>
-                <field name="USER12">Allows for uploading images and files</field>
-                <field name="CPU12">0x00008000</field>
-                <field name="USER13">Allows for reading of message history</field>
-                <field name="CPU13">0x00010000</field>
-                <field name="USER14">Allows for using the @everyone tag to notify all users in a channel, and the @here tag to notify all online users in a channel</field>
-                <field name="CPU14">0x00020000</field>
-                <field name="USER15">Allows the usage of custom emojis from other servers</field>
-                <field name="CPU15">0x00040000</field>
-                <field name="USER16">Allows for joining of a voice channel</field>
-                <field name="CPU16">0x00100000</field>
-                <field name="USER17">Allows for speaking in a voice channel</field>
-                <field name="CPU17">0x00200000</field>
-                <field name="USER18">Allows for muting members in a voice channel</field>
-                <field name="CPU18">0x00400000</field>
-                <field name="USER19">Allows for deafening of members in a voice channel</field>
-                <field name="CPU19">0x00800000</field>
-                <field name="USER20">Allows for moving of members between voice channels</field>
-                <field name="CPU20">0x01000000</field>
-                <field name="USER21">Allows for using voice-activity-detection in a voice channel</field>
-                <field name="CPU21">0x02000000</field>
-                <field name="USER22">Allows for modification of own nickname</field>
-                <field name="CPU22">0x04000000</field>
-                <field name="USER23">Allows for modification of other users nicknames</field>
-                <field name="CPU23">0x08000000</field>
-                <field name="USER24">Allows management and editing of roles</field>
-                <field name="CPU24">0x10000000</field>
-                <field name="USER25">Allows management and editing of webhooks</field>
-                <field name="CPU25">0x20000000</field>
-                <field name="USER26">Allows management and editing of emojis</field>
-                <field name="CPU26">0x40000000</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="0{@cK#A7@?mvS?Z{t(XV" deletable="false" movable="false">
-        <field name="TEXT">Get the constant for each permission which can be added to the "permission" variable</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="C,!^$ZlD)V?u~dir9O^Q" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="~~7_EC@g!5G`hb|7s2i~"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="r:Y;aLH1dh2rtv|.^wKV">
-        <mutation colour="#5b67a5"></mutation>
-        <field name="HUE">230</field>
-      </block>
-    </value>
-  </block><block type="factory_base" id="]r!?/g@}5bo=jp[=R|2g" deletable="false" movable="false" x="0" y="0">
-    <mutation connections="LEFT"></mutation>
-    <field name="NAME">date_isostring</field>
-    <field name="INLINE">AUTO</field>
-    <field name="CONNECTIONS">LEFT</field>
-    <statement name="INPUTS">
-      <block type="input_dummy" id="Sd7Ut*J,gZzn-3+DWv|a">
-        <field name="ALIGN">LEFT</field>
-        <statement name="FIELDS">
-          <block type="field_static" id="_KhE_soX5i5NZ1sN+1gW">
-            <field name="TEXT">iso date</field>
-          </block>
-        </statement>
-      </block>
-    </statement>
-    <value name="TOOLTIP">
-      <block type="text" id="9a{4xrltoySPib.[Jg;_" deletable="false" movable="false">
-        <field name="TEXT">Get the current ISO Date</field>
-      </block>
-    </value>
-    <value name="HELPURL">
-      <block type="text" id="sxuTU~lht0CR`v.mht7h" deletable="false" movable="false">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="OUTPUTTYPE">
-      <shadow type="type_null" id="%Y[~FBAG5gjljnJWj;H9"></shadow>
-    </value>
-    <value name="COLOUR">
-      <block type="colour_hue" id="`.ySxfaZ`JO`5x[7Jt%L">
+      <block type="colour_hue" id="ga[WCA@52C[Is!Z3ehE|">
         <mutation colour="#5b67a5"></mutation>
         <field name="HUE">230</field>
       </block>
