@@ -1,4 +1,4 @@
-# DiscordBlocks
+# DiscordBlocks v1.0
 A Google Blockly (like MIT Scratch) to Discord.js compiler
 
 ## Example
