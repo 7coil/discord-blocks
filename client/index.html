@@ -1,0 +1,516 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<title>Untitled Bot - Discord Blocks Version 2017.06.26</title>
+
+		<!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	</head>
+	<body>
+		<nav class="light-blue lighten-1" role="navigation" id="header">
+			<div class="nav-wrapper container">
+				<div class="brand-logo white-text"><a href="index.html">DiscordBlocks</a></div>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#" onclick="loadCode()">Open</a></li>
+						<li><a href="#" onclick="saveCode()">Save</a></li>
+						<li><a href="#" onclick="getCode()">Export</a></li>
+						<li><a href="#" onclick="runCode()">Execute</a></li>
+					</ul>
+
+					<ul id="nav-mobile" class="side-nav">
+						<li><a href="#" onclick="loadCode()">Open</a></li>
+						<li><a href="#" onclick="saveCode()">Save</a></li>
+						<li><a href="#" onclick="getCode()">Export</a></li>
+						<li><a href="#" onclick="runCode()">Execute</a></li>
+					</ul>
+					<a href="#" data-activates="nav-mobile" class="button-collapse">
+						Menu
+					</a>
+				</div>
+		</nav>
+
+		<main>
+			<div id="discordblocksarea">
+				<div id="discordblocks" style="height: 480px; width: 600px;"></div>
+			</div>
+			<!-- Guilds list -->
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12">
+
+					</div>
+				</div>
+			</div>
+			<div id="modal" class="modal"></div>
+		</main>
+
+		<!-- Blockly -->
+		<script src="js/blockly/blockly.js"></script>
+		<script src="js/blockly/blocks.js"></script>
+		<script src="js/blockly/javascript.js"></script>
+		<script src="js/blockly/en-gb.js"></script>
+
+		<!-- Block definitions -->
+		<script src="js/blocks/blockdef.js"></script>
+		<script src="js/blocks/gendef.js"></script>
+
+		<!-- Toolbox -->
+		<xml id="toolbox" style="display: none">
+			<category name="Logic">
+				<category name="If">
+					<block type="controls_if"></block>
+					<block type="controls_if">
+						<mutation else="1"></mutation>
+					</block>
+					<block type="controls_if">
+						<mutation elseif="1" else="1"></mutation>
+					</block>
+				</category>
+				<category name="Boolean">
+					<block type="logic_compare"></block>
+					<block type="logic_operation"></block>
+					<block type="logic_negate"></block>
+					<block type="logic_boolean"></block>
+					<block type="logic_null"></block>
+					<block type="logic_ternary"></block>
+				</category>
+			</category>
+			<category name="Loops">
+				<block type="controls_repeat_ext">
+					<value name="TIMES">
+						<block type="math_number">
+							<field name="NUM">10</field>
+						</block>
+					</value>
+				</block>
+				<block type="controls_whileUntil"></block>
+				<block type="controls_for">
+					<field name="VAR">i</field>
+					<value name="FROM">
+						<block type="math_number">
+							<field name="NUM">1</field>
+						</block>
+					</value>
+					<value name="TO">
+						<block type="math_number">
+							<field name="NUM">10</field>
+						</block>
+					</value>
+					<value name="BY">
+						<block type="math_number">
+							<field name="NUM">1</field>
+						</block>
+					</value>
+				</block>
+				<block type="controls_forEach"></block>
+				<block type="controls_flow_statements"></block>
+			</category>
+			<category name="Mathematics">
+				<block type="math_number"></block>
+				<block type="math_arithmetic"></block>
+				<block type="math_single"></block>
+				<block type="math_trig"></block>
+				<block type="math_constant"></block>
+				<block type="math_number_property"></block>
+				<block type="math_round"></block>
+				<block type="math_on_list"></block>
+				<block type="math_modulo"></block>
+				<block type="math_constrain">
+					<value name="LOW">
+						<block type="math_number">
+							<field name="NUM">1</field>
+						</block>
+					</value>
+					<value name="HIGH">
+						<block type="math_number">
+							<field name="NUM">100</field>
+						</block>
+					</value>
+				</block>
+				<block type="math_random_int">
+					<value name="FROM">
+						<block type="math_number">
+							<field name="NUM">1</field>
+						</block>
+					</value>
+					<value name="TO">
+						<block type="math_number">
+							<field name="NUM">100</field>
+						</block>
+					</value>
+				</block>
+				<block type="math_random_float"></block>
+			</category>
+			<category name="Arrays">
+				<block type="lists_create_with">
+					<mutation items="0"></mutation>
+				</block>
+				<block type="lists_create_with"></block>
+				<block type="lists_repeat">
+					<value name="NUM">
+						<shadow type="math_number">
+							<field name="NUM">5</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="lists_length"></block>
+				<block type="lists_isEmpty"></block>
+				<block type="lists_indexOf">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="lists_getIndex">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="lists_setIndex">
+					<value name="LIST">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="lists_getSublist">
+					<value name="LIST">
+						<block type="variables_get">
+							<field name="VAR">{listVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="lists_split">
+					<value name="DELIM">
+						<shadow type="text">
+							<field name="TEXT">,</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="lists_sort"></block>
+			</category>
+			<category name="Strings">
+				<block type="text"></block>
+				<block type="text_join"></block>
+				<block type="text_append">
+					<value name="TEXT">
+						<shadow type="text"></shadow>
+					</value>
+				</block>
+				<block type="text_length">
+					<value name="VALUE">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_isEmpty">
+					<value name="VALUE">
+						<shadow type="text">
+							<field name="TEXT"></field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_indexOf">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field>
+						</block>
+					</value>
+					<value name="FIND">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_charAt">
+					<value name="VALUE">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="text_getSubstring">
+					<value name="STRING">
+						<block type="variables_get">
+							<field name="VAR">{textVariable}</field>
+						</block>
+					</value>
+				</block>
+				<block type="text_changeCase">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_trim">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="console_log">
+					<value name="text">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_print">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+				<block type="text_prompt_ext">
+					<value name="TEXT">
+						<shadow type="text">
+							<field name="TEXT">abc</field>
+						</shadow>
+					</value>
+				</block>
+			</category>
+			<category name="Variables" custom="VARIABLE"></category>
+			<category name="Functions" custom="PROCEDURE"></category>
+			<sep></sep>
+			<category name="Premade Functions">
+				<category name="Randomize">
+					<block type="procedures_defnoreturn">
+						<mutation>
+							<arg name="list"></arg>
+						</mutation>
+						<field name="NAME">randomize</field>
+						<statement name="STACK">
+							<block type="controls_for" inline="true">
+								<field name="VAR">x</field>
+								<value name="FROM">
+									<block type="math_number">
+										<field name="NUM">1</field>
+									</block>
+								</value>
+								<value name="TO">
+									<block type="lists_length" inline="false">
+										<value name="VALUE">
+											<block type="variables_get">
+												<field name="VAR">list</field>
+											</block>
+										</value>
+									</block>
+								</value>
+								<value name="BY">
+									<block type="math_number">
+										<field name="NUM">1</field>
+									</block>
+								</value>
+								<statement name="DO">
+									<block type="variables_set" inline="false">
+										<field name="VAR">y</field>
+										<value name="VALUE">
+											<block type="math_random_int" inline="true">
+												<value name="FROM">
+													<block type="math_number">
+														<field name="NUM">1</field>
+													</block>
+												</value>
+												<value name="TO">
+													<block type="lists_length" inline="false">
+														<value name="VALUE">
+															<block type="variables_get">
+																<field name="VAR">list</field>
+															</block>
+														</value>
+													</block>
+												</value>
+											</block>
+										</value>
+										<next>
+											<block type="variables_set" inline="false">
+												<field name="VAR">temp</field>
+												<value name="VALUE">
+													<block type="lists_getIndex" inline="true">
+														<mutation statement="false" at="true"></mutation>
+														<field name="MODE">GET</field>
+														<field name="WHERE">FROM_START</field>
+														<value name="AT">
+															<block type="variables_get">
+																<field name="VAR">y</field>
+															</block>
+														</value>
+														<value name="VALUE">
+															<block type="variables_get">
+																<field name="VAR">list</field>
+															</block>
+														</value>
+													</block>
+												</value>
+												<next>
+													<block type="lists_setIndex" inline="false">
+														<value name="AT">
+															<block type="variables_get">
+																<field name="VAR">y</field>
+															</block>
+														</value>
+														<value name="LIST">
+															<block type="variables_get">
+																<field name="VAR">list</field>
+															</block>
+														</value>
+														<value name="TO">
+															<block type="lists_getIndex" inline="true">
+																<mutation statement="false" at="true"></mutation>
+																<field name="MODE">GET</field>
+																<field name="WHERE">FROM_START</field>
+																<value name="AT">
+																	<block type="variables_get">
+																		<field name="VAR">x</field>
+																	</block>
+																</value>
+																<value name="VALUE">
+																	<block type="variables_get">
+																		<field name="VAR">list</field>
+																	</block>
+																</value>
+															</block>
+														</value>
+														<next>
+															<block type="lists_setIndex" inline="false">
+																<value name="AT">
+																	<block type="variables_get">
+																		<field name="VAR">x</field>
+																	</block>
+																</value>
+																<value name="LIST">
+																	<block type="variables_get">
+																		<field name="VAR">list</field>
+																	</block>
+																</value>
+																<value name="TO">
+																	<block type="variables_get">
+																		<field name="VAR">temp</field>
+																	</block>
+																</value>
+															</block>
+														</next>
+													</block>
+												</next>
+											</block>
+										</next>
+									</block>
+								</statement>
+							</block>
+						</statement>
+					</block>
+				</category>
+			</category>
+			<category name="Discord.js">
+				<category name="Client">
+					<category name="Constructor">
+						<block type="client_constructor"></block>
+						<block type="clientoptions"></block>
+						<block type="clientoption_messagecachemaxsize"></block>
+						<block type="clientoption_shardcount"></block>
+						<block type="clientoption_shardid"></block>
+						<block type="clientoption_apirequestmethod"></block>
+						<block type="clientoption_messagecachelifetime"></block>
+						<block type="clientoption_messagesweepinterval"></block>
+						<block type="clientoption_fetchallmembers"></block>
+						<block type="clientoption_disableeveryone"></block>
+						<block type="clientoption_sync"></block>
+						<block type="clientoption_restwsbridgetimeout"></block>
+						<block type="clientoption_resttimeoffset"></block>
+					</category>
+					<category name="Properties">
+						<block type="client_browser"></block>
+						<block type="client_ping"></block>
+						<block type="client_pings"></block>
+						<block type="client_readytimestamp"></block>
+						<block type="client_status"></block>
+						<block type="client_token"></block>
+						<block type="client_uptime"></block>
+						<block type="client_user"></block>
+					</category>
+					<category name="Methods">
+						<block type="client_login"></block>
+					</category>
+					<category name="Events">
+						<block type="client_on_message"></block>
+					</category>
+				</category>
+				<category name="ClientUser">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+				<category name="DMChannel">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+				<category name="GroupDMChannel">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+				<category name="GuildMember">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+				<category name="Message">
+					<category name="Properties">
+						<block type="message_author"></block>
+						<block type="message_channel"></block>
+						<block type="message_cleancontent"></block>
+						<block type="message_client"></block>
+						<block type="message_content"></block>
+					</category>
+					<category name="Methods"></category>
+				</category>
+				<category name="TextChannel">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+				<category name="User">
+					<category name="Properties"></category>
+					<category name="Methods">
+						<block type="send"></block>
+					</category>
+					<category name="Events"></category>
+				</category>
+			</category>
+		</xml>
+
+		<!-- Workspace initialisation -->
+		<script src="js/blockly/workspace.js"></script>
+		<script src="js/discordblocks/index.js"></script>
+
+		<!-- Discord.js -->
+		<script src="js/discord/discord.js"></script>
+
+		<!-- Materialize -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/materialize/materialize.js"></script>
+		<script src="js/materialize/init.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "discordblocks",
+  "version": "1.0.0",
+  "description": "Discord.js, but with blocks. To make things easier",
+  "main": "null",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lepon01/discordblocks.git"
+  },
+  "keywords": [
+    "blockly"
+  ],
+  "author": "7coil",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lepon01/discordblocks/issues"
+  },
+  "homepage": "https://github.com/lepon01/discordblocks#readme",
+  "dependencies": {
+    "eslint": "^4.1.0"
+  }
+}
