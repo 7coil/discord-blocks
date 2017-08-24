@@ -24,97 +24,6 @@ Blockly.Blocks.Client_options = {
 	}
 };
 
-Blockly.Blocks.Client_rest = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get rest of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'RESTManager');
-		this.setColour(230);
-		this.setTooltip('The REST manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=rest');
-	}
-};
-
-Blockly.Blocks.Client_dataManager = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get dataManager of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ClientDataManager');
-		this.setColour(230);
-		this.setTooltip('The data manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=dataManager');
-	}
-};
-
-Blockly.Blocks.Client_manager = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get manager of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ClientManager');
-		this.setColour(230);
-		this.setTooltip('The manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=manager');
-	}
-};
-
-Blockly.Blocks.Client_ws = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get ws of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocketManager');
-		this.setColour(230);
-		this.setTooltip('The WebSocket manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=ws');
-	}
-};
-
-Blockly.Blocks.Client_resolver = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get resolver of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ClientDataResolver');
-		this.setColour(230);
-		this.setTooltip('The data resolver of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=resolver');
-	}
-};
-
-Blockly.Blocks.Client_actions = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get actions of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ActionsManager');
-		this.setColour(230);
-		this.setTooltip('The action manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=actions');
-	}
-};
-
-Blockly.Blocks.Client_voice = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get voice of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ClientVoiceManager');
-		this.setColour(230);
-		this.setTooltip('The voice manager of the client (`null` in browsers)');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=voice');
-	}
-};
-
 Blockly.Blocks.Client_shard = {
 	init() {
 		this.appendValueInput('Client')
@@ -245,45 +154,6 @@ Blockly.Blocks.Client_pings = {
 	}
 };
 
-Blockly.Blocks.Client__timeouts = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get _timeouts of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Set', 'Timeout']);
-		this.setColour(230);
-		this.setTooltip('Timeouts set by {@link Client#setTimeout} that are still active');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=_timeouts');
-	}
-};
-
-Blockly.Blocks.Client__intervals = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get _intervals of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Set', 'Timeout']);
-		this.setColour(230);
-		this.setTooltip('Intervals set by {@link Client#setInterval} that are still active');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=_intervals');
-	}
-};
-
-Blockly.Blocks.Client__pingTimestamp = {
-	init() {
-		this.appendValueInput('Client')
-			.setCheck('Client')
-			.appendField('get _pingTimestamp of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('Timestamp of the latest ping\'s start time');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=_pingTimestamp');
-	}
-};
-
 Blockly.Blocks.Client_status = {
 	init() {
 		this.appendValueInput('Client')
@@ -375,54 +245,1099 @@ Blockly.Blocks.Client_browser = {
 	}
 };
 
-Blockly.Blocks.ClientDataResolver_constructor = {
+Blockly.Blocks.Client_createVoiceBroadcast = {
 	init() {
-		this.appendValueInput('ClientDataResolver')
-			.setCheck('ClientDataResolver')
-			.appendField('ClientDataResolver_constructor');
-		this.setOutput(true, 'ClientDataResolver');
-		this.setColour(160);
-		this.setTooltip('The DataResolver identifies different objects and tries to resolve a specific piece of information from them, e.g.\nextracting a User from a Message object.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientDataResolver');
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createVoiceBroadcast');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a voice broadcast.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=createVoiceBroadcast');
 	}
 };
 
-Blockly.Blocks.ClientManager_client = {
+Blockly.Blocks.Client_login = {
 	init() {
-		this.appendValueInput('ClientManager')
-			.setCheck('ClientManager')
-			.appendField('get client of');
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('login with');
+
+
+		this.appendValueInput('token')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client that instantiated this Manager');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientManager?scrollTo=client');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Logs the client in, establishing a websocket connection to Discord.\n<info>Both bot and regular user accounts are supported, but it is highly recommended to use a bot account whenever\npossible. User accounts are subject to harsher ratelimits and other restrictions that don\'t apply to bot accounts.\nBot accounts also have access to many features that user accounts cannot utilise. User accounts that are found to\nbe abusing/overusing the API will be banned, locking you out of Discord entirely.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=login');
 	}
 };
 
-Blockly.Blocks.ClientManager_heartbeatInterval = {
+Blockly.Blocks.Client_destroy = {
 	init() {
-		this.appendValueInput('ClientManager')
-			.setCheck('ClientManager')
-			.appendField('get heartbeatInterval of');
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('destroy');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The heartbeat interval');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientManager?scrollTo=heartbeatInterval');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Logs out, terminates the connection to Discord, and destroys the client.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=destroy');
 	}
 };
 
-Blockly.Blocks.ClientManager_status = {
+Blockly.Blocks.Client_fetchUser = {
 	init() {
-		this.appendValueInput('ClientManager')
-			.setCheck('ClientManager')
-			.appendField('get status of');
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchUser with');
+
+
+		this.appendValueInput('id')
+			.setCheck('*');
+
+		this.appendValueInput('cache')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The status of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientManager?scrollTo=status');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains a user from Discord, or the user cache if it\'s already available.\n<warn>This is only available when using a bot account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchUser');
+	}
+};
+
+Blockly.Blocks.Client_fetchInvite = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchInvite with');
+
+
+		this.appendValueInput('invite')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains an invite from Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchInvite');
+	}
+};
+
+Blockly.Blocks.Client_fetchWebhook = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchWebhook with');
+
+
+		this.appendValueInput('id')
+			.setCheck('*');
+
+		this.appendValueInput('token')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains a webhook from Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchWebhook');
+	}
+};
+
+Blockly.Blocks.Client_fetchVoiceRegions = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchVoiceRegions');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the available voice regions from Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchVoiceRegions');
+	}
+};
+
+Blockly.Blocks.Client_sweepMessages = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sweepMessages with');
+
+
+		this.appendValueInput('lifetime')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sweeps all text-based channels\' messages and removes the ones older than the max message lifetime.\nIf the message has been edited, the time of the edit is used rather than the time of the original message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=sweepMessages');
+	}
+};
+
+Blockly.Blocks.Client_fetchApplication = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchApplication with');
+
+
+		this.appendValueInput('id')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the OAuth Application of the bot from Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchApplication');
+	}
+};
+
+Blockly.Blocks.Client_generateInvite = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('generateInvite with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Generates a link that can be used to invite the bot to a guild.\n<warn>This is only available when using a bot account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=generateInvite');
+	}
+};
+
+Blockly.Blocks.Client_setTimeout = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTimeout with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('delay')
+			.setCheck('*');
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setTimeout');
+	}
+};
+
+Blockly.Blocks.Client_setInterval = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setInterval with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('delay')
+			.setCheck('*');
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setInterval');
+	}
+};
+
+Blockly.Blocks.Client_channelUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits channelUpdate')
+			.appendField(new Blockly.FieldVariable('oldChannel'), 'oldChannel').appendField(new Blockly.FieldVariable('newChannel'), 'newChannel');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a channel is updated - e.g. name change, topic change.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildUnavailable = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildUnavailable')
+			.appendField(new Blockly.FieldVariable('guild'), 'guild');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild becomes unavailable, likely due to a server outage.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildUnavailable');
+	}
+};
+
+Blockly.Blocks.Client_emojiCreate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits emojiCreate')
+			.appendField(new Blockly.FieldVariable('emoji'), 'emoji');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a custom emoji is created in a guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=emojiCreate');
+	}
+};
+
+Blockly.Blocks.Client_emojiDelete = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits emojiDelete')
+			.appendField(new Blockly.FieldVariable('emoji'), 'emoji');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a custom guild emoji is deleted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=emojiDelete');
+	}
+};
+
+Blockly.Blocks.Client_emojiUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits emojiUpdate')
+			.appendField(new Blockly.FieldVariable('oldEmoji'), 'oldEmoji').appendField(new Blockly.FieldVariable('newEmoji'), 'newEmoji');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a custom guild emoji is updated.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=emojiUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildMemberRemove = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMemberRemove')
+			.appendField(new Blockly.FieldVariable('member'), 'member');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a member leaves a guild, or is kicked.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMemberRemove');
+	}
+};
+
+Blockly.Blocks.Client_roleCreate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits roleCreate')
+			.appendField(new Blockly.FieldVariable('role'), 'role');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a role is created.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=roleCreate');
+	}
+};
+
+Blockly.Blocks.Client_roleDelete = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits roleDelete')
+			.appendField(new Blockly.FieldVariable('role'), 'role');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild role is deleted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=roleDelete');
+	}
+};
+
+Blockly.Blocks.Client_roleUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits roleUpdate')
+			.appendField(new Blockly.FieldVariable('oldRole'), 'oldRole').appendField(new Blockly.FieldVariable('newRole'), 'newRole');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild role is updated.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=roleUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildUpdate')
+			.appendField(new Blockly.FieldVariable('oldGuild'), 'oldGuild').appendField(new Blockly.FieldVariable('newGuild'), 'newGuild');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild is updated - e.g. name change.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildUpdate');
+	}
+};
+
+Blockly.Blocks.Client_messageReactionAdd = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageReactionAdd')
+			.appendField(new Blockly.FieldVariable('messageReaction'), 'messageReaction').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a reaction is added to a message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageReactionAdd');
+	}
+};
+
+Blockly.Blocks.Client_messageReactionRemove = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageReactionRemove')
+			.appendField(new Blockly.FieldVariable('messageReaction'), 'messageReaction').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a reaction is removed from a message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageReactionRemove');
+	}
+};
+
+Blockly.Blocks.Client_messageReactionRemoveAll = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageReactionRemoveAll')
+			.appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever all reactions are removed from a message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageReactionRemoveAll');
+	}
+};
+
+Blockly.Blocks.Client_messageUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageUpdate')
+			.appendField(new Blockly.FieldVariable('oldMessage'), 'oldMessage').appendField(new Blockly.FieldVariable('newMessage'), 'newMessage');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a message is updated - e.g. embed or content change.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageUpdate');
+	}
+};
+
+Blockly.Blocks.Client_userNoteUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits userNoteUpdate')
+			.appendField(new Blockly.FieldVariable('user'), 'user')
+			.appendField(new Blockly.FieldVariable('oldNote'), 'oldNote')
+			.appendField(new Blockly.FieldVariable('newNote'), 'newNote');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a note is updated.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=userNoteUpdate');
+	}
+};
+
+Blockly.Blocks.Client_warn = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits warn')
+			.appendField(new Blockly.FieldVariable('info'), 'info');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted for general warnings.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=warn');
+	}
+};
+
+Blockly.Blocks.Client_debug = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits debug')
+			.appendField(new Blockly.FieldVariable('info'), 'info');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted for general debugging information.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=debug');
+	}
+};
+
+Blockly.Blocks.Client_guildCreate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildCreate')
+			.appendField(new Blockly.FieldVariable('guild'), 'guild');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the client joins a guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildCreate');
+	}
+};
+
+Blockly.Blocks.Client_channelCreate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits channelCreate')
+			.appendField(new Blockly.FieldVariable('channel'), 'channel');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a channel is created.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelCreate');
+	}
+};
+
+Blockly.Blocks.Client_channelDelete = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits channelDelete')
+			.appendField(new Blockly.FieldVariable('channel'), 'channel');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a channel is deleted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelDelete');
+	}
+};
+
+Blockly.Blocks.Client_channelPinsUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits channelPinsUpdate')
+			.appendField(new Blockly.FieldVariable('channel'), 'channel').appendField(new Blockly.FieldVariable('time'), 'time');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the pins of a channel are updated. Due to the nature of the WebSocket event, not much information\ncan be provided easily here - you need to manually check the pins yourself.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channelPinsUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildBanAdd = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildBanAdd')
+			.appendField(new Blockly.FieldVariable('guild'), 'guild').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a member is banned from a guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildBanAdd');
+	}
+};
+
+Blockly.Blocks.Client_guildBanRemove = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildBanRemove')
+			.appendField(new Blockly.FieldVariable('guild'), 'guild').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a member is unbanned from a guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildBanRemove');
+	}
+};
+
+Blockly.Blocks.Client_guildDelete = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildDelete')
+			.appendField(new Blockly.FieldVariable('guild'), 'guild');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild is deleted/left.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildDelete');
+	}
+};
+
+Blockly.Blocks.Client_guildMembersChunk = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMembersChunk')
+			.appendField(new Blockly.FieldVariable('members'), 'members').appendField(new Blockly.FieldVariable('guild'), 'guild');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a chunk of guild members is received (all members come from the same guild).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMembersChunk');
+	}
+};
+
+Blockly.Blocks.Client_message = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits message')
+			.appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a message is created.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=message');
+	}
+};
+
+Blockly.Blocks.Client_messageDelete = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageDelete')
+			.appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a message is deleted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageDelete');
+	}
+};
+
+Blockly.Blocks.Client_messageDeleteBulk = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits messageDeleteBulk')
+			.appendField(new Blockly.FieldVariable('messages'), 'messages');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever messages are deleted in bulk.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=messageDeleteBulk');
+	}
+};
+
+Blockly.Blocks.Client_presenceUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits presenceUpdate')
+			.appendField(new Blockly.FieldVariable('oldMember'), 'oldMember').appendField(new Blockly.FieldVariable('newMember'), 'newMember');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild member\'s presence changes, or they change one of their details.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=presenceUpdate');
+	}
+};
+
+Blockly.Blocks.Client_userUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits userUpdate')
+			.appendField(new Blockly.FieldVariable('oldUser'), 'oldUser').appendField(new Blockly.FieldVariable('newUser'), 'newUser');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user\'s details (e.g. username) are changed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=userUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildMemberAvailable = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMemberAvailable')
+			.appendField(new Blockly.FieldVariable('member'), 'member');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a member becomes available in a large guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMemberAvailable');
+	}
+};
+
+Blockly.Blocks.Client_resume = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits resume')
+			.appendField(new Blockly.FieldVariable('replayed'), 'replayed');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a WebSocket resumes.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=resume');
+	}
+};
+
+Blockly.Blocks.Client_typingStart = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits typingStart')
+			.appendField(new Blockly.FieldVariable('channel'), 'channel').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user starts typing in a channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=typingStart');
+	}
+};
+
+Blockly.Blocks.Client_typingStop = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits typingStop')
+			.appendField(new Blockly.FieldVariable('channel'), 'channel').appendField(new Blockly.FieldVariable('user'), 'user');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user stops typing in a channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=typingStop');
+	}
+};
+
+Blockly.Blocks.Client_clientUserGuildSettingsUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits clientUserGuildSettingsUpdate')
+			.appendField(new Blockly.FieldVariable('clientUserGuildSettings'), 'clientUserGuildSettings');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the client user\'s settings update.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=clientUserGuildSettingsUpdate');
+	}
+};
+
+Blockly.Blocks.Client_clientUserSettingsUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits clientUserSettingsUpdate')
+			.appendField(new Blockly.FieldVariable('clientUserSettings'), 'clientUserSettings');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the client user\'s settings update.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=clientUserSettingsUpdate');
+	}
+};
+
+Blockly.Blocks.Client_voiceStateUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits voiceStateUpdate')
+			.appendField(new Blockly.FieldVariable('oldMember'), 'oldMember').appendField(new Blockly.FieldVariable('newMember'), 'newMember');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user changes voice state - e.g. joins/leaves a channel, mutes/unmutes.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=voiceStateUpdate');
+	}
+};
+
+Blockly.Blocks.Client_ready = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits ready');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the client becomes ready to start working.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=ready');
+	}
+};
+
+Blockly.Blocks.Client_reconnecting = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits reconnecting');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the client tries to reconnect to the WebSocket.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=reconnecting');
+	}
+};
+
+Blockly.Blocks.Client_error = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits error')
+			.appendField(new Blockly.FieldVariable('error'), 'error');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the client\'s WebSocket encounters a connection error.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=error');
+	}
+};
+
+Blockly.Blocks.Client_disconnect = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits disconnect')
+			.appendField(new Blockly.FieldVariable('event'), 'event');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the client\'s WebSocket disconnects and will no longer attempt to reconnect.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=disconnect');
+	}
+};
+
+Blockly.Blocks.Client_guildMemberAdd = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMemberAdd')
+			.appendField(new Blockly.FieldVariable('member'), 'member');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user joins a guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMemberAdd');
+	}
+};
+
+Blockly.Blocks.Client_guildMemberUpdate = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMemberUpdate')
+			.appendField(new Blockly.FieldVariable('oldMember'), 'oldMember').appendField(new Blockly.FieldVariable('newMember'), 'newMember');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a guild member changes - i.e. new role, removed role, nickname.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMemberUpdate');
+	}
+};
+
+Blockly.Blocks.Client_guildMemberSpeaking = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits guildMemberSpeaking')
+			.appendField(new Blockly.FieldVariable('member'), 'member').appendField(new Blockly.FieldVariable('speaking'), 'speaking');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted once a guild member starts/stops speaking.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guildMemberSpeaking');
 	}
 };
 
@@ -436,173 +1351,6 @@ Blockly.Blocks.DiscordAPIError_code = {
 		this.setColour(230);
 		this.setTooltip('HTTP error code returned by Discord');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DiscordAPIError?scrollTo=code');
-	}
-};
-
-Blockly.Blocks.RequestHandler_constructor = {
-	init() {
-		this.appendValueInput('RequestHandler')
-			.setCheck('RequestHandler')
-			.appendField('RequestHandler_constructor');
-		this.setOutput(true, 'RequestHandler');
-		this.setColour(160);
-		this.setTooltip('A base class for different types of rate limiting handlers for the REST API.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RequestHandler');
-	}
-};
-
-Blockly.Blocks.RequestHandler_restManager = {
-	init() {
-		this.appendValueInput('RequestHandler')
-			.setCheck('RequestHandler')
-			.appendField('get restManager of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'RESTManager');
-		this.setColour(230);
-		this.setTooltip('The RESTManager that instantiated this RequestHandler');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RequestHandler?scrollTo=restManager');
-	}
-};
-
-Blockly.Blocks.RequestHandler_queue = {
-	init() {
-		this.appendValueInput('RequestHandler')
-			.setCheck('RequestHandler')
-			.appendField('get queue of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'APIRequest']);
-		this.setColour(230);
-		this.setTooltip('A list of requests that have yet to be processed');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RequestHandler?scrollTo=queue');
-	}
-};
-
-Blockly.Blocks.RequestHandler_globalLimit = {
-	init() {
-		this.appendValueInput('RequestHandler')
-			.setCheck('RequestHandler')
-			.appendField('get globalLimit of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
-		this.setColour(230);
-		this.setTooltip('Whether or not the client is being rate limited on every endpoint');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RequestHandler?scrollTo=globalLimit');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_constructor = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('SequentialRequestHandler_constructor');
-		this.setOutput(true, 'SequentialRequestHandler');
-		this.setColour(160);
-		this.setTooltip('Handles API Requests sequentially, i.e. we wait until the current request is finished before moving onto\nthe next. This plays a _lot_ nicer in terms of avoiding 429\'s when there is more than one session of the account,\nbut it can be slower.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_endpoint = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get endpoint of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'string');
-		this.setColour(230);
-		this.setTooltip('The endpoint that this handler is handling');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=endpoint');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_timeDifference = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get timeDifference of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The time difference between Discord\'s Dates and the local computer\'s Dates. A positive number means the local\ncomputer\'s time is ahead of Discord\'s');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=timeDifference');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_busy = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get busy of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
-		this.setColour(230);
-		this.setTooltip('Whether the queue is being processed or not');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=busy');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_restManager = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get restManager of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'RESTManager');
-		this.setColour(230);
-		this.setTooltip('The RESTManager that instantiated this RequestHandler');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=restManager');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_queue = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get queue of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'APIRequest']);
-		this.setColour(230);
-		this.setTooltip('A list of requests that have yet to be processed');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=queue');
-	}
-};
-
-Blockly.Blocks.SequentialRequestHandler_globalLimit = {
-	init() {
-		this.appendValueInput('SequentialRequestHandler')
-			.setCheck('SequentialRequestHandler')
-			.appendField('get globalLimit of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
-		this.setColour(230);
-		this.setTooltip('Whether or not the client is being rate limited on every endpoint');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SequentialRequestHandler?scrollTo=globalLimit');
-	}
-};
-
-Blockly.Blocks.ClientVoiceManager_client = {
-	init() {
-		this.appendValueInput('ClientVoiceManager')
-			.setCheck('ClientVoiceManager')
-			.appendField('get client of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client that instantiated this voice manager');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientVoiceManager?scrollTo=client');
-	}
-};
-
-Blockly.Blocks.ClientVoiceManager_connections = {
-	init() {
-		this.appendValueInput('ClientVoiceManager')
-			.setCheck('ClientVoiceManager')
-			.appendField('get connections of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'VoiceConnection']);
-		this.setColour(230);
-		this.setTooltip('A collection mapping connection IDs to the Connection objects');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientVoiceManager?scrollTo=connections');
 	}
 };
 
@@ -697,93 +1445,98 @@ Blockly.Blocks.StreamDispatcher_totalStreamTime = {
 	}
 };
 
-Blockly.Blocks.BaseOpus_constructor = {
+Blockly.Blocks.StreamDispatcher_speaking = {
 	init() {
-		this.appendValueInput('BaseOpus')
-			.setCheck('BaseOpus')
-			.appendField('BaseOpus_constructor');
-		this.setOutput(true, 'BaseOpus');
-		this.setColour(160);
-		this.setTooltip('The base opus encoding engine.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/BaseOpus');
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits speaking')
+			.appendField(new Blockly.FieldVariable('value'), 'value');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the dispatcher starts/stops speaking.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=speaking');
 	}
 };
 
-Blockly.Blocks.BaseOpus_bitrate = {
+Blockly.Blocks.StreamDispatcher_debug = {
 	init() {
-		this.appendValueInput('BaseOpus')
-			.setCheck('BaseOpus')
-			.appendField('get bitrate of');
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits debug')
+			.appendField(new Blockly.FieldVariable('info'), 'info');
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The desired bitrate (kbps)');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/BaseOpus?scrollTo=bitrate');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the dispatcher has debug information.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=debug');
 	}
 };
 
-Blockly.Blocks.BaseOpus_options = {
+Blockly.Blocks.StreamDispatcher_start = {
 	init() {
-		this.appendValueInput('BaseOpus')
-			.setCheck('BaseOpus')
-			.appendField('get options of');
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits start');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('Miscellaneous Opus options');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/BaseOpus?scrollTo=options');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted once the dispatcher starts streaming.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=start');
 	}
 };
 
-Blockly.Blocks.AudioPlayer_voiceConnection = {
+Blockly.Blocks.StreamDispatcher_end = {
 	init() {
-		this.appendValueInput('AudioPlayer')
-			.setCheck('AudioPlayer')
-			.appendField('get voiceConnection of');
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits end')
+			.appendField(new Blockly.FieldVariable('reason'), 'reason');
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'VoiceConnection');
-		this.setColour(230);
-		this.setTooltip('The voice connection that the player serves');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/AudioPlayer?scrollTo=voiceConnection');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted once the dispatcher ends.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=end');
 	}
 };
 
-Blockly.Blocks.AudioPlayer_prism = {
+Blockly.Blocks.StreamDispatcher_error = {
 	init() {
-		this.appendValueInput('AudioPlayer')
-			.setCheck('AudioPlayer')
-			.appendField('get prism of');
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits error')
+			.appendField(new Blockly.FieldVariable('error'), 'error');
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'Prism');
-		this.setColour(230);
-		this.setTooltip('The prism transcoder that the player uses');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/AudioPlayer?scrollTo=prism');
-	}
-};
-
-Blockly.Blocks.AudioPlayer_transcoder = {
-	init() {
-		this.appendValueInput('AudioPlayer')
-			.setCheck('AudioPlayer')
-			.appendField('get transcoder of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('The current transcoder');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/AudioPlayer?scrollTo=transcoder');
-	}
-};
-
-Blockly.Blocks.AudioPlayer_dispatcher = {
-	init() {
-		this.appendValueInput('AudioPlayer')
-			.setCheck('AudioPlayer')
-			.appendField('get dispatcher of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'StreamDispatcher');
-		this.setColour(230);
-		this.setTooltip('The current dispatcher');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/AudioPlayer?scrollTo=dispatcher');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted if the dispatcher encounters an error.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=error');
 	}
 };
 
@@ -813,16 +1566,102 @@ Blockly.Blocks.VoiceReceiver_voiceConnection = {
 	}
 };
 
-Blockly.Blocks.SecretKey_key = {
+Blockly.Blocks.VoiceReceiver_createOpusStream = {
 	init() {
-		this.appendValueInput('SecretKey')
-			.setCheck('SecretKey')
-			.appendField('get key of');
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createOpusStream with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Uint8Array');
-		this.setColour(230);
-		this.setTooltip('The key used for encryption');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SecretKey?scrollTo=key');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a readable stream for a user that provides opus data while the user is speaking. When the user\nstops speaking, the stream is destroyed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createOpusStream');
+	}
+};
+
+Blockly.Blocks.VoiceReceiver_createPCMStream = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createPCMStream with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a readable stream for a user that provides PCM data while the user is speaking. When the user\nstops speaking, the stream is destroyed. The stream is 32-bit signed stereo PCM at 48KHz.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createPCMStream');
+	}
+};
+
+Blockly.Blocks.VoiceReceiver_warn = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits warn')
+			.appendField(new Blockly.FieldVariable('reason'), 'reason').appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a voice packet experiences a problem.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=warn');
+	}
+};
+
+Blockly.Blocks.VoiceReceiver_opus = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits opus')
+			.appendField(new Blockly.FieldVariable('user'), 'user').appendField(new Blockly.FieldVariable('buffer'), 'buffer');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever voice data is received from the voice connection. This is _always_ emitted (unlike PCM).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=opus');
+	}
+};
+
+Blockly.Blocks.VoiceReceiver_pcm = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits pcm')
+			.appendField(new Blockly.FieldVariable('user'), 'user').appendField(new Blockly.FieldVariable('buffer'), 'buffer');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emits decoded voice data when it\'s received. For performance reasons, the decoding will only\nhappen if there is at least one `pcm` listener on this receiver.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=pcm');
 	}
 };
 
@@ -862,6 +1701,25 @@ Blockly.Blocks.VolumeInterface_volumeLogarithmic = {
 		this.setColour(230);
 		this.setTooltip('The current volume of the broadcast from a logarithmic scale');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeLogarithmic');
+	}
+};
+
+Blockly.Blocks.VolumeInterface_volumeChange = {
+	init() {
+		this.appendValueInput('VolumeInterface')
+			.setCheck('VolumeInterface')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits volumeChange')
+			.appendField(new Blockly.FieldVariable('oldVolume'), 'oldVolume').appendField(new Blockly.FieldVariable('newVolume'), 'newVolume');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the volume of this interface changes.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeChange');
 	}
 };
 
@@ -914,6 +1772,221 @@ Blockly.Blocks.VoiceBroadcast_dispatchers = {
 		this.setColour(230);
 		this.setTooltip('An array of subscribed dispatchers');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=dispatchers');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_playStream = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays any audio stream across the broadcast.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playStream');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_playFile = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playFile with');
+
+
+		this.appendValueInput('file')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Play the given file in the voice connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playFile');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_playConvertedStream = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playConvertedStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playConvertedStream');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_playOpusStream = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playOpusStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playOpusStream');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_playArbitraryInput = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playArbitraryInput with');
+
+
+		this.appendValueInput('input')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playArbitraryInput');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_unsubscribe = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits unsubscribe')
+			.appendField(new Blockly.FieldVariable('dispatcher'), 'dispatcher');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a stream dispatcher unsubscribes from the broadcast.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=unsubscribe');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_subscribe = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits subscribe')
+			.appendField(new Blockly.FieldVariable('dispatcher'), 'dispatcher');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a stream dispatcher subscribes to the broadcast.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=subscribe');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_error = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits error')
+			.appendField(new Blockly.FieldVariable('error'), 'error');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever an error occurs.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=error');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_warn = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits warn')
+			.appendField(new Blockly.FieldVariable('warning'), 'warning');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the VoiceBroadcast has any warnings.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=warn');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_end = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits end');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted once the broadcast (the audio stream) ends.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=end');
 	}
 };
 
@@ -1008,19 +2081,6 @@ Blockly.Blocks.VoiceConnection_receivers = {
 	}
 };
 
-Blockly.Blocks.VoiceConnection_authentication = {
-	init() {
-		this.appendValueInput('VoiceConnection')
-			.setCheck('VoiceConnection')
-			.appendField('get authentication of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('The authentication data needed to connect to the voice server');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=authentication');
-	}
-};
-
 Blockly.Blocks.VoiceConnection_player = {
 	init() {
 		this.appendValueInput('VoiceConnection')
@@ -1031,32 +2091,6 @@ Blockly.Blocks.VoiceConnection_player = {
 		this.setColour(230);
 		this.setTooltip('The audio player for this voice connection');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=player');
-	}
-};
-
-Blockly.Blocks.VoiceConnection_ssrcMap = {
-	init() {
-		this.appendValueInput('VoiceConnection')
-			.setCheck('VoiceConnection')
-			.appendField('get ssrcMap of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Map', 'number', 'boolean']);
-		this.setColour(230);
-		this.setTooltip('Map SSRC to speaking values');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=ssrcMap');
-	}
-};
-
-Blockly.Blocks.VoiceConnection_sockets = {
-	init() {
-		this.appendValueInput('VoiceConnection')
-			.setCheck('VoiceConnection')
-			.appendField('get sockets of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('Object that wraps contains the `ws` and `udp` sockets of this voice connection');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=sockets');
 	}
 };
 
@@ -1073,133 +2107,378 @@ Blockly.Blocks.VoiceConnection_dispatcher = {
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_voiceConnection = {
+Blockly.Blocks.VoiceConnection_setTokenAndEndpoint = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get voiceConnection of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTokenAndEndpoint with');
+
+
+		this.appendValueInput('token')
+			.setCheck('*');
+
+		this.appendValueInput('endpoint')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'VoiceConnection');
-		this.setColour(230);
-		this.setTooltip('The voice connection that this UDP client serves');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=voiceConnection');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the token and endpoint required to connect to the voice servers.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=setTokenAndEndpoint');
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_socket = {
+Blockly.Blocks.VoiceConnection_playFile = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get socket of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playFile with');
+
+
+		this.appendValueInput('file')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Socket');
-		this.setColour(230);
-		this.setTooltip('The UDP socket');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=socket');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Play the given file in the voice connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playFile');
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_discordAddress = {
+Blockly.Blocks.VoiceConnection_playArbitraryInput = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get discordAddress of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playArbitraryInput with');
+
+
+		this.appendValueInput('input')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
-		this.setColour(230);
-		this.setTooltip('The address of the Discord voice server');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=discordAddress');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playArbitraryInput');
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_localAddress = {
+Blockly.Blocks.VoiceConnection_playStream = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get localAddress of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
-		this.setColour(230);
-		this.setTooltip('The local IP address');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=localAddress');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays and converts an audio stream in the voice connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playStream');
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_localPort = {
+Blockly.Blocks.VoiceConnection_playConvertedStream = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get localPort of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playConvertedStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
-		this.setColour(230);
-		this.setTooltip('The local port');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=localPort');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playConvertedStream');
 	}
 };
 
-Blockly.Blocks.VoiceConnectionUDPClient_discordPort = {
+Blockly.Blocks.VoiceConnection_playOpusStream = {
 	init() {
-		this.appendValueInput('VoiceConnectionUDPClient')
-			.setCheck('VoiceConnectionUDPClient')
-			.appendField('get discordPort of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playOpusStream with');
+
+
+		this.appendValueInput('stream')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The port of the Discord voice server');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnectionUDPClient?scrollTo=discordPort');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playOpusStream');
 	}
 };
 
-Blockly.Blocks.VoiceWebSocket_client = {
+Blockly.Blocks.VoiceConnection_playBroadcast = {
 	init() {
-		this.appendValueInput('VoiceWebSocket')
-			.setCheck('VoiceWebSocket')
-			.appendField('get client of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('playBroadcast with');
+
+
+		this.appendValueInput('broadcast')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client of this voice WebSocket');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceWebSocket?scrollTo=client');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Plays a voice broadcast.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playBroadcast');
 	}
 };
 
-Blockly.Blocks.VoiceWebSocket_voiceConnection = {
+Blockly.Blocks.VoiceConnection_createReceiver = {
 	init() {
-		this.appendValueInput('VoiceWebSocket')
-			.setCheck('VoiceWebSocket')
-			.appendField('get voiceConnection of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createReceiver');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'VoiceConnection');
-		this.setColour(230);
-		this.setTooltip('The Voice Connection that this WebSocket serves');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceWebSocket?scrollTo=voiceConnection');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a VoiceReceiver so you can start listening to voice data.\nIt\'s recommended to only create one of these.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=createReceiver');
 	}
 };
 
-Blockly.Blocks.VoiceWebSocket_attempts = {
+Blockly.Blocks.VoiceConnection_debug = {
 	init() {
-		this.appendValueInput('VoiceWebSocket')
-			.setCheck('VoiceWebSocket')
-			.appendField('get attempts of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits debug')
+			.appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('How many connection attempts have been made');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceWebSocket?scrollTo=attempts');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Debug info from the connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=debug');
 	}
 };
 
-Blockly.Blocks.VoiceWebSocket_ws = {
+Blockly.Blocks.VoiceConnection_warn = {
 	init() {
-		this.appendValueInput('VoiceWebSocket')
-			.setCheck('VoiceWebSocket')
-			.appendField('get ws of');
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits warn')
+			.appendField(new Blockly.FieldVariable('warning'), 'warning');
+		this.appendStatementInput('function')
+			.setCheck(null);
 		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocket');
-		this.setColour(230);
-		this.setTooltip('The actual WebSocket used to connect to the Voice WebSocket Server.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceWebSocket?scrollTo=ws');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Warning info from the connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=warn');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_newSession = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits newSession');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when a new session ID is received.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=newSession');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_authenticated = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits authenticated');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when we successfully initiate a voice connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=authenticated');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_failed = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits failed')
+			.appendField(new Blockly.FieldVariable('error'), 'error');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when we fail to initiate a voice connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=failed');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_reconnecting = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits reconnecting');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the voice connection is reconnecting (typically after a region change).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=reconnecting');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_disconnect = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits disconnect');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the voice connection disconnects.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=disconnect');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_error = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits error')
+			.appendField(new Blockly.FieldVariable('error'), 'error');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever the connection encounters an error.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=error');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_ready = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits ready');
+
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted once the connection is ready, when a promise to join a voice channel resolves,\nthe connection will already be ready.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=ready');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_speaking = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits speaking')
+			.appendField(new Blockly.FieldVariable('user'), 'user').appendField(new Blockly.FieldVariable('speaking'), 'speaking');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever a user starts/stops speaking.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=speaking');
 	}
 };
 
@@ -1225,58 +2504,6 @@ Blockly.Blocks.WebhookClient_options = {
 		this.setColour(230);
 		this.setTooltip('The options the client was instantiated with');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=options');
-	}
-};
-
-Blockly.Blocks.WebhookClient_rest = {
-	init() {
-		this.appendValueInput('WebhookClient')
-			.setCheck('WebhookClient')
-			.appendField('get rest of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'RESTManager');
-		this.setColour(230);
-		this.setTooltip('The REST manager of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=rest');
-	}
-};
-
-Blockly.Blocks.WebhookClient_resolver = {
-	init() {
-		this.appendValueInput('WebhookClient')
-			.setCheck('WebhookClient')
-			.appendField('get resolver of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'ClientDataResolver');
-		this.setColour(230);
-		this.setTooltip('The data resolver of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=resolver');
-	}
-};
-
-Blockly.Blocks.WebhookClient__timeouts = {
-	init() {
-		this.appendValueInput('WebhookClient')
-			.setCheck('WebhookClient')
-			.appendField('get _timeouts of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Set', 'Timeout']);
-		this.setColour(230);
-		this.setTooltip('Timeouts set by {@link WebhookClient#setTimeout} that are still active');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=_timeouts');
-	}
-};
-
-Blockly.Blocks.WebhookClient__intervals = {
-	init() {
-		this.appendValueInput('WebhookClient')
-			.setCheck('WebhookClient')
-			.appendField('get _intervals of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Set', 'Timeout']);
-		this.setColour(230);
-		this.setTooltip('Intervals set by {@link WebhookClient#setInterval} that are still active');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=_intervals');
 	}
 };
 
@@ -1384,197 +2611,228 @@ Blockly.Blocks.WebhookClient_owner = {
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_constructor = {
+Blockly.Blocks.WebhookClient_setTimeout = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('WebSocketConnection_constructor');
-		this.setOutput(true, 'WebSocketConnection');
-		this.setColour(160);
-		this.setTooltip('Abstracts a WebSocket connection with decoding/encoding for the Discord gateway.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTimeout with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('delay')
+			.setCheck('*');
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setTimeout');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_manager = {
+Blockly.Blocks.WebhookClient_setInterval = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get manager of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setInterval with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('delay')
+			.setCheck('*');
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocketManager');
-		this.setColour(230);
-		this.setTooltip('The WebSocket Manager of this connection');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=manager');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setInterval');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_client = {
+Blockly.Blocks.WebhookClient_send = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get client of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client this belongs to');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=client');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=send');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_ws = {
+Blockly.Blocks.WebhookClient_sendMessage = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get ws of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocket');
-		this.setColour(230);
-		this.setTooltip('The WebSocket connection itself');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=ws');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message with this webhook');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=sendMessage');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_sequence = {
+Blockly.Blocks.WebhookClient_sendFile = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get sequence of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The current sequence of the WebSocket');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=sequence');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=sendFile');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_status = {
+Blockly.Blocks.WebhookClient_sendCode = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get status of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The current status of the client');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=status');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=sendCode');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_packetManager = {
+Blockly.Blocks.WebhookClient_sendSlackMessage = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get packetManager of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendSlackMessage with');
+
+
+		this.appendValueInput('body')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocketPacketManager');
-		this.setColour(230);
-		this.setTooltip('The Packet Manager of the connection');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=packetManager');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a raw slack message with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=sendSlackMessage');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_lastPingTimestamp = {
+Blockly.Blocks.WebhookClient_edit = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get lastPingTimestamp of');
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('avatar')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The last time a ping was sent (a timestamp)');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=lastPingTimestamp');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=edit');
 	}
 };
 
-Blockly.Blocks.WebSocketConnection_ratelimit = {
+Blockly.Blocks.WebhookClient_delete = {
 	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get ratelimit of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('Contains the rate limit queue and metadata');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=ratelimit');
-	}
-};
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
 
-Blockly.Blocks.WebSocketConnection_disabledEvents = {
-	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get disabledEvents of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Object');
-		this.setColour(230);
-		this.setTooltip('Events that are disabled (will not be processed)');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=disabledEvents');
-	}
-};
 
-Blockly.Blocks.WebSocketConnection_closeSequence = {
-	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get closeSequence of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'number');
-		this.setColour(230);
-		this.setTooltip('The sequence on WebSocket close');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=closeSequence');
-	}
-};
+		this.appendValueInput('reason')
+			.setCheck('*');
 
-Blockly.Blocks.WebSocketConnection_expectingClose = {
-	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get expectingClose of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
-		this.setColour(230);
-		this.setTooltip('Whether or not the WebSocket is expecting to be closed');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=expectingClose');
-	}
-};
-
-Blockly.Blocks.WebSocketConnection_ENCODING = {
-	init() {
-		this.appendValueInput('WebSocketConnection')
-			.setCheck('WebSocketConnection')
-			.appendField('get ENCODING of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'string');
-		this.setColour(230);
-		this.setTooltip('Encoding the WebSocket connections will use.');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketConnection?scrollTo=ENCODING');
-	}
-};
-
-Blockly.Blocks.WebSocketManager_client = {
-	init() {
-		this.appendValueInput('WebSocketManager')
-			.setCheck('WebSocketManager')
-			.appendField('get client of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client that instantiated this WebSocketManager');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketManager?scrollTo=client');
-	}
-};
-
-Blockly.Blocks.WebSocketManager_connection = {
-	init() {
-		this.appendValueInput('WebSocketManager')
-			.setCheck('WebSocketManager')
-			.appendField('get connection of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'WebSocketConnection');
-		this.setColour(230);
-		this.setTooltip('The WebSocket connection of this manager');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebSocketManager?scrollTo=connection');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Delete the webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=delete');
 	}
 };
 
@@ -1642,6 +2900,69 @@ Blockly.Blocks.Shard_process = {
 	}
 };
 
+Blockly.Blocks.Shard_send = {
+	init() {
+		this.appendValueInput('Shard')
+			.setCheck('Shard')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('message')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sends a message to the shard\'s process.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.Shard_fetchClientValue = {
+	init() {
+		this.appendValueInput('Shard')
+			.setCheck('Shard')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchClientValue with');
+
+
+		this.appendValueInput('prop')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches a client property value of the shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=fetchClientValue');
+	}
+};
+
+Blockly.Blocks.Shard_eval = {
+	init() {
+		this.appendValueInput('Shard')
+			.setCheck('Shard')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('eval with');
+
+
+		this.appendValueInput('script')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Evaluates a script on the shard, in the context of the client.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=eval');
+	}
+};
+
 Blockly.Blocks.ShardClientUtil_constructor = {
 	init() {
 		this.appendValueInput('ShardClientUtil')
@@ -1677,6 +2998,90 @@ Blockly.Blocks.ShardClientUtil_count = {
 		this.setColour(230);
 		this.setTooltip('Total number of shards');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=count');
+	}
+};
+
+Blockly.Blocks.ShardClientUtil_send = {
+	init() {
+		this.appendValueInput('ShardClientUtil')
+			.setCheck('ShardClientUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('message')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sends a message to the master process.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.ShardClientUtil_fetchClientValues = {
+	init() {
+		this.appendValueInput('ShardClientUtil')
+			.setCheck('ShardClientUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchClientValues with');
+
+
+		this.appendValueInput('prop')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches a client property value of each shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=fetchClientValues');
+	}
+};
+
+Blockly.Blocks.ShardClientUtil_broadcastEval = {
+	init() {
+		this.appendValueInput('ShardClientUtil')
+			.setCheck('ShardClientUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('broadcastEval with');
+
+
+		this.appendValueInput('script')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Evaluates a script on all shards, in the context of the Clients.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=broadcastEval');
+	}
+};
+
+Blockly.Blocks.ShardClientUtil_singleton = {
+	init() {
+		this.appendValueInput('ShardClientUtil')
+			.setCheck('ShardClientUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('singleton with');
+
+
+		this.appendValueInput('client')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates/gets the singleton of this class.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=singleton');
 	}
 };
 
@@ -1770,6 +3175,152 @@ Blockly.Blocks.ShardingManager_shards = {
 	}
 };
 
+Blockly.Blocks.ShardingManager_createShard = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createShard with');
+
+
+		this.appendValueInput('id')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Spawns a single shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=createShard');
+	}
+};
+
+Blockly.Blocks.ShardingManager_spawn = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('spawn with');
+
+
+		this.appendValueInput('amount')
+			.setCheck('*');
+
+		this.appendValueInput('delay')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Spawns multiple shards.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=spawn');
+	}
+};
+
+Blockly.Blocks.ShardingManager_broadcast = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('broadcast with');
+
+
+		this.appendValueInput('message')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to all shards.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=broadcast');
+	}
+};
+
+Blockly.Blocks.ShardingManager_broadcastEval = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('broadcastEval with');
+
+
+		this.appendValueInput('script')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Evaluates a script on all shards, in the context of the Clients.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=broadcastEval');
+	}
+};
+
+Blockly.Blocks.ShardingManager_fetchClientValues = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchClientValues with');
+
+
+		this.appendValueInput('prop')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches a client property value of each shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=fetchClientValues');
+	}
+};
+
+Blockly.Blocks.ShardingManager_message = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits message')
+			.appendField(new Blockly.FieldVariable('shard'), 'shard').appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted upon recieving a message from a shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=message');
+	}
+};
+
+Blockly.Blocks.ShardingManager_launch = {
+	init() {
+		this.appendValueInput('ShardingManager')
+			.setCheck('ShardingManager')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits launch')
+			.appendField(new Blockly.FieldVariable('shard'), 'shard');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted upon launching a shard.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=launch');
+	}
+};
+
 Blockly.Blocks.Attachment_constructor = {
 	init() {
 		this.appendValueInput('Attachment')
@@ -1805,6 +3356,72 @@ Blockly.Blocks.Attachment_attachment = {
 		this.setColour(230);
 		this.setTooltip('The file');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=attachment');
+	}
+};
+
+Blockly.Blocks.Attachment_setAttachment = {
+	init() {
+		this.appendValueInput('Attachment')
+			.setCheck('Attachment')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAttachment with');
+
+
+		this.appendValueInput('file')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the file of this attachment.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setAttachment');
+	}
+};
+
+Blockly.Blocks.Attachment_setFile = {
+	init() {
+		this.appendValueInput('Attachment')
+			.setCheck('Attachment')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the file of this attachment.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setFile');
+	}
+};
+
+Blockly.Blocks.Attachment_setName = {
+	init() {
+		this.appendValueInput('Attachment')
+			.setCheck('Attachment')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the name of this attachment.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setName');
 	}
 };
 
@@ -1870,6 +3487,23 @@ Blockly.Blocks.Channel_createdAt = {
 		this.setColour(230);
 		this.setTooltip('The time the channel was created');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=createdAt');
+	}
+};
+
+Blockly.Blocks.Channel_delete = {
+	init() {
+		this.appendValueInput('Channel')
+			.setCheck('Channel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=delete');
 	}
 };
 
@@ -2224,6 +3858,657 @@ Blockly.Blocks.ClientUser_dmChannel = {
 	}
 };
 
+Blockly.Blocks.ClientUser_setUsername = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setUsername with');
+
+
+		this.appendValueInput('username')
+			.setCheck('*');
+
+		this.appendValueInput('password')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the username of the logged in client.\n<info>Changing usernames in Discord is heavily rate limited, with only 2 requests\nevery hour. Use this sparingly!</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setUsername');
+	}
+};
+
+Blockly.Blocks.ClientUser_setEmail = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setEmail with');
+
+
+		this.appendValueInput('email')
+			.setCheck('*');
+
+		this.appendValueInput('password')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Changes the email for the client user\'s account.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setEmail');
+	}
+};
+
+Blockly.Blocks.ClientUser_setPassword = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPassword with');
+
+
+		this.appendValueInput('newPassword')
+			.setCheck('*');
+
+		this.appendValueInput('oldPassword')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Changes the password for the client user\'s account.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setPassword');
+	}
+};
+
+Blockly.Blocks.ClientUser_setAvatar = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAvatar with');
+
+
+		this.appendValueInput('avatar')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the avatar of the logged in client.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setAvatar');
+	}
+};
+
+Blockly.Blocks.ClientUser_setPresence = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPresence with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the full presence of the client user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setPresence');
+	}
+};
+
+Blockly.Blocks.ClientUser_setStatus = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setStatus with');
+
+
+		this.appendValueInput('status')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the status of the client user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setStatus');
+	}
+};
+
+Blockly.Blocks.ClientUser_setGame = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setGame with');
+
+
+		this.appendValueInput('game')
+			.setCheck('*');
+
+		this.appendValueInput('streamingURL')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the game the client user is playing.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setGame');
+	}
+};
+
+Blockly.Blocks.ClientUser_setAFK = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAFK with');
+
+
+		this.appendValueInput('afk')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets/removes the AFK flag for the client user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setAFK');
+	}
+};
+
+Blockly.Blocks.ClientUser_fetchMentions = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMentions with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches messages that mentioned the client\'s user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=fetchMentions');
+	}
+};
+
+Blockly.Blocks.ClientUser_addFriend = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addFriend with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a friend request.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=addFriend');
+	}
+};
+
+Blockly.Blocks.ClientUser_removeFriend = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeFriend with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Remove a friend.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=removeFriend');
+	}
+};
+
+Blockly.Blocks.ClientUser_createGuild = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createGuild with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('region')
+			.setCheck('*');
+
+		this.appendValueInput('icon')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a guild.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createGuild');
+	}
+};
+
+Blockly.Blocks.ClientUser_createGroupDM = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createGroupDM with');
+
+
+		this.appendValueInput('recipients')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a Group DM.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createGroupDM');
+	}
+};
+
+Blockly.Blocks.ClientUser_acceptInvite = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acceptInvite with');
+
+
+		this.appendValueInput('invite')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Accepts an invite to join a guild.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=acceptInvite');
+	}
+};
+
+Blockly.Blocks.ClientUser_typingIn = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Check whether the user is typing in a channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingIn');
+	}
+};
+
+Blockly.Blocks.ClientUser_typingSinceIn = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingSinceIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the time that the user started typing.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingSinceIn');
+	}
+};
+
+Blockly.Blocks.ClientUser_typingDurationIn = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingDurationIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingDurationIn');
+	}
+};
+
+Blockly.Blocks.ClientUser_createDM = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a DM channel between the client and the user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createDM');
+	}
+};
+
+Blockly.Blocks.ClientUser_deleteDM = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deleteDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes a DM channel (if one exists) between the client and the user. Resolves with the channel if successful.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=deleteDM');
+	}
+};
+
+Blockly.Blocks.ClientUser_block = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('block');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Blocks the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=block');
+	}
+};
+
+Blockly.Blocks.ClientUser_unblock = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('unblock');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Unblocks the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=unblock');
+	}
+};
+
+Blockly.Blocks.ClientUser_fetchProfile = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchProfile');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the profile of the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=fetchProfile');
+	}
+};
+
+Blockly.Blocks.ClientUser_setNote = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setNote with');
+
+
+		this.appendValueInput('note')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets a note for the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=setNote');
+	}
+};
+
+Blockly.Blocks.ClientUser_equals = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.ClientUser_toString = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.ClientUser_send = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.ClientUser_sendMessage = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.ClientUser_sendEmbed = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.ClientUser_sendFile = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.ClientUser_sendCode = {
+	init() {
+		this.appendValueInput('ClientUser')
+			.setCheck('ClientUser')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=sendCode');
+	}
+};
+
 Blockly.Blocks.ClientUserChannelOverride_muted = {
 	init() {
 		this.appendValueInput('ClientUserChannelOverride')
@@ -2338,6 +4623,30 @@ Blockly.Blocks.ClientUserGuildSettings_channelOverrides = {
 		this.setColour(230);
 		this.setTooltip('A collection containing all the channel overrides');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=channelOverrides');
+	}
+};
+
+Blockly.Blocks.ClientUserGuildSettings_update = {
+	init() {
+		this.appendValueInput('ClientUserGuildSettings')
+			.setCheck('ClientUserGuildSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('update with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Update a specific property of the guild settings.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=update');
 	}
 };
 
@@ -2562,6 +4871,99 @@ Blockly.Blocks.ClientUserSettings_friendSources = {
 	}
 };
 
+Blockly.Blocks.ClientUserSettings_update = {
+	init() {
+		this.appendValueInput('ClientUserSettings')
+			.setCheck('ClientUserSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('update with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Update a specific property of of user settings.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=update');
+	}
+};
+
+Blockly.Blocks.ClientUserSettings_setGuildPosition = {
+	init() {
+		this.appendValueInput('ClientUserSettings')
+			.setCheck('ClientUserSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setGuildPosition with');
+
+
+		this.appendValueInput('guild')
+			.setCheck('*');
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=setGuildPosition');
+	}
+};
+
+Blockly.Blocks.ClientUserSettings_addRestrictedGuild = {
+	init() {
+		this.appendValueInput('ClientUserSettings')
+			.setCheck('ClientUserSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addRestrictedGuild with');
+
+
+		this.appendValueInput('guild')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Add a guild to the list of restricted guilds.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=addRestrictedGuild');
+	}
+};
+
+Blockly.Blocks.ClientUserSettings_removeRestrictedGuild = {
+	init() {
+		this.appendValueInput('ClientUserSettings')
+			.setCheck('ClientUserSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeRestrictedGuild with');
+
+
+		this.appendValueInput('guild')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Remove a guild from the list of restricted guilds.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=removeRestrictedGuild');
+	}
+};
+
 Blockly.Blocks.DMChannel_recipient = {
 	init() {
 		this.appendValueInput('DMChannel')
@@ -2689,6 +5091,344 @@ Blockly.Blocks.DMChannel_createdAt = {
 		this.setColour(230);
 		this.setTooltip('The time the channel was created');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createdAt');
+	}
+};
+
+Blockly.Blocks.DMChannel_toString = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the recipient\'s mention instead of the\nDM channel object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.DMChannel_send = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.DMChannel_fetchMessage = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessage with');
+
+
+		this.appendValueInput('messageID')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets a single message from this channel, regardless of it being cached or not. Since the single message fetching\nendpoint is reserved for bot accounts, this abstracts the `fetchMessages` method to obtain the single message when\nusing a user account.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=fetchMessage');
+	}
+};
+
+Blockly.Blocks.DMChannel_fetchMessages = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessages with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the past messages sent in this channel. Resolves with a collection mapping message ID\'s to Message objects.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=fetchMessages');
+	}
+};
+
+Blockly.Blocks.DMChannel_fetchPinnedMessages = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchPinnedMessages');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches the pinned messages of this channel and returns a collection of them.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=fetchPinnedMessages');
+	}
+};
+
+Blockly.Blocks.DMChannel_search = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('search with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Performs a search within the channel.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=search');
+	}
+};
+
+Blockly.Blocks.DMChannel_createCollector = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createCollector with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a Message Collector');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createCollector');
+	}
+};
+
+Blockly.Blocks.DMChannel_awaitMessages = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('awaitMessages with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Similar to createCollector but in promise form. Resolves with a collection of messages that pass the specified\nfilter.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=awaitMessages');
+	}
+};
+
+Blockly.Blocks.DMChannel_acknowledge = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acknowledge');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Marks all messages in this channel as read.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=acknowledge');
+	}
+};
+
+Blockly.Blocks.DMChannel_sendMessage = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.DMChannel_sendEmbed = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.DMChannel_sendFiles = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFiles with');
+
+
+		this.appendValueInput('files')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send files to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=sendFiles');
+	}
+};
+
+Blockly.Blocks.DMChannel_sendFile = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.DMChannel_sendCode = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=sendCode');
+	}
+};
+
+Blockly.Blocks.DMChannel_delete = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=delete');
 	}
 };
 
@@ -2832,6 +5572,176 @@ Blockly.Blocks.Emoji_identifier = {
 		this.setColour(230);
 		this.setTooltip('The identifier of this emoji, used for message reactions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=identifier');
+	}
+};
+
+Blockly.Blocks.Emoji_edit = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edits the emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.Emoji_setName = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the name of the emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.Emoji_addRestrictedRole = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addRestrictedRole with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Add a role to the list of roles that can use this emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=addRestrictedRole');
+	}
+};
+
+Blockly.Blocks.Emoji_addRestrictedRoles = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addRestrictedRoles with');
+
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Add multiple roles to the list of roles that can use this emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=addRestrictedRoles');
+	}
+};
+
+Blockly.Blocks.Emoji_removeRestrictedRole = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeRestrictedRole with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Remove a role from the list of roles that can use this emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=removeRestrictedRole');
+	}
+};
+
+Blockly.Blocks.Emoji_removeRestrictedRoles = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeRestrictedRoles with');
+
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Remove multiple roles from the list of roles that can use this emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=removeRestrictedRoles');
+	}
+};
+
+Blockly.Blocks.Emoji_toString = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically returns the emoji mention rather than the object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.Emoji_equals = {
+	init() {
+		this.appendValueInput('Emoji')
+			.setCheck('Emoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('other')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this emoji is the same as another one.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=equals');
 	}
 };
 
@@ -3066,6 +5976,386 @@ Blockly.Blocks.GroupDMChannel_createdAt = {
 		this.setColour(230);
 		this.setTooltip('The time the channel was created');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createdAt');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_equals = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this channel equals another channel. It compares all properties, so for most operations\nit is advisable to just compare `channel.id === channel2.id` as it is much faster and is often\nwhat most users need.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_setIcon = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setIcon with');
+
+
+		this.appendValueInput('icon')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new GroupDMChannel icon.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=setIcon');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_toString = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the channel\'s name instead of the Channel object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_send = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_fetchMessage = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessage with');
+
+
+		this.appendValueInput('messageID')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets a single message from this channel, regardless of it being cached or not. Since the single message fetching\nendpoint is reserved for bot accounts, this abstracts the `fetchMessages` method to obtain the single message when\nusing a user account.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=fetchMessage');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_fetchMessages = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessages with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the past messages sent in this channel. Resolves with a collection mapping message ID\'s to Message objects.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=fetchMessages');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_fetchPinnedMessages = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchPinnedMessages');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches the pinned messages of this channel and returns a collection of them.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=fetchPinnedMessages');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_search = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('search with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Performs a search within the channel.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=search');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_createCollector = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createCollector with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a Message Collector');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createCollector');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_awaitMessages = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('awaitMessages with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Similar to createCollector but in promise form. Resolves with a collection of messages that pass the specified\nfilter.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=awaitMessages');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_acknowledge = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acknowledge');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Marks all messages in this channel as read.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=acknowledge');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_sendMessage = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_sendEmbed = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_sendFiles = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFiles with');
+
+
+		this.appendValueInput('files')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send files to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=sendFiles');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_sendFile = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_sendCode = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=sendCode');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_delete = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=delete');
 	}
 };
 
@@ -3602,19 +6892,6 @@ Blockly.Blocks.Guild_me = {
 	}
 };
 
-Blockly.Blocks.Guild__sortedRoles = {
-	init() {
-		this.appendValueInput('Guild')
-			.setCheck('Guild')
-			.appendField('get _sortedRoles of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'Role']);
-		this.setColour(230);
-		this.setTooltip('Fetches a collection of roles in the current guild sorted by position');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=_sortedRoles');
-	}
-};
-
 Blockly.Blocks.Guild_defaultChannel = {
 	init() {
 		this.appendValueInput('Guild')
@@ -3628,6 +6905,865 @@ Blockly.Blocks.Guild_defaultChannel = {
 	}
 };
 
+Blockly.Blocks.Guild_member = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('member with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Returns the GuildMember form of a User object, if the user is present in the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=member');
+	}
+};
+
+Blockly.Blocks.Guild_fetchBans = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchBans');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch a collection of banned users in this guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchBans');
+	}
+};
+
+Blockly.Blocks.Guild_fetchInvites = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchInvites');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch a collection of invites to this guild.\nResolves with a collection mapping invites by their codes.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchInvites');
+	}
+};
+
+Blockly.Blocks.Guild_fetchWebhooks = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchWebhooks');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch all webhooks for the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchWebhooks');
+	}
+};
+
+Blockly.Blocks.Guild_fetchVoiceRegions = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchVoiceRegions');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch available voice regions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchVoiceRegions');
+	}
+};
+
+Blockly.Blocks.Guild_fetchAuditLogs = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchAuditLogs with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch audit logs for this guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchAuditLogs');
+	}
+};
+
+Blockly.Blocks.Guild_addMember = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addMember with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Adds a user to the guild using OAuth2. Requires the `CREATE_INSTANT_INVITE` permission.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=addMember');
+	}
+};
+
+Blockly.Blocks.Guild_fetchMember = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMember with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.appendValueInput('cache')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch a single guild member from a user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchMember');
+	}
+};
+
+Blockly.Blocks.Guild_fetchMembers = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMembers with');
+
+
+		this.appendValueInput('query')
+			.setCheck('*');
+
+		this.appendValueInput('limit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches all the members in the guild, even if they are offline. If the guild has less than 250 members,\nthis should not be necessary.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchMembers');
+	}
+};
+
+Blockly.Blocks.Guild_search = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('search with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Performs a search within the entire guild.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=search');
+	}
+};
+
+Blockly.Blocks.Guild_edit = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Updates the guild with new information - e.g. a new name.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.Guild_setExplicitContentFilter = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setExplicitContentFilter with');
+
+
+		this.appendValueInput('explicitContentFilter')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the level of the explicit content filter.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setExplicitContentFilter');
+	}
+};
+
+Blockly.Blocks.Guild_setName = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the name of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.Guild_setRegion = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setRegion with');
+
+
+		this.appendValueInput('region')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the region of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setRegion');
+	}
+};
+
+Blockly.Blocks.Guild_setVerificationLevel = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setVerificationLevel with');
+
+
+		this.appendValueInput('verificationLevel')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the verification level of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setVerificationLevel');
+	}
+};
+
+Blockly.Blocks.Guild_setAFKChannel = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAFKChannel with');
+
+
+		this.appendValueInput('afkChannel')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the AFK channel of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setAFKChannel');
+	}
+};
+
+Blockly.Blocks.Guild_setSystemChannel = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setSystemChannel with');
+
+
+		this.appendValueInput('systemChannel')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the system channel of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setSystemChannel');
+	}
+};
+
+Blockly.Blocks.Guild_setAFKTimeout = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAFKTimeout with');
+
+
+		this.appendValueInput('afkTimeout')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the AFK timeout of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setAFKTimeout');
+	}
+};
+
+Blockly.Blocks.Guild_setIcon = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setIcon with');
+
+
+		this.appendValueInput('icon')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new guild icon.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setIcon');
+	}
+};
+
+Blockly.Blocks.Guild_setOwner = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setOwner with');
+
+
+		this.appendValueInput('owner')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets a new owner of the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setOwner');
+	}
+};
+
+Blockly.Blocks.Guild_setSplash = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setSplash with');
+
+
+		this.appendValueInput('splash')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new guild splash screen.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setSplash');
+	}
+};
+
+Blockly.Blocks.Guild_setPosition = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPosition with');
+
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the position of the guild in the guild listing.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setPosition');
+	}
+};
+
+Blockly.Blocks.Guild_acknowledge = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acknowledge');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Marks all messages in this guild as read.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=acknowledge');
+	}
+};
+
+Blockly.Blocks.Guild_allowDMs = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('allowDMs with');
+
+
+		this.appendValueInput('allow')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Allow direct messages from guild members.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=allowDMs');
+	}
+};
+
+Blockly.Blocks.Guild_ban = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('ban with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Bans a user from the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=ban');
+	}
+};
+
+Blockly.Blocks.Guild_unban = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('unban with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Unbans a user from the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=unban');
+	}
+};
+
+Blockly.Blocks.Guild_pruneMembers = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('pruneMembers with');
+
+
+		this.appendValueInput('days')
+			.setCheck('*');
+
+		this.appendValueInput('dry')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Prunes members from the guild based on how long they have been inactive.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=pruneMembers');
+	}
+};
+
+Blockly.Blocks.Guild_createChannel = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createChannel with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('type')
+			.setCheck('*');
+
+		this.appendValueInput('overwrites')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a new channel in the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createChannel');
+	}
+};
+
+Blockly.Blocks.Guild_setChannelPositions = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setChannelPositions with');
+
+
+		this.appendValueInput('channelPositions')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Batch-updates the guild\'s channels\' positions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setChannelPositions');
+	}
+};
+
+Blockly.Blocks.Guild_createRole = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createRole with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a new role in the guild with given information');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createRole');
+	}
+};
+
+Blockly.Blocks.Guild_createEmoji = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createEmoji with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a new custom emoji in the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createEmoji');
+	}
+};
+
+Blockly.Blocks.Guild_deleteEmoji = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deleteEmoji with');
+
+
+		this.appendValueInput('emoji')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Delete an emoji.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=deleteEmoji');
+	}
+};
+
+Blockly.Blocks.Guild_leave = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('leave');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Causes the client to leave the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=leave');
+	}
+};
+
+Blockly.Blocks.Guild_delete = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Causes the client to delete the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=delete');
+	}
+};
+
+Blockly.Blocks.Guild_equals = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('guild')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this guild equals another guild. It compares all properties, so for most operations\nit is advisable to just compare `guild.id === guild2.id` as it is much faster and is often\nwhat most users need.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.Guild_toString = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the guild\'s name instead of the guild object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.Guild_setRolePosition = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setRolePosition with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the position of a role in this guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setRolePosition');
+	}
+};
+
+Blockly.Blocks.Guild_setChannelPosition = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setChannelPosition with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the position of a channel in this guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=setChannelPosition');
+	}
+};
+
 Blockly.Blocks.GuildAuditLogs_entries = {
 	init() {
 		this.appendValueInput('GuildAuditLogs')
@@ -3638,6 +7774,65 @@ Blockly.Blocks.GuildAuditLogs_entries = {
 		this.setColour(230);
 		this.setTooltip('The entries for this guild\'s audit logs');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=entries');
+	}
+};
+
+Blockly.Blocks.GuildAuditLogs_build = {
+	init() {
+		this.appendValueInput('GuildAuditLogs')
+			.setCheck('GuildAuditLogs')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('build');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Handles possible promises for entry targets.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=build');
+	}
+};
+
+Blockly.Blocks.GuildAuditLogs_targetType = {
+	init() {
+		this.appendValueInput('GuildAuditLogs')
+			.setCheck('GuildAuditLogs')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('targetType with');
+
+
+		this.appendValueInput('target')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Find target type from entry action.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=targetType');
+	}
+};
+
+Blockly.Blocks.GuildAuditLogs_actionType = {
+	init() {
+		this.appendValueInput('GuildAuditLogs')
+			.setCheck('GuildAuditLogs')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('actionType with');
+
+
+		this.appendValueInput('action')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Find action type from entry action.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=actionType');
 	}
 };
 
@@ -3950,6 +8145,259 @@ Blockly.Blocks.GuildChannel_createdAt = {
 		this.setColour(230);
 		this.setTooltip('The time the channel was created');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=createdAt');
+	}
+};
+
+Blockly.Blocks.GuildChannel_permissionsFor = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('permissionsFor with');
+
+
+		this.appendValueInput('member')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=permissionsFor');
+	}
+};
+
+Blockly.Blocks.GuildChannel_overwritePermissions = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('overwritePermissions with');
+
+
+		this.appendValueInput('userOrRole')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Overwrites the permissions for a user or role in this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=overwritePermissions');
+	}
+};
+
+Blockly.Blocks.GuildChannel_edit = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edits the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.GuildChannel_setName = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new name for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.GuildChannel_setPosition = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPosition with');
+
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new position for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=setPosition');
+	}
+};
+
+Blockly.Blocks.GuildChannel_setTopic = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTopic with');
+
+
+		this.appendValueInput('topic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new topic for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=setTopic');
+	}
+};
+
+Blockly.Blocks.GuildChannel_createInvite = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createInvite with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Create an invite to this guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=createInvite');
+	}
+};
+
+Blockly.Blocks.GuildChannel_clone = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clone with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('withPermissions')
+			.setCheck('*');
+
+		this.appendValueInput('withTopic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clone this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=clone');
+	}
+};
+
+Blockly.Blocks.GuildChannel_equals = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.GuildChannel_toString = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.GuildChannel_delete = {
+	init() {
+		this.appendValueInput('GuildChannel')
+			.setCheck('GuildChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=delete');
 	}
 };
 
@@ -4343,6 +8791,567 @@ Blockly.Blocks.GuildMember_bannable = {
 	}
 };
 
+Blockly.Blocks.GuildMember_permissionsIn = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('permissionsIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Returns `channel.permissionsFor(guildMember)`. Returns permissions for a member in a guild channel,\ntaking into account roles and permission overwrites.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=permissionsIn');
+	}
+};
+
+Blockly.Blocks.GuildMember_hasPermission = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermission with');
+
+
+		this.appendValueInput('permission')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.appendValueInput('checkAdmin')
+			.setCheck('*');
+
+		this.appendValueInput('checkOwner')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if any of the member\'s roles have a permission.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermission');
+	}
+};
+
+Blockly.Blocks.GuildMember_hasPermissions = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the roles of the member allows them to perform specific actions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermissions');
+	}
+};
+
+Blockly.Blocks.GuildMember_missingPermissions = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('missingPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the roles of the member allows them to perform specific actions, and lists any missing permissions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=missingPermissions');
+	}
+};
+
+Blockly.Blocks.GuildMember_edit = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit a guild member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.GuildMember_setMute = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setMute with');
+
+
+		this.appendValueInput('mute')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Mute/unmute a user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=setMute');
+	}
+};
+
+Blockly.Blocks.GuildMember_setDeaf = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setDeaf with');
+
+
+		this.appendValueInput('deaf')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deafen/undeafen a user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=setDeaf');
+	}
+};
+
+Blockly.Blocks.GuildMember_setVoiceChannel = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setVoiceChannel with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Moves the guild member to the given channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=setVoiceChannel');
+	}
+};
+
+Blockly.Blocks.GuildMember_setRoles = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setRoles with');
+
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the roles applied to the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=setRoles');
+	}
+};
+
+Blockly.Blocks.GuildMember_addRole = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addRole with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Adds a single role to the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=addRole');
+	}
+};
+
+Blockly.Blocks.GuildMember_addRoles = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addRoles with');
+
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Adds multiple roles to the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=addRoles');
+	}
+};
+
+Blockly.Blocks.GuildMember_removeRole = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeRole with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Removes a single role from the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=removeRole');
+	}
+};
+
+Blockly.Blocks.GuildMember_removeRoles = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeRoles with');
+
+
+		this.appendValueInput('roles')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Removes multiple roles from the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=removeRoles');
+	}
+};
+
+Blockly.Blocks.GuildMember_setNickname = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setNickname with');
+
+
+		this.appendValueInput('nick')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the nickname for the guild member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=setNickname');
+	}
+};
+
+Blockly.Blocks.GuildMember_createDM = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a DM channel between the client and the member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=createDM');
+	}
+};
+
+Blockly.Blocks.GuildMember_deleteDM = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deleteDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes any DMs with this guild member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=deleteDM');
+	}
+};
+
+Blockly.Blocks.GuildMember_kick = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('kick with');
+
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Kick this member from the guild.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=kick');
+	}
+};
+
+Blockly.Blocks.GuildMember_ban = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('ban with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Ban this guild member.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=ban');
+	}
+};
+
+Blockly.Blocks.GuildMember_toString = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the Member object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.GuildMember_send = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.GuildMember_sendMessage = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.GuildMember_sendEmbed = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.GuildMember_sendFile = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.GuildMember_sendCode = {
+	init() {
+		this.appendValueInput('GuildMember')
+			.setCheck('GuildMember')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=sendCode');
+	}
+};
+
 Blockly.Blocks.Collector_client = {
 	init() {
 		this.appendValueInput('Collector')
@@ -4408,32 +9417,6 @@ Blockly.Blocks.Collector_ended = {
 	}
 };
 
-Blockly.Blocks.Collector__timeout = {
-	init() {
-		this.appendValueInput('Collector')
-			.setCheck('Collector')
-			.appendField('get _timeout of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Timeout');
-		this.setColour(230);
-		this.setTooltip('Timeout for cleanup');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=_timeout');
-	}
-};
-
-Blockly.Blocks.Collector_listener = {
-	init() {
-		this.appendValueInput('Collector')
-			.setCheck('Collector')
-			.appendField('get listener of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'function');
-		this.setColour(230);
-		this.setTooltip('Call this to handle an event as a collectable element\nAccepts any event data as parameters');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=listener');
-	}
-};
-
 Blockly.Blocks.Collector_next = {
 	init() {
 		this.appendValueInput('Collector')
@@ -4444,6 +9427,86 @@ Blockly.Blocks.Collector_next = {
 		this.setColour(230);
 		this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=next');
+	}
+};
+
+Blockly.Blocks.Collector_handle = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('handle with');
+
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Handles incoming events from the `listener` function. Returns null if the event should not be collected,\nor returns an object describing the data that should be stored.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=handle');
+	}
+};
+
+Blockly.Blocks.Collector_postCheck = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('postCheck with');
+
+
+		this.appendValueInput('args')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('This method runs after collection to see if the collector should finish.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=postCheck');
+	}
+};
+
+Blockly.Blocks.Collector_collect = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits collect')
+			.appendField(new Blockly.FieldVariable('element'), 'element').appendField(new Blockly.FieldVariable('collector'), 'collector');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever an element is collected.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=collect');
+	}
+};
+
+Blockly.Blocks.Collector_end = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits end')
+			.appendField(new Blockly.FieldVariable('collected'), 'collected').appendField(new Blockly.FieldVariable('reason'), 'reason');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the collector is finished collecting.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=end');
 	}
 };
 
@@ -4678,6 +9741,44 @@ Blockly.Blocks.Invite_url = {
 		this.setColour(230);
 		this.setTooltip('The URL to the invite');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=url');
+	}
+};
+
+Blockly.Blocks.Invite_delete = {
+	init() {
+		this.appendValueInput('Invite')
+			.setCheck('Invite')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
+
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes this invite.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=delete');
+	}
+};
+
+Blockly.Blocks.Invite_toString = {
+	init() {
+		this.appendValueInput('Invite')
+			.setCheck('Invite')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the invite\'s URL instead of the object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=toString');
 	}
 };
 
@@ -4928,19 +10029,6 @@ Blockly.Blocks.Message_hit = {
 	}
 };
 
-Blockly.Blocks.Message__edits = {
-	init() {
-		this.appendValueInput('Message')
-			.setCheck('Message')
-			.appendField('get _edits of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'Message']);
-		this.setColour(230);
-		this.setTooltip('The previous versions of the message, sorted with the most recent first');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=_edits');
-	}
-};
-
 Blockly.Blocks.Message_createdAt = {
 	init() {
 		this.appendValueInput('Message')
@@ -5042,6 +10130,336 @@ Blockly.Blocks.Message_pinnable = {
 		this.setColour(230);
 		this.setTooltip('Whether the message is pinnable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pinnable');
+	}
+};
+
+Blockly.Blocks.Message_createReactionCollector = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createReactionCollector with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a reaction collector.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createReactionCollector');
+	}
+};
+
+Blockly.Blocks.Message_awaitReactions = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('awaitReactions with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Similar to createCollector but in promise form.\nResolves with a collection of reactions that pass the specified filter.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=awaitReactions');
+	}
+};
+
+Blockly.Blocks.Message_isMentioned = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('isMentioned with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether or not a user, channel or role is mentioned in this message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMentioned');
+	}
+};
+
+Blockly.Blocks.Message_isMemberMentioned = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('isMemberMentioned with');
+
+
+		this.appendValueInput('member')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether or not a guild member is mentioned in this message. Takes into account\nuser mentions, role mentions, and @everyone/@here mentions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMemberMentioned');
+	}
+};
+
+Blockly.Blocks.Message_edit = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the content of the message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.Message_editCode = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('editCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the content of the message, with a code block.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editCode');
+	}
+};
+
+Blockly.Blocks.Message_pin = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('pin');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Pins this message to the channel\'s pinned messages.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pin');
+	}
+};
+
+Blockly.Blocks.Message_unpin = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('unpin');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Unpins this message from the channel\'s pinned messages.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=unpin');
+	}
+};
+
+Blockly.Blocks.Message_react = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('react with');
+
+
+		this.appendValueInput('emoji')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Add a reaction to the message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=react');
+	}
+};
+
+Blockly.Blocks.Message_clearReactions = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clearReactions');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Remove all reactions from a message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=clearReactions');
+	}
+};
+
+Blockly.Blocks.Message_delete = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
+
+
+		this.appendValueInput('timeout')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=delete');
+	}
+};
+
+Blockly.Blocks.Message_reply = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('reply with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Reply to the message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=reply');
+	}
+};
+
+Blockly.Blocks.Message_acknowledge = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acknowledge');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Marks the message as read.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=acknowledge');
+	}
+};
+
+Blockly.Blocks.Message_fetchWebhook = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchWebhook');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches the webhook used to create this message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=fetchWebhook');
+	}
+};
+
+Blockly.Blocks.Message_equals = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('message')
+			.setCheck('*');
+
+		this.appendValueInput('rawData')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Used mainly internally. Whether two messages are identical in properties. If you want to compare messages\nwithout checking all the properties, use `message.id === message2.id`, which is much more efficient. This\nmethod allows you to see if there are differences in content, embeds, attachments, nonce and tts properties.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.Message_toString = {
+	init() {
+		this.appendValueInput('Message')
+			.setCheck('Message')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the message\'s content instead of the object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=toString');
 	}
 };
 
@@ -5265,32 +10683,6 @@ Blockly.Blocks.MessageCollector_ended = {
 	}
 };
 
-Blockly.Blocks.MessageCollector__timeout = {
-	init() {
-		this.appendValueInput('MessageCollector')
-			.setCheck('MessageCollector')
-			.appendField('get _timeout of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Timeout');
-		this.setColour(230);
-		this.setTooltip('Timeout for cleanup');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=_timeout');
-	}
-};
-
-Blockly.Blocks.MessageCollector_listener = {
-	init() {
-		this.appendValueInput('MessageCollector')
-			.setCheck('MessageCollector')
-			.appendField('get listener of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'function');
-		this.setColour(230);
-		this.setTooltip('Call this to handle an event as a collectable element\nAccepts any event data as parameters');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=listener');
-	}
-};
-
 Blockly.Blocks.MessageCollector_next = {
 	init() {
 		this.appendValueInput('MessageCollector')
@@ -5301,6 +10693,63 @@ Blockly.Blocks.MessageCollector_next = {
 		this.setColour(230);
 		this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=next');
+	}
+};
+
+Blockly.Blocks.MessageCollector_message = {
+	init() {
+		this.appendValueInput('MessageCollector')
+			.setCheck('MessageCollector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits message')
+			.appendField(new Blockly.FieldVariable('message'), 'message');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the collector receives a message.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=message');
+	}
+};
+
+Blockly.Blocks.MessageCollector_collect = {
+	init() {
+		this.appendValueInput('MessageCollector')
+			.setCheck('MessageCollector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits collect')
+			.appendField(new Blockly.FieldVariable('element'), 'element').appendField(new Blockly.FieldVariable('collector'), 'collector');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever an element is collected.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=collect');
+	}
+};
+
+Blockly.Blocks.MessageCollector_end = {
+	init() {
+		this.appendValueInput('MessageCollector')
+			.setCheck('MessageCollector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits end')
+			.appendField(new Blockly.FieldVariable('collected'), 'collected').appendField(new Blockly.FieldVariable('reason'), 'reason');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the collector is finished collecting.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=end');
 	}
 };
 
@@ -5941,71 +11390,6 @@ Blockly.Blocks.MessageMentions_roles = {
 	}
 };
 
-Blockly.Blocks.MessageMentions__content = {
-	init() {
-		this.appendValueInput('MessageMentions')
-			.setCheck('MessageMentions')
-			.appendField('get _content of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Message');
-		this.setColour(230);
-		this.setTooltip('Content of the message');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=_content');
-	}
-};
-
-Blockly.Blocks.MessageMentions__client = {
-	init() {
-		this.appendValueInput('MessageMentions')
-			.setCheck('MessageMentions')
-			.appendField('get _client of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Client');
-		this.setColour(230);
-		this.setTooltip('The client the message is from');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=_client');
-	}
-};
-
-Blockly.Blocks.MessageMentions__guild = {
-	init() {
-		this.appendValueInput('MessageMentions')
-			.setCheck('MessageMentions')
-			.appendField('get _guild of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Guild');
-		this.setColour(230);
-		this.setTooltip('The guild the message is in');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=_guild');
-	}
-};
-
-Blockly.Blocks.MessageMentions__members = {
-	init() {
-		this.appendValueInput('MessageMentions')
-			.setCheck('MessageMentions')
-			.appendField('get _members of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'GuildMember']);
-		this.setColour(230);
-		this.setTooltip('Cached members for {@MessageMention#members}');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=_members');
-	}
-};
-
-Blockly.Blocks.MessageMentions__channels = {
-	init() {
-		this.appendValueInput('MessageMentions')
-			.setCheck('MessageMentions')
-			.appendField('get _channels of');
-		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'GuildChannel']);
-		this.setColour(230);
-		this.setTooltip('Cached channels for {@MessageMention#channels}');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=_channels');
-	}
-};
-
 Blockly.Blocks.MessageMentions_members = {
 	init() {
 		this.appendValueInput('MessageMentions')
@@ -6146,6 +11530,48 @@ Blockly.Blocks.MessageReaction_emoji = {
 		this.setColour(230);
 		this.setTooltip('The emoji of this reaction, either an Emoji object for known custom emojis, or a ReactionEmoji\nobject which has fewer properties. Whatever the prototype of the emoji, it will still have\n`name`, `id`, `identifier` and `toString()`');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=emoji');
+	}
+};
+
+Blockly.Blocks.MessageReaction_remove = {
+	init() {
+		this.appendValueInput('MessageReaction')
+			.setCheck('MessageReaction')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('remove with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Removes a user from this reaction.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=remove');
+	}
+};
+
+Blockly.Blocks.MessageReaction_fetchUsers = {
+	init() {
+		this.appendValueInput('MessageReaction')
+			.setCheck('MessageReaction')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchUsers with');
+
+
+		this.appendValueInput('limit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch all the users that gave this reaction. Resolves with a collection of users, mapped by their IDs.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=fetchUsers');
 	}
 };
 
@@ -6370,6 +11796,40 @@ Blockly.Blocks.OAuth2Application_createdAt = {
 	}
 };
 
+Blockly.Blocks.OAuth2Application_reset = {
+	init() {
+		this.appendValueInput('OAuth2Application')
+			.setCheck('OAuth2Application')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('reset');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Reset the app\'s secret and bot token.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=reset');
+	}
+};
+
+Blockly.Blocks.OAuth2Application_toString = {
+	init() {
+		this.appendValueInput('OAuth2Application')
+			.setCheck('OAuth2Application')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the app name rather than the app object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=toString');
+	}
+};
+
 Blockly.Blocks.PartialGuild_client = {
 	init() {
 		this.appendValueInput('PartialGuild')
@@ -6526,6 +11986,27 @@ Blockly.Blocks.PermissionOverwrites_type = {
 	}
 };
 
+Blockly.Blocks.PermissionOverwrites_delete = {
+	init() {
+		this.appendValueInput('PermissionOverwrites')
+			.setCheck('PermissionOverwrites')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
+
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Delete this Permission Overwrite.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PermissionOverwrites?scrollTo=delete');
+	}
+};
+
 Blockly.Blocks.Presence_status = {
 	init() {
 		this.appendValueInput('Presence')
@@ -6549,6 +12030,27 @@ Blockly.Blocks.Presence_game = {
 		this.setColour(230);
 		this.setTooltip('The game that the user is playing');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=game');
+	}
+};
+
+Blockly.Blocks.Presence_equals = {
+	init() {
+		this.appendValueInput('Presence')
+			.setCheck('Presence')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('presence')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this presence is equal to another');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=equals');
 	}
 };
 
@@ -6601,6 +12103,27 @@ Blockly.Blocks.Game_streaming = {
 		this.setColour(230);
 		this.setTooltip('Whether or not the game is being streamed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=streaming');
+	}
+};
+
+Blockly.Blocks.Game_equals = {
+	init() {
+		this.appendValueInput('Game')
+			.setCheck('Game')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('game')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this game is equal to another game');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=equals');
 	}
 };
 
@@ -6720,32 +12243,6 @@ Blockly.Blocks.ReactionCollector_ended = {
 	}
 };
 
-Blockly.Blocks.ReactionCollector__timeout = {
-	init() {
-		this.appendValueInput('ReactionCollector')
-			.setCheck('ReactionCollector')
-			.appendField('get _timeout of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'Timeout');
-		this.setColour(230);
-		this.setTooltip('Timeout for cleanup');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=_timeout');
-	}
-};
-
-Blockly.Blocks.ReactionCollector_listener = {
-	init() {
-		this.appendValueInput('ReactionCollector')
-			.setCheck('ReactionCollector')
-			.appendField('get listener of');
-		this.setInputsInline(true);
-		this.setOutput(true, 'function');
-		this.setColour(230);
-		this.setTooltip('Call this to handle an event as a collectable element\nAccepts any event data as parameters');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=listener');
-	}
-};
-
 Blockly.Blocks.ReactionCollector_next = {
 	init() {
 		this.appendValueInput('ReactionCollector')
@@ -6756,6 +12253,44 @@ Blockly.Blocks.ReactionCollector_next = {
 		this.setColour(230);
 		this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=next');
+	}
+};
+
+Blockly.Blocks.ReactionCollector_collect = {
+	init() {
+		this.appendValueInput('ReactionCollector')
+			.setCheck('ReactionCollector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits collect')
+			.appendField(new Blockly.FieldVariable('element'), 'element').appendField(new Blockly.FieldVariable('collector'), 'collector');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted whenever an element is collected.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=collect');
+	}
+};
+
+Blockly.Blocks.ReactionCollector_end = {
+	init() {
+		this.appendValueInput('ReactionCollector')
+			.setCheck('ReactionCollector')
+			.appendField('when');
+		this.appendDummyInput()
+			.appendField('emits end')
+			.appendField(new Blockly.FieldVariable('collected'), 'collected').appendField(new Blockly.FieldVariable('reason'), 'reason');
+		this.appendStatementInput('function')
+			.setCheck(null);
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(100);
+		this.setTooltip('Emitted when the collector is finished collecting.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=end');
 	}
 };
 
@@ -6808,6 +12343,23 @@ Blockly.Blocks.ReactionEmoji_identifier = {
 		this.setColour(230);
 		this.setTooltip('The identifier of this emoji, used for message reactions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=identifier');
+	}
+};
+
+Blockly.Blocks.ReactionEmoji_toString = {
+	init() {
+		this.appendValueInput('ReactionEmoji')
+			.setCheck('ReactionEmoji')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates the text required to form a graphical emoji on Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=toString');
 	}
 };
 
@@ -6963,6 +12515,273 @@ Blockly.Blocks.RichEmbed_file = {
 		this.setColour(230);
 		this.setTooltip('File to upload alongside this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=file');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setTitle = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTitle with');
+
+
+		this.appendValueInput('title')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the title of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTitle');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setDescription = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setDescription with');
+
+
+		this.appendValueInput('description')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the description of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setDescription');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setURL = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setURL with');
+
+
+		this.appendValueInput('url')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the URL of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setURL');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setColor = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setColor with');
+
+
+		this.appendValueInput('color')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the color of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setColor');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setAuthor = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setAuthor with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('icon')
+			.setCheck('*');
+
+		this.appendValueInput('url')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the author of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setAuthor');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setTimestamp = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTimestamp with');
+
+
+		this.appendValueInput('timestamp')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the timestamp of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTimestamp');
+	}
+};
+
+Blockly.Blocks.RichEmbed_addField = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addField with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.appendValueInput('inline')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Adds a field to the embed (max 25).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addField');
+	}
+};
+
+Blockly.Blocks.RichEmbed_addBlankField = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addBlankField with');
+
+
+		this.appendValueInput('inline')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Convenience function for `<RichEmbed>.addField(\'\u200B\', \'\u200B\', inline)`.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addBlankField');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setThumbnail = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setThumbnail with');
+
+
+		this.appendValueInput('url')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the thumbnail of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setThumbnail');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setImage = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setImage with');
+
+
+		this.appendValueInput('url')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the image of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setImage');
+	}
+};
+
+Blockly.Blocks.RichEmbed_setFooter = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setFooter with');
+
+
+		this.appendValueInput('text')
+			.setCheck('*');
+
+		this.appendValueInput('icon')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the footer of this embed.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setFooter');
+	}
+};
+
+Blockly.Blocks.RichEmbed_attachFile = {
+	init() {
+		this.appendValueInput('RichEmbed')
+			.setCheck('RichEmbed')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('attachFile with');
+
+
+		this.appendValueInput('file')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the file to upload alongside the embed. This file can be accessed via `attachment://fileName.extension` when\nsetting an embed image or author/footer icons. Only one file may be attached.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=attachFile');
 	}
 };
 
@@ -7174,6 +12993,346 @@ Blockly.Blocks.Role_calculatedPosition = {
 	}
 };
 
+Blockly.Blocks.Role_serialize = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('serialize');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get an object mapping permission names to whether or not the role enables that permission.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=serialize');
+	}
+};
+
+Blockly.Blocks.Role_hasPermission = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermission with');
+
+
+		this.appendValueInput('permission')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.appendValueInput('checkAdmin')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if the role has a permission.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermission');
+	}
+};
+
+Blockly.Blocks.Role_hasPermissions = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if the role has all specified permissions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermissions');
+	}
+};
+
+Blockly.Blocks.Role_comparePositionTo = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('comparePositionTo with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Compares this role\'s position to another role\'s.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositionTo');
+	}
+};
+
+Blockly.Blocks.Role_edit = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edits the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.Role_setName = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new name for the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.Role_setColor = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setColor with');
+
+
+		this.appendValueInput('color')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new color for the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setColor');
+	}
+};
+
+Blockly.Blocks.Role_setHoist = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setHoist with');
+
+
+		this.appendValueInput('hoist')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set whether or not the role should be hoisted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setHoist');
+	}
+};
+
+Blockly.Blocks.Role_setPosition = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPosition with');
+
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the position of the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setPosition');
+	}
+};
+
+Blockly.Blocks.Role_setPermissions = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the permissions of the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setPermissions');
+	}
+};
+
+Blockly.Blocks.Role_setMentionable = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setMentionable with');
+
+
+		this.appendValueInput('mentionable')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set whether this role is mentionable.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=setMentionable');
+	}
+};
+
+Blockly.Blocks.Role_delete = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
+
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes the role.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=delete');
+	}
+};
+
+Blockly.Blocks.Role_equals = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('role')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Whether this role equals another role. It compares all properties, so for most operations\nit is advisable to just compare `role.id === role2.id` as it is much faster and is often\nwhat most users need.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.Role_toString = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the role mention rather than the Role object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.Role_comparePositions = {
+	init() {
+		this.appendValueInput('Role')
+			.setCheck('Role')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('comparePositions with');
+
+
+		this.appendValueInput('role1')
+			.setCheck('*');
+
+		this.appendValueInput('role2')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Compares the positions of two roles.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositions');
+	}
+};
+
 Blockly.Blocks.TextChannel_topic = {
 	init() {
 		this.appendValueInput('TextChannel')
@@ -7366,6 +13525,638 @@ Blockly.Blocks.TextChannel_messageNotifications = {
 		this.setColour(230);
 		this.setTooltip('The type of message that should notify you\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=messageNotifications');
+	}
+};
+
+Blockly.Blocks.TextChannel_fetchWebhooks = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchWebhooks');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetch all webhooks for the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=fetchWebhooks');
+	}
+};
+
+Blockly.Blocks.TextChannel_createWebhook = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createWebhook with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('avatar')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Create a webhook for the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createWebhook');
+	}
+};
+
+Blockly.Blocks.TextChannel_send = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.TextChannel_fetchMessage = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessage with');
+
+
+		this.appendValueInput('messageID')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets a single message from this channel, regardless of it being cached or not. Since the single message fetching\nendpoint is reserved for bot accounts, this abstracts the `fetchMessages` method to obtain the single message when\nusing a user account.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=fetchMessage');
+	}
+};
+
+Blockly.Blocks.TextChannel_fetchMessages = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchMessages with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the past messages sent in this channel. Resolves with a collection mapping message ID\'s to Message objects.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=fetchMessages');
+	}
+};
+
+Blockly.Blocks.TextChannel_fetchPinnedMessages = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchPinnedMessages');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Fetches the pinned messages of this channel and returns a collection of them.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=fetchPinnedMessages');
+	}
+};
+
+Blockly.Blocks.TextChannel_search = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('search with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Performs a search within the channel.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=search');
+	}
+};
+
+Blockly.Blocks.TextChannel_createCollector = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createCollector with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a Message Collector');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createCollector');
+	}
+};
+
+Blockly.Blocks.TextChannel_createMessageCollector = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createMessageCollector with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a Message Collector.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createMessageCollector');
+	}
+};
+
+Blockly.Blocks.TextChannel_awaitMessages = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('awaitMessages with');
+
+
+		this.appendValueInput('filter')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Similar to createCollector but in promise form. Resolves with a collection of messages that pass the specified\nfilter.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=awaitMessages');
+	}
+};
+
+Blockly.Blocks.TextChannel_bulkDelete = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('bulkDelete with');
+
+
+		this.appendValueInput('messages')
+			.setCheck('*');
+
+		this.appendValueInput('filterOld')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Bulk delete given messages that are newer than two weeks.\n<warn>This is only available when using a bot account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=bulkDelete');
+	}
+};
+
+Blockly.Blocks.TextChannel_acknowledge = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('acknowledge');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Marks all messages in this channel as read.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=acknowledge');
+	}
+};
+
+Blockly.Blocks.TextChannel_sendMessage = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.TextChannel_sendEmbed = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.TextChannel_sendFiles = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFiles with');
+
+
+		this.appendValueInput('files')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send files to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=sendFiles');
+	}
+};
+
+Blockly.Blocks.TextChannel_sendFile = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.TextChannel_sendCode = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=sendCode');
+	}
+};
+
+Blockly.Blocks.TextChannel_permissionsFor = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('permissionsFor with');
+
+
+		this.appendValueInput('member')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=permissionsFor');
+	}
+};
+
+Blockly.Blocks.TextChannel_overwritePermissions = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('overwritePermissions with');
+
+
+		this.appendValueInput('userOrRole')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Overwrites the permissions for a user or role in this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=overwritePermissions');
+	}
+};
+
+Blockly.Blocks.TextChannel_edit = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edits the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.TextChannel_setName = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new name for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.TextChannel_setPosition = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPosition with');
+
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new position for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=setPosition');
+	}
+};
+
+Blockly.Blocks.TextChannel_setTopic = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTopic with');
+
+
+		this.appendValueInput('topic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new topic for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=setTopic');
+	}
+};
+
+Blockly.Blocks.TextChannel_createInvite = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createInvite with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Create an invite to this guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createInvite');
+	}
+};
+
+Blockly.Blocks.TextChannel_clone = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clone with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('withPermissions')
+			.setCheck('*');
+
+		this.appendValueInput('withTopic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clone this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=clone');
+	}
+};
+
+Blockly.Blocks.TextChannel_equals = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.TextChannel_toString = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=toString');
 	}
 };
 
@@ -7587,6 +14378,379 @@ Blockly.Blocks.User_dmChannel = {
 		this.setColour(230);
 		this.setTooltip('The DM between the client\'s user and this user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=dmChannel');
+	}
+};
+
+Blockly.Blocks.User_typingIn = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Check whether the user is typing in a channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingIn');
+	}
+};
+
+Blockly.Blocks.User_typingSinceIn = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingSinceIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the time that the user started typing.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingSinceIn');
+	}
+};
+
+Blockly.Blocks.User_typingDurationIn = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('typingDurationIn with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingDurationIn');
+	}
+};
+
+Blockly.Blocks.User_createDM = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates a DM channel between the client and the user.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=createDM');
+	}
+};
+
+Blockly.Blocks.User_deleteDM = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deleteDM');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deletes a DM channel (if one exists) between the client and the user. Resolves with the channel if successful.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=deleteDM');
+	}
+};
+
+Blockly.Blocks.User_addFriend = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addFriend');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sends a friend request to the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=addFriend');
+	}
+};
+
+Blockly.Blocks.User_removeFriend = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('removeFriend');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Removes the user from your friends.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=removeFriend');
+	}
+};
+
+Blockly.Blocks.User_block = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('block');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Blocks the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=block');
+	}
+};
+
+Blockly.Blocks.User_unblock = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('unblock');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Unblocks the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=unblock');
+	}
+};
+
+Blockly.Blocks.User_fetchProfile = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchProfile');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Get the profile of the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=fetchProfile');
+	}
+};
+
+Blockly.Blocks.User_setNote = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setNote with');
+
+
+		this.appendValueInput('note')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets a note for the user.\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=setNote');
+	}
+};
+
+Blockly.Blocks.User_equals = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('user')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.User_toString = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=toString');
+	}
+};
+
+Blockly.Blocks.User_send = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=send');
+	}
+};
+
+Blockly.Blocks.User_sendMessage = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.User_sendEmbed = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendEmbed with');
+
+
+		this.appendValueInput('embed')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send an embed to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=sendEmbed');
+	}
+};
+
+Blockly.Blocks.User_sendFile = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.User_sendCode = {
+	init() {
+		this.appendValueInput('User')
+			.setCheck('User')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block to this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=sendCode');
 	}
 };
 
@@ -7941,6 +15105,307 @@ Blockly.Blocks.VoiceChannel_messageNotifications = {
 	}
 };
 
+Blockly.Blocks.VoiceChannel_setBitrate = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setBitrate with');
+
+
+		this.appendValueInput('bitrate')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the bitrate of the channel (in kbps).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=setBitrate');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_setUserLimit = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setUserLimit with');
+
+
+		this.appendValueInput('userLimit')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the user limit of the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=setUserLimit');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_join = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('join');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Attempts to join this voice channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=join');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_permissionsFor = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('permissionsFor with');
+
+
+		this.appendValueInput('member')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=permissionsFor');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_overwritePermissions = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('overwritePermissions with');
+
+
+		this.appendValueInput('userOrRole')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Overwrites the permissions for a user or role in this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=overwritePermissions');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_edit = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('data')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edits the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_setName = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setName with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new name for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=setName');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_setPosition = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setPosition with');
+
+
+		this.appendValueInput('position')
+			.setCheck('*');
+
+		this.appendValueInput('relative')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new position for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=setPosition');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_setTopic = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setTopic with');
+
+
+		this.appendValueInput('topic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set a new topic for the guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=setTopic');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_createInvite = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('createInvite with');
+
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Create an invite to this guild channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=createInvite');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_clone = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clone with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('withPermissions')
+			.setCheck('*');
+
+		this.appendValueInput('withTopic')
+			.setCheck('*');
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clone this channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=clone');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_equals = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('channel')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.VoiceChannel_toString = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('toString');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=toString');
+	}
+};
+
 Blockly.Blocks.VoiceRegion_id = {
 	init() {
 		this.appendValueInput('VoiceRegion')
@@ -8136,29 +15601,671 @@ Blockly.Blocks.Webhook_owner = {
 	}
 };
 
-Blockly.Blocks.Collection__array = {
+Blockly.Blocks.Webhook_send = {
 	init() {
-		this.appendValueInput('Collection')
-			.setCheck('Collection')
-			.appendField('get _array of');
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('send with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Array');
-		this.setColour(230);
-		this.setTooltip('Cached array for the `array()` method - will be reset to `null` whenever `set()` or `delete()` are called');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=_array');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=send');
 	}
 };
 
-Blockly.Blocks.Collection__keyArray = {
+Blockly.Blocks.Webhook_sendMessage = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendMessage with');
+
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a message with this webhook');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=sendMessage');
+	}
+};
+
+Blockly.Blocks.Webhook_sendFile = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendFile with');
+
+
+		this.appendValueInput('attachment')
+			.setCheck('*');
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a file with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=sendFile');
+	}
+};
+
+Blockly.Blocks.Webhook_sendCode = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendCode with');
+
+
+		this.appendValueInput('lang')
+			.setCheck('*');
+
+		this.appendValueInput('content')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a code block with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=sendCode');
+	}
+};
+
+Blockly.Blocks.Webhook_sendSlackMessage = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendSlackMessage with');
+
+
+		this.appendValueInput('body')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Send a raw slack message with this webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=sendSlackMessage');
+	}
+};
+
+Blockly.Blocks.Webhook_edit = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('edit with');
+
+
+		this.appendValueInput('name')
+			.setCheck('*');
+
+		this.appendValueInput('avatar')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Edit the webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=edit');
+	}
+};
+
+Blockly.Blocks.Webhook_delete = {
+	init() {
+		this.appendValueInput('Webhook')
+			.setCheck('Webhook')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('delete with');
+
+
+		this.appendValueInput('reason')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Delete the webhook.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=delete');
+	}
+};
+
+Blockly.Blocks.Collection_array = {
 	init() {
 		this.appendValueInput('Collection')
 			.setCheck('Collection')
-			.appendField('get _keyArray of');
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('array');
+
 		this.setInputsInline(true);
-		this.setOutput(true, 'Array');
-		this.setColour(230);
-		this.setTooltip('Cached array for the `keyArray()` method - will be reset to `null` whenever `set()` or `delete()` are called');
-		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=_keyArray');
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates an ordered array of the values of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.values())` instead.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=array');
+	}
+};
+
+Blockly.Blocks.Collection_keyArray = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('keyArray');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates an ordered array of the keys of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.keys())` instead.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=keyArray');
+	}
+};
+
+Blockly.Blocks.Collection_first = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('first with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the first value(s) in this collection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=first');
+	}
+};
+
+Blockly.Blocks.Collection_firstKey = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('firstKey with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the first key(s) in this collection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=firstKey');
+	}
+};
+
+Blockly.Blocks.Collection_last = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('last with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the last value(s) in this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=last');
+	}
+};
+
+Blockly.Blocks.Collection_lastKey = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('lastKey with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains the last key(s) in this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=lastKey');
+	}
+};
+
+Blockly.Blocks.Collection_random = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('random with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains random value(s) from this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=random');
+	}
+};
+
+Blockly.Blocks.Collection_randomKey = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('randomKey with');
+
+
+		this.appendValueInput('count')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Obtains random key(s) from this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=randomKey');
+	}
+};
+
+Blockly.Blocks.Collection_findAll = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('findAll with');
+
+
+		this.appendValueInput('prop')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Searches for all items where their specified property\'s value is identical to the given value\n(`item[prop] === value`).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findAll');
+	}
+};
+
+Blockly.Blocks.Collection_find = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('find with');
+
+
+		this.appendValueInput('propOrFn')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Searches for a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find).\n<warn>All collections used in Discord.js are mapped using their `id` property, and if you want to find by id you\nshould use the `get` method. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get) for details.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=find');
+	}
+};
+
+Blockly.Blocks.Collection_findKey = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('findKey with');
+
+
+		this.appendValueInput('propOrFn')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Searches for the key of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findKey');
+	}
+};
+
+Blockly.Blocks.Collection_exists = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('exists with');
+
+
+		this.appendValueInput('prop')
+			.setCheck('*');
+
+		this.appendValueInput('value')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Searches for the existence of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`).\n<warn>Do not use this to check for an item by its ID. Instead, use `collection.has(id)`. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has) for details.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=exists');
+	}
+};
+
+Blockly.Blocks.Collection_filter = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('filter with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('thisArg')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter),\nbut returns a Collection instead of an Array.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filter');
+	}
+};
+
+Blockly.Blocks.Collection_filterArray = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('filterArray with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('thisArg')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filterArray');
+	}
+};
+
+Blockly.Blocks.Collection_map = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('map with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('thisArg')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=map');
+	}
+};
+
+Blockly.Blocks.Collection_some = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('some with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('thisArg')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=some');
+	}
+};
+
+Blockly.Blocks.Collection_every = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('every with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('thisArg')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=every');
+	}
+};
+
+Blockly.Blocks.Collection_reduce = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('reduce with');
+
+
+		this.appendValueInput('fn')
+			.setCheck('*');
+
+		this.appendValueInput('initialValue')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Identical to\n[Array.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=reduce');
+	}
+};
+
+Blockly.Blocks.Collection_clone = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clone');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Creates an identical shallow copy of this collection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=clone');
+	}
+};
+
+Blockly.Blocks.Collection_concat = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('concat with');
+
+
+		this.appendValueInput('collections')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Combines this collection with others into a new collection. None of the source collections are modified.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=concat');
+	}
+};
+
+Blockly.Blocks.Collection_deleteAll = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deleteAll');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Calls the `delete()` method on all items that have it.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=deleteAll');
+	}
+};
+
+Blockly.Blocks.Collection_equals = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('equals with');
+
+
+		this.appendValueInput('collection')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks if this collection shares identical key-value pairings with another.\nThis is different to checking for equality using equal-signs, because\nthe collections may be different objects, but contain the same data.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.Collection_sort = {
+	init() {
+		this.appendValueInput('Collection')
+			.setCheck('Collection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sort with');
+
+
+		this.appendValueInput('compareFunction')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('The sort() method sorts the elements of a collection in place and returns the collection.\nThe sort is not necessarily stable. The default sort order is according to string Unicode code points.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=sort');
 	}
 };
 
@@ -8249,5 +16356,322 @@ Blockly.Blocks.Permissions_DEFAULT = {
 		this.setColour(230);
 		this.setTooltip('Bitfield representing the default permissions for users');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=DEFAULT');
+	}
+};
+
+Blockly.Blocks.Permissions_has = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('has with');
+
+
+		this.appendValueInput('permission')
+			.setCheck('*');
+
+		this.appendValueInput('checkAdmin')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the bitfield has a permission, or multiple permissions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=has');
+	}
+};
+
+Blockly.Blocks.Permissions_missing = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('missing with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('checkAdmin')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets all given permissions that are missing from the bitfield.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missing');
+	}
+};
+
+Blockly.Blocks.Permissions_add = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('add with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Adds permissions to this one, creating a new instance to represent the new bitfield.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=add');
+	}
+};
+
+Blockly.Blocks.Permissions_remove = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('remove with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Removes permissions to this one, creating a new instance to represent the new bitfield.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=remove');
+	}
+};
+
+Blockly.Blocks.Permissions_serialize = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('serialize with');
+
+
+		this.appendValueInput('checkAdmin')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets an object mapping permission name (like `VIEW_CHANNEL`) to a {@link boolean} indicating whether the\npermission is available.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=serialize');
+	}
+};
+
+Blockly.Blocks.Permissions_hasPermission = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermission with');
+
+
+		this.appendValueInput('permission')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the user has a certain permission, e.g. `READ_MESSAGES`.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermission');
+	}
+};
+
+Blockly.Blocks.Permissions_hasPermissions = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('hasPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the user has all specified permissions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermissions');
+	}
+};
+
+Blockly.Blocks.Permissions_missingPermissions = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('missingPermissions with');
+
+
+		this.appendValueInput('permissions')
+			.setCheck('*');
+
+		this.appendValueInput('explicit')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Checks whether the user has all specified permissions, and lists any missing permissions.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missingPermissions');
+	}
+};
+
+Blockly.Blocks.Permissions_resolve = {
+	init() {
+		this.appendValueInput('Permissions')
+			.setCheck('Permissions')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('resolve with');
+
+
+		this.appendValueInput('permission')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Resolves permissions to their numeric form.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=resolve');
+	}
+};
+
+Blockly.Blocks.SnowflakeUtil_generate = {
+	init() {
+		this.appendValueInput('SnowflakeUtil')
+			.setCheck('SnowflakeUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('generate');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Generates a Discord snowflake.\n<info>This hardcodes the worker ID as 1 and the process ID as 0.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=generate');
+	}
+};
+
+Blockly.Blocks.SnowflakeUtil_deconstruct = {
+	init() {
+		this.appendValueInput('SnowflakeUtil')
+			.setCheck('SnowflakeUtil')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('deconstruct with');
+
+
+		this.appendValueInput('snowflake')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Deconstructs a Discord snowflake.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=deconstruct');
+	}
+};
+
+Blockly.Blocks.Util_splitMessage = {
+	init() {
+		this.appendValueInput('Util')
+			.setCheck('Util')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('splitMessage with');
+
+
+		this.appendValueInput('text')
+			.setCheck('*');
+
+		this.appendValueInput('options')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Splits a string into multiple chunks at a designated character that do not exceed a specific length.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=splitMessage');
+	}
+};
+
+Blockly.Blocks.Util_escapeMarkdown = {
+	init() {
+		this.appendValueInput('Util')
+			.setCheck('Util')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('escapeMarkdown with');
+
+
+		this.appendValueInput('text')
+			.setCheck('*');
+
+		this.appendValueInput('onlyCodeBlock')
+			.setCheck('*');
+
+		this.appendValueInput('onlyInlineCode')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Escapes any Discord-flavour markdown in a string.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=escapeMarkdown');
+	}
+};
+
+Blockly.Blocks.Util_fetchRecommendedShards = {
+	init() {
+		this.appendValueInput('Util')
+			.setCheck('Util')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('fetchRecommendedShards with');
+
+
+		this.appendValueInput('token')
+			.setCheck('*');
+
+		this.appendValueInput('guildsPerShard')
+			.setCheck('*');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Gets the recommended shard count from Discord.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=fetchRecommendedShards');
 	}
 };

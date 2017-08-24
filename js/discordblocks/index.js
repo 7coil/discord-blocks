@@ -1,17 +1,5 @@
 /* exported getCode saveCode runCode loadCode */
 
-// http://stackoverflow.com/questions/6234773/can-i-escape-html-special-chars-in-javascript
-function escapeHtml(unsafe) {
-	return unsafe
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;')
-		.replace(/"/g, '&quot;')
-		.replace(/'/g, '&#039;');
-}
-
-const code = document.getElementById('code');
-
 const save = (data, name) => {
 	const a = document.createElement('a');
 	document.body.appendChild(a);
@@ -47,8 +35,8 @@ function loadCode() {
 	Blockly.Xml.domToWorkspace(xml, workspace);
 }
 
-window.addEventListener('beforeunload', (e) => {
-	const confirm = 'You may have unsaved code.';
-	e.returnValue = confirm;
-	return confirm;
-});
+//	window.addEventListener('beforeunload', (e) => {
+//		const confirm = 'You may have unsaved code.';
+//		e.returnValue = confirm;
+//		return confirm;
+//	});
