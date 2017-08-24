@@ -13,10 +13,10 @@ function escapeHtml(unsafe) {
 const code = document.getElementById('code');
 
 const save = (data, name) => {
-    const a = document.createElement("a");
-    document.body.appendChild(a);
-    a.style = "display: none";
-	const blob = new Blob([data], { type: "octet/stream" });
+	const a = document.createElement('a');
+	document.body.appendChild(a);
+	a.style = 'display: none';
+	const blob = new Blob([data], { type: 'octet/stream' });
 	const url = window.URL.createObjectURL(blob);
 	a.href = url;
 	a.download = name;
@@ -43,11 +43,11 @@ function runCode() {
 function loadCode() {
 	const xml_text = prompt('Insert your XML saved extract');
 	if (!xml_text) return;
-	var xml = Blockly.Xml.textToDom(xml_text);
+	const xml = Blockly.Xml.textToDom(xml_text);
 	Blockly.Xml.domToWorkspace(xml, workspace);
 }
 
-window.addEventListener("beforeunload", (e) => {
+window.addEventListener('beforeunload', (e) => {
 	const confirm = 'You may have unsaved code.';
 	e.returnValue = confirm;
 	return confirm;

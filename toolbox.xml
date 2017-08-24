@@ -1,336 +1,855 @@
-<xml id="toolbox" style="display: none">
-	<category name="Logic">
-		<category name="If">
-			<block type="controls_if"></block>
-			<block type="controls_if">
-				<mutation else="1"></mutation>
-			</block>
-			<block type="controls_if">
-				<mutation elseif="1" else="1"></mutation>
-			</block>
-		</category>
-		<category name="Boolean">
-			<block type="logic_compare"></block>
-			<block type="logic_operation"></block>
-			<block type="logic_negate"></block>
-			<block type="logic_boolean"></block>
-			<block type="logic_null"></block>
-			<block type="logic_ternary"></block>
-		</category>
-	</category>
-	<category name="Loops">
-		<block type="controls_repeat_ext">
-			<value name="TIMES">
-				<block type="math_number">
-					<field name="NUM">10</field>
-				</block>
-			</value>
-		</block>
-		<block type="controls_whileUntil"></block>
-		<block type="controls_for">
-			<field name="VAR">i</field>
-			<value name="FROM">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-			<value name="TO">
-				<block type="math_number">
-					<field name="NUM">10</field>
-				</block>
-			</value>
-			<value name="BY">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-		</block>
-		<block type="controls_forEach"></block>
-		<block type="controls_flow_statements"></block>
-	</category>
-	<category name="Math">
-		<block type="math_number"></block>
-		<block type="math_arithmetic"></block>
-		<block type="math_single"></block>
-		<block type="math_trig"></block>
-		<block type="math_constant"></block>
-		<block type="math_number_property"></block>
-		<block type="math_round"></block>
-		<block type="math_on_list"></block>
-		<block type="math_modulo"></block>
-		<block type="math_constrain">
-			<value name="LOW">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-			<value name="HIGH">
-				<block type="math_number">
-					<field name="NUM">100</field>
-				</block>
-			</value>
-		</block>
-		<block type="math_random_int">
-			<value name="FROM">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-			<value name="TO">
-				<block type="math_number">
-					<field name="NUM">100</field>
-				</block>
-			</value>
-		</block>
-		<block type="math_random_float"></block>
-	</category>
-	<category name="Lists">
-		<block type="lists_create_empty"></block>
-		<block type="lists_create_with"></block>
-		<block type="lists_repeat">
-			<value name="NUM">
-				<block type="math_number">
-					<field name="NUM">5</field>
-				</block>
-			</value>
-		</block>
-		<block type="lists_length"></block>
-		<block type="lists_isEmpty"></block>
-		<block type="lists_indexOf"></block>
-		<block type="lists_getIndex"></block>
-		<block type="lists_setIndex"></block>
-	</category>
-	<category name="Variables" custom="VARIABLE"></category>
-	<category name="Functions" custom="PROCEDURE"></category>
-	<sep></sep>
-	<category name="Premade Functions">
-		<category name="Randomize">
-			<block type="procedures_defnoreturn">
-				<mutation>
-					<arg name="list"></arg>
-				</mutation>
-				<field name="NAME">randomize</field>
-				<statement name="STACK">
-					<block type="controls_for" inline="true">
-						<field name="VAR">x</field>
-						<value name="FROM">
-							<block type="math_number">
-								<field name="NUM">1</field>
-							</block>
-						</value>
-						<value name="TO">
-							<block type="lists_length" inline="false">
-								<value name="VALUE">
-									<block type="variables_get">
-										<field name="VAR">list</field>
-									</block>
-								</value>
-							</block>
-						</value>
-						<value name="BY">
-							<block type="math_number">
-								<field name="NUM">1</field>
-							</block>
-						</value>
-						<statement name="DO">
-							<block type="variables_set" inline="false">
-								<field name="VAR">y</field>
-								<value name="VALUE">
-									<block type="math_random_int" inline="true">
-										<value name="FROM">
-											<block type="math_number">
-												<field name="NUM">1</field>
-											</block>
-										</value>
-										<value name="TO">
-											<block type="lists_length" inline="false">
-												<value name="VALUE">
-													<block type="variables_get">
-														<field name="VAR">list</field>
-													</block>
-												</value>
-											</block>
-										</value>
-									</block>
-								</value>
-								<next>
-									<block type="variables_set" inline="false">
-										<field name="VAR">temp</field>
-										<value name="VALUE">
-											<block type="lists_getIndex" inline="true">
-												<mutation statement="false" at="true"></mutation>
-												<field name="MODE">GET</field>
-												<field name="WHERE">FROM_START</field>
-												<value name="AT">
-													<block type="variables_get">
-														<field name="VAR">y</field>
-													</block>
-												</value>
-												<value name="VALUE">
-													<block type="variables_get">
-														<field name="VAR">list</field>
-													</block>
-												</value>
-											</block>
-										</value>
-										<next>
-											<block type="lists_setIndex" inline="false">
-												<value name="AT">
-													<block type="variables_get">
-														<field name="VAR">y</field>
-													</block>
-												</value>
-												<value name="LIST">
-													<block type="variables_get">
-														<field name="VAR">list</field>
-													</block>
-												</value>
-												<value name="TO">
-													<block type="lists_getIndex" inline="true">
-														<mutation statement="false" at="true"></mutation>
-														<field name="MODE">GET</field>
-														<field name="WHERE">FROM_START</field>
-														<value name="AT">
-															<block type="variables_get">
-																<field name="VAR">x</field>
-															</block>
-														</value>
-														<value name="VALUE">
-															<block type="variables_get">
-																<field name="VAR">list</field>
-															</block>
-														</value>
-													</block>
-												</value>
-												<next>
-													<block type="lists_setIndex" inline="false">
-														<value name="AT">
-															<block type="variables_get">
-																<field name="VAR">x</field>
-															</block>
-														</value>
-														<value name="LIST">
-															<block type="variables_get">
-																<field name="VAR">list</field>
-															</block>
-														</value>
-														<value name="TO">
-															<block type="variables_get">
-																<field name="VAR">temp</field>
-															</block>
-														</value>
-													</block>
-												</next>
-											</block>
-										</next>
-									</block>
-								</next>
-							</block>
-						</statement>
-					</block>
-				</statement>
-			</block>
-		</category>
-		<category name="Jabberwocky">
-			<block type="text_print">
-				<value name="TEXT">
-					<block type="text">
-						<field name="TEXT">'Twas brillig, and the slithy toves</field>
-					</block>
-				</value>
-				<next>
-					<block type="text_print">
-						<value name="TEXT">
-							<block type="text">
-								<field name="TEXT">  Did gyre and gimble in the wabe:</field>
-							</block>
-						</value>
-						<next>
-							<block type="text_print">
-								<value name="TEXT">
-									<block type="text">
-										<field name="TEXT">All mimsy were the borogroves,</field>
-									</block>
-								</value>
-								<next>
-									<block type="text_print">
-										<value name="TEXT">
-											<block type="text">
-												<field name="TEXT">  And the mome raths outgrabe.</field>
-											</block>
-										</value>
-									</block>
-								</next>
-							</block>
-						</next>
-					</block>
-				</next>
-			</block>
-			<block type="text_print">
-				<value name="TEXT">
-					<block type="text">
-						<field name="TEXT">"Beware the Jabberwock, my son!</field>
-					</block>
-				</value>
-				<next>
-					<block type="text_print">
-						<value name="TEXT">
-							<block type="text">
-								<field name="TEXT">  The jaws that bite, the claws that catch!</field>
-							</block>
-						</value>
-						<next>
-							<block type="text_print">
-								<value name="TEXT">
-									<block type="text">
-										<field name="TEXT">Beware the Jubjub bird, and shun</field>
-									</block>
-								</value>
-								<next>
-									<block type="text_print">
-										<value name="TEXT">
-											<block type="text">
-												<field name="TEXT">  The frumious Bandersnatch!"</field>
-											</block>
-										</value>
-									</block>
-								</next>
-							</block>
-						</next>
-					</block>
-				</next>
-			</block>
-		</category>
-	</category>
-	<category name="Discord.js">
-		<category name="Client">
-			<category name="Constructor">
-				<block type="client_constructor"></block>
-				<block type="clientoptions"></block>
-				<block type="clientoption_messagecachemaxsize"></block>
-				<block type="clientoption_shardcount"></block>
-				<block type="clientoption_shardid"></block>
-				<block type="clientoption_apirequestmethod"></block>
-				<block type="clientoption_messagecachelifetime"></block>
-				<block type="clientoption_messagesweepinterval"></block>
-				<block type="clientoption_fetchallmembers"></block>
-				<block type="clientoption_disableeveryone"></block>
-				<block type="clientoption_sync"></block>
-				<block type="clientoption_restwsbridgetimeout"></block>
-				<block type="clientoption_resttimeoffset"></block>
-			</category>
-			<category name="Properties">
-				<block type="client_browser"></block>
-				<block type="client_ping"></block>
-				<block type="client_pings"></block>
-				<block type="client_readytimestamp"></block>
-			</category>
-			<category name="Methods">
+<?xml version="1.0"?>
+<xml>
+	<category name="Client">
 
-			</category>
-			<category name="Events">
-
-			</category>
-		</category>
+		<block type="Client_constructor"></block>
+		<block type="Client_options"></block>
+		<block type="Client_rest"></block>
+		<block type="Client_dataManager"></block>
+		<block type="Client_manager"></block>
+		<block type="Client_ws"></block>
+		<block type="Client_resolver"></block>
+		<block type="Client_actions"></block>
+		<block type="Client_voice"></block>
+		<block type="Client_shard"></block>
+		<block type="Client_users"></block>
+		<block type="Client_guilds"></block>
+		<block type="Client_channels"></block>
+		<block type="Client_presences"></block>
+		<block type="Client_token"></block>
+		<block type="Client_user"></block>
+		<block type="Client_readyAt"></block>
+		<block type="Client_broadcasts"></block>
+		<block type="Client_pings"></block>
+		<block type="Client__timeouts"></block>
+		<block type="Client__intervals"></block>
+		<block type="Client__pingTimestamp"></block>
+		<block type="Client_status"></block>
+		<block type="Client_uptime"></block>
+		<block type="Client_ping"></block>
+		<block type="Client_voiceConnections"></block>
+		<block type="Client_emojis"></block>
+		<block type="Client_readyTimestamp"></block>
+		<block type="Client_browser"></block>
 	</category>
+	<category name="ClientDataResolver">
+
+		<block type="ClientDataResolver_constructor"></block>
+	</category>
+	<category name="ClientManager">
+
+		<block type="ClientManager_client"></block>
+		<block type="ClientManager_heartbeatInterval"></block>
+		<block type="ClientManager_status"></block>
+	</category>
+	<category name="DiscordAPIError">
+
+		<block type="DiscordAPIError_code"></block>
+	</category>
+	<category name="RequestHandler">
+
+		<block type="RequestHandler_constructor"></block>
+		<block type="RequestHandler_restManager"></block>
+		<block type="RequestHandler_queue"></block>
+		<block type="RequestHandler_globalLimit"></block>
+	</category>
+	<category name="SequentialRequestHandler">
+
+		<block type="SequentialRequestHandler_constructor"></block>
+		<block type="SequentialRequestHandler_endpoint"></block>
+		<block type="SequentialRequestHandler_timeDifference"></block>
+		<block type="SequentialRequestHandler_busy"></block>
+		<block type="SequentialRequestHandler_restManager"></block>
+		<block type="SequentialRequestHandler_queue"></block>
+		<block type="SequentialRequestHandler_globalLimit"></block>
+	</category>
+	<category name="ClientVoiceManager">
+
+		<block type="ClientVoiceManager_client"></block>
+		<block type="ClientVoiceManager_connections"></block>
+	</category>
+	<category name="StreamDispatcher">
+
+		<block type="StreamDispatcher_player"></block>
+		<block type="StreamDispatcher_stream"></block>
+		<block type="StreamDispatcher_paused"></block>
+		<block type="StreamDispatcher_destroyed"></block>
+		<block type="StreamDispatcher_passes"></block>
+		<block type="StreamDispatcher_time"></block>
+		<block type="StreamDispatcher_totalStreamTime"></block>
+	</category>
+	<category name="BaseOpus">
+
+		<block type="BaseOpus_constructor"></block>
+		<block type="BaseOpus_bitrate"></block>
+		<block type="BaseOpus_options"></block>
+	</category>
+	<category name="AudioPlayer">
+
+		<block type="AudioPlayer_voiceConnection"></block>
+		<block type="AudioPlayer_prism"></block>
+		<block type="AudioPlayer_transcoder"></block>
+		<block type="AudioPlayer_dispatcher"></block>
+	</category>
+	<category name="VoiceReceiver">
+
+		<block type="VoiceReceiver_destroyed"></block>
+		<block type="VoiceReceiver_voiceConnection"></block>
+	</category>
+	<category name="SecretKey">
+
+		<block type="SecretKey_key"></block>
+	</category>
+	<category name="VolumeInterface">
+
+		<block type="VolumeInterface_volume"></block>
+		<block type="VolumeInterface_volumeDecibels"></block>
+		<block type="VolumeInterface_volumeLogarithmic"></block>
+	</category>
+	<category name="VoiceBroadcast">
+
+		<block type="VoiceBroadcast_client"></block>
+		<block type="VoiceBroadcast_prism"></block>
+		<block type="VoiceBroadcast_currentTranscoder"></block>
+		<block type="VoiceBroadcast_dispatchers"></block>
+	</category>
+	<category name="VoiceConnection">
+
+		<block type="VoiceConnection_voiceManager"></block>
+		<block type="VoiceConnection_client"></block>
+		<block type="VoiceConnection_prism"></block>
+		<block type="VoiceConnection_channel"></block>
+		<block type="VoiceConnection_status"></block>
+		<block type="VoiceConnection_speaking"></block>
+		<block type="VoiceConnection_receivers"></block>
+		<block type="VoiceConnection_authentication"></block>
+		<block type="VoiceConnection_player"></block>
+		<block type="VoiceConnection_ssrcMap"></block>
+		<block type="VoiceConnection_sockets"></block>
+		<block type="VoiceConnection_dispatcher"></block>
+	</category>
+	<category name="VoiceConnectionUDPClient">
+
+		<block type="VoiceConnectionUDPClient_voiceConnection"></block>
+		<block type="VoiceConnectionUDPClient_socket"></block>
+		<block type="VoiceConnectionUDPClient_discordAddress"></block>
+		<block type="VoiceConnectionUDPClient_localAddress"></block>
+		<block type="VoiceConnectionUDPClient_localPort"></block>
+		<block type="VoiceConnectionUDPClient_discordPort"></block>
+	</category>
+	<category name="VoiceWebSocket">
+
+		<block type="VoiceWebSocket_client"></block>
+		<block type="VoiceWebSocket_voiceConnection"></block>
+		<block type="VoiceWebSocket_attempts"></block>
+		<block type="VoiceWebSocket_ws"></block>
+	</category>
+	<category name="WebhookClient">
+
+		<block type="WebhookClient_constructor"></block>
+		<block type="WebhookClient_options"></block>
+		<block type="WebhookClient_rest"></block>
+		<block type="WebhookClient_resolver"></block>
+		<block type="WebhookClient__timeouts"></block>
+		<block type="WebhookClient__intervals"></block>
+		<block type="WebhookClient_client"></block>
+		<block type="WebhookClient_name"></block>
+		<block type="WebhookClient_token"></block>
+		<block type="WebhookClient_avatar"></block>
+		<block type="WebhookClient_id"></block>
+		<block type="WebhookClient_guildID"></block>
+		<block type="WebhookClient_channelID"></block>
+		<block type="WebhookClient_owner"></block>
+	</category>
+	<category name="WebSocketConnection">
+
+		<block type="WebSocketConnection_constructor"></block>
+		<block type="WebSocketConnection_manager"></block>
+		<block type="WebSocketConnection_client"></block>
+		<block type="WebSocketConnection_ws"></block>
+		<block type="WebSocketConnection_sequence"></block>
+		<block type="WebSocketConnection_status"></block>
+		<block type="WebSocketConnection_packetManager"></block>
+		<block type="WebSocketConnection_lastPingTimestamp"></block>
+		<block type="WebSocketConnection_ratelimit"></block>
+		<block type="WebSocketConnection_disabledEvents"></block>
+		<block type="WebSocketConnection_closeSequence"></block>
+		<block type="WebSocketConnection_expectingClose"></block>
+		<block type="WebSocketConnection_ENCODING"></block>
+	</category>
+	<category name="WebSocketManager">
+
+		<block type="WebSocketManager_client"></block>
+		<block type="WebSocketManager_connection"></block>
+	</category>
+	<category name="Shard">
+
+		<block type="Shard_constructor"></block>
+		<block type="Shard_manager"></block>
+		<block type="Shard_id"></block>
+		<block type="Shard_env"></block>
+		<block type="Shard_process"></block>
+	</category>
+	<category name="ShardClientUtil">
+
+		<block type="ShardClientUtil_constructor"></block>
+		<block type="ShardClientUtil_id"></block>
+		<block type="ShardClientUtil_count"></block>
+	</category>
+	<category name="ShardingManager">
+
+		<block type="ShardingManager_constructor"></block>
+		<block type="ShardingManager_file"></block>
+		<block type="ShardingManager_totalShards"></block>
+		<block type="ShardingManager_respawn"></block>
+		<block type="ShardingManager_shardArgs"></block>
+		<block type="ShardingManager_token"></block>
+		<block type="ShardingManager_shards"></block>
+	</category>
+	<category name="Attachment">
+
+		<block type="Attachment_constructor"></block>
+		<block type="Attachment_name"></block>
+		<block type="Attachment_attachment"></block>
+	</category>
+	<category name="Channel">
+
+		<block type="Channel_client"></block>
+		<block type="Channel_type"></block>
+		<block type="Channel_id"></block>
+		<block type="Channel_createdTimestamp"></block>
+		<block type="Channel_createdAt"></block>
+	</category>
+	<category name="ClientUser">
+
+		<block type="ClientUser_verified"></block>
+		<block type="ClientUser_email"></block>
+		<block type="ClientUser_friends"></block>
+		<block type="ClientUser_blocked"></block>
+		<block type="ClientUser_notes"></block>
+		<block type="ClientUser_premium"></block>
+		<block type="ClientUser_mfaEnabled"></block>
+		<block type="ClientUser_mobile"></block>
+		<block type="ClientUser_settings"></block>
+		<block type="ClientUser_guildSettings"></block>
+		<block type="ClientUser_client"></block>
+		<block type="ClientUser_id"></block>
+		<block type="ClientUser_username"></block>
+		<block type="ClientUser_discriminator"></block>
+		<block type="ClientUser_avatar"></block>
+		<block type="ClientUser_bot"></block>
+		<block type="ClientUser_lastMessageID"></block>
+		<block type="ClientUser_lastMessage"></block>
+		<block type="ClientUser_createdTimestamp"></block>
+		<block type="ClientUser_createdAt"></block>
+		<block type="ClientUser_presence"></block>
+		<block type="ClientUser_avatarURL"></block>
+		<block type="ClientUser_defaultAvatarURL"></block>
+		<block type="ClientUser_displayAvatarURL"></block>
+		<block type="ClientUser_tag"></block>
+		<block type="ClientUser_note"></block>
+		<block type="ClientUser_dmChannel"></block>
+	</category>
+	<category name="ClientUserChannelOverride">
+
+		<block type="ClientUserChannelOverride_muted"></block>
+		<block type="ClientUserChannelOverride_messageNotifications"></block>
+	</category>
+	<category name="ClientUserGuildSettings">
+
+		<block type="ClientUserGuildSettings_client"></block>
+		<block type="ClientUserGuildSettings_guildID"></block>
+		<block type="ClientUserGuildSettings_mobilePush"></block>
+		<block type="ClientUserGuildSettings_messageNotifications"></block>
+		<block type="ClientUserGuildSettings_muted"></block>
+		<block type="ClientUserGuildSettings_suppressEveryone"></block>
+		<block type="ClientUserGuildSettings_channelOverrides"></block>
+	</category>
+	<category name="ClientUserSettings">
+
+		<block type="ClientUserSettings_convertEmoticons"></block>
+		<block type="ClientUserSettings_defaultGuildsRestricted"></block>
+		<block type="ClientUserSettings_detectPlatformAccounts"></block>
+		<block type="ClientUserSettings_developerMode"></block>
+		<block type="ClientUserSettings_enableTTSCommand"></block>
+		<block type="ClientUserSettings_theme"></block>
+		<block type="ClientUserSettings_status"></block>
+		<block type="ClientUserSettings_showCurrentGame"></block>
+		<block type="ClientUserSettings_inlineAttachmentMedia"></block>
+		<block type="ClientUserSettings_inlineEmbedMedia"></block>
+		<block type="ClientUserSettings_locale"></block>
+		<block type="ClientUserSettings_messageDisplayCompact"></block>
+		<block type="ClientUserSettings_renderReactions"></block>
+		<block type="ClientUserSettings_guildPositions"></block>
+		<block type="ClientUserSettings_restrictedGuilds"></block>
+		<block type="ClientUserSettings_explicitContentFilter"></block>
+		<block type="ClientUserSettings_friendSources"></block>
+	</category>
+	<category name="DMChannel">
+
+		<block type="DMChannel_recipient"></block>
+		<block type="DMChannel_messages"></block>
+		<block type="DMChannel_lastMessageID"></block>
+		<block type="DMChannel_typing"></block>
+		<block type="DMChannel_typingCount"></block>
+		<block type="DMChannel_client"></block>
+		<block type="DMChannel_type"></block>
+		<block type="DMChannel_id"></block>
+		<block type="DMChannel_createdTimestamp"></block>
+		<block type="DMChannel_createdAt"></block>
+	</category>
+	<category name="Emoji">
+
+		<block type="Emoji_client"></block>
+		<block type="Emoji_guild"></block>
+		<block type="Emoji_id"></block>
+		<block type="Emoji_name"></block>
+		<block type="Emoji_requiresColons"></block>
+		<block type="Emoji_managed"></block>
+		<block type="Emoji_createdTimestamp"></block>
+		<block type="Emoji_createdAt"></block>
+		<block type="Emoji_roles"></block>
+		<block type="Emoji_url"></block>
+		<block type="Emoji_identifier"></block>
+	</category>
+	<category name="GroupDMChannel">
+
+		<block type="GroupDMChannel_name"></block>
+		<block type="GroupDMChannel_icon"></block>
+		<block type="GroupDMChannel_ownerID"></block>
+		<block type="GroupDMChannel_managed"></block>
+		<block type="GroupDMChannel_applicationID"></block>
+		<block type="GroupDMChannel_nicks"></block>
+		<block type="GroupDMChannel_recipients"></block>
+		<block type="GroupDMChannel_owner"></block>
+		<block type="GroupDMChannel_iconURL"></block>
+		<block type="GroupDMChannel_messages"></block>
+		<block type="GroupDMChannel_lastMessageID"></block>
+		<block type="GroupDMChannel_typing"></block>
+		<block type="GroupDMChannel_typingCount"></block>
+		<block type="GroupDMChannel_client"></block>
+		<block type="GroupDMChannel_type"></block>
+		<block type="GroupDMChannel_id"></block>
+		<block type="GroupDMChannel_createdTimestamp"></block>
+		<block type="GroupDMChannel_createdAt"></block>
+	</category>
+	<category name="Guild">
+
+		<block type="Guild_client"></block>
+		<block type="Guild_members"></block>
+		<block type="Guild_channels"></block>
+		<block type="Guild_roles"></block>
+		<block type="Guild_presences"></block>
+		<block type="Guild_available"></block>
+		<block type="Guild_id"></block>
+		<block type="Guild_name"></block>
+		<block type="Guild_icon"></block>
+		<block type="Guild_splash"></block>
+		<block type="Guild_region"></block>
+		<block type="Guild_memberCount"></block>
+		<block type="Guild_large"></block>
+		<block type="Guild_features"></block>
+		<block type="Guild_applicationID"></block>
+		<block type="Guild_afkTimeout"></block>
+		<block type="Guild_afkChannelID"></block>
+		<block type="Guild_systemChannelID"></block>
+		<block type="Guild_embedEnabled"></block>
+		<block type="Guild_verificationLevel"></block>
+		<block type="Guild_explicitContentFilter"></block>
+		<block type="Guild_joinedTimestamp"></block>
+		<block type="Guild_ownerID"></block>
+		<block type="Guild_emojis"></block>
+		<block type="Guild_createdTimestamp"></block>
+		<block type="Guild_createdAt"></block>
+		<block type="Guild_joinedAt"></block>
+		<block type="Guild_iconURL"></block>
+		<block type="Guild_nameAcronym"></block>
+		<block type="Guild_splashURL"></block>
+		<block type="Guild_owner"></block>
+		<block type="Guild_afkChannel"></block>
+		<block type="Guild_systemChannel"></block>
+		<block type="Guild_voiceConnection"></block>
+		<block type="Guild_position"></block>
+		<block type="Guild_muted"></block>
+		<block type="Guild_messageNotifications"></block>
+		<block type="Guild_mobilePush"></block>
+		<block type="Guild_suppressEveryone"></block>
+		<block type="Guild_defaultRole"></block>
+		<block type="Guild_me"></block>
+		<block type="Guild__sortedRoles"></block>
+		<block type="Guild_defaultChannel"></block>
+	</category>
+	<category name="GuildAuditLogs">
+
+		<block type="GuildAuditLogs_entries"></block>
+	</category>
+	<category name="GuildAuditLogsEntry">
+
+		<block type="GuildAuditLogsEntry_targetType"></block>
+		<block type="GuildAuditLogsEntry_actionType"></block>
+		<block type="GuildAuditLogsEntry_action"></block>
+		<block type="GuildAuditLogsEntry_reason"></block>
+		<block type="GuildAuditLogsEntry_executor"></block>
+		<block type="GuildAuditLogsEntry_changes"></block>
+		<block type="GuildAuditLogsEntry_id"></block>
+		<block type="GuildAuditLogsEntry_extra"></block>
+		<block type="GuildAuditLogsEntry_target"></block>
+		<block type="GuildAuditLogsEntry_createdTimestamp"></block>
+		<block type="GuildAuditLogsEntry_createdAt"></block>
+	</category>
+	<category name="GuildChannel">
+
+		<block type="GuildChannel_guild"></block>
+		<block type="GuildChannel_name"></block>
+		<block type="GuildChannel_position"></block>
+		<block type="GuildChannel_permissionOverwrites"></block>
+		<block type="GuildChannel_calculatedPosition"></block>
+		<block type="GuildChannel_deletable"></block>
+		<block type="GuildChannel_muted"></block>
+		<block type="GuildChannel_messageNotifications"></block>
+		<block type="GuildChannel_client"></block>
+		<block type="GuildChannel_type"></block>
+		<block type="GuildChannel_id"></block>
+		<block type="GuildChannel_createdTimestamp"></block>
+		<block type="GuildChannel_createdAt"></block>
+	</category>
+	<category name="GuildMember">
+
+		<block type="GuildMember_client"></block>
+		<block type="GuildMember_guild"></block>
+		<block type="GuildMember_user"></block>
+		<block type="GuildMember_lastMessageID"></block>
+		<block type="GuildMember_lastMessage"></block>
+		<block type="GuildMember_serverDeaf"></block>
+		<block type="GuildMember_serverMute"></block>
+		<block type="GuildMember_selfMute"></block>
+		<block type="GuildMember_selfDeaf"></block>
+		<block type="GuildMember_voiceSessionID"></block>
+		<block type="GuildMember_voiceChannelID"></block>
+		<block type="GuildMember_speaking"></block>
+		<block type="GuildMember_nickname"></block>
+		<block type="GuildMember_joinedTimestamp"></block>
+		<block type="GuildMember_joinedAt"></block>
+		<block type="GuildMember_presence"></block>
+		<block type="GuildMember_roles"></block>
+		<block type="GuildMember_highestRole"></block>
+		<block type="GuildMember_colorRole"></block>
+		<block type="GuildMember_displayColor"></block>
+		<block type="GuildMember_displayHexColor"></block>
+		<block type="GuildMember_hoistRole"></block>
+		<block type="GuildMember_mute"></block>
+		<block type="GuildMember_deaf"></block>
+		<block type="GuildMember_voiceChannel"></block>
+		<block type="GuildMember_id"></block>
+		<block type="GuildMember_displayName"></block>
+		<block type="GuildMember_permissions"></block>
+		<block type="GuildMember_kickable"></block>
+		<block type="GuildMember_bannable"></block>
+	</category>
+	<category name="Collector">
+
+		<block type="Collector_client"></block>
+		<block type="Collector_filter"></block>
+		<block type="Collector_options"></block>
+		<block type="Collector_collected"></block>
+		<block type="Collector_ended"></block>
+		<block type="Collector__timeout"></block>
+		<block type="Collector_listener"></block>
+		<block type="Collector_next"></block>
+	</category>
+	<category name="Invite">
+
+		<block type="Invite_client"></block>
+		<block type="Invite_guild"></block>
+		<block type="Invite_code"></block>
+		<block type="Invite_presenceCount"></block>
+		<block type="Invite_memberCount"></block>
+		<block type="Invite_textChannelCount"></block>
+		<block type="Invite_voiceChannelCount"></block>
+		<block type="Invite_temporary"></block>
+		<block type="Invite_maxAge"></block>
+		<block type="Invite_uses"></block>
+		<block type="Invite_maxUses"></block>
+		<block type="Invite_inviter"></block>
+		<block type="Invite_channel"></block>
+		<block type="Invite_createdTimestamp"></block>
+		<block type="Invite_createdAt"></block>
+		<block type="Invite_expiresTimestamp"></block>
+		<block type="Invite_expiresAt"></block>
+		<block type="Invite_url"></block>
+	</category>
+	<category name="Message">
+
+		<block type="Message_client"></block>
+		<block type="Message_channel"></block>
+		<block type="Message_id"></block>
+		<block type="Message_type"></block>
+		<block type="Message_content"></block>
+		<block type="Message_author"></block>
+		<block type="Message_member"></block>
+		<block type="Message_pinned"></block>
+		<block type="Message_tts"></block>
+		<block type="Message_nonce"></block>
+		<block type="Message_system"></block>
+		<block type="Message_embeds"></block>
+		<block type="Message_attachments"></block>
+		<block type="Message_createdTimestamp"></block>
+		<block type="Message_editedTimestamp"></block>
+		<block type="Message_reactions"></block>
+		<block type="Message_mentions"></block>
+		<block type="Message_webhookID"></block>
+		<block type="Message_hit"></block>
+		<block type="Message__edits"></block>
+		<block type="Message_createdAt"></block>
+		<block type="Message_editedAt"></block>
+		<block type="Message_guild"></block>
+		<block type="Message_cleanContent"></block>
+		<block type="Message_edits"></block>
+		<block type="Message_editable"></block>
+		<block type="Message_deletable"></block>
+		<block type="Message_pinnable"></block>
+	</category>
+	<category name="MessageAttachment">
+
+		<block type="MessageAttachment_client"></block>
+		<block type="MessageAttachment_message"></block>
+		<block type="MessageAttachment_id"></block>
+		<block type="MessageAttachment_filename"></block>
+		<block type="MessageAttachment_filesize"></block>
+		<block type="MessageAttachment_url"></block>
+		<block type="MessageAttachment_proxyURL"></block>
+		<block type="MessageAttachment_height"></block>
+		<block type="MessageAttachment_width"></block>
+	</category>
+	<category name="MessageCollector">
+
+		<block type="MessageCollector_constructor"></block>
+		<block type="MessageCollector_channel"></block>
+		<block type="MessageCollector_received"></block>
+		<block type="MessageCollector_client"></block>
+		<block type="MessageCollector_filter"></block>
+		<block type="MessageCollector_options"></block>
+		<block type="MessageCollector_collected"></block>
+		<block type="MessageCollector_ended"></block>
+		<block type="MessageCollector__timeout"></block>
+		<block type="MessageCollector_listener"></block>
+		<block type="MessageCollector_next"></block>
+	</category>
+	<category name="MessageEmbed">
+
+		<block type="MessageEmbed_client"></block>
+		<block type="MessageEmbed_message"></block>
+		<block type="MessageEmbed_type"></block>
+		<block type="MessageEmbed_title"></block>
+		<block type="MessageEmbed_description"></block>
+		<block type="MessageEmbed_url"></block>
+		<block type="MessageEmbed_color"></block>
+		<block type="MessageEmbed_fields"></block>
+		<block type="MessageEmbed_createdTimestamp"></block>
+		<block type="MessageEmbed_thumbnail"></block>
+		<block type="MessageEmbed_image"></block>
+		<block type="MessageEmbed_video"></block>
+		<block type="MessageEmbed_author"></block>
+		<block type="MessageEmbed_provider"></block>
+		<block type="MessageEmbed_footer"></block>
+		<block type="MessageEmbed_createdAt"></block>
+		<block type="MessageEmbed_hexColor"></block>
+	</category>
+	<category name="MessageEmbedThumbnail">
+
+		<block type="MessageEmbedThumbnail_embed"></block>
+		<block type="MessageEmbedThumbnail_url"></block>
+		<block type="MessageEmbedThumbnail_proxyURL"></block>
+		<block type="MessageEmbedThumbnail_height"></block>
+		<block type="MessageEmbedThumbnail_width"></block>
+	</category>
+	<category name="MessageEmbedImage">
+
+		<block type="MessageEmbedImage_embed"></block>
+		<block type="MessageEmbedImage_url"></block>
+		<block type="MessageEmbedImage_proxyURL"></block>
+		<block type="MessageEmbedImage_height"></block>
+		<block type="MessageEmbedImage_width"></block>
+	</category>
+	<category name="MessageEmbedVideo">
+
+		<block type="MessageEmbedVideo_embed"></block>
+		<block type="MessageEmbedVideo_url"></block>
+		<block type="MessageEmbedVideo_height"></block>
+		<block type="MessageEmbedVideo_width"></block>
+	</category>
+	<category name="MessageEmbedProvider">
+
+		<block type="MessageEmbedProvider_embed"></block>
+		<block type="MessageEmbedProvider_name"></block>
+		<block type="MessageEmbedProvider_url"></block>
+	</category>
+	<category name="MessageEmbedAuthor">
+
+		<block type="MessageEmbedAuthor_embed"></block>
+		<block type="MessageEmbedAuthor_name"></block>
+		<block type="MessageEmbedAuthor_url"></block>
+		<block type="MessageEmbedAuthor_iconURL"></block>
+	</category>
+	<category name="MessageEmbedField">
+
+		<block type="MessageEmbedField_embed"></block>
+		<block type="MessageEmbedField_name"></block>
+		<block type="MessageEmbedField_value"></block>
+		<block type="MessageEmbedField_inline"></block>
+	</category>
+	<category name="MessageEmbedFooter">
+
+		<block type="MessageEmbedFooter_embed"></block>
+		<block type="MessageEmbedFooter_text"></block>
+		<block type="MessageEmbedFooter_iconURL"></block>
+		<block type="MessageEmbedFooter_proxyIconUrl"></block>
+	</category>
+	<category name="MessageMentions">
+
+		<block type="MessageMentions_everyone"></block>
+		<block type="MessageMentions_users"></block>
+		<block type="MessageMentions_roles"></block>
+		<block type="MessageMentions__content"></block>
+		<block type="MessageMentions__client"></block>
+		<block type="MessageMentions__guild"></block>
+		<block type="MessageMentions__members"></block>
+		<block type="MessageMentions__channels"></block>
+		<block type="MessageMentions_members"></block>
+		<block type="MessageMentions_channels"></block>
+		<block type="MessageMentions_EVERYONE_PATTERN"></block>
+		<block type="MessageMentions_USERS_PATTERN"></block>
+		<block type="MessageMentions_ROLES_PATTERN"></block>
+		<block type="MessageMentions_CHANNELS_PATTERN"></block>
+	</category>
+	<category name="MessageReaction">
+
+		<block type="MessageReaction_message"></block>
+		<block type="MessageReaction_me"></block>
+		<block type="MessageReaction_count"></block>
+		<block type="MessageReaction_users"></block>
+		<block type="MessageReaction_emoji"></block>
+	</category>
+	<category name="OAuth2Application">
+
+		<block type="OAuth2Application_client"></block>
+		<block type="OAuth2Application_id"></block>
+		<block type="OAuth2Application_name"></block>
+		<block type="OAuth2Application_description"></block>
+		<block type="OAuth2Application_icon"></block>
+		<block type="OAuth2Application_iconURL"></block>
+		<block type="OAuth2Application_rpcOrigins"></block>
+		<block type="OAuth2Application_redirectURIs"></block>
+		<block type="OAuth2Application_botRequireCodeGrant"></block>
+		<block type="OAuth2Application_botPublic"></block>
+		<block type="OAuth2Application_rpcApplicationState"></block>
+		<block type="OAuth2Application_bot"></block>
+		<block type="OAuth2Application_flags"></block>
+		<block type="OAuth2Application_secret"></block>
+		<block type="OAuth2Application_owner"></block>
+		<block type="OAuth2Application_createdTimestamp"></block>
+		<block type="OAuth2Application_createdAt"></block>
+	</category>
+	<category name="PartialGuild">
+
+		<block type="PartialGuild_client"></block>
+		<block type="PartialGuild_id"></block>
+		<block type="PartialGuild_name"></block>
+		<block type="PartialGuild_icon"></block>
+		<block type="PartialGuild_splash"></block>
+	</category>
+	<category name="PartialGuildChannel">
+
+		<block type="PartialGuildChannel_client"></block>
+		<block type="PartialGuildChannel_id"></block>
+		<block type="PartialGuildChannel_name"></block>
+		<block type="PartialGuildChannel_type"></block>
+	</category>
+	<category name="PermissionOverwrites">
+
+		<block type="PermissionOverwrites_channel"></block>
+		<block type="PermissionOverwrites_id"></block>
+		<block type="PermissionOverwrites_type"></block>
+	</category>
+	<category name="Presence">
+
+		<block type="Presence_status"></block>
+		<block type="Presence_game"></block>
+	</category>
+	<category name="Game">
+
+		<block type="Game_name"></block>
+		<block type="Game_type"></block>
+		<block type="Game_url"></block>
+		<block type="Game_streaming"></block>
+	</category>
+	<category name="ReactionCollector">
+
+		<block type="ReactionCollector_constructor"></block>
+		<block type="ReactionCollector_message"></block>
+		<block type="ReactionCollector_users"></block>
+		<block type="ReactionCollector_total"></block>
+		<block type="ReactionCollector_client"></block>
+		<block type="ReactionCollector_filter"></block>
+		<block type="ReactionCollector_options"></block>
+		<block type="ReactionCollector_collected"></block>
+		<block type="ReactionCollector_ended"></block>
+		<block type="ReactionCollector__timeout"></block>
+		<block type="ReactionCollector_listener"></block>
+		<block type="ReactionCollector_next"></block>
+	</category>
+	<category name="ReactionEmoji">
+
+		<block type="ReactionEmoji_reaction"></block>
+		<block type="ReactionEmoji_name"></block>
+		<block type="ReactionEmoji_id"></block>
+		<block type="ReactionEmoji_identifier"></block>
+	</category>
+	<category name="RichEmbed">
+
+		<block type="RichEmbed_constructor"></block>
+		<block type="RichEmbed_title"></block>
+		<block type="RichEmbed_description"></block>
+		<block type="RichEmbed_url"></block>
+		<block type="RichEmbed_color"></block>
+		<block type="RichEmbed_author"></block>
+		<block type="RichEmbed_timestamp"></block>
+		<block type="RichEmbed_fields"></block>
+		<block type="RichEmbed_thumbnail"></block>
+		<block type="RichEmbed_image"></block>
+		<block type="RichEmbed_footer"></block>
+		<block type="RichEmbed_file"></block>
+	</category>
+	<category name="Role">
+
+		<block type="Role_client"></block>
+		<block type="Role_guild"></block>
+		<block type="Role_id"></block>
+		<block type="Role_name"></block>
+		<block type="Role_color"></block>
+		<block type="Role_hoist"></block>
+		<block type="Role_position"></block>
+		<block type="Role_permissions"></block>
+		<block type="Role_managed"></block>
+		<block type="Role_mentionable"></block>
+		<block type="Role_createdTimestamp"></block>
+		<block type="Role_createdAt"></block>
+		<block type="Role_hexColor"></block>
+		<block type="Role_members"></block>
+		<block type="Role_editable"></block>
+		<block type="Role_calculatedPosition"></block>
+	</category>
+	<category name="TextChannel">
+
+		<block type="TextChannel_topic"></block>
+		<block type="TextChannel_nsfw"></block>
+		<block type="TextChannel_members"></block>
+		<block type="TextChannel_messages"></block>
+		<block type="TextChannel_lastMessageID"></block>
+		<block type="TextChannel_typing"></block>
+		<block type="TextChannel_typingCount"></block>
+		<block type="TextChannel_guild"></block>
+		<block type="TextChannel_name"></block>
+		<block type="TextChannel_position"></block>
+		<block type="TextChannel_permissionOverwrites"></block>
+		<block type="TextChannel_calculatedPosition"></block>
+		<block type="TextChannel_deletable"></block>
+		<block type="TextChannel_muted"></block>
+		<block type="TextChannel_messageNotifications"></block>
+	</category>
+	<category name="User">
+
+		<block type="User_client"></block>
+		<block type="User_id"></block>
+		<block type="User_username"></block>
+		<block type="User_discriminator"></block>
+		<block type="User_avatar"></block>
+		<block type="User_bot"></block>
+		<block type="User_lastMessageID"></block>
+		<block type="User_lastMessage"></block>
+		<block type="User_createdTimestamp"></block>
+		<block type="User_createdAt"></block>
+		<block type="User_presence"></block>
+		<block type="User_avatarURL"></block>
+		<block type="User_defaultAvatarURL"></block>
+		<block type="User_displayAvatarURL"></block>
+		<block type="User_tag"></block>
+		<block type="User_note"></block>
+		<block type="User_dmChannel"></block>
+	</category>
+	<category name="UserConnection">
+
+		<block type="UserConnection_user"></block>
+		<block type="UserConnection_type"></block>
+		<block type="UserConnection_name"></block>
+		<block type="UserConnection_id"></block>
+		<block type="UserConnection_revoked"></block>
+		<block type="UserConnection_integrations"></block>
+	</category>
+	<category name="UserProfile">
+
+		<block type="UserProfile_user"></block>
+		<block type="UserProfile_client"></block>
+		<block type="UserProfile_mutualGuilds"></block>
+		<block type="UserProfile_connections"></block>
+		<block type="UserProfile_premium"></block>
+		<block type="UserProfile_premiumSince"></block>
+	</category>
+	<category name="VoiceChannel">
+
+		<block type="VoiceChannel_members"></block>
+		<block type="VoiceChannel_bitrate"></block>
+		<block type="VoiceChannel_userLimit"></block>
+		<block type="VoiceChannel_connection"></block>
+		<block type="VoiceChannel_full"></block>
+		<block type="VoiceChannel_joinable"></block>
+		<block type="VoiceChannel_speakable"></block>
+		<block type="VoiceChannel_guild"></block>
+		<block type="VoiceChannel_name"></block>
+		<block type="VoiceChannel_position"></block>
+		<block type="VoiceChannel_permissionOverwrites"></block>
+		<block type="VoiceChannel_calculatedPosition"></block>
+		<block type="VoiceChannel_deletable"></block>
+		<block type="VoiceChannel_muted"></block>
+		<block type="VoiceChannel_messageNotifications"></block>
+	</category>
+	<category name="VoiceRegion">
+
+		<block type="VoiceRegion_id"></block>
+		<block type="VoiceRegion_name"></block>
+		<block type="VoiceRegion_vip"></block>
+		<block type="VoiceRegion_deprecated"></block>
+		<block type="VoiceRegion_optimal"></block>
+		<block type="VoiceRegion_custom"></block>
+		<block type="VoiceRegion_sampleHostname"></block>
+	</category>
+	<category name="Webhook">
+
+		<block type="Webhook_client"></block>
+		<block type="Webhook_name"></block>
+		<block type="Webhook_token"></block>
+		<block type="Webhook_avatar"></block>
+		<block type="Webhook_id"></block>
+		<block type="Webhook_guildID"></block>
+		<block type="Webhook_channelID"></block>
+		<block type="Webhook_owner"></block>
+	</category>
+	<category name="Collection">
+
+		<block type="Collection__array"></block>
+		<block type="Collection__keyArray"></block>
+	</category>
+	<category name="Permissions">
+
+		<block type="Permissions_constructor"></block>
+		<block type="Permissions__member"></block>
+		<block type="Permissions_bitfield"></block>
+		<block type="Permissions_raw"></block>
+		<block type="Permissions_FLAGS"></block>
+		<block type="Permissions_ALL"></block>
+		<block type="Permissions_DEFAULT"></block>
+	</category>
+	<category name="EvaluatedPermissions"></category>
+	<category name="SnowflakeUtil"></category>
+	<category name="Util"></category>
 </xml>

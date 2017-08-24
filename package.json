@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/lepon01/discordblocks#readme",
   "dependencies": {
-    "eslint": "^4.1.0"
+    "eslint": "^4.1.0",
+    "js2xmlparser": "^3.0.0"
+  },
+  "devDependencies": {
+    "base": "^0.13.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
