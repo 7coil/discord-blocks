@@ -272,7 +272,7 @@ Blockly.Blocks.Client_login = {
 
 
 		this.appendValueInput('token')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -310,10 +310,10 @@ Blockly.Blocks.Client_fetchUser = {
 
 
 		this.appendValueInput('id')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('cache')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -334,7 +334,7 @@ Blockly.Blocks.Client_fetchInvite = {
 
 
 		this.appendValueInput('invite')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -355,10 +355,10 @@ Blockly.Blocks.Client_fetchWebhook = {
 
 
 		this.appendValueInput('id')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('token')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -396,7 +396,7 @@ Blockly.Blocks.Client_sweepMessages = {
 
 
 		this.appendValueInput('lifetime')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -417,7 +417,7 @@ Blockly.Blocks.Client_fetchApplication = {
 
 
 		this.appendValueInput('id')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -438,7 +438,7 @@ Blockly.Blocks.Client_generateInvite = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -459,13 +459,13 @@ Blockly.Blocks.Client_setTimeout = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('delay')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -486,13 +486,13 @@ Blockly.Blocks.Client_setInterval = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('delay')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1576,7 +1576,7 @@ Blockly.Blocks.VoiceReceiver_createOpusStream = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1597,7 +1597,7 @@ Blockly.Blocks.VoiceReceiver_createPCMStream = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1785,10 +1785,10 @@ Blockly.Blocks.VoiceBroadcast_playStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1809,10 +1809,10 @@ Blockly.Blocks.VoiceBroadcast_playFile = {
 
 
 		this.appendValueInput('file')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1833,10 +1833,10 @@ Blockly.Blocks.VoiceBroadcast_playConvertedStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1857,10 +1857,10 @@ Blockly.Blocks.VoiceBroadcast_playOpusStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -1881,10 +1881,10 @@ Blockly.Blocks.VoiceBroadcast_playArbitraryInput = {
 
 
 		this.appendValueInput('input')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2117,10 +2117,10 @@ Blockly.Blocks.VoiceConnection_setTokenAndEndpoint = {
 
 
 		this.appendValueInput('token')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('endpoint')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2141,10 +2141,10 @@ Blockly.Blocks.VoiceConnection_playFile = {
 
 
 		this.appendValueInput('file')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2165,10 +2165,10 @@ Blockly.Blocks.VoiceConnection_playArbitraryInput = {
 
 
 		this.appendValueInput('input')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2189,10 +2189,10 @@ Blockly.Blocks.VoiceConnection_playStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2213,10 +2213,10 @@ Blockly.Blocks.VoiceConnection_playConvertedStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2237,10 +2237,10 @@ Blockly.Blocks.VoiceConnection_playOpusStream = {
 
 
 		this.appendValueInput('stream')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2261,10 +2261,10 @@ Blockly.Blocks.VoiceConnection_playBroadcast = {
 
 
 		this.appendValueInput('broadcast')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2621,13 +2621,13 @@ Blockly.Blocks.WebhookClient_setTimeout = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('delay')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2648,13 +2648,13 @@ Blockly.Blocks.WebhookClient_setInterval = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('delay')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2675,10 +2675,10 @@ Blockly.Blocks.WebhookClient_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2699,10 +2699,10 @@ Blockly.Blocks.WebhookClient_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2723,16 +2723,16 @@ Blockly.Blocks.WebhookClient_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2753,13 +2753,13 @@ Blockly.Blocks.WebhookClient_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2780,7 +2780,7 @@ Blockly.Blocks.WebhookClient_sendSlackMessage = {
 
 
 		this.appendValueInput('body')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2801,10 +2801,10 @@ Blockly.Blocks.WebhookClient_edit = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('avatar')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2825,7 +2825,7 @@ Blockly.Blocks.WebhookClient_delete = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2910,7 +2910,7 @@ Blockly.Blocks.Shard_send = {
 
 
 		this.appendValueInput('message')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2931,7 +2931,7 @@ Blockly.Blocks.Shard_fetchClientValue = {
 
 
 		this.appendValueInput('prop')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -2952,7 +2952,7 @@ Blockly.Blocks.Shard_eval = {
 
 
 		this.appendValueInput('script')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3011,7 +3011,7 @@ Blockly.Blocks.ShardClientUtil_send = {
 
 
 		this.appendValueInput('message')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3032,7 +3032,7 @@ Blockly.Blocks.ShardClientUtil_fetchClientValues = {
 
 
 		this.appendValueInput('prop')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3053,7 +3053,7 @@ Blockly.Blocks.ShardClientUtil_broadcastEval = {
 
 
 		this.appendValueInput('script')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3074,7 +3074,7 @@ Blockly.Blocks.ShardClientUtil_singleton = {
 
 
 		this.appendValueInput('client')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3185,7 +3185,7 @@ Blockly.Blocks.ShardingManager_createShard = {
 
 
 		this.appendValueInput('id')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3206,10 +3206,10 @@ Blockly.Blocks.ShardingManager_spawn = {
 
 
 		this.appendValueInput('amount')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('delay')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3230,7 +3230,7 @@ Blockly.Blocks.ShardingManager_broadcast = {
 
 
 		this.appendValueInput('message')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3251,7 +3251,7 @@ Blockly.Blocks.ShardingManager_broadcastEval = {
 
 
 		this.appendValueInput('script')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3272,7 +3272,7 @@ Blockly.Blocks.ShardingManager_fetchClientValues = {
 
 
 		this.appendValueInput('prop')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3369,10 +3369,10 @@ Blockly.Blocks.Attachment_setAttachment = {
 
 
 		this.appendValueInput('file')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3393,7 +3393,7 @@ Blockly.Blocks.Attachment_setFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3414,7 +3414,7 @@ Blockly.Blocks.Attachment_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3868,10 +3868,10 @@ Blockly.Blocks.ClientUser_setUsername = {
 
 
 		this.appendValueInput('username')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('password')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3892,10 +3892,10 @@ Blockly.Blocks.ClientUser_setEmail = {
 
 
 		this.appendValueInput('email')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('password')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3916,10 +3916,10 @@ Blockly.Blocks.ClientUser_setPassword = {
 
 
 		this.appendValueInput('newPassword')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('oldPassword')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3940,7 +3940,7 @@ Blockly.Blocks.ClientUser_setAvatar = {
 
 
 		this.appendValueInput('avatar')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3961,7 +3961,7 @@ Blockly.Blocks.ClientUser_setPresence = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -3982,7 +3982,7 @@ Blockly.Blocks.ClientUser_setStatus = {
 
 
 		this.appendValueInput('status')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4003,10 +4003,10 @@ Blockly.Blocks.ClientUser_setGame = {
 
 
 		this.appendValueInput('game')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('streamingURL')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4027,7 +4027,7 @@ Blockly.Blocks.ClientUser_setAFK = {
 
 
 		this.appendValueInput('afk')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4048,7 +4048,7 @@ Blockly.Blocks.ClientUser_fetchMentions = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4069,7 +4069,7 @@ Blockly.Blocks.ClientUser_addFriend = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4090,7 +4090,7 @@ Blockly.Blocks.ClientUser_removeFriend = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4111,13 +4111,13 @@ Blockly.Blocks.ClientUser_createGuild = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('region')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('icon')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4138,7 +4138,7 @@ Blockly.Blocks.ClientUser_createGroupDM = {
 
 
 		this.appendValueInput('recipients')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4159,7 +4159,7 @@ Blockly.Blocks.ClientUser_acceptInvite = {
 
 
 		this.appendValueInput('invite')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4180,7 +4180,7 @@ Blockly.Blocks.ClientUser_typingIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4201,7 +4201,7 @@ Blockly.Blocks.ClientUser_typingSinceIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4222,7 +4222,7 @@ Blockly.Blocks.ClientUser_typingDurationIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4328,7 +4328,7 @@ Blockly.Blocks.ClientUser_setNote = {
 
 
 		this.appendValueInput('note')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4349,7 +4349,7 @@ Blockly.Blocks.ClientUser_equals = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4387,10 +4387,10 @@ Blockly.Blocks.ClientUser_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4411,10 +4411,10 @@ Blockly.Blocks.ClientUser_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4435,13 +4435,13 @@ Blockly.Blocks.ClientUser_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4462,16 +4462,16 @@ Blockly.Blocks.ClientUser_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4492,13 +4492,13 @@ Blockly.Blocks.ClientUser_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4636,10 +4636,10 @@ Blockly.Blocks.ClientUserGuildSettings_update = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4881,10 +4881,10 @@ Blockly.Blocks.ClientUserSettings_update = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4905,13 +4905,13 @@ Blockly.Blocks.ClientUserSettings_setGuildPosition = {
 
 
 		this.appendValueInput('guild')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4932,7 +4932,7 @@ Blockly.Blocks.ClientUserSettings_addRestrictedGuild = {
 
 
 		this.appendValueInput('guild')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -4953,7 +4953,7 @@ Blockly.Blocks.ClientUserSettings_removeRestrictedGuild = {
 
 
 		this.appendValueInput('guild')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5121,10 +5121,10 @@ Blockly.Blocks.DMChannel_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5145,7 +5145,7 @@ Blockly.Blocks.DMChannel_fetchMessage = {
 
 
 		this.appendValueInput('messageID')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5166,7 +5166,7 @@ Blockly.Blocks.DMChannel_fetchMessages = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5204,7 +5204,7 @@ Blockly.Blocks.DMChannel_search = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5225,10 +5225,10 @@ Blockly.Blocks.DMChannel_createCollector = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5249,10 +5249,10 @@ Blockly.Blocks.DMChannel_awaitMessages = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5290,10 +5290,10 @@ Blockly.Blocks.DMChannel_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5314,13 +5314,13 @@ Blockly.Blocks.DMChannel_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5341,13 +5341,13 @@ Blockly.Blocks.DMChannel_sendFiles = {
 
 
 		this.appendValueInput('files')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5368,16 +5368,16 @@ Blockly.Blocks.DMChannel_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5398,13 +5398,13 @@ Blockly.Blocks.DMChannel_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5585,10 +5585,10 @@ Blockly.Blocks.Emoji_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5609,10 +5609,10 @@ Blockly.Blocks.Emoji_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5633,7 +5633,7 @@ Blockly.Blocks.Emoji_addRestrictedRole = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5654,7 +5654,7 @@ Blockly.Blocks.Emoji_addRestrictedRoles = {
 
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5675,7 +5675,7 @@ Blockly.Blocks.Emoji_removeRestrictedRole = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5696,7 +5696,7 @@ Blockly.Blocks.Emoji_removeRestrictedRoles = {
 
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5734,7 +5734,7 @@ Blockly.Blocks.Emoji_equals = {
 
 
 		this.appendValueInput('other')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -5989,7 +5989,7 @@ Blockly.Blocks.GroupDMChannel_equals = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6010,7 +6010,7 @@ Blockly.Blocks.GroupDMChannel_setIcon = {
 
 
 		this.appendValueInput('icon')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6048,10 +6048,10 @@ Blockly.Blocks.GroupDMChannel_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6072,7 +6072,7 @@ Blockly.Blocks.GroupDMChannel_fetchMessage = {
 
 
 		this.appendValueInput('messageID')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6093,7 +6093,7 @@ Blockly.Blocks.GroupDMChannel_fetchMessages = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6131,7 +6131,7 @@ Blockly.Blocks.GroupDMChannel_search = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6152,10 +6152,10 @@ Blockly.Blocks.GroupDMChannel_createCollector = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6176,10 +6176,10 @@ Blockly.Blocks.GroupDMChannel_awaitMessages = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6217,10 +6217,10 @@ Blockly.Blocks.GroupDMChannel_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6241,13 +6241,13 @@ Blockly.Blocks.GroupDMChannel_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6268,13 +6268,13 @@ Blockly.Blocks.GroupDMChannel_sendFiles = {
 
 
 		this.appendValueInput('files')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6295,16 +6295,16 @@ Blockly.Blocks.GroupDMChannel_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6325,13 +6325,13 @@ Blockly.Blocks.GroupDMChannel_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -6915,7 +6915,7 @@ Blockly.Blocks.Guild_member = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7004,7 +7004,7 @@ Blockly.Blocks.Guild_fetchAuditLogs = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7025,10 +7025,10 @@ Blockly.Blocks.Guild_addMember = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7049,10 +7049,10 @@ Blockly.Blocks.Guild_fetchMember = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('cache')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7073,10 +7073,10 @@ Blockly.Blocks.Guild_fetchMembers = {
 
 
 		this.appendValueInput('query')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('limit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7097,7 +7097,7 @@ Blockly.Blocks.Guild_search = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7118,10 +7118,10 @@ Blockly.Blocks.Guild_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7142,10 +7142,10 @@ Blockly.Blocks.Guild_setExplicitContentFilter = {
 
 
 		this.appendValueInput('explicitContentFilter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7166,10 +7166,10 @@ Blockly.Blocks.Guild_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7190,10 +7190,10 @@ Blockly.Blocks.Guild_setRegion = {
 
 
 		this.appendValueInput('region')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7214,10 +7214,10 @@ Blockly.Blocks.Guild_setVerificationLevel = {
 
 
 		this.appendValueInput('verificationLevel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7238,10 +7238,10 @@ Blockly.Blocks.Guild_setAFKChannel = {
 
 
 		this.appendValueInput('afkChannel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7262,10 +7262,10 @@ Blockly.Blocks.Guild_setSystemChannel = {
 
 
 		this.appendValueInput('systemChannel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7286,10 +7286,10 @@ Blockly.Blocks.Guild_setAFKTimeout = {
 
 
 		this.appendValueInput('afkTimeout')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7310,10 +7310,10 @@ Blockly.Blocks.Guild_setIcon = {
 
 
 		this.appendValueInput('icon')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7334,10 +7334,10 @@ Blockly.Blocks.Guild_setOwner = {
 
 
 		this.appendValueInput('owner')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7358,10 +7358,10 @@ Blockly.Blocks.Guild_setSplash = {
 
 
 		this.appendValueInput('splash')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7382,10 +7382,10 @@ Blockly.Blocks.Guild_setPosition = {
 
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7423,7 +7423,7 @@ Blockly.Blocks.Guild_allowDMs = {
 
 
 		this.appendValueInput('allow')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7444,10 +7444,10 @@ Blockly.Blocks.Guild_ban = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7468,10 +7468,10 @@ Blockly.Blocks.Guild_unban = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7492,13 +7492,13 @@ Blockly.Blocks.Guild_pruneMembers = {
 
 
 		this.appendValueInput('days')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('dry')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7519,16 +7519,16 @@ Blockly.Blocks.Guild_createChannel = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('type')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('overwrites')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7549,7 +7549,7 @@ Blockly.Blocks.Guild_setChannelPositions = {
 
 
 		this.appendValueInput('channelPositions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7570,10 +7570,10 @@ Blockly.Blocks.Guild_createRole = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7594,16 +7594,16 @@ Blockly.Blocks.Guild_createEmoji = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7624,10 +7624,10 @@ Blockly.Blocks.Guild_deleteEmoji = {
 
 
 		this.appendValueInput('emoji')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7682,7 +7682,7 @@ Blockly.Blocks.Guild_equals = {
 
 
 		this.appendValueInput('guild')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7720,13 +7720,13 @@ Blockly.Blocks.Guild_setRolePosition = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7747,13 +7747,13 @@ Blockly.Blocks.Guild_setChannelPosition = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7804,7 +7804,7 @@ Blockly.Blocks.GuildAuditLogs_targetType = {
 
 
 		this.appendValueInput('target')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -7825,7 +7825,7 @@ Blockly.Blocks.GuildAuditLogs_actionType = {
 
 
 		this.appendValueInput('action')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8158,7 +8158,7 @@ Blockly.Blocks.GuildChannel_permissionsFor = {
 
 
 		this.appendValueInput('member')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8179,13 +8179,13 @@ Blockly.Blocks.GuildChannel_overwritePermissions = {
 
 
 		this.appendValueInput('userOrRole')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8206,10 +8206,10 @@ Blockly.Blocks.GuildChannel_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8230,10 +8230,10 @@ Blockly.Blocks.GuildChannel_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8254,10 +8254,10 @@ Blockly.Blocks.GuildChannel_setPosition = {
 
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8278,10 +8278,10 @@ Blockly.Blocks.GuildChannel_setTopic = {
 
 
 		this.appendValueInput('topic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8302,10 +8302,10 @@ Blockly.Blocks.GuildChannel_createInvite = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8326,16 +8326,16 @@ Blockly.Blocks.GuildChannel_clone = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withPermissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withTopic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8356,7 +8356,7 @@ Blockly.Blocks.GuildChannel_equals = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8801,7 +8801,7 @@ Blockly.Blocks.GuildMember_permissionsIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8822,16 +8822,16 @@ Blockly.Blocks.GuildMember_hasPermission = {
 
 
 		this.appendValueInput('permission')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('checkAdmin')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('checkOwner')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8852,10 +8852,10 @@ Blockly.Blocks.GuildMember_hasPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8876,10 +8876,10 @@ Blockly.Blocks.GuildMember_missingPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8900,10 +8900,10 @@ Blockly.Blocks.GuildMember_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8924,10 +8924,10 @@ Blockly.Blocks.GuildMember_setMute = {
 
 
 		this.appendValueInput('mute')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8948,10 +8948,10 @@ Blockly.Blocks.GuildMember_setDeaf = {
 
 
 		this.appendValueInput('deaf')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8972,7 +8972,7 @@ Blockly.Blocks.GuildMember_setVoiceChannel = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -8993,10 +8993,10 @@ Blockly.Blocks.GuildMember_setRoles = {
 
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9017,10 +9017,10 @@ Blockly.Blocks.GuildMember_addRole = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9041,10 +9041,10 @@ Blockly.Blocks.GuildMember_addRoles = {
 
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9065,10 +9065,10 @@ Blockly.Blocks.GuildMember_removeRole = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9089,10 +9089,10 @@ Blockly.Blocks.GuildMember_removeRoles = {
 
 
 		this.appendValueInput('roles')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9113,10 +9113,10 @@ Blockly.Blocks.GuildMember_setNickname = {
 
 
 		this.appendValueInput('nick')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9171,7 +9171,7 @@ Blockly.Blocks.GuildMember_kick = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9192,7 +9192,7 @@ Blockly.Blocks.GuildMember_ban = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9230,10 +9230,10 @@ Blockly.Blocks.GuildMember_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9254,10 +9254,10 @@ Blockly.Blocks.GuildMember_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9278,13 +9278,13 @@ Blockly.Blocks.GuildMember_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9305,16 +9305,16 @@ Blockly.Blocks.GuildMember_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9335,13 +9335,13 @@ Blockly.Blocks.GuildMember_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9440,7 +9440,7 @@ Blockly.Blocks.Collector_handle = {
 
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9461,7 +9461,7 @@ Blockly.Blocks.Collector_postCheck = {
 
 
 		this.appendValueInput('args')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -9754,7 +9754,7 @@ Blockly.Blocks.Invite_delete = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10143,10 +10143,10 @@ Blockly.Blocks.Message_createReactionCollector = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10167,10 +10167,10 @@ Blockly.Blocks.Message_awaitReactions = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10191,7 +10191,7 @@ Blockly.Blocks.Message_isMentioned = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10212,7 +10212,7 @@ Blockly.Blocks.Message_isMemberMentioned = {
 
 
 		this.appendValueInput('member')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10233,10 +10233,10 @@ Blockly.Blocks.Message_edit = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10257,10 +10257,10 @@ Blockly.Blocks.Message_editCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10315,7 +10315,7 @@ Blockly.Blocks.Message_react = {
 
 
 		this.appendValueInput('emoji')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10353,7 +10353,7 @@ Blockly.Blocks.Message_delete = {
 
 
 		this.appendValueInput('timeout')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10374,10 +10374,10 @@ Blockly.Blocks.Message_reply = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -10432,10 +10432,10 @@ Blockly.Blocks.Message_equals = {
 
 
 		this.appendValueInput('message')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('rawData')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -11543,7 +11543,7 @@ Blockly.Blocks.MessageReaction_remove = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -11564,7 +11564,7 @@ Blockly.Blocks.MessageReaction_fetchUsers = {
 
 
 		this.appendValueInput('limit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -11996,7 +11996,7 @@ Blockly.Blocks.PermissionOverwrites_delete = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12043,7 +12043,7 @@ Blockly.Blocks.Presence_equals = {
 
 
 		this.appendValueInput('presence')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12116,7 +12116,7 @@ Blockly.Blocks.Game_equals = {
 
 
 		this.appendValueInput('game')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12528,7 +12528,7 @@ Blockly.Blocks.RichEmbed_setTitle = {
 
 
 		this.appendValueInput('title')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12549,7 +12549,7 @@ Blockly.Blocks.RichEmbed_setDescription = {
 
 
 		this.appendValueInput('description')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12570,7 +12570,7 @@ Blockly.Blocks.RichEmbed_setURL = {
 
 
 		this.appendValueInput('url')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12591,7 +12591,7 @@ Blockly.Blocks.RichEmbed_setColor = {
 
 
 		this.appendValueInput('color')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12612,13 +12612,13 @@ Blockly.Blocks.RichEmbed_setAuthor = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('icon')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('url')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12639,7 +12639,7 @@ Blockly.Blocks.RichEmbed_setTimestamp = {
 
 
 		this.appendValueInput('timestamp')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12660,13 +12660,13 @@ Blockly.Blocks.RichEmbed_addField = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('inline')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12687,7 +12687,7 @@ Blockly.Blocks.RichEmbed_addBlankField = {
 
 
 		this.appendValueInput('inline')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12708,7 +12708,7 @@ Blockly.Blocks.RichEmbed_setThumbnail = {
 
 
 		this.appendValueInput('url')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12729,7 +12729,7 @@ Blockly.Blocks.RichEmbed_setImage = {
 
 
 		this.appendValueInput('url')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12750,10 +12750,10 @@ Blockly.Blocks.RichEmbed_setFooter = {
 
 
 		this.appendValueInput('text')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('icon')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -12774,7 +12774,7 @@ Blockly.Blocks.RichEmbed_attachFile = {
 
 
 		this.appendValueInput('file')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13020,13 +13020,13 @@ Blockly.Blocks.Role_hasPermission = {
 
 
 		this.appendValueInput('permission')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('checkAdmin')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13047,10 +13047,10 @@ Blockly.Blocks.Role_hasPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13071,7 +13071,7 @@ Blockly.Blocks.Role_comparePositionTo = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13092,10 +13092,10 @@ Blockly.Blocks.Role_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13116,10 +13116,10 @@ Blockly.Blocks.Role_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13140,10 +13140,10 @@ Blockly.Blocks.Role_setColor = {
 
 
 		this.appendValueInput('color')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13164,10 +13164,10 @@ Blockly.Blocks.Role_setHoist = {
 
 
 		this.appendValueInput('hoist')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13188,10 +13188,10 @@ Blockly.Blocks.Role_setPosition = {
 
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13212,10 +13212,10 @@ Blockly.Blocks.Role_setPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13236,10 +13236,10 @@ Blockly.Blocks.Role_setMentionable = {
 
 
 		this.appendValueInput('mentionable')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13260,7 +13260,7 @@ Blockly.Blocks.Role_delete = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13281,7 +13281,7 @@ Blockly.Blocks.Role_equals = {
 
 
 		this.appendValueInput('role')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13319,10 +13319,10 @@ Blockly.Blocks.Role_comparePositions = {
 
 
 		this.appendValueInput('role1')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('role2')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13555,13 +13555,13 @@ Blockly.Blocks.TextChannel_createWebhook = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('avatar')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13582,10 +13582,10 @@ Blockly.Blocks.TextChannel_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13606,7 +13606,7 @@ Blockly.Blocks.TextChannel_fetchMessage = {
 
 
 		this.appendValueInput('messageID')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13627,7 +13627,7 @@ Blockly.Blocks.TextChannel_fetchMessages = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13665,7 +13665,7 @@ Blockly.Blocks.TextChannel_search = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13686,10 +13686,10 @@ Blockly.Blocks.TextChannel_createCollector = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13710,10 +13710,10 @@ Blockly.Blocks.TextChannel_createMessageCollector = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13734,10 +13734,10 @@ Blockly.Blocks.TextChannel_awaitMessages = {
 
 
 		this.appendValueInput('filter')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13758,10 +13758,10 @@ Blockly.Blocks.TextChannel_bulkDelete = {
 
 
 		this.appendValueInput('messages')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('filterOld')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13799,10 +13799,10 @@ Blockly.Blocks.TextChannel_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13823,13 +13823,13 @@ Blockly.Blocks.TextChannel_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13850,13 +13850,13 @@ Blockly.Blocks.TextChannel_sendFiles = {
 
 
 		this.appendValueInput('files')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13877,16 +13877,16 @@ Blockly.Blocks.TextChannel_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13907,13 +13907,13 @@ Blockly.Blocks.TextChannel_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13934,7 +13934,7 @@ Blockly.Blocks.TextChannel_permissionsFor = {
 
 
 		this.appendValueInput('member')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13955,13 +13955,13 @@ Blockly.Blocks.TextChannel_overwritePermissions = {
 
 
 		this.appendValueInput('userOrRole')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -13982,10 +13982,10 @@ Blockly.Blocks.TextChannel_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14006,10 +14006,10 @@ Blockly.Blocks.TextChannel_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14030,10 +14030,10 @@ Blockly.Blocks.TextChannel_setPosition = {
 
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14054,10 +14054,10 @@ Blockly.Blocks.TextChannel_setTopic = {
 
 
 		this.appendValueInput('topic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14078,10 +14078,10 @@ Blockly.Blocks.TextChannel_createInvite = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14102,16 +14102,16 @@ Blockly.Blocks.TextChannel_clone = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withPermissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withTopic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14132,7 +14132,7 @@ Blockly.Blocks.TextChannel_equals = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14391,7 +14391,7 @@ Blockly.Blocks.User_typingIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14412,7 +14412,7 @@ Blockly.Blocks.User_typingSinceIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14433,7 +14433,7 @@ Blockly.Blocks.User_typingDurationIn = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14573,7 +14573,7 @@ Blockly.Blocks.User_setNote = {
 
 
 		this.appendValueInput('note')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14594,7 +14594,7 @@ Blockly.Blocks.User_equals = {
 
 
 		this.appendValueInput('user')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14632,10 +14632,10 @@ Blockly.Blocks.User_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14656,10 +14656,10 @@ Blockly.Blocks.User_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14680,13 +14680,13 @@ Blockly.Blocks.User_sendEmbed = {
 
 
 		this.appendValueInput('embed')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14707,16 +14707,16 @@ Blockly.Blocks.User_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -14737,13 +14737,13 @@ Blockly.Blocks.User_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15115,10 +15115,10 @@ Blockly.Blocks.VoiceChannel_setBitrate = {
 
 
 		this.appendValueInput('bitrate')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15139,10 +15139,10 @@ Blockly.Blocks.VoiceChannel_setUserLimit = {
 
 
 		this.appendValueInput('userLimit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15180,7 +15180,7 @@ Blockly.Blocks.VoiceChannel_permissionsFor = {
 
 
 		this.appendValueInput('member')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15201,13 +15201,13 @@ Blockly.Blocks.VoiceChannel_overwritePermissions = {
 
 
 		this.appendValueInput('userOrRole')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15228,10 +15228,10 @@ Blockly.Blocks.VoiceChannel_edit = {
 
 
 		this.appendValueInput('data')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15252,10 +15252,10 @@ Blockly.Blocks.VoiceChannel_setName = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15276,10 +15276,10 @@ Blockly.Blocks.VoiceChannel_setPosition = {
 
 
 		this.appendValueInput('position')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('relative')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15300,10 +15300,10 @@ Blockly.Blocks.VoiceChannel_setTopic = {
 
 
 		this.appendValueInput('topic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15324,10 +15324,10 @@ Blockly.Blocks.VoiceChannel_createInvite = {
 
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15348,16 +15348,16 @@ Blockly.Blocks.VoiceChannel_clone = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withPermissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('withTopic')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15378,7 +15378,7 @@ Blockly.Blocks.VoiceChannel_equals = {
 
 
 		this.appendValueInput('channel')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15611,10 +15611,10 @@ Blockly.Blocks.Webhook_send = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15635,10 +15635,10 @@ Blockly.Blocks.Webhook_sendMessage = {
 
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15659,16 +15659,16 @@ Blockly.Blocks.Webhook_sendFile = {
 
 
 		this.appendValueInput('attachment')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15689,13 +15689,13 @@ Blockly.Blocks.Webhook_sendCode = {
 
 
 		this.appendValueInput('lang')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('content')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15716,7 +15716,7 @@ Blockly.Blocks.Webhook_sendSlackMessage = {
 
 
 		this.appendValueInput('body')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15737,10 +15737,10 @@ Blockly.Blocks.Webhook_edit = {
 
 
 		this.appendValueInput('name')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('avatar')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15761,7 +15761,7 @@ Blockly.Blocks.Webhook_delete = {
 
 
 		this.appendValueInput('reason')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15816,7 +15816,7 @@ Blockly.Blocks.Collection_first = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15837,7 +15837,7 @@ Blockly.Blocks.Collection_firstKey = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15858,7 +15858,7 @@ Blockly.Blocks.Collection_last = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15879,7 +15879,7 @@ Blockly.Blocks.Collection_lastKey = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15900,7 +15900,7 @@ Blockly.Blocks.Collection_random = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15921,7 +15921,7 @@ Blockly.Blocks.Collection_randomKey = {
 
 
 		this.appendValueInput('count')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15942,10 +15942,10 @@ Blockly.Blocks.Collection_findAll = {
 
 
 		this.appendValueInput('prop')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15966,10 +15966,10 @@ Blockly.Blocks.Collection_find = {
 
 
 		this.appendValueInput('propOrFn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -15990,10 +15990,10 @@ Blockly.Blocks.Collection_findKey = {
 
 
 		this.appendValueInput('propOrFn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16014,10 +16014,10 @@ Blockly.Blocks.Collection_exists = {
 
 
 		this.appendValueInput('prop')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('value')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16038,10 +16038,10 @@ Blockly.Blocks.Collection_filter = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('thisArg')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16062,10 +16062,10 @@ Blockly.Blocks.Collection_filterArray = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('thisArg')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16086,10 +16086,10 @@ Blockly.Blocks.Collection_map = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('thisArg')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16110,10 +16110,10 @@ Blockly.Blocks.Collection_some = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('thisArg')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16134,10 +16134,10 @@ Blockly.Blocks.Collection_every = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('thisArg')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16158,10 +16158,10 @@ Blockly.Blocks.Collection_reduce = {
 
 
 		this.appendValueInput('fn')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('initialValue')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16199,7 +16199,7 @@ Blockly.Blocks.Collection_concat = {
 
 
 		this.appendValueInput('collections')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16237,7 +16237,7 @@ Blockly.Blocks.Collection_equals = {
 
 
 		this.appendValueInput('collection')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16258,7 +16258,7 @@ Blockly.Blocks.Collection_sort = {
 
 
 		this.appendValueInput('compareFunction')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16369,10 +16369,10 @@ Blockly.Blocks.Permissions_has = {
 
 
 		this.appendValueInput('permission')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('checkAdmin')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16393,10 +16393,10 @@ Blockly.Blocks.Permissions_missing = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('checkAdmin')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16417,7 +16417,7 @@ Blockly.Blocks.Permissions_add = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16438,7 +16438,7 @@ Blockly.Blocks.Permissions_remove = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16459,7 +16459,7 @@ Blockly.Blocks.Permissions_serialize = {
 
 
 		this.appendValueInput('checkAdmin')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16480,10 +16480,10 @@ Blockly.Blocks.Permissions_hasPermission = {
 
 
 		this.appendValueInput('permission')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16504,10 +16504,10 @@ Blockly.Blocks.Permissions_hasPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16528,10 +16528,10 @@ Blockly.Blocks.Permissions_missingPermissions = {
 
 
 		this.appendValueInput('permissions')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('explicit')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16552,7 +16552,7 @@ Blockly.Blocks.Permissions_resolve = {
 
 
 		this.appendValueInput('permission')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16590,7 +16590,7 @@ Blockly.Blocks.SnowflakeUtil_deconstruct = {
 
 
 		this.appendValueInput('snowflake')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16611,10 +16611,10 @@ Blockly.Blocks.Util_splitMessage = {
 
 
 		this.appendValueInput('text')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('options')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16635,13 +16635,13 @@ Blockly.Blocks.Util_escapeMarkdown = {
 
 
 		this.appendValueInput('text')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('onlyCodeBlock')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('onlyInlineCode')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
@@ -16662,10 +16662,10 @@ Blockly.Blocks.Util_fetchRecommendedShards = {
 
 
 		this.appendValueInput('token')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.appendValueInput('guildsPerShard')
-			.setCheck('*');
+			.setCheck(null);
 
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);

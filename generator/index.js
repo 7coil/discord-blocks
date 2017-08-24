@@ -107,7 +107,7 @@ Blockly.Blocks.${classy.name}_${curr.name} = {
 		${(curr.params || []).filter(current => !current.name.includes('.')).reduce((string, current) => `
 			${string}
 			this.appendValueInput('${current.name}')
-				.setCheck('*');
+				.setCheck(null);
 		`, '')}
 		this.setInputsInline(true);
 		this.setPreviousStatement(true, null);
