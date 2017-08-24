@@ -5,7 +5,7 @@ A Google Blockly (like MIT Scratch) to Discord.js compiler
 
 ### Blockly Input
 
-![](./img/blockly.png?raw=true)
+![](/examples/reply/project.png?raw=true)
 
 ### Javascript Output
 
