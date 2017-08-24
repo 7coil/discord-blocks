@@ -1,0 +1,517 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="Cf?6Kgdd.(L5tlv#/Y[7" x="-843" y="-996">
+    <field name="VAR">prefix</field>
+    <value name="VALUE">
+      <block type="text" id="qpg(~q4D3_C:l8y9Tnc%">
+        <field name="TEXT">blocks</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="[Uo;jlKFBBL10rE@`3_D">
+        <field name="VAR">owner</field>
+        <value name="VALUE">
+          <block type="text" id="y[iDNTDB(3Op@5^prHJ2">
+            <field name="TEXT">190519304972664832</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="KJV*bftVi}u}mq%M$p6B">
+            <field name="VAR">client</field>
+            <value name="VALUE">
+              <block type="Client_constructor" id="Pk-e%L+kMU3S`Fsf3-.v"></block>
+            </value>
+            <next>
+              <block type="Client_login" id="W!cPuqOaPMNEPsoeg|vk">
+                <value name="Client">
+                  <block type="variables_get" id="3oz!M5/S-Y^lAXkUGfF|">
+                    <field name="VAR">client</field>
+                  </block>
+                </value>
+                <value name="token">
+                  <block type="text" id="WqMq/jsBv9VkO-T#pn$g">
+                    <field name="TEXT"></field>
+                  </block>
+                </value>
+                <next>
+                  <block type="Client_ready" id="uN`ZYH%|i]A8j`1T;Cor">
+                    <value name="Client">
+                      <block type="variables_get" id="A.p)JBQ4:j|9_xhOH|+b">
+                        <field name="VAR">client</field>
+                      </block>
+                    </value>
+                    <statement name="function">
+                      <block type="console_log" id="*yOSa)0?fW{8s!,(-qxU">
+                        <value name="text">
+                          <shadow type="text" id="YN]sVcf},0+[w:Q:z2(3">
+                            <field name="TEXT">Welcome to DiscordBlocks!</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="Client_debug" id="sSDTW*A*z(h8~nmJ$*5^">
+                        <field name="info">info</field>
+                        <value name="Client">
+                          <block type="variables_get" id="vC~[+foo87mb,Pxj74b~">
+                            <field name="VAR">client</field>
+                          </block>
+                        </value>
+                        <statement name="function">
+                          <block type="console_log" id="Us+!bX2[c@?--,[|^K+T">
+                            <value name="text">
+                              <shadow type="text" id="_;Z+2JHNoa[5@p`F1$[U">
+                                <field name="TEXT">abc</field>
+                              </shadow>
+                              <block type="variables_get" id="8KI~CX=79yl|,*K.Ay-s">
+                                <field name="VAR">info</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="Client_message" id=")oOp{$KHeyB8H{(5O$;0">
+                            <field name="message">message</field>
+                            <value name="Client">
+                              <block type="variables_get" id="4*uUiA3{K?{#vxjFY}Ep">
+                                <field name="VAR">client</field>
+                              </block>
+                            </value>
+                            <statement name="function">
+                              <block type="controls_if" id="QgSpPTj_WUlMP|Hw`^UW">
+                                <value name="IF0">
+                                  <block type="logic_negate" id="(vAk5AJ58!(XDvPdes#g">
+                                    <value name="BOOL">
+                                      <block type="User_bot" id="gCjZ6/)GL@,(e-!B^{S%">
+                                        <value name="User">
+                                          <block type="Message_author" id="BX$*`8JDvU~_[I|R~dD-">
+                                            <value name="Message">
+                                              <block type="variables_get" id="0k7Eb+3T?UT@m|*;kg@-">
+                                                <field name="VAR">message</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="controls_if" id="#V3F_k]Jm2x6)6Ea[+a[">
+                                    <mutation elseif="3"></mutation>
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="#SvzEt[IDm|,$54=P$[o">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="text_indexOf" id="+~^7Mo:#;{0K6YXUd2[B">
+                                            <field name="END">FIRST</field>
+                                            <value name="VALUE">
+                                              <block type="Message_content" id="u5g:3^Gl~#T5c9GvdCP)">
+                                                <value name="Message">
+                                                  <block type="variables_get" id="95*$(QR3VDwzgL|)HQcl">
+                                                    <field name="VAR">message</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="FIND">
+                                              <shadow type="text" id="lWX7mc:Wf%2$5HkuYJmq">
+                                                <field name="TEXT">mss icon</field>
+                                              </shadow>
+                                              <block type="text_join" id="HXeJ}`^L=178vM^4P@sk">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="variables_get" id="[nT5K0q#IbUyu-HBZsJ9">
+                                                    <field name="VAR">prefix</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="text" id="Bt[mc~?%.rRJA|Kt;zk5">
+                                                    <field name="TEXT">icon</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="Nl!eE}9^eHEg]fLz,G.C">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="TextChannel_send" id="gmr]2L#8vFwc%T%@3pJO">
+                                        <value name="TextChannel">
+                                          <block type="Message_channel" id="!S2)`o1}auSx.~CWrcz5">
+                                            <value name="Message">
+                                              <block type="variables_get" id="d]MeOmq,bcm[sX3GVl;I">
+                                                <field name="VAR">message</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="content">
+                                          <block type="text_join" id="OA}pg$JE7VHuQiHWCc7G">
+                                            <mutation items="4"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="];wr:NY#ix$fyLhUg~|#">
+                                                <field name="TEXT">Icon of </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="Guild_name" id="T~[~-BoNR|9hEF4{2h9h">
+                                                <value name="Guild">
+                                                  <block type="Message_guild" id="Rgyu6M`RDeh3CL6lDKTy">
+                                                    <value name="Message">
+                                                      <block type="variables_get" id="|j7ka6g(JyYDHD1JCslR">
+                                                        <field name="VAR">message</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="ADD2">
+                                              <block type="text" id="s(k/YlnT.D`vHZSHp::,">
+                                                <field name="TEXT">: </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD3">
+                                              <block type="Guild_iconURL" id="*Lzer(0k~#nxzq)bnvc]">
+                                                <value name="Guild">
+                                                  <block type="Message_guild" id="1QnY8~}*g;?vKCih(f8P">
+                                                    <value name="Message">
+                                                      <block type="variables_get" id="[3g]F[L~A(5YFgBC*#c/">
+                                                        <field name="VAR">message</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <value name="IF1">
+                                      <block type="logic_compare" id="SIBWuz~#~TH%PhRkm(}=">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="text_indexOf" id="VC8@ydX+{f,]lIu_KtFl">
+                                            <field name="END">FIRST</field>
+                                            <value name="VALUE">
+                                              <block type="Message_content" id="yn!W1G{F7AdN7+?f}f-p">
+                                                <value name="Message">
+                                                  <block type="variables_get" id="GGQOyU%WiB9ri%a.KOl2">
+                                                    <field name="VAR">message</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="FIND">
+                                              <shadow type="text" id="XSAA4B!neVM)@q0G|~;W">
+                                                <field name="TEXT">mss icon</field>
+                                              </shadow>
+                                              <block type="text_join" id="RHjC9ZiL(gwR`uR+Q,S!">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="variables_get" id="5#k=0fCsj64f7Wg]_CxB">
+                                                    <field name="VAR">prefix</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="text" id="`!)dYlJTmG]2T=Yyaz`n">
+                                                    <field name="TEXT">ping</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="6GjWm6h{5`Dj(fa/h+Ag">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO1">
+                                      <block type="TextChannel_send" id="CKjBRzfW^;tv/94{U.3(">
+                                        <value name="TextChannel">
+                                          <block type="Message_channel" id="G;dn=+pT;=S`p$O5$CYv">
+                                            <value name="Message">
+                                              <block type="variables_get" id=";tu}ju:6O~KWv7y-cs1x">
+                                                <field name="VAR">message</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="content">
+                                          <block type="text_join" id="%aZaUKO;Q8-p{mCslTBt">
+                                            <mutation items="3"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="}LHb:?@%=Mar3ahN;8?[">
+                                                <field name="TEXT">Ping! </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="Client_ping" id="]X7Ayf$G[/G5B:zUsg^1">
+                                                <value name="Client">
+                                                  <block type="variables_get" id=")sZ]gcFL1hnd]SK:rfD{">
+                                                    <field name="VAR">client</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="ADD2">
+                                              <block type="text" id="V^cQQBdO~.33vD*gGs:#">
+                                                <field name="TEXT">ms</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <value name="IF2">
+                                      <block type="logic_compare" id="JxMH#P/1yh^e3Bc%K2A:">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="text_indexOf" id="IsLZ[R^9EO0Gk*3w^XQv">
+                                            <field name="END">FIRST</field>
+                                            <value name="VALUE">
+                                              <block type="Message_content" id="YmS!w8FhHFp5Cy$aLh_%">
+                                                <value name="Message">
+                                                  <block type="variables_get" id="hQZYNg{eNVU$Y!7!#ZG;">
+                                                    <field name="VAR">message</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="FIND">
+                                              <shadow type="text" id="XSAA4B!neVM)@q0G|~;W">
+                                                <field name="TEXT">mss icon</field>
+                                              </shadow>
+                                              <block type="text_join" id="tm/n=iOO2}H+4$uD0Oyx">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="variables_get" id="=o=4wbV,bW)%f3YPmabD">
+                                                    <field name="VAR">prefix</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="text" id="6kmULt_ME?59|8.Cc`{P">
+                                                    <field name="TEXT">roll</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="27}ji+DX].$4p|8HQzax">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO2">
+                                      <block type="TextChannel_send" id="sy$Z%D6%K+O~D5/.$8P{">
+                                        <value name="TextChannel">
+                                          <block type="Message_channel" id="?X-,*)Omr!I5:ME})J9X">
+                                            <value name="Message">
+                                              <block type="variables_get" id="iayfaIts7+tBiAS~pKw(">
+                                                <field name="VAR">message</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="content">
+                                          <block type="text_join" id="rvXNq8XBQofY1h|JaPUr">
+                                            <mutation items="3"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="V(vDD0}yy1;/F-LOuhrZ">
+                                                <field name="TEXT">You rolled a </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="math_random_int" id="Uq#J{~3.Da#Rbg;9nV?X">
+                                                <value name="FROM">
+                                                  <block type="math_number" id=")V8*bsW4weH1Fe;go5rr">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                                <value name="TO">
+                                                  <block type="math_number" id="f/U+Z7^@4{K=S%6)``CM">
+                                                    <field name="NUM">6</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="ADD2">
+                                              <block type="text" id="`4*vQfCQ@ZmH:nHx+srO">
+                                                <field name="TEXT">.</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <value name="IF3">
+                                      <block type="logic_compare" id="8H(_Jq}UgKG``6jRp}(@">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="text_indexOf" id="1#~,jfBo|C-HAnm}5xRo">
+                                            <field name="END">FIRST</field>
+                                            <value name="VALUE">
+                                              <block type="Message_content" id="AOsPuh3G%vNqINxXRB:1">
+                                                <value name="Message">
+                                                  <block type="variables_get" id="B{@0caSW}w:O3FX~[!AZ">
+                                                    <field name="VAR">message</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="FIND">
+                                              <shadow type="text" id="XSAA4B!neVM)@q0G|~;W">
+                                                <field name="TEXT">mss icon</field>
+                                              </shadow>
+                                              <block type="text_join" id="`_)[Y+#q;7tc_h|QerdK">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="variables_get" id="}4j?puiHJ!|RK.K5Nap@">
+                                                    <field name="VAR">prefix</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="text" id="6Od6%fbl#Eg;6Kxy-+OY">
+                                                    <field name="TEXT">eval</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="8Z2;PY,C`[v(5Re4|;}D">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO3">
+                                      <block type="controls_if" id="!@J|!jqUm,6K}{$jj-@U">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="W,$G/gaO59~aEXCz@TR3">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="variables_get" id="fIHtalD=w4L1oh?Uj?.E">
+                                                <field name="VAR">owner</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="User_id" id="-FFLub?Iz7HJ54,YObno">
+                                                <value name="User">
+                                                  <block type="Message_author" id="k:_z2P(Aj#1X$W*)){t0">
+                                                    <value name="Message">
+                                                      <block type="variables_get" id="~/+(-G:g+nwW?%mmXZKj">
+                                                        <field name="VAR">message</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="eval" id="?MUWJTm~YKTpI5dCZI9%">
+                                            <value name="text">
+                                              <block type="text_getSubstring" id="5|#Ptn1%_f|2==6Xp7,=">
+                                                <mutation at1="true" at2="false"></mutation>
+                                                <field name="WHERE1">FROM_START</field>
+                                                <field name="WHERE2">LAST</field>
+                                                <value name="STRING">
+                                                  <block type="Message_content" id="2,JNRgPGDFb+~GekaFm7">
+                                                    <value name="Message">
+                                                      <block type="variables_get" id="PZ$}-PF1:!!E.e#3!`2z">
+                                                        <field name="VAR">message</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="AT1">
+                                                  <block type="math_arithmetic" id="$rOf*V.*/34W.Qx`;.gJ">
+                                                    <field name="OP">ADD</field>
+                                                    <value name="A">
+                                                      <block type="text_length" id="QQNSxo|K3:{G7K8hiM.]">
+                                                        <value name="VALUE">
+                                                          <shadow type="text" id="3DjlE2`HpMV-FOvw*Hjs">
+                                                            <field name="TEXT">abc</field>
+                                                          </shadow>
+                                                          <block type="text_join" id="{1F-TvGI-)DZyL^wST7T">
+                                                            <mutation items="2"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="variables_get" id="]rP=g0|),R9@g[D,-w{D">
+                                                                <field name="VAR">prefix</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ADD1">
+                                                              <block type="text" id="ih%!/)KTRIw?6%g5QOja">
+                                                                <field name="TEXT">eval</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="N@]q@]5%rXOMc32J^^@E">
+                                                        <field name="NUM">1</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                          <block type="TextChannel_send" id="1%JID@=SA-d2gNSP2ox$">
+                                            <value name="TextChannel">
+                                              <block type="Message_channel" id="Cxp88d_m$U%kxZozX]?s">
+                                                <value name="Message">
+                                                  <block type="variables_get" id="_wcgNlzJf/.x;,3,v@_]">
+                                                    <field name="VAR">message</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="content">
+                                              <block type="text" id="ean*z`EfGf7De`?h$2Hz">
+                                                <field name="TEXT">You do not have permission to run this command!</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
