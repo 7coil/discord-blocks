@@ -49,11 +49,7 @@ DiscordBlocks is moustacheminer.com's mission to make Discord bots more accessab
 
 ### Installation
 
-DiscordBlocks is a web app, which means it can be ran in a webpage. Without installation, the latest version of DiscordBlocks can be found in the following official links:
-
-* Long Link - https://moustacheminer.com/discordblocks
-* Short Link - http://mss.ovh/db
-* RawGit - https://cdn.rawgit.com/lepon01/discordblocks/b1d42c50/index.html
+DiscordBlocks is a web app, which means it can be ran in a webpage. Without installation, the latest version of DiscordBlocks can be found here: https://moustacheminer.com/discord-blocks
 
 You could download a ZIP, but it is recommended that you host DiscordBlocks on a webserver (so no `file://`)
 
