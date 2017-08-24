@@ -18,7 +18,7 @@ Blockly.JavaScript.console_log = (block) => {
 	return code;
 };
 
-Blockly.Blocks.console_log = {
+Blockly.Blocks.eval = {
 	init() {
 		this.appendValueInput('text')
 			.setCheck(null)
@@ -31,7 +31,7 @@ Blockly.Blocks.console_log = {
 	}
 };
 
-Blockly.JavaScript.console_log = (block) => {
+Blockly.JavaScript.eval = (block) => {
 	const value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
 	// TODO: Assemble JavaScript into code variable.
 	const code = `eval(${value_text});\n`;
