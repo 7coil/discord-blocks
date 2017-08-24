@@ -95,7 +95,7 @@ Blockly.Blocks.Client_token = {
 			.setCheck('Client')
 			.appendField('get token of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Authorization token for the logged in user/bot\n<warn>This should be kept private at all times.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=token');
@@ -147,7 +147,7 @@ Blockly.Blocks.Client_pings = {
 			.setCheck('Client')
 			.appendField('get pings of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'number']);
+		this.setOutput(true, ['Array', 'Number']);
 		this.setColour(230);
 		this.setTooltip('Previous heartbeat pings of the websocket (most recent first, limited to three elements)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=pings');
@@ -160,7 +160,7 @@ Blockly.Blocks.Client_status = {
 			.setCheck('Client')
 			.appendField('get status of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Current status of the client\'s connection to Discord');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=status');
@@ -173,7 +173,7 @@ Blockly.Blocks.Client_uptime = {
 			.setCheck('Client')
 			.appendField('get uptime of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('How long it has been since the client last entered the `READY` state');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=uptime');
@@ -186,7 +186,7 @@ Blockly.Blocks.Client_ping = {
 			.setCheck('Client')
 			.appendField('get ping of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Average heartbeat ping of the websocket, obtained by averaging the {@link Client#pings} property');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=ping');
@@ -225,7 +225,7 @@ Blockly.Blocks.Client_readyTimestamp = {
 			.setCheck('Client')
 			.appendField('get readyTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Timestamp of the time the client was last `READY` at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=readyTimestamp');
@@ -238,7 +238,7 @@ Blockly.Blocks.Client_browser = {
 			.setCheck('Client')
 			.appendField('get browser of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the client is in a browser environment');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=browser');
@@ -1347,7 +1347,7 @@ Blockly.Blocks.DiscordAPIError_code = {
 			.setCheck('DiscordAPIError')
 			.appendField('get code of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('HTTP error code returned by Discord');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DiscordAPIError?scrollTo=code');
@@ -1386,7 +1386,7 @@ Blockly.Blocks.StreamDispatcher_paused = {
 			.setCheck('StreamDispatcher')
 			.appendField('get paused of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether playing is paused');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=paused');
@@ -1399,7 +1399,7 @@ Blockly.Blocks.StreamDispatcher_destroyed = {
 			.setCheck('StreamDispatcher')
 			.appendField('get destroyed of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this dispatcher has been destroyed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=destroyed');
@@ -1412,7 +1412,7 @@ Blockly.Blocks.StreamDispatcher_passes = {
 			.setCheck('StreamDispatcher')
 			.appendField('get passes of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('How many passes the dispatcher should take when sending packets to reduce packet loss. Values over 5\naren\'t recommended, as it means you are using 5x more bandwidth. You _can_ edit this at runtime');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=passes');
@@ -1425,7 +1425,7 @@ Blockly.Blocks.StreamDispatcher_time = {
 			.setCheck('StreamDispatcher')
 			.appendField('get time of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('How long the stream dispatcher has been "speaking" for');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=time');
@@ -1438,7 +1438,7 @@ Blockly.Blocks.StreamDispatcher_totalStreamTime = {
 			.setCheck('StreamDispatcher')
 			.appendField('get totalStreamTime of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The total time, taking into account pauses and skips, that the dispatcher has been streaming for');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=totalStreamTime');
@@ -1546,7 +1546,7 @@ Blockly.Blocks.VoiceReceiver_destroyed = {
 			.setCheck('VoiceReceiver')
 			.appendField('get destroyed of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this receiver has been destroyed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=destroyed');
@@ -1671,7 +1671,7 @@ Blockly.Blocks.VolumeInterface_volume = {
 			.setCheck('VolumeInterface')
 			.appendField('get volume of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The current volume of the broadcast');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volume');
@@ -1684,7 +1684,7 @@ Blockly.Blocks.VolumeInterface_volumeDecibels = {
 			.setCheck('VolumeInterface')
 			.appendField('get volumeDecibels of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The current volume of the broadcast in decibels');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeDecibels');
@@ -1697,7 +1697,7 @@ Blockly.Blocks.VolumeInterface_volumeLogarithmic = {
 			.setCheck('VolumeInterface')
 			.appendField('get volumeLogarithmic of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The current volume of the broadcast from a logarithmic scale');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeLogarithmic');
@@ -2048,7 +2048,7 @@ Blockly.Blocks.VoiceConnection_status = {
 			.setCheck('VoiceConnection')
 			.appendField('get status of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The current status of the voice connection');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=status');
@@ -2061,7 +2061,7 @@ Blockly.Blocks.VoiceConnection_speaking = {
 			.setCheck('VoiceConnection')
 			.appendField('get speaking of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether we\'re currently transmitting audio');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=speaking');
@@ -2526,7 +2526,7 @@ Blockly.Blocks.WebhookClient_name = {
 			.setCheck('WebhookClient')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=name');
@@ -2539,7 +2539,7 @@ Blockly.Blocks.WebhookClient_token = {
 			.setCheck('WebhookClient')
 			.appendField('get token of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The token for the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=token');
@@ -2552,7 +2552,7 @@ Blockly.Blocks.WebhookClient_avatar = {
 			.setCheck('WebhookClient')
 			.appendField('get avatar of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The avatar for the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=avatar');
@@ -2867,7 +2867,7 @@ Blockly.Blocks.Shard_id = {
 			.setCheck('Shard')
 			.appendField('get id of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('ID of the shard');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=id');
@@ -2981,7 +2981,7 @@ Blockly.Blocks.ShardClientUtil_id = {
 			.setCheck('ShardClientUtil')
 			.appendField('get id of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('ID of this shard');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=id');
@@ -2994,7 +2994,7 @@ Blockly.Blocks.ShardClientUtil_count = {
 			.setCheck('ShardClientUtil')
 			.appendField('get count of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Total number of shards');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=count');
@@ -3103,7 +3103,7 @@ Blockly.Blocks.ShardingManager_file = {
 			.setCheck('ShardingManager')
 			.appendField('get file of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Path to the shard script file');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=file');
@@ -3116,7 +3116,7 @@ Blockly.Blocks.ShardingManager_totalShards = {
 			.setCheck('ShardingManager')
 			.appendField('get totalShards of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Amount of shards that this manager is going to spawn');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=totalShards');
@@ -3129,7 +3129,7 @@ Blockly.Blocks.ShardingManager_respawn = {
 			.setCheck('ShardingManager')
 			.appendField('get respawn of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether shards should automatically respawn upon exiting');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=respawn');
@@ -3142,7 +3142,7 @@ Blockly.Blocks.ShardingManager_shardArgs = {
 			.setCheck('ShardingManager')
 			.appendField('get shardArgs of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'string']);
+		this.setOutput(true, ['Array', 'String']);
 		this.setColour(230);
 		this.setTooltip('An array of arguments to pass to shards');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=shardArgs');
@@ -3155,7 +3155,7 @@ Blockly.Blocks.ShardingManager_token = {
 			.setCheck('ShardingManager')
 			.appendField('get token of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Token to use for obtaining the automatic shard count, and passing to shards');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=token');
@@ -3168,7 +3168,7 @@ Blockly.Blocks.ShardingManager_shards = {
 			.setCheck('ShardingManager')
 			.appendField('get shards of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'number', 'Shard']);
+		this.setOutput(true, ['Collection', 'Number', 'Shard']);
 		this.setColour(230);
 		this.setTooltip('A collection of shards that this manager has spawned');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=shards');
@@ -3339,7 +3339,7 @@ Blockly.Blocks.Attachment_name = {
 			.setCheck('Attachment')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the file');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=name');
@@ -3444,7 +3444,7 @@ Blockly.Blocks.Channel_type = {
 			.setCheck('Channel')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=type');
@@ -3470,7 +3470,7 @@ Blockly.Blocks.Channel_createdTimestamp = {
 			.setCheck('Channel')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the channel was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=createdTimestamp');
@@ -3513,7 +3513,7 @@ Blockly.Blocks.ClientUser_verified = {
 			.setCheck('ClientUser')
 			.appendField('get verified of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this account has been verified');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=verified');
@@ -3526,7 +3526,7 @@ Blockly.Blocks.ClientUser_email = {
 			.setCheck('ClientUser')
 			.appendField('get email of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The email of this account');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=email');
@@ -3565,7 +3565,7 @@ Blockly.Blocks.ClientUser_notes = {
 			.setCheck('ClientUser')
 			.appendField('get notes of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'string']);
+		this.setOutput(true, ['Collection', 'Snowflake', 'String']);
 		this.setColour(230);
 		this.setTooltip('A Collection of notes for the logged in user\n<warn>This is only filled when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=notes');
@@ -3578,7 +3578,7 @@ Blockly.Blocks.ClientUser_premium = {
 			.setCheck('ClientUser')
 			.appendField('get premium of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the user has Discord premium (nitro)\n<warn>This is only filled when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=premium');
@@ -3591,7 +3591,7 @@ Blockly.Blocks.ClientUser_mfaEnabled = {
 			.setCheck('ClientUser')
 			.appendField('get mfaEnabled of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the user has MFA enabled on their account\n<warn>This is only filled when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=mfaEnabled');
@@ -3604,7 +3604,7 @@ Blockly.Blocks.ClientUser_mobile = {
 			.setCheck('ClientUser')
 			.appendField('get mobile of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the user has ever used a mobile device on Discord\n<warn>This is only filled when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=mobile');
@@ -3669,7 +3669,7 @@ Blockly.Blocks.ClientUser_username = {
 			.setCheck('ClientUser')
 			.appendField('get username of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The username of the user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=username');
@@ -3682,7 +3682,7 @@ Blockly.Blocks.ClientUser_discriminator = {
 			.setCheck('ClientUser')
 			.appendField('get discriminator of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A discriminator based on username for the user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=discriminator');
@@ -3695,7 +3695,7 @@ Blockly.Blocks.ClientUser_avatar = {
 			.setCheck('ClientUser')
 			.appendField('get avatar of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The ID of the user\'s avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=avatar');
@@ -3708,7 +3708,7 @@ Blockly.Blocks.ClientUser_bot = {
 			.setCheck('ClientUser')
 			.appendField('get bot of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the user is a bot');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=bot');
@@ -3747,7 +3747,7 @@ Blockly.Blocks.ClientUser_createdTimestamp = {
 			.setCheck('ClientUser')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the user was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createdTimestamp');
@@ -3786,7 +3786,7 @@ Blockly.Blocks.ClientUser_avatarURL = {
 			.setCheck('ClientUser')
 			.appendField('get avatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=avatarURL');
@@ -3799,7 +3799,7 @@ Blockly.Blocks.ClientUser_defaultAvatarURL = {
 			.setCheck('ClientUser')
 			.appendField('get defaultAvatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s default avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=defaultAvatarURL');
@@ -3812,7 +3812,7 @@ Blockly.Blocks.ClientUser_displayAvatarURL = {
 			.setCheck('ClientUser')
 			.appendField('get displayAvatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s avatar if they have one. Otherwise a link to their default avatar will be returned');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=displayAvatarURL');
@@ -3825,7 +3825,7 @@ Blockly.Blocks.ClientUser_tag = {
 			.setCheck('ClientUser')
 			.appendField('get tag of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The Discord "tag" for this user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=tag');
@@ -3838,7 +3838,7 @@ Blockly.Blocks.ClientUser_note = {
 			.setCheck('ClientUser')
 			.appendField('get note of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The note that is set for the user\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=note');
@@ -4515,7 +4515,7 @@ Blockly.Blocks.ClientUserChannelOverride_muted = {
 			.setCheck('ClientUserChannelOverride')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is muted');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserChannelOverride?scrollTo=muted');
@@ -4567,7 +4567,7 @@ Blockly.Blocks.ClientUserGuildSettings_mobilePush = {
 			.setCheck('ClientUserGuildSettings')
 			.appendField('get mobilePush of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether to receive mobile push notifications');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=mobilePush');
@@ -4593,7 +4593,7 @@ Blockly.Blocks.ClientUserGuildSettings_muted = {
 			.setCheck('ClientUserGuildSettings')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the guild is muted');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=muted');
@@ -4606,7 +4606,7 @@ Blockly.Blocks.ClientUserGuildSettings_suppressEveryone = {
 			.setCheck('ClientUserGuildSettings')
 			.appendField('get suppressEveryone of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether to suppress everyone mention');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=suppressEveryone');
@@ -4656,7 +4656,7 @@ Blockly.Blocks.ClientUserSettings_convertEmoticons = {
 			.setCheck('ClientUserSettings')
 			.appendField('get convertEmoticons of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Automatically convert emoticons in your messages to emoji\nFor example, when you type `:-)` Discord will convert it to 😃');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=convertEmoticons');
@@ -4669,7 +4669,7 @@ Blockly.Blocks.ClientUserSettings_defaultGuildsRestricted = {
 			.setCheck('ClientUserSettings')
 			.appendField('get defaultGuildsRestricted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If new guilds should automatically disable DMs between you and its members');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=defaultGuildsRestricted');
@@ -4682,7 +4682,7 @@ Blockly.Blocks.ClientUserSettings_detectPlatformAccounts = {
 			.setCheck('ClientUserSettings')
 			.appendField('get detectPlatformAccounts of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Automatically detect accounts from services like Steam and Blizzard when you open the Discord client');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=detectPlatformAccounts');
@@ -4695,7 +4695,7 @@ Blockly.Blocks.ClientUserSettings_developerMode = {
 			.setCheck('ClientUserSettings')
 			.appendField('get developerMode of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Developer Mode exposes context menu items helpful for people writing bots using the Discord API');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=developerMode');
@@ -4708,7 +4708,7 @@ Blockly.Blocks.ClientUserSettings_enableTTSCommand = {
 			.setCheck('ClientUserSettings')
 			.appendField('get enableTTSCommand of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Allow playback and usage of the `/tts` command');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=enableTTSCommand');
@@ -4721,7 +4721,7 @@ Blockly.Blocks.ClientUserSettings_theme = {
 			.setCheck('ClientUserSettings')
 			.appendField('get theme of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The theme of the client. Either `light` or `dark`');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=theme');
@@ -4747,7 +4747,7 @@ Blockly.Blocks.ClientUserSettings_showCurrentGame = {
 			.setCheck('ClientUserSettings')
 			.appendField('get showCurrentGame of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Display currently running game as status message');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=showCurrentGame');
@@ -4760,7 +4760,7 @@ Blockly.Blocks.ClientUserSettings_inlineAttachmentMedia = {
 			.setCheck('ClientUserSettings')
 			.appendField('get inlineAttachmentMedia of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Display images, videos, and lolcats when uploaded directly to Discord');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=inlineAttachmentMedia');
@@ -4773,7 +4773,7 @@ Blockly.Blocks.ClientUserSettings_inlineEmbedMedia = {
 			.setCheck('ClientUserSettings')
 			.appendField('get inlineEmbedMedia of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Display images, videos, and lolcats when uploaded posted as links in chat');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=inlineEmbedMedia');
@@ -4786,7 +4786,7 @@ Blockly.Blocks.ClientUserSettings_locale = {
 			.setCheck('ClientUserSettings')
 			.appendField('get locale of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Language the Discord client will use, as an RFC 3066 language identifier');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=locale');
@@ -4799,7 +4799,7 @@ Blockly.Blocks.ClientUserSettings_messageDisplayCompact = {
 			.setCheck('ClientUserSettings')
 			.appendField('get messageDisplayCompact of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Display messages in compact mode');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=messageDisplayCompact');
@@ -4812,7 +4812,7 @@ Blockly.Blocks.ClientUserSettings_renderReactions = {
 			.setCheck('ClientUserSettings')
 			.appendField('get renderReactions of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Show emoji reactions on messages');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=renderReactions');
@@ -4851,7 +4851,7 @@ Blockly.Blocks.ClientUserSettings_explicitContentFilter = {
 			.setCheck('ClientUserSettings')
 			.appendField('get explicitContentFilter of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Safe direct messaging; force people\'s messages with images to be scanned before they are sent to you.\nOne of `DISABLED`, `NON_FRIENDS`, `FRIENDS_AND_NON_FRIENDS`');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=explicitContentFilter');
@@ -5009,7 +5009,7 @@ Blockly.Blocks.DMChannel_typing = {
 			.setCheck('DMChannel')
 			.appendField('get typing of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=typing');
@@ -5022,7 +5022,7 @@ Blockly.Blocks.DMChannel_typingCount = {
 			.setCheck('DMChannel')
 			.appendField('get typingCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Number of times `startTyping` has been called');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=typingCount');
@@ -5048,7 +5048,7 @@ Blockly.Blocks.DMChannel_type = {
 			.setCheck('DMChannel')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=type');
@@ -5074,7 +5074,7 @@ Blockly.Blocks.DMChannel_createdTimestamp = {
 			.setCheck('DMChannel')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the channel was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createdTimestamp');
@@ -5477,7 +5477,7 @@ Blockly.Blocks.Emoji_name = {
 			.setCheck('Emoji')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the emoji');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=name');
@@ -5490,7 +5490,7 @@ Blockly.Blocks.Emoji_requiresColons = {
 			.setCheck('Emoji')
 			.appendField('get requiresColons of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this emoji requires colons surrounding it');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=requiresColons');
@@ -5503,7 +5503,7 @@ Blockly.Blocks.Emoji_managed = {
 			.setCheck('Emoji')
 			.appendField('get managed of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this emoji is managed by an external service');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=managed');
@@ -5516,7 +5516,7 @@ Blockly.Blocks.Emoji_createdTimestamp = {
 			.setCheck('Emoji')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the emoji was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=createdTimestamp');
@@ -5555,7 +5555,7 @@ Blockly.Blocks.Emoji_url = {
 			.setCheck('Emoji')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to the emoji file');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=url');
@@ -5568,7 +5568,7 @@ Blockly.Blocks.Emoji_identifier = {
 			.setCheck('Emoji')
 			.appendField('get identifier of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The identifier of this emoji, used for message reactions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=identifier');
@@ -5751,7 +5751,7 @@ Blockly.Blocks.GroupDMChannel_name = {
 			.setCheck('GroupDMChannel')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this Group DM, can be null if one isn\'t set');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=name');
@@ -5764,7 +5764,7 @@ Blockly.Blocks.GroupDMChannel_icon = {
 			.setCheck('GroupDMChannel')
 			.appendField('get icon of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A hash of this Group DM icon');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=icon');
@@ -5777,7 +5777,7 @@ Blockly.Blocks.GroupDMChannel_ownerID = {
 			.setCheck('GroupDMChannel')
 			.appendField('get ownerID of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The user ID of this Group DM\'s owner');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=ownerID');
@@ -5790,7 +5790,7 @@ Blockly.Blocks.GroupDMChannel_managed = {
 			.setCheck('GroupDMChannel')
 			.appendField('get managed of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the DM is managed by an application');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=managed');
@@ -5803,7 +5803,7 @@ Blockly.Blocks.GroupDMChannel_applicationID = {
 			.setCheck('GroupDMChannel')
 			.appendField('get applicationID of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Application ID of the application that made this Group DM, if applicable');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=applicationID');
@@ -5816,7 +5816,7 @@ Blockly.Blocks.GroupDMChannel_nicks = {
 			.setCheck('GroupDMChannel')
 			.appendField('get nicks of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Collection', 'Snowflake', 'string']);
+		this.setOutput(true, ['Collection', 'Snowflake', 'String']);
 		this.setColour(230);
 		this.setTooltip('Nicknames for group members');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=nicks');
@@ -5855,7 +5855,7 @@ Blockly.Blocks.GroupDMChannel_iconURL = {
 			.setCheck('GroupDMChannel')
 			.appendField('get iconURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to this guild\'s icon');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=iconURL');
@@ -5894,7 +5894,7 @@ Blockly.Blocks.GroupDMChannel_typing = {
 			.setCheck('GroupDMChannel')
 			.appendField('get typing of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=typing');
@@ -5907,7 +5907,7 @@ Blockly.Blocks.GroupDMChannel_typingCount = {
 			.setCheck('GroupDMChannel')
 			.appendField('get typingCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Number of times `startTyping` has been called');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=typingCount');
@@ -5933,7 +5933,7 @@ Blockly.Blocks.GroupDMChannel_type = {
 			.setCheck('GroupDMChannel')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=type');
@@ -5959,7 +5959,7 @@ Blockly.Blocks.GroupDMChannel_createdTimestamp = {
 			.setCheck('GroupDMChannel')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the channel was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createdTimestamp');
@@ -6430,7 +6430,7 @@ Blockly.Blocks.Guild_available = {
 			.setCheck('Guild')
 			.appendField('get available of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the guild is available to access. If it is not available, it indicates a server outage');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=available');
@@ -6456,7 +6456,7 @@ Blockly.Blocks.Guild_name = {
 			.setCheck('Guild')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the guild');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=name');
@@ -6469,7 +6469,7 @@ Blockly.Blocks.Guild_icon = {
 			.setCheck('Guild')
 			.appendField('get icon of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hash of the guild icon');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=icon');
@@ -6482,7 +6482,7 @@ Blockly.Blocks.Guild_splash = {
 			.setCheck('Guild')
 			.appendField('get splash of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hash of the guild splash image (VIP only)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=splash');
@@ -6495,7 +6495,7 @@ Blockly.Blocks.Guild_region = {
 			.setCheck('Guild')
 			.appendField('get region of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The region the guild is located in');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=region');
@@ -6508,7 +6508,7 @@ Blockly.Blocks.Guild_memberCount = {
 			.setCheck('Guild')
 			.appendField('get memberCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The full amount of members in this guild as of `READY`');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=memberCount');
@@ -6521,7 +6521,7 @@ Blockly.Blocks.Guild_large = {
 			.setCheck('Guild')
 			.appendField('get large of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the guild is "large" (has more than 250 members)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=large');
@@ -6560,7 +6560,7 @@ Blockly.Blocks.Guild_afkTimeout = {
 			.setCheck('Guild')
 			.appendField('get afkTimeout of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The time in seconds before a user is counted as "away from keyboard"');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=afkTimeout');
@@ -6573,7 +6573,7 @@ Blockly.Blocks.Guild_afkChannelID = {
 			.setCheck('Guild')
 			.appendField('get afkChannelID of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The ID of the voice channel where AFK members are moved');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=afkChannelID');
@@ -6599,7 +6599,7 @@ Blockly.Blocks.Guild_embedEnabled = {
 			.setCheck('Guild')
 			.appendField('get embedEnabled of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether embedded images are enabled on this guild');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=embedEnabled');
@@ -6612,7 +6612,7 @@ Blockly.Blocks.Guild_verificationLevel = {
 			.setCheck('Guild')
 			.appendField('get verificationLevel of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The verification level of the guild');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=verificationLevel');
@@ -6625,7 +6625,7 @@ Blockly.Blocks.Guild_explicitContentFilter = {
 			.setCheck('Guild')
 			.appendField('get explicitContentFilter of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The explicit content filter level of the guild');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=explicitContentFilter');
@@ -6638,7 +6638,7 @@ Blockly.Blocks.Guild_joinedTimestamp = {
 			.setCheck('Guild')
 			.appendField('get joinedTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the client user joined the guild at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=joinedTimestamp');
@@ -6677,7 +6677,7 @@ Blockly.Blocks.Guild_createdTimestamp = {
 			.setCheck('Guild')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the guild was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createdTimestamp');
@@ -6716,7 +6716,7 @@ Blockly.Blocks.Guild_iconURL = {
 			.setCheck('Guild')
 			.appendField('get iconURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to this guild\'s icon');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=iconURL');
@@ -6729,7 +6729,7 @@ Blockly.Blocks.Guild_nameAcronym = {
 			.setCheck('Guild')
 			.appendField('get nameAcronym of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The acronym that shows up in place of a guild icon.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=nameAcronym');
@@ -6742,7 +6742,7 @@ Blockly.Blocks.Guild_splashURL = {
 			.setCheck('Guild')
 			.appendField('get splashURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to this guild\'s splash');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=splashURL');
@@ -6807,7 +6807,7 @@ Blockly.Blocks.Guild_position = {
 			.setCheck('Guild')
 			.appendField('get position of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of this guild\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=position');
@@ -6820,7 +6820,7 @@ Blockly.Blocks.Guild_muted = {
 			.setCheck('Guild')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the guild is muted\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=muted');
@@ -6846,7 +6846,7 @@ Blockly.Blocks.Guild_mobilePush = {
 			.setCheck('Guild')
 			.appendField('get mobilePush of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether to receive mobile push notifications\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=mobilePush');
@@ -6859,7 +6859,7 @@ Blockly.Blocks.Guild_suppressEveryone = {
 			.setCheck('Guild')
 			.appendField('get suppressEveryone of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether to suppress everyone messages\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=suppressEveryone');
@@ -7842,7 +7842,7 @@ Blockly.Blocks.GuildAuditLogsEntry_targetType = {
 			.setCheck('GuildAuditLogsEntry')
 			.appendField('get targetType of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The target type of this entry');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=targetType');
@@ -7855,7 +7855,7 @@ Blockly.Blocks.GuildAuditLogsEntry_actionType = {
 			.setCheck('GuildAuditLogsEntry')
 			.appendField('get actionType of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The action type of this entry');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=actionType');
@@ -7868,7 +7868,7 @@ Blockly.Blocks.GuildAuditLogsEntry_action = {
 			.setCheck('GuildAuditLogsEntry')
 			.appendField('get action of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Specific action type of this entry');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=action');
@@ -7881,7 +7881,7 @@ Blockly.Blocks.GuildAuditLogsEntry_reason = {
 			.setCheck('GuildAuditLogsEntry')
 			.appendField('get reason of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The reason of this entry');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=reason');
@@ -7959,7 +7959,7 @@ Blockly.Blocks.GuildAuditLogsEntry_createdTimestamp = {
 			.setCheck('GuildAuditLogsEntry')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp this entry was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=createdTimestamp');
@@ -7998,7 +7998,7 @@ Blockly.Blocks.GuildChannel_name = {
 			.setCheck('GuildChannel')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the guild channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=name');
@@ -8011,7 +8011,7 @@ Blockly.Blocks.GuildChannel_position = {
 			.setCheck('GuildChannel')
 			.appendField('get position of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel in the list');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=position');
@@ -8037,7 +8037,7 @@ Blockly.Blocks.GuildChannel_calculatedPosition = {
 			.setCheck('GuildChannel')
 			.appendField('get calculatedPosition of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=calculatedPosition');
@@ -8050,7 +8050,7 @@ Blockly.Blocks.GuildChannel_deletable = {
 			.setCheck('GuildChannel')
 			.appendField('get deletable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is deletable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=deletable');
@@ -8063,7 +8063,7 @@ Blockly.Blocks.GuildChannel_muted = {
 			.setCheck('GuildChannel')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=muted');
@@ -8102,7 +8102,7 @@ Blockly.Blocks.GuildChannel_type = {
 			.setCheck('GuildChannel')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=type');
@@ -8128,7 +8128,7 @@ Blockly.Blocks.GuildChannel_createdTimestamp = {
 			.setCheck('GuildChannel')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the channel was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=createdTimestamp');
@@ -8472,7 +8472,7 @@ Blockly.Blocks.GuildMember_serverDeaf = {
 			.setCheck('GuildMember')
 			.appendField('get serverDeaf of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is deafened server-wide');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=serverDeaf');
@@ -8485,7 +8485,7 @@ Blockly.Blocks.GuildMember_serverMute = {
 			.setCheck('GuildMember')
 			.appendField('get serverMute of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is muted server-wide');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=serverMute');
@@ -8498,7 +8498,7 @@ Blockly.Blocks.GuildMember_selfMute = {
 			.setCheck('GuildMember')
 			.appendField('get selfMute of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is self-muted');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=selfMute');
@@ -8511,7 +8511,7 @@ Blockly.Blocks.GuildMember_selfDeaf = {
 			.setCheck('GuildMember')
 			.appendField('get selfDeaf of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is self-deafened');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=selfDeaf');
@@ -8550,7 +8550,7 @@ Blockly.Blocks.GuildMember_speaking = {
 			.setCheck('GuildMember')
 			.appendField('get speaking of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is speaking');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=speaking');
@@ -8563,7 +8563,7 @@ Blockly.Blocks.GuildMember_nickname = {
 			.setCheck('GuildMember')
 			.appendField('get nickname of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The nickname of this guild member, if they have one');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=nickname');
@@ -8576,7 +8576,7 @@ Blockly.Blocks.GuildMember_joinedTimestamp = {
 			.setCheck('GuildMember')
 			.appendField('get joinedTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the member joined the guild at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=joinedTimestamp');
@@ -8654,7 +8654,7 @@ Blockly.Blocks.GuildMember_displayColor = {
 			.setCheck('GuildMember')
 			.appendField('get displayColor of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The displayed color of the member in base 10');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayColor');
@@ -8667,7 +8667,7 @@ Blockly.Blocks.GuildMember_displayHexColor = {
 			.setCheck('GuildMember')
 			.appendField('get displayHexColor of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The displayed color of the member in hexadecimal');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayHexColor');
@@ -8693,7 +8693,7 @@ Blockly.Blocks.GuildMember_mute = {
 			.setCheck('GuildMember')
 			.appendField('get mute of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is muted in any way');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=mute');
@@ -8706,7 +8706,7 @@ Blockly.Blocks.GuildMember_deaf = {
 			.setCheck('GuildMember')
 			.appendField('get deaf of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this member is deafened in any way');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=deaf');
@@ -8745,7 +8745,7 @@ Blockly.Blocks.GuildMember_displayName = {
 			.setCheck('GuildMember')
 			.appendField('get displayName of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The nickname of the member, or their username if they don\'t have one');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayName');
@@ -8771,7 +8771,7 @@ Blockly.Blocks.GuildMember_kickable = {
 			.setCheck('GuildMember')
 			.appendField('get kickable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the member is kickable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=kickable');
@@ -8784,7 +8784,7 @@ Blockly.Blocks.GuildMember_bannable = {
 			.setCheck('GuildMember')
 			.appendField('get bannable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the member is bannable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=bannable');
@@ -9410,7 +9410,7 @@ Blockly.Blocks.Collector_ended = {
 			.setCheck('Collector')
 			.appendField('get ended of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this collector has finished collecting');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=ended');
@@ -9542,7 +9542,7 @@ Blockly.Blocks.Invite_code = {
 			.setCheck('Invite')
 			.appendField('get code of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The code for this invite');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=code');
@@ -9555,7 +9555,7 @@ Blockly.Blocks.Invite_presenceCount = {
 			.setCheck('Invite')
 			.appendField('get presenceCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The approximate number of online members of the guild this invite is for');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=presenceCount');
@@ -9568,7 +9568,7 @@ Blockly.Blocks.Invite_memberCount = {
 			.setCheck('Invite')
 			.appendField('get memberCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The approximate total number of members of the guild this invite is for');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=memberCount');
@@ -9581,7 +9581,7 @@ Blockly.Blocks.Invite_textChannelCount = {
 			.setCheck('Invite')
 			.appendField('get textChannelCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The number of text channels the guild this invite goes to has');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=textChannelCount');
@@ -9594,7 +9594,7 @@ Blockly.Blocks.Invite_voiceChannelCount = {
 			.setCheck('Invite')
 			.appendField('get voiceChannelCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The number of voice channels the guild this invite goes to has');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=voiceChannelCount');
@@ -9607,7 +9607,7 @@ Blockly.Blocks.Invite_temporary = {
 			.setCheck('Invite')
 			.appendField('get temporary of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this invite is temporary');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=temporary');
@@ -9620,7 +9620,7 @@ Blockly.Blocks.Invite_maxAge = {
 			.setCheck('Invite')
 			.appendField('get maxAge of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The maximum age of the invite, in seconds');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=maxAge');
@@ -9633,7 +9633,7 @@ Blockly.Blocks.Invite_uses = {
 			.setCheck('Invite')
 			.appendField('get uses of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('How many times this invite has been used');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=uses');
@@ -9646,7 +9646,7 @@ Blockly.Blocks.Invite_maxUses = {
 			.setCheck('Invite')
 			.appendField('get maxUses of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The maximum uses of this invite');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=maxUses');
@@ -9685,7 +9685,7 @@ Blockly.Blocks.Invite_createdTimestamp = {
 			.setCheck('Invite')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the invite was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=createdTimestamp');
@@ -9711,7 +9711,7 @@ Blockly.Blocks.Invite_expiresTimestamp = {
 			.setCheck('Invite')
 			.appendField('get expiresTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the invite will expire at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=expiresTimestamp');
@@ -9737,7 +9737,7 @@ Blockly.Blocks.Invite_url = {
 			.setCheck('Invite')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to the invite');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=url');
@@ -9827,7 +9827,7 @@ Blockly.Blocks.Message_type = {
 			.setCheck('Message')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the message');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=type');
@@ -9840,7 +9840,7 @@ Blockly.Blocks.Message_content = {
 			.setCheck('Message')
 			.appendField('get content of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The content of the message');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=content');
@@ -9879,7 +9879,7 @@ Blockly.Blocks.Message_pinned = {
 			.setCheck('Message')
 			.appendField('get pinned of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this message is pinned');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pinned');
@@ -9892,7 +9892,7 @@ Blockly.Blocks.Message_tts = {
 			.setCheck('Message')
 			.appendField('get tts of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the message was Text-To-Speech');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=tts');
@@ -9905,7 +9905,7 @@ Blockly.Blocks.Message_nonce = {
 			.setCheck('Message')
 			.appendField('get nonce of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A random number or string used for checking message delivery');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=nonce');
@@ -9918,7 +9918,7 @@ Blockly.Blocks.Message_system = {
 			.setCheck('Message')
 			.appendField('get system of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not this message was sent by Discord, not actually a user (e.g. pin notifications)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=system');
@@ -9957,7 +9957,7 @@ Blockly.Blocks.Message_createdTimestamp = {
 			.setCheck('Message')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the message was sent at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createdTimestamp');
@@ -9970,7 +9970,7 @@ Blockly.Blocks.Message_editedTimestamp = {
 			.setCheck('Message')
 			.appendField('get editedTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the message was last edited at (if applicable)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editedTimestamp');
@@ -10022,7 +10022,7 @@ Blockly.Blocks.Message_hit = {
 			.setCheck('Message')
 			.appendField('get hit of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this message is a hit in a search');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=hit');
@@ -10074,7 +10074,7 @@ Blockly.Blocks.Message_cleanContent = {
 			.setCheck('Message')
 			.appendField('get cleanContent of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The message contents with all mentions replaced by the equivalent text.\nIf mentions cannot be resolved to a name, the relevant mention in the message content will not be converted.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=cleanContent');
@@ -10100,7 +10100,7 @@ Blockly.Blocks.Message_editable = {
 			.setCheck('Message')
 			.appendField('get editable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the message is editable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editable');
@@ -10113,7 +10113,7 @@ Blockly.Blocks.Message_deletable = {
 			.setCheck('Message')
 			.appendField('get deletable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the message is deletable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=deletable');
@@ -10126,7 +10126,7 @@ Blockly.Blocks.Message_pinnable = {
 			.setCheck('Message')
 			.appendField('get pinnable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the message is pinnable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pinnable');
@@ -10508,7 +10508,7 @@ Blockly.Blocks.MessageAttachment_filename = {
 			.setCheck('MessageAttachment')
 			.appendField('get filename of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The file name of this attachment');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=filename');
@@ -10521,7 +10521,7 @@ Blockly.Blocks.MessageAttachment_filesize = {
 			.setCheck('MessageAttachment')
 			.appendField('get filesize of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The size of this attachment in bytes');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=filesize');
@@ -10534,7 +10534,7 @@ Blockly.Blocks.MessageAttachment_url = {
 			.setCheck('MessageAttachment')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL to this attachment');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=url');
@@ -10547,7 +10547,7 @@ Blockly.Blocks.MessageAttachment_proxyURL = {
 			.setCheck('MessageAttachment')
 			.appendField('get proxyURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The Proxy URL to this attachment');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=proxyURL');
@@ -10560,7 +10560,7 @@ Blockly.Blocks.MessageAttachment_height = {
 			.setCheck('MessageAttachment')
 			.appendField('get height of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The height of this attachment (if an image)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=height');
@@ -10573,7 +10573,7 @@ Blockly.Blocks.MessageAttachment_width = {
 			.setCheck('MessageAttachment')
 			.appendField('get width of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The width of this attachment (if an image)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=width');
@@ -10611,7 +10611,7 @@ Blockly.Blocks.MessageCollector_received = {
 			.setCheck('MessageCollector')
 			.appendField('get received of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Total number of messages that were received in the channel during message collection');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=received');
@@ -10676,7 +10676,7 @@ Blockly.Blocks.MessageCollector_ended = {
 			.setCheck('MessageCollector')
 			.appendField('get ended of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this collector has finished collecting');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=ended');
@@ -10785,7 +10785,7 @@ Blockly.Blocks.MessageEmbed_type = {
 			.setCheck('MessageEmbed')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of this embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=type');
@@ -10798,7 +10798,7 @@ Blockly.Blocks.MessageEmbed_title = {
 			.setCheck('MessageEmbed')
 			.appendField('get title of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The title of this embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=title');
@@ -10811,7 +10811,7 @@ Blockly.Blocks.MessageEmbed_description = {
 			.setCheck('MessageEmbed')
 			.appendField('get description of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The description of this embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=description');
@@ -10824,7 +10824,7 @@ Blockly.Blocks.MessageEmbed_url = {
 			.setCheck('MessageEmbed')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL of this embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=url');
@@ -10837,7 +10837,7 @@ Blockly.Blocks.MessageEmbed_color = {
 			.setCheck('MessageEmbed')
 			.appendField('get color of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The color of the embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=color');
@@ -10863,7 +10863,7 @@ Blockly.Blocks.MessageEmbed_createdTimestamp = {
 			.setCheck('MessageEmbed')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp of this embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=createdTimestamp');
@@ -10967,7 +10967,7 @@ Blockly.Blocks.MessageEmbed_hexColor = {
 			.setCheck('MessageEmbed')
 			.appendField('get hexColor of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hexadecimal version of the embed color, with a leading hash');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=hexColor');
@@ -10993,7 +10993,7 @@ Blockly.Blocks.MessageEmbedThumbnail_url = {
 			.setCheck('MessageEmbedThumbnail')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL for this thumbnail');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=url');
@@ -11006,7 +11006,7 @@ Blockly.Blocks.MessageEmbedThumbnail_proxyURL = {
 			.setCheck('MessageEmbedThumbnail')
 			.appendField('get proxyURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The Proxy URL for this thumbnail');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=proxyURL');
@@ -11019,7 +11019,7 @@ Blockly.Blocks.MessageEmbedThumbnail_height = {
 			.setCheck('MessageEmbedThumbnail')
 			.appendField('get height of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The height of the thumbnail');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=height');
@@ -11032,7 +11032,7 @@ Blockly.Blocks.MessageEmbedThumbnail_width = {
 			.setCheck('MessageEmbedThumbnail')
 			.appendField('get width of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The width of the thumbnail');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=width');
@@ -11058,7 +11058,7 @@ Blockly.Blocks.MessageEmbedImage_url = {
 			.setCheck('MessageEmbedImage')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL for this image');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=url');
@@ -11071,7 +11071,7 @@ Blockly.Blocks.MessageEmbedImage_proxyURL = {
 			.setCheck('MessageEmbedImage')
 			.appendField('get proxyURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The Proxy URL for this image');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=proxyURL');
@@ -11084,7 +11084,7 @@ Blockly.Blocks.MessageEmbedImage_height = {
 			.setCheck('MessageEmbedImage')
 			.appendField('get height of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The height of the image');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=height');
@@ -11097,7 +11097,7 @@ Blockly.Blocks.MessageEmbedImage_width = {
 			.setCheck('MessageEmbedImage')
 			.appendField('get width of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The width of the image');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=width');
@@ -11123,7 +11123,7 @@ Blockly.Blocks.MessageEmbedVideo_url = {
 			.setCheck('MessageEmbedVideo')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The source URL for this video');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=url');
@@ -11136,7 +11136,7 @@ Blockly.Blocks.MessageEmbedVideo_height = {
 			.setCheck('MessageEmbedVideo')
 			.appendField('get height of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The height of the video');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=height');
@@ -11149,7 +11149,7 @@ Blockly.Blocks.MessageEmbedVideo_width = {
 			.setCheck('MessageEmbedVideo')
 			.appendField('get width of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The width of the video');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=width');
@@ -11175,7 +11175,7 @@ Blockly.Blocks.MessageEmbedProvider_name = {
 			.setCheck('MessageEmbedProvider')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this provider');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedProvider?scrollTo=name');
@@ -11188,7 +11188,7 @@ Blockly.Blocks.MessageEmbedProvider_url = {
 			.setCheck('MessageEmbedProvider')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL of this provider');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedProvider?scrollTo=url');
@@ -11214,7 +11214,7 @@ Blockly.Blocks.MessageEmbedAuthor_name = {
 			.setCheck('MessageEmbedAuthor')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this author');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=name');
@@ -11227,7 +11227,7 @@ Blockly.Blocks.MessageEmbedAuthor_url = {
 			.setCheck('MessageEmbedAuthor')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The URL of this author');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=url');
@@ -11240,7 +11240,7 @@ Blockly.Blocks.MessageEmbedAuthor_iconURL = {
 			.setCheck('MessageEmbedAuthor')
 			.appendField('get iconURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The icon URL of this author');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=iconURL');
@@ -11266,7 +11266,7 @@ Blockly.Blocks.MessageEmbedField_name = {
 			.setCheck('MessageEmbedField')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this field');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=name');
@@ -11279,7 +11279,7 @@ Blockly.Blocks.MessageEmbedField_value = {
 			.setCheck('MessageEmbedField')
 			.appendField('get value of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The value of this field');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=value');
@@ -11292,7 +11292,7 @@ Blockly.Blocks.MessageEmbedField_inline = {
 			.setCheck('MessageEmbedField')
 			.appendField('get inline of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If this field is displayed inline');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=inline');
@@ -11318,7 +11318,7 @@ Blockly.Blocks.MessageEmbedFooter_text = {
 			.setCheck('MessageEmbedFooter')
 			.appendField('get text of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The text in this footer');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=text');
@@ -11331,7 +11331,7 @@ Blockly.Blocks.MessageEmbedFooter_iconURL = {
 			.setCheck('MessageEmbedFooter')
 			.appendField('get iconURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The icon URL of this footer');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=iconURL');
@@ -11344,7 +11344,7 @@ Blockly.Blocks.MessageEmbedFooter_proxyIconUrl = {
 			.setCheck('MessageEmbedFooter')
 			.appendField('get proxyIconUrl of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The proxy icon URL of this footer');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=proxyIconUrl');
@@ -11357,7 +11357,7 @@ Blockly.Blocks.MessageMentions_everyone = {
 			.setCheck('MessageMentions')
 			.appendField('get everyone of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether `@everyone` or `@here` were mentioned');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=everyone');
@@ -11487,7 +11487,7 @@ Blockly.Blocks.MessageReaction_me = {
 			.setCheck('MessageReaction')
 			.appendField('get me of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the client has given this reaction');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=me');
@@ -11500,7 +11500,7 @@ Blockly.Blocks.MessageReaction_count = {
 			.setCheck('MessageReaction')
 			.appendField('get count of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The number of people that have given the same reaction');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=count');
@@ -11607,7 +11607,7 @@ Blockly.Blocks.OAuth2Application_name = {
 			.setCheck('OAuth2Application')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the app');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=name');
@@ -11620,7 +11620,7 @@ Blockly.Blocks.OAuth2Application_description = {
 			.setCheck('OAuth2Application')
 			.appendField('get description of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The app\'s description');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=description');
@@ -11633,7 +11633,7 @@ Blockly.Blocks.OAuth2Application_icon = {
 			.setCheck('OAuth2Application')
 			.appendField('get icon of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The app\'s icon hash');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=icon');
@@ -11646,7 +11646,7 @@ Blockly.Blocks.OAuth2Application_iconURL = {
 			.setCheck('OAuth2Application')
 			.appendField('get iconURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The app\'s icon URL');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=iconURL');
@@ -11659,7 +11659,7 @@ Blockly.Blocks.OAuth2Application_rpcOrigins = {
 			.setCheck('OAuth2Application')
 			.appendField('get rpcOrigins of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'string']);
+		this.setOutput(true, ['Array', 'String']);
 		this.setColour(230);
 		this.setTooltip('The app\'s RPC origins');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=rpcOrigins');
@@ -11672,7 +11672,7 @@ Blockly.Blocks.OAuth2Application_redirectURIs = {
 			.setCheck('OAuth2Application')
 			.appendField('get redirectURIs of');
 		this.setInputsInline(true);
-		this.setOutput(true, ['Array', 'string']);
+		this.setOutput(true, ['Array', 'String']);
 		this.setColour(230);
 		this.setTooltip('The app\'s redirect URIs');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=redirectURIs');
@@ -11685,7 +11685,7 @@ Blockly.Blocks.OAuth2Application_botRequireCodeGrant = {
 			.setCheck('OAuth2Application')
 			.appendField('get botRequireCodeGrant of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If this app\'s bot requires a code grant when using the OAuth2 flow');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=botRequireCodeGrant');
@@ -11698,7 +11698,7 @@ Blockly.Blocks.OAuth2Application_botPublic = {
 			.setCheck('OAuth2Application')
 			.appendField('get botPublic of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If this app\'s bot is public');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=botPublic');
@@ -11711,7 +11711,7 @@ Blockly.Blocks.OAuth2Application_rpcApplicationState = {
 			.setCheck('OAuth2Application')
 			.appendField('get rpcApplicationState of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If this app can use rpc');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=rpcApplicationState');
@@ -11737,7 +11737,7 @@ Blockly.Blocks.OAuth2Application_flags = {
 			.setCheck('OAuth2Application')
 			.appendField('get flags of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The flags for the app');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=flags');
@@ -11750,7 +11750,7 @@ Blockly.Blocks.OAuth2Application_secret = {
 			.setCheck('OAuth2Application')
 			.appendField('get secret of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('OAuth2 secret for the application');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=secret');
@@ -11776,7 +11776,7 @@ Blockly.Blocks.OAuth2Application_createdTimestamp = {
 			.setCheck('OAuth2Application')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the app was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=createdTimestamp');
@@ -11862,7 +11862,7 @@ Blockly.Blocks.PartialGuild_name = {
 			.setCheck('PartialGuild')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this guild');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=name');
@@ -11875,7 +11875,7 @@ Blockly.Blocks.PartialGuild_icon = {
 			.setCheck('PartialGuild')
 			.appendField('get icon of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hash of this guild\'s icon');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=icon');
@@ -11888,7 +11888,7 @@ Blockly.Blocks.PartialGuild_splash = {
 			.setCheck('PartialGuild')
 			.appendField('get splash of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hash of the guild splash image (VIP only)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=splash');
@@ -11927,7 +11927,7 @@ Blockly.Blocks.PartialGuildChannel_name = {
 			.setCheck('PartialGuildChannel')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this guild channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=name');
@@ -11940,7 +11940,7 @@ Blockly.Blocks.PartialGuildChannel_type = {
 			.setCheck('PartialGuildChannel')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of this guild channel - `text` or `voice`');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=type');
@@ -11979,7 +11979,7 @@ Blockly.Blocks.PermissionOverwrites_type = {
 			.setCheck('PermissionOverwrites')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of this overwrite');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PermissionOverwrites?scrollTo=type');
@@ -12013,7 +12013,7 @@ Blockly.Blocks.Presence_status = {
 			.setCheck('Presence')
 			.appendField('get status of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The status of the presence:\n\n* **`online`** - user is online\n* **`offline`** - user is offline or invisible\n* **`idle`** - user is AFK\n* **`dnd`** - user is in Do not Disturb');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=status');
@@ -12060,7 +12060,7 @@ Blockly.Blocks.Game_name = {
 			.setCheck('Game')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the game being played');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=name');
@@ -12073,7 +12073,7 @@ Blockly.Blocks.Game_type = {
 			.setCheck('Game')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The type of the game status');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=type');
@@ -12086,7 +12086,7 @@ Blockly.Blocks.Game_url = {
 			.setCheck('Game')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('If the game is being streamed, a link to the stream');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=url');
@@ -12099,7 +12099,7 @@ Blockly.Blocks.Game_streaming = {
 			.setCheck('Game')
 			.appendField('get streaming of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the game is being streamed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=streaming');
@@ -12171,7 +12171,7 @@ Blockly.Blocks.ReactionCollector_total = {
 			.setCheck('ReactionCollector')
 			.appendField('get total of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The total number of reactions collected');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=total');
@@ -12236,7 +12236,7 @@ Blockly.Blocks.ReactionCollector_ended = {
 			.setCheck('ReactionCollector')
 			.appendField('get ended of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether this collector has finished collecting');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=ended');
@@ -12313,7 +12313,7 @@ Blockly.Blocks.ReactionEmoji_name = {
 			.setCheck('ReactionEmoji')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of this reaction emoji');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=name');
@@ -12339,7 +12339,7 @@ Blockly.Blocks.ReactionEmoji_identifier = {
 			.setCheck('ReactionEmoji')
 			.appendField('get identifier of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The identifier of this emoji, used for message reactions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=identifier');
@@ -12381,7 +12381,7 @@ Blockly.Blocks.RichEmbed_title = {
 			.setCheck('RichEmbed')
 			.appendField('get title of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Title for this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=title');
@@ -12394,7 +12394,7 @@ Blockly.Blocks.RichEmbed_description = {
 			.setCheck('RichEmbed')
 			.appendField('get description of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Description for this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=description');
@@ -12407,7 +12407,7 @@ Blockly.Blocks.RichEmbed_url = {
 			.setCheck('RichEmbed')
 			.appendField('get url of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('URL for this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=url');
@@ -12420,7 +12420,7 @@ Blockly.Blocks.RichEmbed_color = {
 			.setCheck('RichEmbed')
 			.appendField('get color of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Color for this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=color');
@@ -12511,7 +12511,7 @@ Blockly.Blocks.RichEmbed_file = {
 			.setCheck('RichEmbed')
 			.appendField('get file of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('File to upload alongside this Embed');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=file');
@@ -12830,7 +12830,7 @@ Blockly.Blocks.Role_name = {
 			.setCheck('Role')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the role');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=name');
@@ -12843,7 +12843,7 @@ Blockly.Blocks.Role_color = {
 			.setCheck('Role')
 			.appendField('get color of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The base 10 color of the role');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=color');
@@ -12856,7 +12856,7 @@ Blockly.Blocks.Role_hoist = {
 			.setCheck('Role')
 			.appendField('get hoist of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If true, users that are part of this role will appear in a separate category in the users list');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hoist');
@@ -12869,7 +12869,7 @@ Blockly.Blocks.Role_position = {
 			.setCheck('Role')
 			.appendField('get position of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the role from the API');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=position');
@@ -12882,7 +12882,7 @@ Blockly.Blocks.Role_permissions = {
 			.setCheck('Role')
 			.appendField('get permissions of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The permissions bitfield of the role');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=permissions');
@@ -12895,7 +12895,7 @@ Blockly.Blocks.Role_managed = {
 			.setCheck('Role')
 			.appendField('get managed of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the role is managed by an external service');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=managed');
@@ -12908,7 +12908,7 @@ Blockly.Blocks.Role_mentionable = {
 			.setCheck('Role')
 			.appendField('get mentionable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the role can be mentioned by anyone');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=mentionable');
@@ -12921,7 +12921,7 @@ Blockly.Blocks.Role_createdTimestamp = {
 			.setCheck('Role')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the role was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=createdTimestamp');
@@ -12947,7 +12947,7 @@ Blockly.Blocks.Role_hexColor = {
 			.setCheck('Role')
 			.appendField('get hexColor of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The hexadecimal version of the role color, with a leading hashtag');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hexColor');
@@ -12973,7 +12973,7 @@ Blockly.Blocks.Role_editable = {
 			.setCheck('Role')
 			.appendField('get editable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the role is editable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=editable');
@@ -12986,7 +12986,7 @@ Blockly.Blocks.Role_calculatedPosition = {
 			.setCheck('Role')
 			.appendField('get calculatedPosition of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the role in the role manager');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=calculatedPosition');
@@ -13339,7 +13339,7 @@ Blockly.Blocks.TextChannel_topic = {
 			.setCheck('TextChannel')
 			.appendField('get topic of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The topic of the text channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=topic');
@@ -13352,7 +13352,7 @@ Blockly.Blocks.TextChannel_nsfw = {
 			.setCheck('TextChannel')
 			.appendField('get nsfw of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the Discord considers this channel NSFW');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=nsfw');
@@ -13404,7 +13404,7 @@ Blockly.Blocks.TextChannel_typing = {
 			.setCheck('TextChannel')
 			.appendField('get typing of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=typing');
@@ -13417,7 +13417,7 @@ Blockly.Blocks.TextChannel_typingCount = {
 			.setCheck('TextChannel')
 			.appendField('get typingCount of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Number of times `startTyping` has been called');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=typingCount');
@@ -13443,7 +13443,7 @@ Blockly.Blocks.TextChannel_name = {
 			.setCheck('TextChannel')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the guild channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=name');
@@ -13456,7 +13456,7 @@ Blockly.Blocks.TextChannel_position = {
 			.setCheck('TextChannel')
 			.appendField('get position of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel in the list');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=position');
@@ -13482,7 +13482,7 @@ Blockly.Blocks.TextChannel_calculatedPosition = {
 			.setCheck('TextChannel')
 			.appendField('get calculatedPosition of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=calculatedPosition');
@@ -13495,7 +13495,7 @@ Blockly.Blocks.TextChannel_deletable = {
 			.setCheck('TextChannel')
 			.appendField('get deletable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is deletable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=deletable');
@@ -13508,7 +13508,7 @@ Blockly.Blocks.TextChannel_muted = {
 			.setCheck('TextChannel')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=muted');
@@ -14192,7 +14192,7 @@ Blockly.Blocks.User_username = {
 			.setCheck('User')
 			.appendField('get username of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The username of the user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=username');
@@ -14205,7 +14205,7 @@ Blockly.Blocks.User_discriminator = {
 			.setCheck('User')
 			.appendField('get discriminator of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A discriminator based on username for the user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=discriminator');
@@ -14218,7 +14218,7 @@ Blockly.Blocks.User_avatar = {
 			.setCheck('User')
 			.appendField('get avatar of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The ID of the user\'s avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=avatar');
@@ -14231,7 +14231,7 @@ Blockly.Blocks.User_bot = {
 			.setCheck('User')
 			.appendField('get bot of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether or not the user is a bot');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=bot');
@@ -14270,7 +14270,7 @@ Blockly.Blocks.User_createdTimestamp = {
 			.setCheck('User')
 			.appendField('get createdTimestamp of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The timestamp the user was created at');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=createdTimestamp');
@@ -14309,7 +14309,7 @@ Blockly.Blocks.User_avatarURL = {
 			.setCheck('User')
 			.appendField('get avatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=avatarURL');
@@ -14322,7 +14322,7 @@ Blockly.Blocks.User_defaultAvatarURL = {
 			.setCheck('User')
 			.appendField('get defaultAvatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s default avatar');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=defaultAvatarURL');
@@ -14335,7 +14335,7 @@ Blockly.Blocks.User_displayAvatarURL = {
 			.setCheck('User')
 			.appendField('get displayAvatarURL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A link to the user\'s avatar if they have one. Otherwise a link to their default avatar will be returned');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=displayAvatarURL');
@@ -14348,7 +14348,7 @@ Blockly.Blocks.User_tag = {
 			.setCheck('User')
 			.appendField('get tag of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The Discord "tag" for this user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=tag');
@@ -14361,7 +14361,7 @@ Blockly.Blocks.User_note = {
 			.setCheck('User')
 			.appendField('get note of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The note that is set for the user\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=note');
@@ -14773,7 +14773,7 @@ Blockly.Blocks.UserConnection_type = {
 			.setCheck('UserConnection')
 			.appendField('get type of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The type of the connection');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=type');
@@ -14786,7 +14786,7 @@ Blockly.Blocks.UserConnection_name = {
 			.setCheck('UserConnection')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The username of the connection account');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=name');
@@ -14799,7 +14799,7 @@ Blockly.Blocks.UserConnection_id = {
 			.setCheck('UserConnection')
 			.appendField('get id of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The id of the connection account');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=id');
@@ -14812,7 +14812,7 @@ Blockly.Blocks.UserConnection_revoked = {
 			.setCheck('UserConnection')
 			.appendField('get revoked of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the connection is revoked');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=revoked');
@@ -14890,7 +14890,7 @@ Blockly.Blocks.UserProfile_premium = {
 			.setCheck('UserProfile')
 			.appendField('get premium of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('If the user has Discord Premium');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=premium');
@@ -14929,7 +14929,7 @@ Blockly.Blocks.VoiceChannel_bitrate = {
 			.setCheck('VoiceChannel')
 			.appendField('get bitrate of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The bitrate of this voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=bitrate');
@@ -14942,7 +14942,7 @@ Blockly.Blocks.VoiceChannel_userLimit = {
 			.setCheck('VoiceChannel')
 			.appendField('get userLimit of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The maximum amount of users allowed in this channel - 0 means unlimited.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=userLimit');
@@ -14968,7 +14968,7 @@ Blockly.Blocks.VoiceChannel_full = {
 			.setCheck('VoiceChannel')
 			.appendField('get full of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Checks if the voice channel is full');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=full');
@@ -14981,7 +14981,7 @@ Blockly.Blocks.VoiceChannel_joinable = {
 			.setCheck('VoiceChannel')
 			.appendField('get joinable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Checks if the client has permission join the voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=joinable');
@@ -14994,7 +14994,7 @@ Blockly.Blocks.VoiceChannel_speakable = {
 			.setCheck('VoiceChannel')
 			.appendField('get speakable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Checks if the client has permission to send audio to the voice channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=speakable');
@@ -15020,7 +15020,7 @@ Blockly.Blocks.VoiceChannel_name = {
 			.setCheck('VoiceChannel')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the guild channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=name');
@@ -15033,7 +15033,7 @@ Blockly.Blocks.VoiceChannel_position = {
 			.setCheck('VoiceChannel')
 			.appendField('get position of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel in the list');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=position');
@@ -15059,7 +15059,7 @@ Blockly.Blocks.VoiceChannel_calculatedPosition = {
 			.setCheck('VoiceChannel')
 			.appendField('get calculatedPosition of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('The position of the channel');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=calculatedPosition');
@@ -15072,7 +15072,7 @@ Blockly.Blocks.VoiceChannel_deletable = {
 			.setCheck('VoiceChannel')
 			.appendField('get deletable of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is deletable by the client user');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=deletable');
@@ -15085,7 +15085,7 @@ Blockly.Blocks.VoiceChannel_muted = {
 			.setCheck('VoiceChannel')
 			.appendField('get muted of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=muted');
@@ -15412,7 +15412,7 @@ Blockly.Blocks.VoiceRegion_id = {
 			.setCheck('VoiceRegion')
 			.appendField('get id of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The ID of the region');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=id');
@@ -15425,7 +15425,7 @@ Blockly.Blocks.VoiceRegion_name = {
 			.setCheck('VoiceRegion')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('Name of the region');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=name');
@@ -15438,7 +15438,7 @@ Blockly.Blocks.VoiceRegion_vip = {
 			.setCheck('VoiceRegion')
 			.appendField('get vip of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the region is VIP-only');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=vip');
@@ -15451,7 +15451,7 @@ Blockly.Blocks.VoiceRegion_deprecated = {
 			.setCheck('VoiceRegion')
 			.appendField('get deprecated of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the region is deprecated');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=deprecated');
@@ -15464,7 +15464,7 @@ Blockly.Blocks.VoiceRegion_optimal = {
 			.setCheck('VoiceRegion')
 			.appendField('get optimal of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the region is optimal');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=optimal');
@@ -15477,7 +15477,7 @@ Blockly.Blocks.VoiceRegion_custom = {
 			.setCheck('VoiceRegion')
 			.appendField('get custom of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'boolean');
+		this.setOutput(true, 'Boolean');
 		this.setColour(230);
 		this.setTooltip('Whether the region is custom');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=custom');
@@ -15490,7 +15490,7 @@ Blockly.Blocks.VoiceRegion_sampleHostname = {
 			.setCheck('VoiceRegion')
 			.appendField('get sampleHostname of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('A sample hostname for what a connection might look like');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=sampleHostname');
@@ -15516,7 +15516,7 @@ Blockly.Blocks.Webhook_name = {
 			.setCheck('Webhook')
 			.appendField('get name of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The name of the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=name');
@@ -15529,7 +15529,7 @@ Blockly.Blocks.Webhook_token = {
 			.setCheck('Webhook')
 			.appendField('get token of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The token for the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=token');
@@ -15542,7 +15542,7 @@ Blockly.Blocks.Webhook_avatar = {
 			.setCheck('Webhook')
 			.appendField('get avatar of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'string');
+		this.setOutput(true, 'String');
 		this.setColour(230);
 		this.setTooltip('The avatar for the webhook');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=avatar');
@@ -16300,7 +16300,7 @@ Blockly.Blocks.Permissions_bitfield = {
 			.setCheck('Permissions')
 			.appendField('get bitfield of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Bitfield of the packed permissions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=bitfield');
@@ -16313,7 +16313,7 @@ Blockly.Blocks.Permissions_raw = {
 			.setCheck('Permissions')
 			.appendField('get raw of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Bitfield of the packed permissions');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=raw');
@@ -16339,7 +16339,7 @@ Blockly.Blocks.Permissions_ALL = {
 			.setCheck('Permissions')
 			.appendField('get ALL of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Bitfield representing every permission combined');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=ALL');
@@ -16352,7 +16352,7 @@ Blockly.Blocks.Permissions_DEFAULT = {
 			.setCheck('Permissions')
 			.appendField('get DEFAULT of');
 		this.setInputsInline(true);
-		this.setOutput(true, 'number');
+		this.setOutput(true, 'Number');
 		this.setColour(230);
 		this.setTooltip('Bitfield representing the default permissions for users');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=DEFAULT');

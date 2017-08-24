@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/lepon01/discordblocks#readme",
   "dependencies": {
+    "discord.js": "^11.1.0",
     "eslint": "^4.1.0",
     "js2xmlparser": "^3.0.0"
   },

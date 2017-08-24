@@ -34,7 +34,7 @@ documentation.classes.forEach((classy) => {
 			this.appendValueInput('${classy.name}')
 				.setCheck('${classy.name}')
 				.appendField('${classy.name}_constructor');
-			this.setOutput(true, '${classy.name}');
+			this.setOutput(true, '${classy.name.charAt(0).toUpperCase() + classy.name.slice(1)}');
 			this.setColour(${colour.construct});
 			this.setTooltip('${(classy.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
 			this.setHelpUrl('${url}class/${classy.name}');
@@ -66,7 +66,7 @@ documentation.classes.forEach((classy) => {
 				.setCheck('${classy.name}')
 				.appendField('get ${curr.name} of');
 			this.setInputsInline(true);
-			this.setOutput(true, ${curr.type[0].length === 1 ? `'${curr.type[0][0][0]}'` : JSON.stringify(curr.type[0].reduce((array, current) => { array.push(current[0]); return array; }, []))});
+			this.setOutput(true, ${curr.type[0].length === 1 ? `'${curr.type[0][0][0].charAt(0).toUpperCase() + curr.type[0][0][0].slice(1)}'` : JSON.stringify(curr.type[0].reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
 			this.setColour(${colour.prop});
 			this.setTooltip('${(curr.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
 			this.setHelpUrl('${url}class/${classy.name}?scrollTo=${curr.name}');
@@ -121,9 +121,8 @@ Blockly.Blocks.${classy.name}_${curr.name} = {
 						gendef.push(`
 Blockly.JavaScript.${classy.name}_${curr.name} = (block) => {
 	const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
-	${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = block.getFieldValue('${current.name}');`); return array; }, []).join('')}
-	const statements_function = Blockly.JavaScript.statementToCode(block, 'function');
-	const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()}) => {\${statements_function}});\`;
+	${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
+	const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
 	return code;
 };
 	`);
