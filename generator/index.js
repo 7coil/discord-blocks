@@ -95,7 +95,71 @@ documentation.classes.forEach((classy) => {
 			classy.methods.forEach((curr) => {
 				if (curr.access !== 'private') {
 					if (curr.returns) {
-						// const returns = curr.returns.types || curr.returns;
+						const returnoutput = curr.returns.types || curr.returns;
+						if (returnoutput[0][0][0] === 'Promise') {
+							console.dir(curr);
+							blockdef.push(`
+Blockly.Blocks.${classy.name}_${curr.name} = {
+	init() {
+		this.appendValueInput('${classy.name}')
+			.setCheck('${classy.name}')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('${curr.name}${curr.params ? ' with' : ''}');
+		${(curr.params || []).filter(current => !current.name.includes('.')).reduce((string, current) => `
+			${string}
+			this.appendValueInput('${current.name}')
+				.setCheck(null);
+		`, '')}
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(${colour.method});
+		this.setTooltip('${(curr.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
+		this.setHelpUrl('${url}class/${classy.name}?scrollTo=${curr.name}');
+	}
+};
+	`);
+							gendef.push(`
+Blockly.JavaScript.${classy.name}_${curr.name} = (block) => {
+	const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
+	${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
+	const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
+	return code;
+};
+	`);
+						} else {
+							blockdef.push(`
+	Blockly.Blocks.${classy.name}_${curr.name} = {
+		init() {
+			this.appendValueInput('${classy.name}')
+				.setCheck('${classy.name}')
+				.appendField('with');
+			this.appendDummyInput()
+				.appendField('${curr.name}${curr.params ? ' with' : ''}');
+			${(curr.params || []).filter(current => !current.name.includes('.')).reduce((string, current) => `
+				${string}
+				this.appendValueInput('${current.name}')
+					.setCheck(null);
+			`, '')}
+			this.setInputsInline(true);
+			this.setOutput(true, ${returnoutput[0].length === 1 ? `'${returnoutput[0][0][0].charAt(0).toUpperCase() + returnoutput[0][0][0].slice(1)}'` : JSON.stringify(returnoutput[0].reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
+			this.setColour(${colour.method});
+			this.setTooltip('${(curr.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
+			this.setHelpUrl('${url}class/${classy.name}?scrollTo=${curr.name}');
+		}
+	};
+	`);
+							gendef.push(`
+Blockly.JavaScript.${classy.name}_${curr.name} = (block) => {
+	const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
+	${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
+	const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
+	return code;
+};
+	`);
+						}
+					} else {
 						blockdef.push(`
 Blockly.Blocks.${classy.name}_${curr.name} = {
 	init() {

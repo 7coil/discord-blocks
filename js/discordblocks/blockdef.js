@@ -1,4 +1,3 @@
-
 Blockly.Blocks.Client_constructor = {
 	init() {
 		this.appendValueInput('Client')
@@ -254,8 +253,7 @@ Blockly.Blocks.Client_createVoiceBroadcast = {
 			.appendField('createVoiceBroadcast');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'VoiceBroadcast');
 		this.setColour(40);
 		this.setTooltip('Creates a voice broadcast.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=createVoiceBroadcast');
@@ -297,6 +295,27 @@ Blockly.Blocks.Client_destroy = {
 		this.setColour(40);
 		this.setTooltip('Logs out, terminates the connection to Discord, and destroys the client.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=destroy');
+	}
+};
+
+Blockly.Blocks.Client_syncGuilds = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('syncGuilds with');
+
+
+		this.appendValueInput('guilds')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Requests a sync of guild data with Discord.\n<info>This can be done automatically every 30 seconds by enabling {@link ClientOptions#sync}.</info>\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=syncGuilds');
 	}
 };
 
@@ -378,8 +397,7 @@ Blockly.Blocks.Client_fetchVoiceRegions = {
 			.appendField('fetchVoiceRegions');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Collection', 'String', 'VoiceRegion']);
 		this.setColour(40);
 		this.setTooltip('Obtains the available voice regions from Discord.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchVoiceRegions');
@@ -399,8 +417,7 @@ Blockly.Blocks.Client_sweepMessages = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Sweeps all text-based channels\' messages and removes the ones older than the max message lifetime.\nIf the message has been edited, the time of the edit is used rather than the time of the original message.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=sweepMessages');
@@ -468,11 +485,31 @@ Blockly.Blocks.Client_setTimeout = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Timeout');
 		this.setColour(40);
 		this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setTimeout');
+	}
+};
+
+Blockly.Blocks.Client_clearTimeout = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clearTimeout with');
+
+
+		this.appendValueInput('timeout')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clears a timeout.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=clearTimeout');
 	}
 };
 
@@ -495,11 +532,31 @@ Blockly.Blocks.Client_setInterval = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Timeout');
 		this.setColour(40);
 		this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setInterval');
+	}
+};
+
+Blockly.Blocks.Client_clearInterval = {
+	init() {
+		this.appendValueInput('Client')
+			.setCheck('Client')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clearInterval with');
+
+
+		this.appendValueInput('interval')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clears an interval.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=clearInterval');
 	}
 };
 
@@ -1445,6 +1502,82 @@ Blockly.Blocks.StreamDispatcher_totalStreamTime = {
 	}
 };
 
+Blockly.Blocks.StreamDispatcher_pause = {
+	init() {
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('pause');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stops sending voice packets to the voice connection (stream may still progress however).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=pause');
+	}
+};
+
+Blockly.Blocks.StreamDispatcher_resume = {
+	init() {
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('resume');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Resumes sending voice packets to the voice connection (may be further on in the stream than when paused).');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=resume');
+	}
+};
+
+Blockly.Blocks.StreamDispatcher_end = {
+	init() {
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('end with');
+
+
+		this.appendValueInput('reason')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stops the current stream permanently and emits an `end` event.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=end');
+	}
+};
+
+Blockly.Blocks.StreamDispatcher_setBitrate = {
+	init() {
+		this.appendValueInput('StreamDispatcher')
+			.setCheck('StreamDispatcher')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setBitrate with');
+
+
+		this.appendValueInput('bitrate')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the bitrate of the current Opus encoder.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=setBitrate');
+	}
+};
+
 Blockly.Blocks.StreamDispatcher_speaking = {
 	init() {
 		this.appendValueInput('StreamDispatcher')
@@ -1566,6 +1699,40 @@ Blockly.Blocks.VoiceReceiver_voiceConnection = {
 	}
 };
 
+Blockly.Blocks.VoiceReceiver_recreate = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('recreate');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('If this VoiceReceiver has been destroyed, running `recreate()` will recreate the listener.\nThis avoids you having to create a new receiver.\n<info>Any streams that you had prior to destroying the receiver will not be recreated.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=recreate');
+	}
+};
+
+Blockly.Blocks.VoiceReceiver_destroy = {
+	init() {
+		this.appendValueInput('VoiceReceiver')
+			.setCheck('VoiceReceiver')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('destroy');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Destroy this VoiceReceiver, also ending any streams that it may be controlling.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=destroy');
+	}
+};
+
 Blockly.Blocks.VoiceReceiver_createOpusStream = {
 	init() {
 		this.appendValueInput('VoiceReceiver')
@@ -1579,8 +1746,7 @@ Blockly.Blocks.VoiceReceiver_createOpusStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'ReadableStream');
 		this.setColour(40);
 		this.setTooltip('Creates a readable stream for a user that provides opus data while the user is speaking. When the user\nstops speaking, the stream is destroyed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createOpusStream');
@@ -1600,8 +1766,7 @@ Blockly.Blocks.VoiceReceiver_createPCMStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'ReadableStream');
 		this.setColour(40);
 		this.setTooltip('Creates a readable stream for a user that provides PCM data while the user is speaking. When the user\nstops speaking, the stream is destroyed. The stream is 32-bit signed stereo PCM at 48KHz.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createPCMStream');
@@ -1704,6 +1869,69 @@ Blockly.Blocks.VolumeInterface_volumeLogarithmic = {
 	}
 };
 
+Blockly.Blocks.VolumeInterface_setVolume = {
+	init() {
+		this.appendValueInput('VolumeInterface')
+			.setCheck('VolumeInterface')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setVolume with');
+
+
+		this.appendValueInput('volume')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the volume relative to the input stream - i.e. 1 is normal, 0.5 is half, 2 is double.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=setVolume');
+	}
+};
+
+Blockly.Blocks.VolumeInterface_setVolumeDecibels = {
+	init() {
+		this.appendValueInput('VolumeInterface')
+			.setCheck('VolumeInterface')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setVolumeDecibels with');
+
+
+		this.appendValueInput('db')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the volume in decibels.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=setVolumeDecibels');
+	}
+};
+
+Blockly.Blocks.VolumeInterface_setVolumeLogarithmic = {
+	init() {
+		this.appendValueInput('VolumeInterface')
+			.setCheck('VolumeInterface')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setVolumeLogarithmic with');
+
+
+		this.appendValueInput('value')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Set the volume so that a perceived value of 0.5 is half the perceived volume etc.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=setVolumeLogarithmic');
+	}
+};
+
 Blockly.Blocks.VolumeInterface_volumeChange = {
 	init() {
 		this.appendValueInput('VolumeInterface')
@@ -1791,8 +2019,7 @@ Blockly.Blocks.VoiceBroadcast_playStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'VoiceBroadcast');
 		this.setColour(40);
 		this.setTooltip('Plays any audio stream across the broadcast.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playStream');
@@ -1815,8 +2042,7 @@ Blockly.Blocks.VoiceBroadcast_playFile = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Play the given file in the voice connection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playFile');
@@ -1839,8 +2065,7 @@ Blockly.Blocks.VoiceBroadcast_playConvertedStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'VoiceBroadcast');
 		this.setColour(40);
 		this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playConvertedStream');
@@ -1863,8 +2088,7 @@ Blockly.Blocks.VoiceBroadcast_playOpusStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playOpusStream');
@@ -1887,11 +2111,78 @@ Blockly.Blocks.VoiceBroadcast_playArbitraryInput = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'VoiceBroadcast');
 		this.setColour(40);
 		this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playArbitraryInput');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_pause = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('pause');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Pauses the entire broadcast - all dispatchers also pause.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=pause');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_resume = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('resume');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Resumes the entire broadcast - all dispatchers also resume.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=resume');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_end = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('end');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stop the current stream from playing without unsubscribing dispatchers.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=end');
+	}
+};
+
+Blockly.Blocks.VoiceBroadcast_destroy = {
+	init() {
+		this.appendValueInput('VoiceBroadcast')
+			.setCheck('VoiceBroadcast')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('destroy');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('End the current broadcast, all subscribed dispatchers will also end.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=destroy');
 	}
 };
 
@@ -2107,6 +2398,27 @@ Blockly.Blocks.VoiceConnection_dispatcher = {
 	}
 };
 
+Blockly.Blocks.VoiceConnection_sendVoiceStateUpdate = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sendVoiceStateUpdate with');
+
+
+		this.appendValueInput('options')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sends a request to the main gateway to join a voice channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=sendVoiceStateUpdate');
+	}
+};
+
 Blockly.Blocks.VoiceConnection_setTokenAndEndpoint = {
 	init() {
 		this.appendValueInput('VoiceConnection')
@@ -2123,11 +2435,48 @@ Blockly.Blocks.VoiceConnection_setTokenAndEndpoint = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Void');
 		this.setColour(40);
 		this.setTooltip('Set the token and endpoint required to connect to the voice servers.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=setTokenAndEndpoint');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_setSessionID = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('setSessionID with');
+
+
+		this.appendValueInput('sessionID')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Sets the Session ID for the connection.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=setSessionID');
+	}
+};
+
+Blockly.Blocks.VoiceConnection_disconnect = {
+	init() {
+		this.appendValueInput('VoiceConnection')
+			.setCheck('VoiceConnection')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('disconnect');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Disconnect the voice connection, causing a disconnect and closing event to be emitted.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=disconnect');
 	}
 };
 
@@ -2147,8 +2496,7 @@ Blockly.Blocks.VoiceConnection_playFile = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Play the given file in the voice connection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playFile');
@@ -2171,8 +2519,7 @@ Blockly.Blocks.VoiceConnection_playArbitraryInput = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playArbitraryInput');
@@ -2195,8 +2542,7 @@ Blockly.Blocks.VoiceConnection_playStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Plays and converts an audio stream in the voice connection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playStream');
@@ -2219,8 +2565,7 @@ Blockly.Blocks.VoiceConnection_playConvertedStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playConvertedStream');
@@ -2243,8 +2588,7 @@ Blockly.Blocks.VoiceConnection_playOpusStream = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playOpusStream');
@@ -2267,8 +2611,7 @@ Blockly.Blocks.VoiceConnection_playBroadcast = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'StreamDispatcher');
 		this.setColour(40);
 		this.setTooltip('Plays a voice broadcast.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playBroadcast');
@@ -2284,8 +2627,7 @@ Blockly.Blocks.VoiceConnection_createReceiver = {
 			.appendField('createReceiver');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'VoiceReceiver');
 		this.setColour(40);
 		this.setTooltip('Creates a VoiceReceiver so you can start listening to voice data.\nIt\'s recommended to only create one of these.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=createReceiver');
@@ -2630,11 +2972,31 @@ Blockly.Blocks.WebhookClient_setTimeout = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Timeout');
 		this.setColour(40);
 		this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setTimeout');
+	}
+};
+
+Blockly.Blocks.WebhookClient_clearTimeout = {
+	init() {
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clearTimeout with');
+
+
+		this.appendValueInput('timeout')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clears a timeout.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=clearTimeout');
 	}
 };
 
@@ -2657,11 +3019,48 @@ Blockly.Blocks.WebhookClient_setInterval = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Timeout');
 		this.setColour(40);
 		this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setInterval');
+	}
+};
+
+Blockly.Blocks.WebhookClient_clearInterval = {
+	init() {
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('clearInterval with');
+
+
+		this.appendValueInput('interval')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Clears an interval.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=clearInterval');
+	}
+};
+
+Blockly.Blocks.WebhookClient_destroy = {
+	init() {
+		this.appendValueInput('WebhookClient')
+			.setCheck('WebhookClient')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('destroy');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Destroys the client.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=destroy');
 	}
 };
 
@@ -3077,8 +3476,7 @@ Blockly.Blocks.ShardClientUtil_singleton = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'ShardClientUtil');
 		this.setColour(40);
 		this.setTooltip('Creates/gets the singleton of this class.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=singleton');
@@ -3375,8 +3773,7 @@ Blockly.Blocks.Attachment_setAttachment = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Attachment');
 		this.setColour(40);
 		this.setTooltip('Set the file of this attachment.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setAttachment');
@@ -3396,8 +3793,7 @@ Blockly.Blocks.Attachment_setFile = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Attachment');
 		this.setColour(40);
 		this.setTooltip('Set the file of this attachment.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setFile');
@@ -3417,8 +3813,7 @@ Blockly.Blocks.Attachment_setName = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Attachment');
 		this.setColour(40);
 		this.setTooltip('Set the name of this attachment.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setName');
@@ -4183,8 +4578,7 @@ Blockly.Blocks.ClientUser_typingIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Check whether the user is typing in a channel.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingIn');
@@ -4204,8 +4598,7 @@ Blockly.Blocks.ClientUser_typingSinceIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Date');
 		this.setColour(40);
 		this.setTooltip('Get the time that the user started typing.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingSinceIn');
@@ -4225,8 +4618,7 @@ Blockly.Blocks.ClientUser_typingDurationIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingDurationIn');
@@ -4352,8 +4744,7 @@ Blockly.Blocks.ClientUser_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=equals');
@@ -4369,8 +4760,7 @@ Blockly.Blocks.ClientUser_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=toString');
@@ -4535,6 +4925,27 @@ Blockly.Blocks.ClientUserChannelOverride_messageNotifications = {
 	}
 };
 
+Blockly.Blocks.ClientUserChannelOverride_patch = {
+	init() {
+		this.appendValueInput('ClientUserChannelOverride')
+			.setCheck('ClientUserChannelOverride')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('patch with');
+
+
+		this.appendValueInput('data')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Patch the data contained in this class with new partial data.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserChannelOverride?scrollTo=patch');
+	}
+};
+
 Blockly.Blocks.ClientUserGuildSettings_client = {
 	init() {
 		this.appendValueInput('ClientUserGuildSettings')
@@ -4623,6 +5034,27 @@ Blockly.Blocks.ClientUserGuildSettings_channelOverrides = {
 		this.setColour(230);
 		this.setTooltip('A collection containing all the channel overrides');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=channelOverrides');
+	}
+};
+
+Blockly.Blocks.ClientUserGuildSettings_patch = {
+	init() {
+		this.appendValueInput('ClientUserGuildSettings')
+			.setCheck('ClientUserGuildSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('patch with');
+
+
+		this.appendValueInput('data')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Patch the data contained in this class with new partial data.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=patch');
 	}
 };
 
@@ -4871,6 +5303,27 @@ Blockly.Blocks.ClientUserSettings_friendSources = {
 	}
 };
 
+Blockly.Blocks.ClientUserSettings_patch = {
+	init() {
+		this.appendValueInput('ClientUserSettings')
+			.setCheck('ClientUserSettings')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('patch with');
+
+
+		this.appendValueInput('data')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Patch the data contained in this class with new partial data.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=patch');
+	}
+};
+
 Blockly.Blocks.ClientUserSettings_update = {
 	init() {
 		this.appendValueInput('ClientUserSettings')
@@ -5103,8 +5556,7 @@ Blockly.Blocks.DMChannel_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the recipient\'s mention instead of the\nDM channel object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=toString');
@@ -5215,6 +5667,48 @@ Blockly.Blocks.DMChannel_search = {
 	}
 };
 
+Blockly.Blocks.DMChannel_startTyping = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('startTyping with');
+
+
+		this.appendValueInput('count')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Starts a typing indicator in the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=startTyping');
+	}
+};
+
+Blockly.Blocks.DMChannel_stopTyping = {
+	init() {
+		this.appendValueInput('DMChannel')
+			.setCheck('DMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stopTyping with');
+
+
+		this.appendValueInput('force')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stops the typing indicator in the channel.\nThe indicator will only stop if this is called as many times as startTyping().\n<info>It can take a few seconds for the client user to stop typing.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=stopTyping');
+	}
+};
+
 Blockly.Blocks.DMChannel_createCollector = {
 	init() {
 		this.appendValueInput('DMChannel')
@@ -5231,8 +5725,7 @@ Blockly.Blocks.DMChannel_createCollector = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'MessageCollector');
 		this.setColour(40);
 		this.setTooltip('Creates a Message Collector');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createCollector');
@@ -5716,8 +6209,7 @@ Blockly.Blocks.Emoji_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically returns the emoji mention rather than the object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=toString');
@@ -5737,8 +6229,7 @@ Blockly.Blocks.Emoji_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this emoji is the same as another one.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=equals');
@@ -5992,11 +6483,34 @@ Blockly.Blocks.GroupDMChannel_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this channel equals another channel. It compares all properties, so for most operations\nit is advisable to just compare `channel.id === channel2.id` as it is much faster and is often\nwhat most users need.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=equals');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_addUser = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('addUser with');
+
+
+		this.appendValueInput('accessTokenOrID')
+			.setCheck(null);
+
+		this.appendValueInput('nick')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Add a user to the DM');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=addUser');
 	}
 };
 
@@ -6030,8 +6544,7 @@ Blockly.Blocks.GroupDMChannel_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the channel\'s name instead of the Channel object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=toString');
@@ -6142,6 +6655,48 @@ Blockly.Blocks.GroupDMChannel_search = {
 	}
 };
 
+Blockly.Blocks.GroupDMChannel_startTyping = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('startTyping with');
+
+
+		this.appendValueInput('count')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Starts a typing indicator in the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=startTyping');
+	}
+};
+
+Blockly.Blocks.GroupDMChannel_stopTyping = {
+	init() {
+		this.appendValueInput('GroupDMChannel')
+			.setCheck('GroupDMChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stopTyping with');
+
+
+		this.appendValueInput('force')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stops the typing indicator in the channel.\nThe indicator will only stop if this is called as many times as startTyping().\n<info>It can take a few seconds for the client user to stop typing.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=stopTyping');
+	}
+};
+
 Blockly.Blocks.GroupDMChannel_createCollector = {
 	init() {
 		this.appendValueInput('GroupDMChannel')
@@ -6158,8 +6713,7 @@ Blockly.Blocks.GroupDMChannel_createCollector = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'MessageCollector');
 		this.setColour(40);
 		this.setTooltip('Creates a Message Collector');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createCollector');
@@ -6918,8 +7472,7 @@ Blockly.Blocks.Guild_member = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'GuildMember');
 		this.setColour(40);
 		this.setTooltip('Returns the GuildMember form of a User object, if the user is present in the guild.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=member');
@@ -6969,8 +7522,7 @@ Blockly.Blocks.Guild_fetchWebhooks = {
 			.appendField('fetchWebhooks');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Collection', 'Snowflake', 'Webhook']);
 		this.setColour(40);
 		this.setTooltip('Fetch all webhooks for the guild.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchWebhooks');
@@ -6986,8 +7538,7 @@ Blockly.Blocks.Guild_fetchVoiceRegions = {
 			.appendField('fetchVoiceRegions');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Collection', 'String', 'VoiceRegion']);
 		this.setColour(40);
 		this.setTooltip('Fetch available voice regions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchVoiceRegions');
@@ -7509,6 +8060,23 @@ Blockly.Blocks.Guild_pruneMembers = {
 	}
 };
 
+Blockly.Blocks.Guild_sync = {
+	init() {
+		this.appendValueInput('Guild')
+			.setCheck('Guild')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('sync');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Syncs this guild (already done automatically every 30 seconds).\n<warn>This is only available when using a user account.</warn>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=sync');
+	}
+};
+
 Blockly.Blocks.Guild_createChannel = {
 	init() {
 		this.appendValueInput('Guild')
@@ -7685,8 +8253,7 @@ Blockly.Blocks.Guild_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this guild equals another guild. It compares all properties, so for most operations\nit is advisable to just compare `guild.id === guild2.id` as it is much faster and is often\nwhat most users need.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=equals');
@@ -7702,8 +8269,7 @@ Blockly.Blocks.Guild_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the guild\'s name instead of the guild object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=toString');
@@ -7807,8 +8373,7 @@ Blockly.Blocks.GuildAuditLogs_targetType = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('Find target type from entry action.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=targetType');
@@ -7828,8 +8393,7 @@ Blockly.Blocks.GuildAuditLogs_actionType = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('Find action type from entry action.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=actionType');
@@ -8161,8 +8725,7 @@ Blockly.Blocks.GuildChannel_permissionsFor = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=permissionsFor');
@@ -8359,8 +8922,7 @@ Blockly.Blocks.GuildChannel_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=equals');
@@ -8376,8 +8938,7 @@ Blockly.Blocks.GuildChannel_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=toString');
@@ -8804,8 +9365,7 @@ Blockly.Blocks.GuildMember_permissionsIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Returns `channel.permissionsFor(guildMember)`. Returns permissions for a member in a guild channel,\ntaking into account roles and permission overwrites.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=permissionsIn');
@@ -8834,8 +9394,7 @@ Blockly.Blocks.GuildMember_hasPermission = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if any of the member\'s roles have a permission.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermission');
@@ -8858,8 +9417,7 @@ Blockly.Blocks.GuildMember_hasPermissions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks whether the roles of the member allows them to perform specific actions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermissions');
@@ -8882,8 +9440,7 @@ Blockly.Blocks.GuildMember_missingPermissions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Array', 'PermissionResolvable']);
 		this.setColour(40);
 		this.setTooltip('Checks whether the roles of the member allows them to perform specific actions, and lists any missing permissions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=missingPermissions');
@@ -9212,8 +9769,7 @@ Blockly.Blocks.GuildMember_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the Member object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=toString');
@@ -9430,6 +9986,27 @@ Blockly.Blocks.Collector_next = {
 	}
 };
 
+Blockly.Blocks.Collector_stop = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stop with');
+
+
+		this.appendValueInput('reason')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stop this collector and emit the `end` event.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=stop');
+	}
+};
+
 Blockly.Blocks.Collector_handle = {
 	init() {
 		this.appendValueInput('Collector')
@@ -9443,8 +10020,7 @@ Blockly.Blocks.Collector_handle = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Object');
 		this.setColour(40);
 		this.setTooltip('Handles incoming events from the `listener` function. Returns null if the event should not be collected,\nor returns an object describing the data that should be stored.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=handle');
@@ -9464,11 +10040,27 @@ Blockly.Blocks.Collector_postCheck = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('This method runs after collection to see if the collector should finish.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=postCheck');
+	}
+};
+
+Blockly.Blocks.Collector_cleanup = {
+	init() {
+		this.appendValueInput('Collector')
+			.setCheck('Collector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('cleanup');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Called when the collector is ending.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=cleanup');
 	}
 };
 
@@ -9774,8 +10366,7 @@ Blockly.Blocks.Invite_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the invite\'s URL instead of the object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=toString');
@@ -10149,8 +10740,7 @@ Blockly.Blocks.Message_createReactionCollector = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'ReactionCollector');
 		this.setColour(40);
 		this.setTooltip('Creates a reaction collector.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createReactionCollector');
@@ -10194,8 +10784,7 @@ Blockly.Blocks.Message_isMentioned = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether or not a user, channel or role is mentioned in this message.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMentioned');
@@ -10215,8 +10804,7 @@ Blockly.Blocks.Message_isMemberMentioned = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether or not a guild member is mentioned in this message. Takes into account\nuser mentions, role mentions, and @everyone/@here mentions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMemberMentioned');
@@ -10438,8 +11026,7 @@ Blockly.Blocks.Message_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Used mainly internally. Whether two messages are identical in properties. If you want to compare messages\nwithout checking all the properties, use `message.id === message2.id`, which is much more efficient. This\nmethod allows you to see if there are differences in content, embeds, attachments, nonce and tts properties.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=equals');
@@ -10455,8 +11042,7 @@ Blockly.Blocks.Message_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the message\'s content instead of the object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=toString');
@@ -10693,6 +11279,27 @@ Blockly.Blocks.MessageCollector_next = {
 		this.setColour(230);
 		this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=next');
+	}
+};
+
+Blockly.Blocks.MessageCollector_stop = {
+	init() {
+		this.appendValueInput('MessageCollector')
+			.setCheck('MessageCollector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stop with');
+
+
+		this.appendValueInput('reason')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stop this collector and emit the `end` event.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=stop');
 	}
 };
 
@@ -11805,8 +12412,7 @@ Blockly.Blocks.OAuth2Application_reset = {
 			.appendField('reset');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'OAuth2Application');
 		this.setColour(40);
 		this.setTooltip('Reset the app\'s secret and bot token.\n<warn>This is only available when using a user account.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=reset');
@@ -11822,8 +12428,7 @@ Blockly.Blocks.OAuth2Application_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the app name rather than the app object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=toString');
@@ -12046,8 +12651,7 @@ Blockly.Blocks.Presence_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this presence is equal to another');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=equals');
@@ -12119,8 +12723,7 @@ Blockly.Blocks.Game_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this game is equal to another game');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=equals');
@@ -12256,6 +12859,27 @@ Blockly.Blocks.ReactionCollector_next = {
 	}
 };
 
+Blockly.Blocks.ReactionCollector_stop = {
+	init() {
+		this.appendValueInput('ReactionCollector')
+			.setCheck('ReactionCollector')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stop with');
+
+
+		this.appendValueInput('reason')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stop this collector and emit the `end` event.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=stop');
+	}
+};
+
 Blockly.Blocks.ReactionCollector_collect = {
 	init() {
 		this.appendValueInput('ReactionCollector')
@@ -12355,8 +12979,7 @@ Blockly.Blocks.ReactionEmoji_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('Creates the text required to form a graphical emoji on Discord.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=toString');
@@ -12531,8 +13154,7 @@ Blockly.Blocks.RichEmbed_setTitle = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the title of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTitle');
@@ -12552,8 +13174,7 @@ Blockly.Blocks.RichEmbed_setDescription = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the description of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setDescription');
@@ -12573,8 +13194,7 @@ Blockly.Blocks.RichEmbed_setURL = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the URL of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setURL');
@@ -12594,8 +13214,7 @@ Blockly.Blocks.RichEmbed_setColor = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the color of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setColor');
@@ -12621,8 +13240,7 @@ Blockly.Blocks.RichEmbed_setAuthor = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the author of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setAuthor');
@@ -12642,8 +13260,7 @@ Blockly.Blocks.RichEmbed_setTimestamp = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the timestamp of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTimestamp');
@@ -12669,8 +13286,7 @@ Blockly.Blocks.RichEmbed_addField = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Adds a field to the embed (max 25).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addField');
@@ -12690,8 +13306,7 @@ Blockly.Blocks.RichEmbed_addBlankField = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Convenience function for `<RichEmbed>.addField(\'\u200B\', \'\u200B\', inline)`.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addBlankField');
@@ -12711,8 +13326,7 @@ Blockly.Blocks.RichEmbed_setThumbnail = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Set the thumbnail of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setThumbnail');
@@ -12732,8 +13346,7 @@ Blockly.Blocks.RichEmbed_setImage = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Set the image of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setImage');
@@ -12756,8 +13369,7 @@ Blockly.Blocks.RichEmbed_setFooter = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the footer of this embed.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setFooter');
@@ -12777,8 +13389,7 @@ Blockly.Blocks.RichEmbed_attachFile = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'RichEmbed');
 		this.setColour(40);
 		this.setTooltip('Sets the file to upload alongside the embed. This file can be accessed via `attachment://fileName.extension` when\nsetting an embed image or author/footer icons. Only one file may be attached.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=attachFile');
@@ -13002,8 +13613,7 @@ Blockly.Blocks.Role_serialize = {
 			.appendField('serialize');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Object', 'String', 'Boolean']);
 		this.setColour(40);
 		this.setTooltip('Get an object mapping permission names to whether or not the role enables that permission.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=serialize');
@@ -13029,8 +13639,7 @@ Blockly.Blocks.Role_hasPermission = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if the role has a permission.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermission');
@@ -13053,8 +13662,7 @@ Blockly.Blocks.Role_hasPermissions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if the role has all specified permissions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermissions');
@@ -13074,8 +13682,7 @@ Blockly.Blocks.Role_comparePositionTo = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Compares this role\'s position to another role\'s.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositionTo');
@@ -13284,8 +13891,7 @@ Blockly.Blocks.Role_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Whether this role equals another role. It compares all properties, so for most operations\nit is advisable to just compare `role.id === role2.id` as it is much faster and is often\nwhat most users need.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=equals');
@@ -13301,8 +13907,7 @@ Blockly.Blocks.Role_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the role mention rather than the Role object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=toString');
@@ -13325,8 +13930,7 @@ Blockly.Blocks.Role_comparePositions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Compares the positions of two roles.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositions');
@@ -13676,6 +14280,48 @@ Blockly.Blocks.TextChannel_search = {
 	}
 };
 
+Blockly.Blocks.TextChannel_startTyping = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('startTyping with');
+
+
+		this.appendValueInput('count')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Starts a typing indicator in the channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=startTyping');
+	}
+};
+
+Blockly.Blocks.TextChannel_stopTyping = {
+	init() {
+		this.appendValueInput('TextChannel')
+			.setCheck('TextChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('stopTyping with');
+
+
+		this.appendValueInput('force')
+			.setCheck(null);
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Stops the typing indicator in the channel.\nThe indicator will only stop if this is called as many times as startTyping().\n<info>It can take a few seconds for the client user to stop typing.</info>');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=stopTyping');
+	}
+};
+
 Blockly.Blocks.TextChannel_createCollector = {
 	init() {
 		this.appendValueInput('TextChannel')
@@ -13692,8 +14338,7 @@ Blockly.Blocks.TextChannel_createCollector = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'MessageCollector');
 		this.setColour(40);
 		this.setTooltip('Creates a Message Collector');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createCollector');
@@ -13716,8 +14361,7 @@ Blockly.Blocks.TextChannel_createMessageCollector = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'MessageCollector');
 		this.setColour(40);
 		this.setTooltip('Creates a Message Collector.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createMessageCollector');
@@ -13937,8 +14581,7 @@ Blockly.Blocks.TextChannel_permissionsFor = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=permissionsFor');
@@ -14135,8 +14778,7 @@ Blockly.Blocks.TextChannel_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=equals');
@@ -14152,8 +14794,7 @@ Blockly.Blocks.TextChannel_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=toString');
@@ -14394,8 +15035,7 @@ Blockly.Blocks.User_typingIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Check whether the user is typing in a channel.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingIn');
@@ -14415,8 +15055,7 @@ Blockly.Blocks.User_typingSinceIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Date');
 		this.setColour(40);
 		this.setTooltip('Get the time that the user started typing.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingSinceIn');
@@ -14436,8 +15075,7 @@ Blockly.Blocks.User_typingDurationIn = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingDurationIn');
@@ -14597,8 +15235,7 @@ Blockly.Blocks.User_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=equals');
@@ -14614,8 +15251,7 @@ Blockly.Blocks.User_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=toString');
@@ -15170,6 +15806,23 @@ Blockly.Blocks.VoiceChannel_join = {
 	}
 };
 
+Blockly.Blocks.VoiceChannel_leave = {
+	init() {
+		this.appendValueInput('VoiceChannel')
+			.setCheck('VoiceChannel')
+			.appendField('with');
+		this.appendDummyInput()
+			.appendField('leave');
+
+		this.setInputsInline(true);
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null);
+		this.setColour(40);
+		this.setTooltip('Leaves this voice channel.');
+		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=leave');
+	}
+};
+
 Blockly.Blocks.VoiceChannel_permissionsFor = {
 	init() {
 		this.appendValueInput('VoiceChannel')
@@ -15183,8 +15836,7 @@ Blockly.Blocks.VoiceChannel_permissionsFor = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=permissionsFor');
@@ -15381,8 +16033,7 @@ Blockly.Blocks.VoiceChannel_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=equals');
@@ -15398,8 +16049,7 @@ Blockly.Blocks.VoiceChannel_toString = {
 			.appendField('toString');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=toString');
@@ -15781,8 +16431,7 @@ Blockly.Blocks.Collection_array = {
 			.appendField('array');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Array');
 		this.setColour(40);
 		this.setTooltip('Creates an ordered array of the values of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.values())` instead.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=array');
@@ -15798,8 +16447,7 @@ Blockly.Blocks.Collection_keyArray = {
 			.appendField('keyArray');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Array');
 		this.setColour(40);
 		this.setTooltip('Creates an ordered array of the keys of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.keys())` instead.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=keyArray');
@@ -15819,8 +16467,7 @@ Blockly.Blocks.Collection_first = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains the first value(s) in this collection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=first');
@@ -15840,8 +16487,7 @@ Blockly.Blocks.Collection_firstKey = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains the first key(s) in this collection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=firstKey');
@@ -15861,8 +16507,7 @@ Blockly.Blocks.Collection_last = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains the last value(s) in this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=last');
@@ -15882,8 +16527,7 @@ Blockly.Blocks.Collection_lastKey = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains the last key(s) in this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=lastKey');
@@ -15903,8 +16547,7 @@ Blockly.Blocks.Collection_random = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains random value(s) from this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=random');
@@ -15924,8 +16567,7 @@ Blockly.Blocks.Collection_randomKey = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Obtains random key(s) from this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=randomKey');
@@ -15948,8 +16590,7 @@ Blockly.Blocks.Collection_findAll = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Array');
 		this.setColour(40);
 		this.setTooltip('Searches for all items where their specified property\'s value is identical to the given value\n(`item[prop] === value`).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findAll');
@@ -15972,8 +16613,7 @@ Blockly.Blocks.Collection_find = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Searches for a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find).\n<warn>All collections used in Discord.js are mapped using their `id` property, and if you want to find by id you\nshould use the `get` method. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get) for details.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=find');
@@ -15996,8 +16636,7 @@ Blockly.Blocks.Collection_findKey = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Searches for the key of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findKey');
@@ -16020,8 +16659,7 @@ Blockly.Blocks.Collection_exists = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Searches for the existence of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`).\n<warn>Do not use this to check for an item by its ID. Instead, use `collection.has(id)`. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has) for details.</warn>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=exists');
@@ -16044,8 +16682,7 @@ Blockly.Blocks.Collection_filter = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Collection');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter),\nbut returns a Collection instead of an Array.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filter');
@@ -16068,8 +16705,7 @@ Blockly.Blocks.Collection_filterArray = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Array');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filterArray');
@@ -16092,8 +16728,7 @@ Blockly.Blocks.Collection_map = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Array');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=map');
@@ -16116,8 +16751,7 @@ Blockly.Blocks.Collection_some = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=some');
@@ -16140,8 +16774,7 @@ Blockly.Blocks.Collection_every = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=every');
@@ -16164,8 +16797,7 @@ Blockly.Blocks.Collection_reduce = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, '*');
 		this.setColour(40);
 		this.setTooltip('Identical to\n[Array.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=reduce');
@@ -16181,8 +16813,7 @@ Blockly.Blocks.Collection_clone = {
 			.appendField('clone');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Collection');
 		this.setColour(40);
 		this.setTooltip('Creates an identical shallow copy of this collection.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=clone');
@@ -16202,8 +16833,7 @@ Blockly.Blocks.Collection_concat = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Collection');
 		this.setColour(40);
 		this.setTooltip('Combines this collection with others into a new collection. None of the source collections are modified.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=concat');
@@ -16219,8 +16849,7 @@ Blockly.Blocks.Collection_deleteAll = {
 			.appendField('deleteAll');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Array', 'Promise']);
 		this.setColour(40);
 		this.setTooltip('Calls the `delete()` method on all items that have it.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=deleteAll');
@@ -16240,8 +16869,7 @@ Blockly.Blocks.Collection_equals = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks if this collection shares identical key-value pairings with another.\nThis is different to checking for equality using equal-signs, because\nthe collections may be different objects, but contain the same data.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=equals');
@@ -16261,8 +16889,7 @@ Blockly.Blocks.Collection_sort = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Collection');
 		this.setColour(40);
 		this.setTooltip('The sort() method sorts the elements of a collection in place and returns the collection.\nThe sort is not necessarily stable. The default sort order is according to string Unicode code points.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=sort');
@@ -16375,8 +17002,7 @@ Blockly.Blocks.Permissions_has = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks whether the bitfield has a permission, or multiple permissions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=has');
@@ -16399,8 +17025,7 @@ Blockly.Blocks.Permissions_missing = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Array', 'PermissionResolvable']);
 		this.setColour(40);
 		this.setTooltip('Gets all given permissions that are missing from the bitfield.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missing');
@@ -16420,8 +17045,7 @@ Blockly.Blocks.Permissions_add = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Adds permissions to this one, creating a new instance to represent the new bitfield.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=add');
@@ -16441,8 +17065,7 @@ Blockly.Blocks.Permissions_remove = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Permissions');
 		this.setColour(40);
 		this.setTooltip('Removes permissions to this one, creating a new instance to represent the new bitfield.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=remove');
@@ -16462,8 +17085,7 @@ Blockly.Blocks.Permissions_serialize = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Object');
 		this.setColour(40);
 		this.setTooltip('Gets an object mapping permission name (like `VIEW_CHANNEL`) to a {@link boolean} indicating whether the\npermission is available.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=serialize');
@@ -16486,8 +17108,7 @@ Blockly.Blocks.Permissions_hasPermission = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks whether the user has a certain permission, e.g. `READ_MESSAGES`.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermission');
@@ -16510,8 +17131,7 @@ Blockly.Blocks.Permissions_hasPermissions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Boolean');
 		this.setColour(40);
 		this.setTooltip('Checks whether the user has all specified permissions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermissions');
@@ -16534,8 +17154,7 @@ Blockly.Blocks.Permissions_missingPermissions = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, ['Array', 'PermissionResolvable']);
 		this.setColour(40);
 		this.setTooltip('Checks whether the user has all specified permissions, and lists any missing permissions.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missingPermissions');
@@ -16555,8 +17174,7 @@ Blockly.Blocks.Permissions_resolve = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Number');
 		this.setColour(40);
 		this.setTooltip('Resolves permissions to their numeric form.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=resolve');
@@ -16572,8 +17190,7 @@ Blockly.Blocks.SnowflakeUtil_generate = {
 			.appendField('generate');
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'Snowflake');
 		this.setColour(40);
 		this.setTooltip('Generates a Discord snowflake.\n<info>This hardcodes the worker ID as 1 and the process ID as 0.</info>');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=generate');
@@ -16593,8 +17210,7 @@ Blockly.Blocks.SnowflakeUtil_deconstruct = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'DeconstructedSnowflake');
 		this.setColour(40);
 		this.setTooltip('Deconstructs a Discord snowflake.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=deconstruct');
@@ -16617,8 +17233,7 @@ Blockly.Blocks.Util_splitMessage = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('Splits a string into multiple chunks at a designated character that do not exceed a specific length.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=splitMessage');
@@ -16644,8 +17259,7 @@ Blockly.Blocks.Util_escapeMarkdown = {
 			.setCheck(null);
 
 		this.setInputsInline(true);
-		this.setPreviousStatement(true, null);
-		this.setNextStatement(true, null);
+		this.setOutput(true, 'String');
 		this.setColour(40);
 		this.setTooltip('Escapes any Discord-flavour markdown in a string.');
 		this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=escapeMarkdown');

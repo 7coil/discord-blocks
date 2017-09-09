@@ -1,4 +1,3 @@
-
 Blockly.JavaScript.Client_constructor = () => {
 	const code = 'new Discord.Client()';
 	return [code, Blockly.JavaScript.ORDER_NONE];
@@ -136,6 +135,14 @@ Blockly.JavaScript.Client_destroy = (block) => {
 	return code;
 };
 
+Blockly.JavaScript.Client_syncGuilds = (block) => {
+	const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
+	const guilds = Blockly.JavaScript.valueToCode(block, 'guilds', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${Client}.syncGuilds(${guilds});
+`;
+	return code;
+};
+
 Blockly.JavaScript.Client_fetchUser = (block) => {
 	const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
 	const id = Blockly.JavaScript.valueToCode(block, 'id', Blockly.JavaScript.ORDER_ATOMIC); const cache = Blockly.JavaScript.valueToCode(block, 'cache', Blockly.JavaScript.ORDER_ATOMIC);
@@ -200,10 +207,26 @@ Blockly.JavaScript.Client_setTimeout = (block) => {
 	return code;
 };
 
+Blockly.JavaScript.Client_clearTimeout = (block) => {
+	const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
+	const timeout = Blockly.JavaScript.valueToCode(block, 'timeout', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${Client}.clearTimeout(${timeout});
+`;
+	return code;
+};
+
 Blockly.JavaScript.Client_setInterval = (block) => {
 	const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
 	const fn = Blockly.JavaScript.valueToCode(block, 'fn', Blockly.JavaScript.ORDER_ATOMIC); const delay = Blockly.JavaScript.valueToCode(block, 'delay', Blockly.JavaScript.ORDER_ATOMIC); const args = Blockly.JavaScript.valueToCode(block, 'args', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${Client}.setInterval(${fn},${delay},${args});
+`;
+	return code;
+};
+
+Blockly.JavaScript.Client_clearInterval = (block) => {
+	const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
+	const interval = Blockly.JavaScript.valueToCode(block, 'interval', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${Client}.clearInterval(${interval});
 `;
 	return code;
 };
@@ -608,6 +631,38 @@ Blockly.JavaScript.StreamDispatcher_totalStreamTime = (block) => {
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript.StreamDispatcher_pause = (block) => {
+	const StreamDispatcher = Blockly.JavaScript.valueToCode(block, 'StreamDispatcher', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${StreamDispatcher}.pause();
+`;
+	return code;
+};
+
+Blockly.JavaScript.StreamDispatcher_resume = (block) => {
+	const StreamDispatcher = Blockly.JavaScript.valueToCode(block, 'StreamDispatcher', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${StreamDispatcher}.resume();
+`;
+	return code;
+};
+
+Blockly.JavaScript.StreamDispatcher_end = (block) => {
+	const StreamDispatcher = Blockly.JavaScript.valueToCode(block, 'StreamDispatcher', Blockly.JavaScript.ORDER_ATOMIC);
+	const reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${StreamDispatcher}.end(${reason});
+`;
+	return code;
+};
+
+Blockly.JavaScript.StreamDispatcher_setBitrate = (block) => {
+	const StreamDispatcher = Blockly.JavaScript.valueToCode(block, 'StreamDispatcher', Blockly.JavaScript.ORDER_ATOMIC);
+	const bitrate = Blockly.JavaScript.valueToCode(block, 'bitrate', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${StreamDispatcher}.setBitrate(${bitrate});
+`;
+	return code;
+};
+
 Blockly.JavaScript.StreamDispatcher_speaking = (block) => {
 	const StreamDispatcher = Blockly.JavaScript.valueToCode(block, 'StreamDispatcher', Blockly.JavaScript.ORDER_ATOMIC);
 	const value = block.getFieldValue('value');
@@ -658,6 +713,22 @@ Blockly.JavaScript.VoiceReceiver_voiceConnection = (block) => {
 	const VoiceReceiver = Blockly.JavaScript.valueToCode(block, 'VoiceReceiver', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${VoiceReceiver}.voiceConnection`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.VoiceReceiver_recreate = (block) => {
+	const VoiceReceiver = Blockly.JavaScript.valueToCode(block, 'VoiceReceiver', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceReceiver}.recreate();
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceReceiver_destroy = (block) => {
+	const VoiceReceiver = Blockly.JavaScript.valueToCode(block, 'VoiceReceiver', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceReceiver}.destroy();
+`;
+	return code;
 };
 
 Blockly.JavaScript.VoiceReceiver_createOpusStream = (block) => {
@@ -716,6 +787,30 @@ Blockly.JavaScript.VolumeInterface_volumeLogarithmic = (block) => {
 	const VolumeInterface = Blockly.JavaScript.valueToCode(block, 'VolumeInterface', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${VolumeInterface}.volumeLogarithmic`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.VolumeInterface_setVolume = (block) => {
+	const VolumeInterface = Blockly.JavaScript.valueToCode(block, 'VolumeInterface', Blockly.JavaScript.ORDER_ATOMIC);
+	const volume = Blockly.JavaScript.valueToCode(block, 'volume', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${VolumeInterface}.setVolume(${volume});
+`;
+	return code;
+};
+
+Blockly.JavaScript.VolumeInterface_setVolumeDecibels = (block) => {
+	const VolumeInterface = Blockly.JavaScript.valueToCode(block, 'VolumeInterface', Blockly.JavaScript.ORDER_ATOMIC);
+	const db = Blockly.JavaScript.valueToCode(block, 'db', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${VolumeInterface}.setVolumeDecibels(${db});
+`;
+	return code;
+};
+
+Blockly.JavaScript.VolumeInterface_setVolumeLogarithmic = (block) => {
+	const VolumeInterface = Blockly.JavaScript.valueToCode(block, 'VolumeInterface', Blockly.JavaScript.ORDER_ATOMIC);
+	const value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${VolumeInterface}.setVolumeLogarithmic(${value});
+`;
+	return code;
 };
 
 Blockly.JavaScript.VolumeInterface_volumeChange = (block) => {
@@ -786,6 +881,38 @@ Blockly.JavaScript.VoiceBroadcast_playArbitraryInput = (block) => {
 	const VoiceBroadcast = Blockly.JavaScript.valueToCode(block, 'VoiceBroadcast', Blockly.JavaScript.ORDER_ATOMIC);
 	const input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC); const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${VoiceBroadcast}.playArbitraryInput(${input},${options});
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceBroadcast_pause = (block) => {
+	const VoiceBroadcast = Blockly.JavaScript.valueToCode(block, 'VoiceBroadcast', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceBroadcast}.pause();
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceBroadcast_resume = (block) => {
+	const VoiceBroadcast = Blockly.JavaScript.valueToCode(block, 'VoiceBroadcast', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceBroadcast}.resume();
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceBroadcast_end = (block) => {
+	const VoiceBroadcast = Blockly.JavaScript.valueToCode(block, 'VoiceBroadcast', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceBroadcast}.end();
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceBroadcast_destroy = (block) => {
+	const VoiceBroadcast = Blockly.JavaScript.valueToCode(block, 'VoiceBroadcast', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceBroadcast}.destroy();
 `;
 	return code;
 };
@@ -884,10 +1011,34 @@ Blockly.JavaScript.VoiceConnection_dispatcher = (block) => {
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript.VoiceConnection_sendVoiceStateUpdate = (block) => {
+	const VoiceConnection = Blockly.JavaScript.valueToCode(block, 'VoiceConnection', Blockly.JavaScript.ORDER_ATOMIC);
+	const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${VoiceConnection}.sendVoiceStateUpdate(${options});
+`;
+	return code;
+};
+
 Blockly.JavaScript.VoiceConnection_setTokenAndEndpoint = (block) => {
 	const VoiceConnection = Blockly.JavaScript.valueToCode(block, 'VoiceConnection', Blockly.JavaScript.ORDER_ATOMIC);
 	const token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC); const endpoint = Blockly.JavaScript.valueToCode(block, 'endpoint', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${VoiceConnection}.setTokenAndEndpoint(${token},${endpoint});
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceConnection_setSessionID = (block) => {
+	const VoiceConnection = Blockly.JavaScript.valueToCode(block, 'VoiceConnection', Blockly.JavaScript.ORDER_ATOMIC);
+	const sessionID = Blockly.JavaScript.valueToCode(block, 'sessionID', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${VoiceConnection}.setSessionID(${sessionID});
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceConnection_disconnect = (block) => {
+	const VoiceConnection = Blockly.JavaScript.valueToCode(block, 'VoiceConnection', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceConnection}.disconnect();
 `;
 	return code;
 };
@@ -1095,10 +1246,34 @@ Blockly.JavaScript.WebhookClient_setTimeout = (block) => {
 	return code;
 };
 
+Blockly.JavaScript.WebhookClient_clearTimeout = (block) => {
+	const WebhookClient = Blockly.JavaScript.valueToCode(block, 'WebhookClient', Blockly.JavaScript.ORDER_ATOMIC);
+	const timeout = Blockly.JavaScript.valueToCode(block, 'timeout', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${WebhookClient}.clearTimeout(${timeout});
+`;
+	return code;
+};
+
 Blockly.JavaScript.WebhookClient_setInterval = (block) => {
 	const WebhookClient = Blockly.JavaScript.valueToCode(block, 'WebhookClient', Blockly.JavaScript.ORDER_ATOMIC);
 	const fn = Blockly.JavaScript.valueToCode(block, 'fn', Blockly.JavaScript.ORDER_ATOMIC); const delay = Blockly.JavaScript.valueToCode(block, 'delay', Blockly.JavaScript.ORDER_ATOMIC); const args = Blockly.JavaScript.valueToCode(block, 'args', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${WebhookClient}.setInterval(${fn},${delay},${args});
+`;
+	return code;
+};
+
+Blockly.JavaScript.WebhookClient_clearInterval = (block) => {
+	const WebhookClient = Blockly.JavaScript.valueToCode(block, 'WebhookClient', Blockly.JavaScript.ORDER_ATOMIC);
+	const interval = Blockly.JavaScript.valueToCode(block, 'interval', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${WebhookClient}.clearInterval(${interval});
+`;
+	return code;
+};
+
+Blockly.JavaScript.WebhookClient_destroy = (block) => {
+	const WebhookClient = Blockly.JavaScript.valueToCode(block, 'WebhookClient', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${WebhookClient}.destroy();
 `;
 	return code;
 };
@@ -1851,6 +2026,14 @@ Blockly.JavaScript.ClientUserChannelOverride_messageNotifications = (block) => {
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript.ClientUserChannelOverride_patch = (block) => {
+	const ClientUserChannelOverride = Blockly.JavaScript.valueToCode(block, 'ClientUserChannelOverride', Blockly.JavaScript.ORDER_ATOMIC);
+	const data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${ClientUserChannelOverride}.patch(${data});
+`;
+	return code;
+};
+
 Blockly.JavaScript.ClientUserGuildSettings_client = (block) => {
 	const ClientUserGuildSettings = Blockly.JavaScript.valueToCode(block, 'ClientUserGuildSettings', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${ClientUserGuildSettings}.client`;
@@ -1891,6 +2074,14 @@ Blockly.JavaScript.ClientUserGuildSettings_channelOverrides = (block) => {
 	const ClientUserGuildSettings = Blockly.JavaScript.valueToCode(block, 'ClientUserGuildSettings', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${ClientUserGuildSettings}.channelOverrides`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.ClientUserGuildSettings_patch = (block) => {
+	const ClientUserGuildSettings = Blockly.JavaScript.valueToCode(block, 'ClientUserGuildSettings', Blockly.JavaScript.ORDER_ATOMIC);
+	const data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${ClientUserGuildSettings}.patch(${data});
+`;
+	return code;
 };
 
 Blockly.JavaScript.ClientUserGuildSettings_update = (block) => {
@@ -2001,6 +2192,14 @@ Blockly.JavaScript.ClientUserSettings_friendSources = (block) => {
 	const ClientUserSettings = Blockly.JavaScript.valueToCode(block, 'ClientUserSettings', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${ClientUserSettings}.friendSources`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.ClientUserSettings_patch = (block) => {
+	const ClientUserSettings = Blockly.JavaScript.valueToCode(block, 'ClientUserSettings', Blockly.JavaScript.ORDER_ATOMIC);
+	const data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${ClientUserSettings}.patch(${data});
+`;
+	return code;
 };
 
 Blockly.JavaScript.ClientUserSettings_update = (block) => {
@@ -2139,6 +2338,22 @@ Blockly.JavaScript.DMChannel_search = (block) => {
 	const DMChannel = Blockly.JavaScript.valueToCode(block, 'DMChannel', Blockly.JavaScript.ORDER_ATOMIC);
 	const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${DMChannel}.search(${options});
+`;
+	return code;
+};
+
+Blockly.JavaScript.DMChannel_startTyping = (block) => {
+	const DMChannel = Blockly.JavaScript.valueToCode(block, 'DMChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${DMChannel}.startTyping(${count});
+`;
+	return code;
+};
+
+Blockly.JavaScript.DMChannel_stopTyping = (block) => {
+	const DMChannel = Blockly.JavaScript.valueToCode(block, 'DMChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const force = Blockly.JavaScript.valueToCode(block, 'force', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${DMChannel}.stopTyping(${force});
 `;
 	return code;
 };
@@ -2461,6 +2676,14 @@ Blockly.JavaScript.GroupDMChannel_equals = (block) => {
 	return code;
 };
 
+Blockly.JavaScript.GroupDMChannel_addUser = (block) => {
+	const GroupDMChannel = Blockly.JavaScript.valueToCode(block, 'GroupDMChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const accessTokenOrID = Blockly.JavaScript.valueToCode(block, 'accessTokenOrID', Blockly.JavaScript.ORDER_ATOMIC); const nick = Blockly.JavaScript.valueToCode(block, 'nick', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${GroupDMChannel}.addUser(${accessTokenOrID},${nick});
+`;
+	return code;
+};
+
 Blockly.JavaScript.GroupDMChannel_setIcon = (block) => {
 	const GroupDMChannel = Blockly.JavaScript.valueToCode(block, 'GroupDMChannel', Blockly.JavaScript.ORDER_ATOMIC);
 	const icon = Blockly.JavaScript.valueToCode(block, 'icon', Blockly.JavaScript.ORDER_ATOMIC);
@@ -2513,6 +2736,22 @@ Blockly.JavaScript.GroupDMChannel_search = (block) => {
 	const GroupDMChannel = Blockly.JavaScript.valueToCode(block, 'GroupDMChannel', Blockly.JavaScript.ORDER_ATOMIC);
 	const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${GroupDMChannel}.search(${options});
+`;
+	return code;
+};
+
+Blockly.JavaScript.GroupDMChannel_startTyping = (block) => {
+	const GroupDMChannel = Blockly.JavaScript.valueToCode(block, 'GroupDMChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${GroupDMChannel}.startTyping(${count});
+`;
+	return code;
+};
+
+Blockly.JavaScript.GroupDMChannel_stopTyping = (block) => {
+	const GroupDMChannel = Blockly.JavaScript.valueToCode(block, 'GroupDMChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const force = Blockly.JavaScript.valueToCode(block, 'force', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${GroupDMChannel}.stopTyping(${force});
 `;
 	return code;
 };
@@ -3053,6 +3292,14 @@ Blockly.JavaScript.Guild_pruneMembers = (block) => {
 	const Guild = Blockly.JavaScript.valueToCode(block, 'Guild', Blockly.JavaScript.ORDER_ATOMIC);
 	const days = Blockly.JavaScript.valueToCode(block, 'days', Blockly.JavaScript.ORDER_ATOMIC); const dry = Blockly.JavaScript.valueToCode(block, 'dry', Blockly.JavaScript.ORDER_ATOMIC); const reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${Guild}.pruneMembers(${days},${dry},${reason});
+`;
+	return code;
+};
+
+Blockly.JavaScript.Guild_sync = (block) => {
+	const Guild = Blockly.JavaScript.valueToCode(block, 'Guild', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${Guild}.sync();
 `;
 	return code;
 };
@@ -3815,6 +4062,14 @@ Blockly.JavaScript.Collector_next = (block) => {
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript.Collector_stop = (block) => {
+	const Collector = Blockly.JavaScript.valueToCode(block, 'Collector', Blockly.JavaScript.ORDER_ATOMIC);
+	const reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${Collector}.stop(${reason});
+`;
+	return code;
+};
+
 Blockly.JavaScript.Collector_handle = (block) => {
 	const Collector = Blockly.JavaScript.valueToCode(block, 'Collector', Blockly.JavaScript.ORDER_ATOMIC);
 	const args = Blockly.JavaScript.valueToCode(block, 'args', Blockly.JavaScript.ORDER_ATOMIC);
@@ -3827,6 +4082,14 @@ Blockly.JavaScript.Collector_postCheck = (block) => {
 	const Collector = Blockly.JavaScript.valueToCode(block, 'Collector', Blockly.JavaScript.ORDER_ATOMIC);
 	const args = Blockly.JavaScript.valueToCode(block, 'args', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${Collector}.postCheck(${args});
+`;
+	return code;
+};
+
+Blockly.JavaScript.Collector_cleanup = (block) => {
+	const Collector = Blockly.JavaScript.valueToCode(block, 'Collector', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${Collector}.cleanup();
 `;
 	return code;
 };
@@ -4366,6 +4629,14 @@ Blockly.JavaScript.MessageCollector_next = (block) => {
 	const MessageCollector = Blockly.JavaScript.valueToCode(block, 'MessageCollector', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${MessageCollector}.next`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.MessageCollector_stop = (block) => {
+	const MessageCollector = Blockly.JavaScript.valueToCode(block, 'MessageCollector', Blockly.JavaScript.ORDER_ATOMIC);
+	const reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${MessageCollector}.stop(${reason});
+`;
+	return code;
 };
 
 Blockly.JavaScript.MessageCollector_message = (block) => {
@@ -5077,6 +5348,14 @@ Blockly.JavaScript.ReactionCollector_next = (block) => {
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript.ReactionCollector_stop = (block) => {
+	const ReactionCollector = Blockly.JavaScript.valueToCode(block, 'ReactionCollector', Blockly.JavaScript.ORDER_ATOMIC);
+	const reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${ReactionCollector}.stop(${reason});
+`;
+	return code;
+};
+
 Blockly.JavaScript.ReactionCollector_collect = (block) => {
 	const ReactionCollector = Blockly.JavaScript.valueToCode(block, 'ReactionCollector', Blockly.JavaScript.ORDER_ATOMIC);
 	const element = block.getFieldValue('element'); const collector = block.getFieldValue('collector');
@@ -5650,6 +5929,22 @@ Blockly.JavaScript.TextChannel_search = (block) => {
 	const TextChannel = Blockly.JavaScript.valueToCode(block, 'TextChannel', Blockly.JavaScript.ORDER_ATOMIC);
 	const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
 	const code = `${TextChannel}.search(${options});
+`;
+	return code;
+};
+
+Blockly.JavaScript.TextChannel_startTyping = (block) => {
+	const TextChannel = Blockly.JavaScript.valueToCode(block, 'TextChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const count = Blockly.JavaScript.valueToCode(block, 'count', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${TextChannel}.startTyping(${count});
+`;
+	return code;
+};
+
+Blockly.JavaScript.TextChannel_stopTyping = (block) => {
+	const TextChannel = Blockly.JavaScript.valueToCode(block, 'TextChannel', Blockly.JavaScript.ORDER_ATOMIC);
+	const force = Blockly.JavaScript.valueToCode(block, 'force', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${TextChannel}.stopTyping(${force});
 `;
 	return code;
 };
@@ -6242,6 +6537,14 @@ Blockly.JavaScript.VoiceChannel_join = (block) => {
 	const VoiceChannel = Blockly.JavaScript.valueToCode(block, 'VoiceChannel', Blockly.JavaScript.ORDER_ATOMIC);
 
 	const code = `${VoiceChannel}.join();
+`;
+	return code;
+};
+
+Blockly.JavaScript.VoiceChannel_leave = (block) => {
+	const VoiceChannel = Blockly.JavaScript.valueToCode(block, 'VoiceChannel', Blockly.JavaScript.ORDER_ATOMIC);
+
+	const code = `${VoiceChannel}.leave();
 `;
 	return code;
 };

@@ -1,9 +1,0 @@
-<xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="Client_ping" id="~?R)|MCqQHU(`X?{?2(N" x="79" y="253">
-    <value name="Client">
-      <block type="variables_get" id="A[DoVYAd5*R]m3LrxiiG">
-        <field name="VAR">client</field>
-      </block>
-    </value>
-  </block>
-</xml>
