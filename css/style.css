@@ -2,6 +2,10 @@
 	font-family: "Roboto", sans-serif !important;
 }
 
+body {
+	overflow: hidden;
+}
+
 #discordblocksarea {
   position: relative;
   width: 100%;
