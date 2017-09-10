@@ -35,8 +35,8 @@ function loadCode() {
 	Blockly.Xml.domToWorkspace(xml, workspace);
 }
 
-//	window.addEventListener('beforeunload', (e) => {
-//		const confirm = 'You may have unsaved code.';
-//		e.returnValue = confirm;
-//		return confirm;
-//	});
+window.addEventListener('beforeunload', (e) => {
+	const confirm = 'You may have unsaved code.';
+	e.returnValue = confirm;
+	return confirm;
+});

@@ -25,5 +25,7 @@ const resize = () => {
 };
 
 window.addEventListener('resize', resize, false);
-resize();
+setTimeout(resize, 50);
+
+
 Blockly.svgResize(workspace);
