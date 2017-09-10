@@ -5,3 +5,23 @@
 body {
 	overflow: hidden;
 }
+
+#discordblocksarea {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 56px);
+}
+
+@media only screen and (min-width: 601px) {
+	#discordblocksarea {
+		height: calc(100vh - 64px);
+	}
+}
+
+#discordblocks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
