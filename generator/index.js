@@ -52,14 +52,13 @@ documentation.classes.forEach((classy) => {
 						this.setTooltip('${(classy.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
 						this.setHelpUrl('${url}class/${classy.name}');
 					}
-				};
-			`);
+				};`);
 			code += (`
 				Blockly.JavaScript.${classy.name}_constructor = (block) => {
 					const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
 					${(classy.construct.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
-					const code = \`new Discord.${classy.name}(${(classy.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
-					return code;
+					const code = \`new Discord.${classy.name}(${(classy.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()})\`;
+					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 			`);
 			currclass.block.push({
@@ -169,7 +168,7 @@ documentation.classes.forEach((classy) => {
 									const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
 									${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
 									const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
-									return code;
+									return [code, Blockly.JavaScript.ORDER_NONE];
 								};
 							`);
 						}
@@ -201,7 +200,7 @@ documentation.classes.forEach((classy) => {
 								const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
 								${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
 								const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
-								return code;
+								return [code, Blockly.JavaScript.ORDER_NONE];
 							};
 						`);
 					}
