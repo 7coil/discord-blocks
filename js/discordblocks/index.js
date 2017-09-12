@@ -40,3 +40,18 @@ window.addEventListener('beforeunload', (e) => {
 	e.returnValue = confirm;
 	return confirm;
 });
+
+window.addEventListener('load', () => {
+	const url = window.location.hash.substr(1);
+	if (url) {
+		$.ajax(url, {
+			dataType: 'text'
+		})
+		.done((data) => {
+			console.dir(data);
+			const xml = Blockly.Xml.textToDom(data);
+			Blockly.Xml.domToWorkspace(xml, workspace);
+		});
+	}
+	getUrlParameter('code');
+})
