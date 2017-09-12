@@ -53,5 +53,4 @@ window.addEventListener('load', () => {
 			Blockly.Xml.domToWorkspace(xml, workspace);
 		});
 	}
-	getUrlParameter('code');
 })
