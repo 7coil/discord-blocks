@@ -223,7 +223,7 @@
                                                     </value>
                                                     <next>
                                                       <block type="controls_if" id="FED7Wh8DrSnQnnb:;.+[">
-                                                        <mutation elseif="2"></mutation>
+                                                        <mutation elseif="3"></mutation>
                                                         <value name="IF0">
                                                           <block type="logic_compare" id="9!T,nJtFds|CK|wFJ+qg">
                                                             <field name="OP">EQ</field>
@@ -326,10 +326,86 @@
                                                               </block>
                                                             </value>
                                                             <value name="content">
-                                                              <block type="text" id="%dB(S#(am%?%bt;~4[{_">
-                                                                <field name="TEXT">Welcome to Moustacheminer Server Services DiscordBlocks test bot. Available commands: `parker`, `ping`, `help`</field>
+                                                              <block type="text_join" id="PI@S9}}ay10|Xx-(Oj8I">
+                                                                <mutation items="2"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="text" id="%dB(S#(am%?%bt;~4[{_">
+                                                                    <field name="TEXT">Welcome to DiscordBlocks! Available commands:</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                  <block type="text" id="#;N:CQh*D8nL|X7{PsDA">
+                                                                    <field name="TEXT">`parker`, `ping`, `help`, `birb`</field>
+                                                                  </block>
+                                                                </value>
                                                               </block>
                                                             </value>
+                                                          </block>
+                                                        </statement>
+                                                        <value name="IF3">
+                                                          <block type="logic_compare" id="wDVnRtgtG7yM5RE2re+1">
+                                                            <field name="OP">EQ</field>
+                                                            <value name="A">
+                                                              <block type="variables_get" id="o]Q0k.ktS1mh:4L%zaYW">
+                                                                <field name="VAR">command</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="text" id="4/(=vJ~XHh1Z=0u)UehD">
+                                                                <field name="TEXT">birb</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO3">
+                                                          <block type="variables_set" id="?M]Y7t}d+H+qA=AWeoCx">
+                                                            <field name="VAR">object</field>
+                                                            <value name="VALUE">
+                                                              <block type="mss_object" id="f,S)SB?nYCQgV4F]4h~="></block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="mss_object_set" id="d0=EI!WX:jB-^+_G@-Pb">
+                                                                <field name="key">file</field>
+                                                                <value name="object">
+                                                                  <block type="variables_get" id="zcPUwn#|12*O8h;}+/On">
+                                                                    <field name="VAR">object</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="token">
+                                                                  <block type="Attachment_constructor" id="E0l$*Yah3h!+R$Z?MC?k">
+                                                                    <value name="file">
+                                                                      <block type="text" id="jRcU4%7NqN8NuqzOI4eD">
+                                                                        <field name="TEXT">https://random.birb.pw/tweet/random</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="name">
+                                                                      <block type="text" id="4hY`HviN`{ip)Y#w0OaN">
+                                                                        <field name="TEXT">birb.jpg</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="Message_reply" id="LMn8,lM57JGrd54b6tY3">
+                                                                    <value name="Message">
+                                                                      <block type="variables_get" id=":wA7g${J4A7x0U{qm!Xd">
+                                                                        <field name="VAR">message</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="content">
+                                                                      <block type="text" id="rwsp;SDY6eT(9rg79fXR">
+                                                                        <field name="TEXT">Have a random birb from `random.birb.pw`</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="options">
+                                                                      <block type="variables_get" id="{qda$y9|O=S8.JzyW?B|">
+                                                                        <field name="VAR">object</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
                                                           </block>
                                                         </statement>
                                                       </block>
