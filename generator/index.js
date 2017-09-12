@@ -57,7 +57,7 @@ documentation.classes.forEach((classy) => {
 				Blockly.JavaScript.${classy.name}_constructor = (block) => {
 					const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
 					${(classy.construct.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
-					const code = \`new Discord.${classy.name}(${(classy.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()})\`;
+					const code = \`new Discord.${classy.name}(${(classy.construct.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()})\`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 			`);

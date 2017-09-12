@@ -22,7 +22,7 @@
 				Blockly.JavaScript.Client_constructor = (block) => {
 					const Client = Blockly.JavaScript.valueToCode(block, 'Client', Blockly.JavaScript.ORDER_ATOMIC);
 					const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.Client()`;
+					const code = `new Discord.Client(${options})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -4059,7 +4059,7 @@
 				Blockly.JavaScript.WebhookClient_constructor = (block) => {
 					const WebhookClient = Blockly.JavaScript.valueToCode(block, 'WebhookClient', Blockly.JavaScript.ORDER_ATOMIC);
 					const id = Blockly.JavaScript.valueToCode(block, 'id', Blockly.JavaScript.ORDER_ATOMIC);const token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.WebhookClient()`;
+					const code = `new Discord.WebhookClient(${id},${token},${options})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -4651,7 +4651,7 @@
 				Blockly.JavaScript.Shard_constructor = (block) => {
 					const Shard = Blockly.JavaScript.valueToCode(block, 'Shard', Blockly.JavaScript.ORDER_ATOMIC);
 					const manager = Blockly.JavaScript.valueToCode(block, 'manager', Blockly.JavaScript.ORDER_ATOMIC);const id = Blockly.JavaScript.valueToCode(block, 'id', Blockly.JavaScript.ORDER_ATOMIC);const args = Blockly.JavaScript.valueToCode(block, 'args', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.Shard()`;
+					const code = `new Discord.Shard(${manager},${id},${args})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -4837,7 +4837,7 @@
 				Blockly.JavaScript.ShardClientUtil_constructor = (block) => {
 					const ShardClientUtil = Blockly.JavaScript.valueToCode(block, 'ShardClientUtil', Blockly.JavaScript.ORDER_ATOMIC);
 					const client = Blockly.JavaScript.valueToCode(block, 'client', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.ShardClientUtil()`;
+					const code = `new Discord.ShardClientUtil(${client})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -5017,7 +5017,7 @@
 				Blockly.JavaScript.ShardingManager_constructor = (block) => {
 					const ShardingManager = Blockly.JavaScript.valueToCode(block, 'ShardingManager', Blockly.JavaScript.ORDER_ATOMIC);
 					const file = Blockly.JavaScript.valueToCode(block, 'file', Blockly.JavaScript.ORDER_ATOMIC);const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.ShardingManager()`;
+					const code = `new Discord.ShardingManager(${file},${options})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -5361,7 +5361,7 @@
 				Blockly.JavaScript.Attachment_constructor = (block) => {
 					const Attachment = Blockly.JavaScript.valueToCode(block, 'Attachment', Blockly.JavaScript.ORDER_ATOMIC);
 					const file = Blockly.JavaScript.valueToCode(block, 'file', Blockly.JavaScript.ORDER_ATOMIC);const name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.Attachment()`;
+					const code = `new Discord.Attachment(${file},${name})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -15986,7 +15986,7 @@
 				Blockly.JavaScript.MessageCollector_constructor = (block) => {
 					const MessageCollector = Blockly.JavaScript.valueToCode(block, 'MessageCollector', Blockly.JavaScript.ORDER_ATOMIC);
 					const channel = Blockly.JavaScript.valueToCode(block, 'channel', Blockly.JavaScript.ORDER_ATOMIC);const filter = Blockly.JavaScript.valueToCode(block, 'filter', Blockly.JavaScript.ORDER_ATOMIC);const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.MessageCollector()`;
+					const code = `new Discord.MessageCollector(${channel},${filter},${options})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -18275,7 +18275,7 @@
 				Blockly.JavaScript.ReactionCollector_constructor = (block) => {
 					const ReactionCollector = Blockly.JavaScript.valueToCode(block, 'ReactionCollector', Blockly.JavaScript.ORDER_ATOMIC);
 					const message = Blockly.JavaScript.valueToCode(block, 'message', Blockly.JavaScript.ORDER_ATOMIC);const filter = Blockly.JavaScript.valueToCode(block, 'filter', Blockly.JavaScript.ORDER_ATOMIC);const options = Blockly.JavaScript.valueToCode(block, 'options', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.ReactionCollector()`;
+					const code = `new Discord.ReactionCollector(${message},${filter},${options})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -18652,7 +18652,7 @@
 				Blockly.JavaScript.RichEmbed_constructor = (block) => {
 					const RichEmbed = Blockly.JavaScript.valueToCode(block, 'RichEmbed', Blockly.JavaScript.ORDER_ATOMIC);
 					const data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.RichEmbed()`;
+					const code = `new Discord.RichEmbed(${data})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
@@ -24209,7 +24209,7 @@
 				Blockly.JavaScript.Permissions_constructor = (block) => {
 					const Permissions = Blockly.JavaScript.valueToCode(block, 'Permissions', Blockly.JavaScript.ORDER_ATOMIC);
 					const member = Blockly.JavaScript.valueToCode(block, 'member', Blockly.JavaScript.ORDER_ATOMIC);const permissions = Blockly.JavaScript.valueToCode(block, 'permissions', Blockly.JavaScript.ORDER_ATOMIC);
-					const code = `new Discord.Permissions()`;
+					const code = `new Discord.Permissions(${member},${permissions})`;
 					return [code, Blockly.JavaScript.ORDER_NONE];
 				};
 
