@@ -80,3 +80,24 @@ Blockly.JavaScript.mss_object_set = (block) => {
 	const code = `${value_object}['${text_key.replace(/'/g, '\\\'')}'] = ${value_token};\n`;
 	return code;
 };
+
+Blockly.Blocks.mss_property_get = {
+	init() {
+		this.appendValueInput('object')
+			.setCheck(null)
+			.appendField('get key')
+			.appendField(new Blockly.FieldTextInput('key'), 'key')
+			.appendField('of');
+		this.setOutput(true, null);
+		this.setColour(300);
+		this.setTooltip('');
+		this.setHelpUrl('');
+	}
+};
+
+Blockly.JavaScript.mss_property_get = (block) => {
+	const text_key = block.getFieldValue('key');
+	const value_object = Blockly.JavaScript.valueToCode(block, 'object', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `${value_object}['${text_key.replace(/'/g, '\\\'')}']`;
+	return [code, Blockly.JavaScript.ORDER_NONE];
+};
