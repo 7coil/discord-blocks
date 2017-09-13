@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <xml>
 	<category name="Client">
-
+		
 		<block type="Client_constructor"></block>
 		<block type="Client_options"></block>
 		<block type="Client_shard"></block>
@@ -82,11 +82,11 @@
 		<block type="Client_guildMemberSpeaking"></block>
 	</category>
 	<category name="DiscordAPIError">
-
+		
 		<block type="DiscordAPIError_code"></block>
 	</category>
 	<category name="StreamDispatcher">
-
+		
 		<block type="StreamDispatcher_player"></block>
 		<block type="StreamDispatcher_stream"></block>
 		<block type="StreamDispatcher_paused"></block>
@@ -105,7 +105,7 @@
 		<block type="StreamDispatcher_error"></block>
 	</category>
 	<category name="VoiceReceiver">
-
+		
 		<block type="VoiceReceiver_destroyed"></block>
 		<block type="VoiceReceiver_voiceConnection"></block>
 		<block type="VoiceReceiver_recreate"></block>
@@ -117,7 +117,7 @@
 		<block type="VoiceReceiver_pcm"></block>
 	</category>
 	<category name="VolumeInterface">
-
+		
 		<block type="VolumeInterface_volume"></block>
 		<block type="VolumeInterface_volumeDecibels"></block>
 		<block type="VolumeInterface_volumeLogarithmic"></block>
@@ -127,7 +127,7 @@
 		<block type="VolumeInterface_volumeChange"></block>
 	</category>
 	<category name="VoiceBroadcast">
-
+		
 		<block type="VoiceBroadcast_client"></block>
 		<block type="VoiceBroadcast_prism"></block>
 		<block type="VoiceBroadcast_currentTranscoder"></block>
@@ -148,7 +148,7 @@
 		<block type="VoiceBroadcast_end"></block>
 	</category>
 	<category name="VoiceConnection">
-
+		
 		<block type="VoiceConnection_voiceManager"></block>
 		<block type="VoiceConnection_client"></block>
 		<block type="VoiceConnection_prism"></block>
@@ -181,7 +181,7 @@
 		<block type="VoiceConnection_speaking"></block>
 	</category>
 	<category name="WebhookClient">
-
+		
 		<block type="WebhookClient_constructor"></block>
 		<block type="WebhookClient_options"></block>
 		<block type="WebhookClient_client"></block>
@@ -206,7 +206,7 @@
 		<block type="WebhookClient_delete"></block>
 	</category>
 	<category name="Shard">
-
+		
 		<block type="Shard_constructor"></block>
 		<block type="Shard_manager"></block>
 		<block type="Shard_id"></block>
@@ -217,7 +217,7 @@
 		<block type="Shard_eval"></block>
 	</category>
 	<category name="ShardClientUtil">
-
+		
 		<block type="ShardClientUtil_constructor"></block>
 		<block type="ShardClientUtil_id"></block>
 		<block type="ShardClientUtil_count"></block>
@@ -227,7 +227,7 @@
 		<block type="ShardClientUtil_singleton"></block>
 	</category>
 	<category name="ShardingManager">
-
+		
 		<block type="ShardingManager_constructor"></block>
 		<block type="ShardingManager_file"></block>
 		<block type="ShardingManager_totalShards"></block>
@@ -244,7 +244,7 @@
 		<block type="ShardingManager_launch"></block>
 	</category>
 	<category name="Attachment">
-
+		
 		<block type="Attachment_constructor"></block>
 		<block type="Attachment_name"></block>
 		<block type="Attachment_attachment"></block>
@@ -253,7 +253,7 @@
 		<block type="Attachment_setName"></block>
 	</category>
 	<category name="Channel">
-
+		
 		<block type="Channel_client"></block>
 		<block type="Channel_type"></block>
 		<block type="Channel_id"></block>
@@ -262,7 +262,7 @@
 		<block type="Channel_delete"></block>
 	</category>
 	<category name="ClientUser">
-
+		
 		<block type="ClientUser_verified"></block>
 		<block type="ClientUser_email"></block>
 		<block type="ClientUser_friends"></block>
@@ -322,13 +322,13 @@
 		<block type="ClientUser_sendCode"></block>
 	</category>
 	<category name="ClientUserChannelOverride">
-
+		
 		<block type="ClientUserChannelOverride_muted"></block>
 		<block type="ClientUserChannelOverride_messageNotifications"></block>
 		<block type="ClientUserChannelOverride_patch"></block>
 	</category>
 	<category name="ClientUserGuildSettings">
-
+		
 		<block type="ClientUserGuildSettings_client"></block>
 		<block type="ClientUserGuildSettings_guildID"></block>
 		<block type="ClientUserGuildSettings_mobilePush"></block>
@@ -340,7 +340,7 @@
 		<block type="ClientUserGuildSettings_update"></block>
 	</category>
 	<category name="ClientUserSettings">
-
+		
 		<block type="ClientUserSettings_convertEmoticons"></block>
 		<block type="ClientUserSettings_defaultGuildsRestricted"></block>
 		<block type="ClientUserSettings_detectPlatformAccounts"></block>
@@ -365,7 +365,7 @@
 		<block type="ClientUserSettings_removeRestrictedGuild"></block>
 	</category>
 	<category name="DMChannel">
-
+		
 		<block type="DMChannel_recipient"></block>
 		<block type="DMChannel_messages"></block>
 		<block type="DMChannel_lastMessageID"></block>
@@ -395,7 +395,7 @@
 		<block type="DMChannel_delete"></block>
 	</category>
 	<category name="Emoji">
-
+		
 		<block type="Emoji_client"></block>
 		<block type="Emoji_guild"></block>
 		<block type="Emoji_id"></block>
@@ -417,7 +417,7 @@
 		<block type="Emoji_equals"></block>
 	</category>
 	<category name="GroupDMChannel">
-
+		
 		<block type="GroupDMChannel_name"></block>
 		<block type="GroupDMChannel_icon"></block>
 		<block type="GroupDMChannel_ownerID"></block>
@@ -458,7 +458,7 @@
 		<block type="GroupDMChannel_delete"></block>
 	</category>
 	<category name="Guild">
-
+		
 		<block type="Guild_client"></block>
 		<block type="Guild_members"></block>
 		<block type="Guild_channels"></block>
@@ -542,14 +542,14 @@
 		<block type="Guild_setChannelPosition"></block>
 	</category>
 	<category name="GuildAuditLogs">
-
+		
 		<block type="GuildAuditLogs_entries"></block>
 		<block type="GuildAuditLogs_build"></block>
 		<block type="GuildAuditLogs_targetType"></block>
 		<block type="GuildAuditLogs_actionType"></block>
 	</category>
 	<category name="GuildAuditLogsEntry">
-
+		
 		<block type="GuildAuditLogsEntry_targetType"></block>
 		<block type="GuildAuditLogsEntry_actionType"></block>
 		<block type="GuildAuditLogsEntry_action"></block>
@@ -563,7 +563,7 @@
 		<block type="GuildAuditLogsEntry_createdAt"></block>
 	</category>
 	<category name="GuildChannel">
-
+		
 		<block type="GuildChannel_guild"></block>
 		<block type="GuildChannel_name"></block>
 		<block type="GuildChannel_position"></block>
@@ -590,7 +590,7 @@
 		<block type="GuildChannel_delete"></block>
 	</category>
 	<category name="GuildMember">
-
+		
 		<block type="GuildMember_client"></block>
 		<block type="GuildMember_guild"></block>
 		<block type="GuildMember_user"></block>
@@ -647,7 +647,7 @@
 		<block type="GuildMember_sendCode"></block>
 	</category>
 	<category name="Collector">
-
+		
 		<block type="Collector_client"></block>
 		<block type="Collector_filter"></block>
 		<block type="Collector_options"></block>
@@ -662,7 +662,7 @@
 		<block type="Collector_end"></block>
 	</category>
 	<category name="Invite">
-
+		
 		<block type="Invite_client"></block>
 		<block type="Invite_guild"></block>
 		<block type="Invite_code"></block>
@@ -685,7 +685,7 @@
 		<block type="Invite_toString"></block>
 	</category>
 	<category name="Message">
-
+		
 		<block type="Message_client"></block>
 		<block type="Message_channel"></block>
 		<block type="Message_id"></block>
@@ -731,7 +731,7 @@
 		<block type="Message_toString"></block>
 	</category>
 	<category name="MessageAttachment">
-
+		
 		<block type="MessageAttachment_client"></block>
 		<block type="MessageAttachment_message"></block>
 		<block type="MessageAttachment_id"></block>
@@ -743,7 +743,7 @@
 		<block type="MessageAttachment_width"></block>
 	</category>
 	<category name="MessageCollector">
-
+		
 		<block type="MessageCollector_constructor"></block>
 		<block type="MessageCollector_channel"></block>
 		<block type="MessageCollector_received"></block>
@@ -759,7 +759,7 @@
 		<block type="MessageCollector_end"></block>
 	</category>
 	<category name="MessageEmbed">
-
+		
 		<block type="MessageEmbed_client"></block>
 		<block type="MessageEmbed_message"></block>
 		<block type="MessageEmbed_type"></block>
@@ -779,7 +779,7 @@
 		<block type="MessageEmbed_hexColor"></block>
 	</category>
 	<category name="MessageEmbedThumbnail">
-
+		
 		<block type="MessageEmbedThumbnail_embed"></block>
 		<block type="MessageEmbedThumbnail_url"></block>
 		<block type="MessageEmbedThumbnail_proxyURL"></block>
@@ -787,7 +787,7 @@
 		<block type="MessageEmbedThumbnail_width"></block>
 	</category>
 	<category name="MessageEmbedImage">
-
+		
 		<block type="MessageEmbedImage_embed"></block>
 		<block type="MessageEmbedImage_url"></block>
 		<block type="MessageEmbedImage_proxyURL"></block>
@@ -795,41 +795,41 @@
 		<block type="MessageEmbedImage_width"></block>
 	</category>
 	<category name="MessageEmbedVideo">
-
+		
 		<block type="MessageEmbedVideo_embed"></block>
 		<block type="MessageEmbedVideo_url"></block>
 		<block type="MessageEmbedVideo_height"></block>
 		<block type="MessageEmbedVideo_width"></block>
 	</category>
 	<category name="MessageEmbedProvider">
-
+		
 		<block type="MessageEmbedProvider_embed"></block>
 		<block type="MessageEmbedProvider_name"></block>
 		<block type="MessageEmbedProvider_url"></block>
 	</category>
 	<category name="MessageEmbedAuthor">
-
+		
 		<block type="MessageEmbedAuthor_embed"></block>
 		<block type="MessageEmbedAuthor_name"></block>
 		<block type="MessageEmbedAuthor_url"></block>
 		<block type="MessageEmbedAuthor_iconURL"></block>
 	</category>
 	<category name="MessageEmbedField">
-
+		
 		<block type="MessageEmbedField_embed"></block>
 		<block type="MessageEmbedField_name"></block>
 		<block type="MessageEmbedField_value"></block>
 		<block type="MessageEmbedField_inline"></block>
 	</category>
 	<category name="MessageEmbedFooter">
-
+		
 		<block type="MessageEmbedFooter_embed"></block>
 		<block type="MessageEmbedFooter_text"></block>
 		<block type="MessageEmbedFooter_iconURL"></block>
 		<block type="MessageEmbedFooter_proxyIconUrl"></block>
 	</category>
 	<category name="MessageMentions">
-
+		
 		<block type="MessageMentions_everyone"></block>
 		<block type="MessageMentions_users"></block>
 		<block type="MessageMentions_roles"></block>
@@ -841,7 +841,7 @@
 		<block type="MessageMentions_CHANNELS_PATTERN"></block>
 	</category>
 	<category name="MessageReaction">
-
+		
 		<block type="MessageReaction_message"></block>
 		<block type="MessageReaction_me"></block>
 		<block type="MessageReaction_count"></block>
@@ -851,7 +851,7 @@
 		<block type="MessageReaction_fetchUsers"></block>
 	</category>
 	<category name="OAuth2Application">
-
+		
 		<block type="OAuth2Application_client"></block>
 		<block type="OAuth2Application_id"></block>
 		<block type="OAuth2Application_name"></block>
@@ -873,7 +873,7 @@
 		<block type="OAuth2Application_toString"></block>
 	</category>
 	<category name="PartialGuild">
-
+		
 		<block type="PartialGuild_client"></block>
 		<block type="PartialGuild_id"></block>
 		<block type="PartialGuild_name"></block>
@@ -881,27 +881,27 @@
 		<block type="PartialGuild_splash"></block>
 	</category>
 	<category name="PartialGuildChannel">
-
+		
 		<block type="PartialGuildChannel_client"></block>
 		<block type="PartialGuildChannel_id"></block>
 		<block type="PartialGuildChannel_name"></block>
 		<block type="PartialGuildChannel_type"></block>
 	</category>
 	<category name="PermissionOverwrites">
-
+		
 		<block type="PermissionOverwrites_channel"></block>
 		<block type="PermissionOverwrites_id"></block>
 		<block type="PermissionOverwrites_type"></block>
 		<block type="PermissionOverwrites_delete"></block>
 	</category>
 	<category name="Presence">
-
+		
 		<block type="Presence_status"></block>
 		<block type="Presence_game"></block>
 		<block type="Presence_equals"></block>
 	</category>
 	<category name="Game">
-
+		
 		<block type="Game_name"></block>
 		<block type="Game_type"></block>
 		<block type="Game_url"></block>
@@ -909,7 +909,7 @@
 		<block type="Game_equals"></block>
 	</category>
 	<category name="ReactionCollector">
-
+		
 		<block type="ReactionCollector_constructor"></block>
 		<block type="ReactionCollector_message"></block>
 		<block type="ReactionCollector_users"></block>
@@ -925,7 +925,7 @@
 		<block type="ReactionCollector_end"></block>
 	</category>
 	<category name="ReactionEmoji">
-
+		
 		<block type="ReactionEmoji_reaction"></block>
 		<block type="ReactionEmoji_name"></block>
 		<block type="ReactionEmoji_id"></block>
@@ -933,7 +933,7 @@
 		<block type="ReactionEmoji_toString"></block>
 	</category>
 	<category name="RichEmbed">
-
+		
 		<block type="RichEmbed_constructor"></block>
 		<block type="RichEmbed_title"></block>
 		<block type="RichEmbed_description"></block>
@@ -960,7 +960,7 @@
 		<block type="RichEmbed_attachFile"></block>
 	</category>
 	<category name="Role">
-
+		
 		<block type="Role_client"></block>
 		<block type="Role_guild"></block>
 		<block type="Role_id"></block>
@@ -994,7 +994,7 @@
 		<block type="Role_comparePositions"></block>
 	</category>
 	<category name="TextChannel">
-
+		
 		<block type="TextChannel_topic"></block>
 		<block type="TextChannel_nsfw"></block>
 		<block type="TextChannel_members"></block>
@@ -1041,7 +1041,7 @@
 		<block type="TextChannel_toString"></block>
 	</category>
 	<category name="User">
-
+		
 		<block type="User_client"></block>
 		<block type="User_id"></block>
 		<block type="User_username"></block>
@@ -1079,7 +1079,7 @@
 		<block type="User_sendCode"></block>
 	</category>
 	<category name="UserConnection">
-
+		
 		<block type="UserConnection_user"></block>
 		<block type="UserConnection_type"></block>
 		<block type="UserConnection_name"></block>
@@ -1088,7 +1088,7 @@
 		<block type="UserConnection_integrations"></block>
 	</category>
 	<category name="UserProfile">
-
+		
 		<block type="UserProfile_user"></block>
 		<block type="UserProfile_client"></block>
 		<block type="UserProfile_mutualGuilds"></block>
@@ -1097,7 +1097,7 @@
 		<block type="UserProfile_premiumSince"></block>
 	</category>
 	<category name="VoiceChannel">
-
+		
 		<block type="VoiceChannel_members"></block>
 		<block type="VoiceChannel_bitrate"></block>
 		<block type="VoiceChannel_userLimit"></block>
@@ -1129,7 +1129,7 @@
 		<block type="VoiceChannel_toString"></block>
 	</category>
 	<category name="VoiceRegion">
-
+		
 		<block type="VoiceRegion_id"></block>
 		<block type="VoiceRegion_name"></block>
 		<block type="VoiceRegion_vip"></block>
@@ -1139,7 +1139,7 @@
 		<block type="VoiceRegion_sampleHostname"></block>
 	</category>
 	<category name="Webhook">
-
+		
 		<block type="Webhook_client"></block>
 		<block type="Webhook_name"></block>
 		<block type="Webhook_token"></block>
@@ -1157,7 +1157,7 @@
 		<block type="Webhook_delete"></block>
 	</category>
 	<category name="Collection">
-
+		
 		<block type="Collection_array"></block>
 		<block type="Collection_keyArray"></block>
 		<block type="Collection_first"></block>
@@ -1183,7 +1183,7 @@
 		<block type="Collection_sort"></block>
 	</category>
 	<category name="Permissions">
-
+		
 		<block type="Permissions_constructor"></block>
 		<block type="Permissions__member"></block>
 		<block type="Permissions_bitfield"></block>
@@ -1203,12 +1203,12 @@
 	</category>
 	<category name="EvaluatedPermissions"></category>
 	<category name="SnowflakeUtil">
-
+		
 		<block type="SnowflakeUtil_generate"></block>
 		<block type="SnowflakeUtil_deconstruct"></block>
 	</category>
 	<category name="Util">
-
+		
 		<block type="Util_splitMessage"></block>
 		<block type="Util_escapeMarkdown"></block>
 		<block type="Util_fetchRecommendedShards"></block>

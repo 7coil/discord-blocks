@@ -167,7 +167,7 @@ documentation.classes.forEach((classy) => {
 								Blockly.JavaScript.${classy.name}_${curr.name} = (block) => {
 									const ${classy.name} = Blockly.JavaScript.valueToCode(block, '${classy.name}', Blockly.JavaScript.ORDER_ATOMIC);
 									${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`const ${current.name} = Blockly.JavaScript.valueToCode(block, '${current.name}', Blockly.JavaScript.ORDER_ATOMIC);`); return array; }, []).join('')}
-									const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()});\n\`;
+									const code = \`\${${classy.name}}.${curr.name}(${(curr.params || []).filter(current => !current.name.includes('.')).reduce((array, current) => { array.push(`\${${current.name}}`); return array; }, []).join()})\`;
 									return [code, Blockly.JavaScript.ORDER_NONE];
 								};
 							`);
