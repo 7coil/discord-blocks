@@ -13,7 +13,10 @@ const save = (data, name) => {
 };
 
 function getCode() {
-	const output = `var Discord = require('discord.js');${Blockly.JavaScript.workspaceToCode(workspace)}`;
+	const output = `const Discord = require('discord.js');
+const querystring = require('querystring');
+const https = require('https');
+${Blockly.JavaScript.workspaceToCode(workspace)}`;
 	save(output, 'project.js');
 }
 
