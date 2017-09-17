@@ -126,20 +126,20 @@ Blockly.JavaScript.mss_client_post = (block) => {
 	const text_token = block.getFieldValue('token');
 
 	const code = `if (${value_client}.browser) {
-	console.error('Posting bot statistics is not yet allowed, because of cross site and XMLHttpRequest preflight problems.');
-	//	$.ajax({
-	//		method: 'POST',
-	//		url: \`https://${dropdown_website}/api/bots/\${${value_client}.user.id}/stats\`,
-	//		data: JSON.stringify({
-	//			server_count: ${value_client}.guilds.size
-	//		}),
-	//		headers: {
-	//			Authorization: '${text_token}'
-	//		},
-	//		success: (data) => {
-	//			console.log(data);
-	//		}
-	//	})
+	//	console.error('Posting bot statistics is not yet allowed, because of cross site and XMLHttpRequest preflight problems.');
+	$.ajax({
+		method: 'POST',
+		url: \`https://${dropdown_website}/api/bots/\${${value_client}.user.id}/stats\`,
+		data: {
+			server_count: ${value_client}.guilds.size
+		},
+		headers: {
+			authorization: '${text_token}'
+		},
+		success: (data) => {
+			console.log(data);
+		}
+	})
 } else {
 	const postData = JSON.stringify({
 		server_count: ${value_client}.guilds.size
