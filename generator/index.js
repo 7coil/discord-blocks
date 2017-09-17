@@ -77,10 +77,10 @@ documentation.classes.forEach((classy) => {
 	Blockly.Blocks.${classy.name}_${curr.name} = {
 		init() {
 			this.appendValueInput('${classy.name}')
-				.setCheck('${classy.name}')
+				.setCheck(['${classy.name}', '*'])
 				.appendField('get ${curr.name} of');
 			this.setInputsInline(true);
-			this.setOutput(true, ${JSON.stringify(curr.type[0].concat('*').reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
+			this.setOutput(true, ${curr.type[0].length === 1 ? `'${curr.type[0][0][0].charAt(0).toUpperCase() + curr.type[0][0][0].slice(1)}'` : JSON.stringify(curr.type[0].reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
 			this.setColour(${colour.prop});
 			this.setTooltip('${(curr.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
 			this.setHelpUrl('${url}class/${classy.name}?scrollTo=${curr.name}');
@@ -115,7 +115,7 @@ documentation.classes.forEach((classy) => {
 								Blockly.Blocks.${classy.name}_${curr.name} = {
 									init() {
 										this.appendValueInput('${classy.name}')
-											.setCheck('${classy.name}')
+											.setCheck(['${classy.name}', '*'])
 											.appendField('with');
 										this.appendDummyInput()
 											.appendField('${curr.name}${curr.params ? ' with' : ''}');
@@ -146,7 +146,7 @@ documentation.classes.forEach((classy) => {
 								Blockly.Blocks.${classy.name}_${curr.name} = {
 									init() {
 										this.appendValueInput('${classy.name}')
-											.setCheck('${classy.name}')
+											.setCheck(['${classy.name}', '*'])
 											.appendField('with');
 										this.appendDummyInput()
 											.appendField('${curr.name}${curr.params ? ' with' : ''}');
@@ -156,7 +156,7 @@ documentation.classes.forEach((classy) => {
 												.setCheck(null);
 										`, '')}
 										this.setInputsInline(true);
-										this.setOutput(true, ${JSON.stringify(returnoutput[0].concat('*').reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
+										this.setOutput(true, ${returnoutput[0].length === 1 ? `'${returnoutput[0][0][0].charAt(0).toUpperCase() + returnoutput[0][0][0].slice(1)}'` : JSON.stringify(returnoutput[0].reduce((array, current) => { array.push(current[0].charAt(0).toUpperCase() + current[0].slice(1)); return array; }, []))});
 										this.setColour(${colour.method});
 										this.setTooltip('${(curr.description || '').replace(/\n/g, '\\n').replace(/'/g, '\\\'')}');
 										this.setHelpUrl('${url}class/${classy.name}?scrollTo=${curr.name}');
@@ -177,7 +177,7 @@ documentation.classes.forEach((classy) => {
 							Blockly.Blocks.${classy.name}_${curr.name} = {
 								init() {
 									this.appendValueInput('${classy.name}')
-										.setCheck('${classy.name}')
+										.setCheck(['${classy.name}', '*'])
 										.appendField('with');
 									this.appendDummyInput()
 										.appendField('${curr.name}${curr.params ? ' with' : ''}');
@@ -222,7 +222,7 @@ documentation.classes.forEach((classy) => {
 						Blockly.Blocks.${classy.name}_${curr.name} = {
 							init() {
 								this.appendValueInput('${classy.name}')
-									.setCheck('${classy.name}')
+									.setCheck(['${classy.name}', '*'])
 									.appendField('when');
 								this.appendDummyInput()
 									.appendField('emits ${curr.name}')
