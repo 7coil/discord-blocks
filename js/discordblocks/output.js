@@ -32,7 +32,7 @@
 				.setCheck('Client')
 				.appendField('get options of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ClientOptions');
+			this.setOutput(true, ["ClientOptions","*"]);
 			this.setColour(230);
 			this.setTooltip('The options the client was instantiated with');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=options');
@@ -51,7 +51,7 @@
 				.setCheck('Client')
 				.appendField('get shard of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ShardClientUtil');
+			this.setOutput(true, ["ShardClientUtil","*"]);
 			this.setColour(230);
 			this.setTooltip('The shard helpers for the client\n(only if the process was spawned as a child, such as from a {@link ShardingManager})');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=shard');
@@ -70,7 +70,7 @@
 				.setCheck('Client')
 				.appendField('get users of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('All of the {@link User} objects that have been cached at any point, mapped by their IDs');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=users');
@@ -89,7 +89,7 @@
 				.setCheck('Client')
 				.appendField('get guilds of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Guild"]);
+			this.setOutput(true, ["Collection","Snowflake","Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('All of the guilds the client is currently handling, mapped by their IDs -\nas long as sharding isn\'t being used, this will be *every* guild the bot is a member of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=guilds');
@@ -108,7 +108,7 @@
 				.setCheck('Client')
 				.appendField('get channels of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Channel"]);
+			this.setOutput(true, ["Collection","Snowflake","Channel","*"]);
 			this.setColour(230);
 			this.setTooltip('All of the {@link Channel}s that the client is currently handling, mapped by their IDs -\nas long as sharding isn\'t being used, this will be *every* channel in *every* guild, and all DM channels');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=channels');
@@ -127,7 +127,7 @@
 				.setCheck('Client')
 				.appendField('get presences of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Presence"]);
+			this.setOutput(true, ["Collection","Snowflake","Presence","*"]);
 			this.setColour(230);
 			this.setTooltip('Presences that have been received for the client user\'s friends, mapped by user IDs\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=presences');
@@ -146,7 +146,7 @@
 				.setCheck('Client')
 				.appendField('get token of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Authorization token for the logged in user/bot\n<warn>This should be kept private at all times.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=token');
@@ -165,7 +165,7 @@
 				.setCheck('Client')
 				.appendField('get user of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ClientUser');
+			this.setOutput(true, ["ClientUser","*"]);
 			this.setColour(230);
 			this.setTooltip('User that the client is logged in as');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=user');
@@ -184,7 +184,7 @@
 				.setCheck('Client')
 				.appendField('get readyAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('Time at which the client was last regarded as being in the `READY` state\n(each time the client disconnects and successfully reconnects, this will be overwritten)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=readyAt');
@@ -203,7 +203,7 @@
 				.setCheck('Client')
 				.appendField('get broadcasts of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","VoiceBroadcast"]);
+			this.setOutput(true, ["Array","VoiceBroadcast","*"]);
 			this.setColour(230);
 			this.setTooltip('Active voice broadcasts that have been created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=broadcasts');
@@ -222,7 +222,7 @@
 				.setCheck('Client')
 				.appendField('get pings of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Number"]);
+			this.setOutput(true, ["Array","Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Previous heartbeat pings of the websocket (most recent first, limited to three elements)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=pings');
@@ -241,7 +241,7 @@
 				.setCheck('Client')
 				.appendField('get status of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Current status of the client\'s connection to Discord');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=status');
@@ -260,7 +260,7 @@
 				.setCheck('Client')
 				.appendField('get uptime of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('How long it has been since the client last entered the `READY` state');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=uptime');
@@ -279,7 +279,7 @@
 				.setCheck('Client')
 				.appendField('get ping of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Average heartbeat ping of the websocket, obtained by averaging the {@link Client#pings} property');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=ping');
@@ -298,7 +298,7 @@
 				.setCheck('Client')
 				.appendField('get voiceConnections of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","VoiceConnection"]);
+			this.setOutput(true, ["Collection","Snowflake","VoiceConnection","*"]);
 			this.setColour(230);
 			this.setTooltip('All active voice connections that have been established, mapped by channel ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=voiceConnections');
@@ -317,7 +317,7 @@
 				.setCheck('Client')
 				.appendField('get emojis of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Emoji"]);
+			this.setOutput(true, ["Collection","Snowflake","Emoji","*"]);
 			this.setColour(230);
 			this.setTooltip('All custom emojis that the client has access to, mapped by their IDs');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=emojis');
@@ -336,7 +336,7 @@
 				.setCheck('Client')
 				.appendField('get readyTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Timestamp of the time the client was last `READY` at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=readyTimestamp');
@@ -355,7 +355,7 @@
 				.setCheck('Client')
 				.appendField('get browser of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the client is in a browser environment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=browser');
@@ -377,7 +377,7 @@
 											.appendField('createVoiceBroadcast');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'VoiceBroadcast');
+										this.setOutput(true, ["VoiceBroadcast","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a voice broadcast.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=createVoiceBroadcast');
@@ -578,7 +578,7 @@
 											.appendField('fetchVoiceRegions');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Collection","String","VoiceRegion"]);
+										this.setOutput(true, ["Collection","String","VoiceRegion","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains the available voice regions from Discord.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=fetchVoiceRegions');
@@ -605,7 +605,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Sweeps all text-based channels\' messages and removes the ones older than the max message lifetime.\nIf the message has been edited, the time of the edit is used rather than the time of the original message.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=sweepMessages');
@@ -698,7 +698,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Timeout');
+										this.setOutput(true, ["Timeout","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setTimeout');
@@ -762,7 +762,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Timeout');
+										this.setOutput(true, ["Timeout","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=setInterval');
@@ -1999,7 +1999,7 @@
 				.setCheck('DiscordAPIError')
 				.appendField('get code of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('HTTP error code returned by Discord');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DiscordAPIError?scrollTo=code');
@@ -2018,7 +2018,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get player of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'AudioPlayer');
+			this.setOutput(true, ["AudioPlayer","*"]);
 			this.setColour(230);
 			this.setTooltip('The Audio Player that controls this dispatcher');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=player');
@@ -2037,7 +2037,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get stream of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ReadableStream');
+			this.setOutput(true, ["ReadableStream","*"]);
 			this.setColour(230);
 			this.setTooltip('The stream that the dispatcher plays');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=stream');
@@ -2056,7 +2056,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get paused of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether playing is paused');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=paused');
@@ -2075,7 +2075,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get destroyed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this dispatcher has been destroyed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=destroyed');
@@ -2094,7 +2094,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get passes of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('How many passes the dispatcher should take when sending packets to reduce packet loss. Values over 5\naren\'t recommended, as it means you are using 5x more bandwidth. You _can_ edit this at runtime');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=passes');
@@ -2113,7 +2113,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get time of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('How long the stream dispatcher has been "speaking" for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=time');
@@ -2132,7 +2132,7 @@
 				.setCheck('StreamDispatcher')
 				.appendField('get totalStreamTime of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The total time, taking into account pauses and skips, that the dispatcher has been streaming for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/StreamDispatcher?scrollTo=totalStreamTime');
@@ -2394,7 +2394,7 @@
 				.setCheck('VoiceReceiver')
 				.appendField('get destroyed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this receiver has been destroyed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=destroyed');
@@ -2413,7 +2413,7 @@
 				.setCheck('VoiceReceiver')
 				.appendField('get voiceConnection of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceConnection');
+			this.setOutput(true, ["VoiceConnection","*"]);
 			this.setColour(230);
 			this.setTooltip('The VoiceConnection that instantiated this');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=voiceConnection');
@@ -2489,7 +2489,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'ReadableStream');
+										this.setOutput(true, ["ReadableStream","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a readable stream for a user that provides opus data while the user is speaking. When the user\nstops speaking, the stream is destroyed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createOpusStream');
@@ -2516,7 +2516,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'ReadableStream');
+										this.setOutput(true, ["ReadableStream","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a readable stream for a user that provides PCM data while the user is speaking. When the user\nstops speaking, the stream is destroyed. The stream is 32-bit signed stereo PCM at 48KHz.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceReceiver?scrollTo=createPCMStream');
@@ -2617,7 +2617,7 @@
 				.setCheck('VolumeInterface')
 				.appendField('get volume of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The current volume of the broadcast');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volume');
@@ -2636,7 +2636,7 @@
 				.setCheck('VolumeInterface')
 				.appendField('get volumeDecibels of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The current volume of the broadcast in decibels');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeDecibels');
@@ -2655,7 +2655,7 @@
 				.setCheck('VolumeInterface')
 				.appendField('get volumeLogarithmic of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The current volume of the broadcast from a logarithmic scale');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VolumeInterface?scrollTo=volumeLogarithmic');
@@ -2788,7 +2788,7 @@
 				.setCheck('VoiceBroadcast')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the broadcast');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=client');
@@ -2807,7 +2807,7 @@
 				.setCheck('VoiceBroadcast')
 				.appendField('get prism of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Prism');
+			this.setOutput(true, ["Prism","*"]);
 			this.setColour(230);
 			this.setTooltip('The audio transcoder that this broadcast uses');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=prism');
@@ -2826,7 +2826,7 @@
 				.setCheck('VoiceBroadcast')
 				.appendField('get currentTranscoder of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('The current audio transcoder that is being used');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=currentTranscoder');
@@ -2845,7 +2845,7 @@
 				.setCheck('VoiceBroadcast')
 				.appendField('get dispatchers of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","StreamDispatcher"]);
+			this.setOutput(true, ["Array","StreamDispatcher","*"]);
 			this.setColour(230);
 			this.setTooltip('An array of subscribed dispatchers');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=dispatchers');
@@ -2875,7 +2875,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'VoiceBroadcast');
+										this.setOutput(true, ["VoiceBroadcast","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays any audio stream across the broadcast.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playStream');
@@ -2906,7 +2906,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Play the given file in the voice connection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playFile');
@@ -2937,7 +2937,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'VoiceBroadcast');
+										this.setOutput(true, ["VoiceBroadcast","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playConvertedStream');
@@ -2968,7 +2968,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playOpusStream');
@@ -2999,7 +2999,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'VoiceBroadcast');
+										this.setOutput(true, ["VoiceBroadcast","*"]);
 										this.setColour(40);
 										this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceBroadcast?scrollTo=playArbitraryInput');
@@ -3254,7 +3254,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get voiceManager of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ClientVoiceManager');
+			this.setOutput(true, ["ClientVoiceManager","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice manager that instantiated this connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=voiceManager');
@@ -3273,7 +3273,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=client');
@@ -3292,7 +3292,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get prism of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Prism');
+			this.setOutput(true, ["Prism","*"]);
 			this.setColour(230);
 			this.setTooltip('The audio transcoder for this connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=prism');
@@ -3311,7 +3311,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get channel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceChannel');
+			this.setOutput(true, ["VoiceChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice channel this connection is currently serving');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=channel');
@@ -3330,7 +3330,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get status of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The current status of the voice connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=status');
@@ -3349,7 +3349,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get speaking of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether we\'re currently transmitting audio');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=speaking');
@@ -3368,7 +3368,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get receivers of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","VoiceReceiver"]);
+			this.setOutput(true, ["Array","VoiceReceiver","*"]);
 			this.setColour(230);
 			this.setTooltip('An array of Voice Receivers that have been created for this connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=receivers');
@@ -3387,7 +3387,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get player of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'AudioPlayer');
+			this.setOutput(true, ["AudioPlayer","*"]);
 			this.setColour(230);
 			this.setTooltip('The audio player for this voice connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=player');
@@ -3406,7 +3406,7 @@
 				.setCheck('VoiceConnection')
 				.appendField('get dispatcher of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'StreamDispatcher');
+			this.setOutput(true, ["StreamDispatcher","*"]);
 			this.setColour(230);
 			this.setTooltip('The current stream dispatcher (if any)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=dispatcher');
@@ -3465,7 +3465,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Void');
+										this.setOutput(true, ["Void","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the token and endpoint required to connect to the voice servers.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=setTokenAndEndpoint');
@@ -3550,7 +3550,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Play the given file in the voice connection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playFile');
@@ -3581,7 +3581,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Play an arbitrary input that can be [handled by ffmpeg](https://ffmpeg.org/ffmpeg-protocols.html#Description)');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playArbitraryInput');
@@ -3612,7 +3612,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays and converts an audio stream in the voice connection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playStream');
@@ -3643,7 +3643,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays a stream of 16-bit signed stereo PCM.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playConvertedStream');
@@ -3674,7 +3674,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays an Opus encoded stream.\n<warn>Note that inline volume is not compatible with this method.</warn>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playOpusStream');
@@ -3705,7 +3705,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'StreamDispatcher');
+										this.setOutput(true, ["StreamDispatcher","*"]);
 										this.setColour(40);
 										this.setTooltip('Plays a voice broadcast.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=playBroadcast');
@@ -3728,7 +3728,7 @@
 											.appendField('createReceiver');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'VoiceReceiver');
+										this.setOutput(true, ["VoiceReceiver","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a VoiceReceiver so you can start listening to voice data.\nIt\'s recommended to only create one of these.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceConnection?scrollTo=createReceiver');
@@ -4049,7 +4049,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get options of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ClientOptions');
+			this.setOutput(true, ["ClientOptions","*"]);
 			this.setColour(230);
 			this.setTooltip('The options the client was instantiated with');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=options');
@@ -4068,7 +4068,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=client');
@@ -4087,7 +4087,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=name');
@@ -4106,7 +4106,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get token of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The token for the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=token');
@@ -4125,7 +4125,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get avatar of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The avatar for the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=avatar');
@@ -4144,7 +4144,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=id');
@@ -4163,7 +4163,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get guildID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the webhook belongs to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=guildID');
@@ -4182,7 +4182,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get channelID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The channel the webhook belongs to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=channelID');
@@ -4201,7 +4201,7 @@
 				.setCheck('WebhookClient')
 				.appendField('get owner of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=owner');
@@ -4235,7 +4235,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Timeout');
+										this.setOutput(true, ["Timeout","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets a timeout that will be automatically cancelled if the client is destroyed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setTimeout');
@@ -4299,7 +4299,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Timeout');
+										this.setOutput(true, ["Timeout","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets an interval that will be automatically cancelled if the client is destroyed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/WebhookClient?scrollTo=setInterval');
@@ -4639,7 +4639,7 @@
 				.setCheck('Shard')
 				.appendField('get manager of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ShardingManager');
+			this.setOutput(true, ["ShardingManager","*"]);
 			this.setColour(230);
 			this.setTooltip('Manager that created the shard');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=manager');
@@ -4658,7 +4658,7 @@
 				.setCheck('Shard')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('ID of the shard');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=id');
@@ -4677,7 +4677,7 @@
 				.setCheck('Shard')
 				.appendField('get env of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('The environment variables for the shard');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=env');
@@ -4696,7 +4696,7 @@
 				.setCheck('Shard')
 				.appendField('get process of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ChildProcess');
+			this.setOutput(true, ["ChildProcess","*"]);
 			this.setColour(230);
 			this.setTooltip('Process of the shard');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Shard?scrollTo=process');
@@ -4825,7 +4825,7 @@
 				.setCheck('ShardClientUtil')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('ID of this shard');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=id');
@@ -4844,7 +4844,7 @@
 				.setCheck('ShardClientUtil')
 				.appendField('get count of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Total number of shards');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=count');
@@ -4957,7 +4957,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'ShardClientUtil');
+										this.setOutput(true, ["ShardClientUtil","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates/gets the singleton of this class.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardClientUtil?scrollTo=singleton');
@@ -5004,7 +5004,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get file of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Path to the shard script file');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=file');
@@ -5023,7 +5023,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get totalShards of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Amount of shards that this manager is going to spawn');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=totalShards');
@@ -5042,7 +5042,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get respawn of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether shards should automatically respawn upon exiting');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=respawn');
@@ -5061,7 +5061,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get shardArgs of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","String"]);
+			this.setOutput(true, ["Array","String","*"]);
 			this.setColour(230);
 			this.setTooltip('An array of arguments to pass to shards');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=shardArgs');
@@ -5080,7 +5080,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get token of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Token to use for obtaining the automatic shard count, and passing to shards');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=token');
@@ -5099,7 +5099,7 @@
 				.setCheck('ShardingManager')
 				.appendField('get shards of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Number","Shard"]);
+			this.setOutput(true, ["Collection","Number","Shard","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of shards that this manager has spawned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ShardingManager?scrollTo=shards');
@@ -5348,7 +5348,7 @@
 				.setCheck('Attachment')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the file');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=name');
@@ -5367,7 +5367,7 @@
 				.setCheck('Attachment')
 				.appendField('get attachment of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'BufferResolvable');
+			this.setOutput(true, ["BufferResolvable","*"]);
 			this.setColour(230);
 			this.setTooltip('The file');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=attachment');
@@ -5397,7 +5397,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Attachment');
+										this.setOutput(true, ["Attachment","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the file of this attachment.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setAttachment');
@@ -5424,7 +5424,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Attachment');
+										this.setOutput(true, ["Attachment","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the file of this attachment.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setFile');
@@ -5451,7 +5451,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Attachment');
+										this.setOutput(true, ["Attachment","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the name of this attachment.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Attachment?scrollTo=setName');
@@ -5471,7 +5471,7 @@
 				.setCheck('Channel')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the Channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=client');
@@ -5490,7 +5490,7 @@
 				.setCheck('Channel')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=type');
@@ -5509,7 +5509,7 @@
 				.setCheck('Channel')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The unique ID of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=id');
@@ -5528,7 +5528,7 @@
 				.setCheck('Channel')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the channel was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=createdTimestamp');
@@ -5547,7 +5547,7 @@
 				.setCheck('Channel')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the channel was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Channel?scrollTo=createdAt');
@@ -5591,7 +5591,7 @@
 				.setCheck('ClientUser')
 				.appendField('get verified of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this account has been verified');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=verified');
@@ -5610,7 +5610,7 @@
 				.setCheck('ClientUser')
 				.appendField('get email of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The email of this account');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=email');
@@ -5629,7 +5629,7 @@
 				.setCheck('ClientUser')
 				.appendField('get friends of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('A Collection of friends for the logged in user\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=friends');
@@ -5648,7 +5648,7 @@
 				.setCheck('ClientUser')
 				.appendField('get blocked of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('A Collection of blocked users for the logged in user\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=blocked');
@@ -5667,7 +5667,7 @@
 				.setCheck('ClientUser')
 				.appendField('get notes of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","String"]);
+			this.setOutput(true, ["Collection","Snowflake","String","*"]);
 			this.setColour(230);
 			this.setTooltip('A Collection of notes for the logged in user\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=notes');
@@ -5686,7 +5686,7 @@
 				.setCheck('ClientUser')
 				.appendField('get premium of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the user has Discord premium (nitro)\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=premium');
@@ -5705,7 +5705,7 @@
 				.setCheck('ClientUser')
 				.appendField('get mfaEnabled of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the user has MFA enabled on their account\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=mfaEnabled');
@@ -5724,7 +5724,7 @@
 				.setCheck('ClientUser')
 				.appendField('get mobile of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the user has ever used a mobile device on Discord\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=mobile');
@@ -5743,7 +5743,7 @@
 				.setCheck('ClientUser')
 				.appendField('get settings of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'ClientUserSettings');
+			this.setOutput(true, ["ClientUserSettings","*"]);
 			this.setColour(230);
 			this.setTooltip('Various settings for this user\n<warn>This is only filled when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=settings');
@@ -5762,7 +5762,7 @@
 				.setCheck('ClientUser')
 				.appendField('get guildSettings of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","ClientUserGuildSettings"]);
+			this.setOutput(true, ["Collection","Snowflake","ClientUserGuildSettings","*"]);
 			this.setColour(230);
 			this.setTooltip('All of the user\'s guild settings\n<warn>This is only filled when using a user account</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=guildSettings');
@@ -5781,7 +5781,7 @@
 				.setCheck('ClientUser')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the instance of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=client');
@@ -5800,7 +5800,7 @@
 				.setCheck('ClientUser')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=id');
@@ -5819,7 +5819,7 @@
 				.setCheck('ClientUser')
 				.appendField('get username of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The username of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=username');
@@ -5838,7 +5838,7 @@
 				.setCheck('ClientUser')
 				.appendField('get discriminator of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A discriminator based on username for the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=discriminator');
@@ -5857,7 +5857,7 @@
 				.setCheck('ClientUser')
 				.appendField('get avatar of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the user\'s avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=avatar');
@@ -5876,7 +5876,7 @@
 				.setCheck('ClientUser')
 				.appendField('get bot of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the user is a bot');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=bot');
@@ -5895,7 +5895,7 @@
 				.setCheck('ClientUser')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message sent by the user, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=lastMessageID');
@@ -5914,7 +5914,7 @@
 				.setCheck('ClientUser')
 				.appendField('get lastMessage of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The Message object of the last message sent by the user, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=lastMessage');
@@ -5933,7 +5933,7 @@
 				.setCheck('ClientUser')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the user was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createdTimestamp');
@@ -5952,7 +5952,7 @@
 				.setCheck('ClientUser')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the user was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=createdAt');
@@ -5971,7 +5971,7 @@
 				.setCheck('ClientUser')
 				.appendField('get presence of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Presence');
+			this.setOutput(true, ["Presence","*"]);
 			this.setColour(230);
 			this.setTooltip('The presence of this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=presence');
@@ -5990,7 +5990,7 @@
 				.setCheck('ClientUser')
 				.appendField('get avatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=avatarURL');
@@ -6009,7 +6009,7 @@
 				.setCheck('ClientUser')
 				.appendField('get defaultAvatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s default avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=defaultAvatarURL');
@@ -6028,7 +6028,7 @@
 				.setCheck('ClientUser')
 				.appendField('get displayAvatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s avatar if they have one. Otherwise a link to their default avatar will be returned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=displayAvatarURL');
@@ -6047,7 +6047,7 @@
 				.setCheck('ClientUser')
 				.appendField('get tag of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The Discord "tag" for this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=tag');
@@ -6066,7 +6066,7 @@
 				.setCheck('ClientUser')
 				.appendField('get note of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The note that is set for the user\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=note');
@@ -6085,7 +6085,7 @@
 				.setCheck('ClientUser')
 				.appendField('get dmChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'DMChannel');
+			this.setOutput(true, ["DMChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The DM between the client\'s user and this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=dmChannel');
@@ -6541,7 +6541,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Check whether the user is typing in a channel.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingIn');
@@ -6568,7 +6568,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Date');
+										this.setOutput(true, ["Date","*"]);
 										this.setColour(40);
 										this.setTooltip('Get the time that the user started typing.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingSinceIn');
@@ -6595,7 +6595,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=typingDurationIn');
@@ -6776,7 +6776,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=equals');
@@ -6799,7 +6799,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=toString');
@@ -7000,7 +7000,7 @@
 				.setCheck('ClientUserChannelOverride')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is muted');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserChannelOverride?scrollTo=muted');
@@ -7019,7 +7019,7 @@
 				.setCheck('ClientUserChannelOverride')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserChannelOverride?scrollTo=messageNotifications');
@@ -7067,7 +7067,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the instance of the ClientUserGuildSettings');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=client');
@@ -7086,7 +7086,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get guildID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the guild this settings are for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=guildID');
@@ -7105,7 +7105,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get mobilePush of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether to receive mobile push notifications');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=mobilePush');
@@ -7124,7 +7124,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=messageNotifications');
@@ -7143,7 +7143,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the guild is muted');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=muted');
@@ -7162,7 +7162,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get suppressEveryone of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether to suppress everyone mention');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=suppressEveryone');
@@ -7181,7 +7181,7 @@
 				.setCheck('ClientUserGuildSettings')
 				.appendField('get channelOverrides of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","ClientUserChannelOverride"]);
+			this.setOutput(true, ["Collection","ClientUserChannelOverride","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection containing all the channel overrides');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserGuildSettings?scrollTo=channelOverrides');
@@ -7262,7 +7262,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get convertEmoticons of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Automatically convert emoticons in your messages to emoji\nFor example, when you type `:-)` Discord will convert it to 😃');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=convertEmoticons');
@@ -7281,7 +7281,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get defaultGuildsRestricted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If new guilds should automatically disable DMs between you and its members');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=defaultGuildsRestricted');
@@ -7300,7 +7300,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get detectPlatformAccounts of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Automatically detect accounts from services like Steam and Blizzard when you open the Discord client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=detectPlatformAccounts');
@@ -7319,7 +7319,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get developerMode of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Developer Mode exposes context menu items helpful for people writing bots using the Discord API');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=developerMode');
@@ -7338,7 +7338,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get enableTTSCommand of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Allow playback and usage of the `/tts` command');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=enableTTSCommand');
@@ -7357,7 +7357,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get theme of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The theme of the client. Either `light` or `dark`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=theme');
@@ -7376,7 +7376,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get status of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'PresenceStatus');
+			this.setOutput(true, ["PresenceStatus","*"]);
 			this.setColour(230);
 			this.setTooltip('Last status set in the client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=status');
@@ -7395,7 +7395,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get showCurrentGame of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Display currently running game as status message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=showCurrentGame');
@@ -7414,7 +7414,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get inlineAttachmentMedia of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Display images, videos, and lolcats when uploaded directly to Discord');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=inlineAttachmentMedia');
@@ -7433,7 +7433,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get inlineEmbedMedia of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Display images, videos, and lolcats when uploaded posted as links in chat');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=inlineEmbedMedia');
@@ -7452,7 +7452,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get locale of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Language the Discord client will use, as an RFC 3066 language identifier');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=locale');
@@ -7471,7 +7471,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get messageDisplayCompact of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Display messages in compact mode');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=messageDisplayCompact');
@@ -7490,7 +7490,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get renderReactions of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Show emoji reactions on messages');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=renderReactions');
@@ -7509,7 +7509,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get guildPositions of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Snowflake"]);
+			this.setOutput(true, ["Array","Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('Array of snowflake IDs for guilds, in the order they appear in the Discord client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=guildPositions');
@@ -7528,7 +7528,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get restrictedGuilds of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Snowflake"]);
+			this.setOutput(true, ["Array","Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('Array of snowflake IDs for guilds which you will not recieve DMs from');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=restrictedGuilds');
@@ -7547,7 +7547,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get explicitContentFilter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Safe direct messaging; force people\'s messages with images to be scanned before they are sent to you.\nOne of `DISABLED`, `NON_FRIENDS`, `FRIENDS_AND_NON_FRIENDS`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=explicitContentFilter');
@@ -7566,7 +7566,7 @@
 				.setCheck('ClientUserSettings')
 				.appendField('get friendSources of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Who can add you as a friend');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ClientUserSettings?scrollTo=friendSources');
@@ -7742,7 +7742,7 @@
 				.setCheck('DMChannel')
 				.appendField('get recipient of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The recipient on the other end of the DM');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=recipient');
@@ -7761,7 +7761,7 @@
 				.setCheck('DMChannel')
 				.appendField('get messages of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Message"]);
+			this.setOutput(true, ["Collection","Snowflake","Message","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection containing the messages sent to this channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=messages');
@@ -7780,7 +7780,7 @@
 				.setCheck('DMChannel')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message in the channel, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=lastMessageID');
@@ -7799,7 +7799,7 @@
 				.setCheck('DMChannel')
 				.appendField('get typing of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=typing');
@@ -7818,7 +7818,7 @@
 				.setCheck('DMChannel')
 				.appendField('get typingCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Number of times `startTyping` has been called');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=typingCount');
@@ -7837,7 +7837,7 @@
 				.setCheck('DMChannel')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the Channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=client');
@@ -7856,7 +7856,7 @@
 				.setCheck('DMChannel')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=type');
@@ -7875,7 +7875,7 @@
 				.setCheck('DMChannel')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The unique ID of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=id');
@@ -7894,7 +7894,7 @@
 				.setCheck('DMChannel')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the channel was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createdTimestamp');
@@ -7913,7 +7913,7 @@
 				.setCheck('DMChannel')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the channel was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createdAt');
@@ -7935,7 +7935,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the recipient\'s mention instead of the\nDM channel object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=toString');
@@ -8169,7 +8169,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'MessageCollector');
+										this.setOutput(true, ["MessageCollector","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a Message Collector');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/DMChannel?scrollTo=createCollector');
@@ -8457,7 +8457,7 @@
 				.setCheck('Emoji')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this object');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=client');
@@ -8476,7 +8476,7 @@
 				.setCheck('Emoji')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild this emoji is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=guild');
@@ -8495,7 +8495,7 @@
 				.setCheck('Emoji')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the emoji');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=id');
@@ -8514,7 +8514,7 @@
 				.setCheck('Emoji')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the emoji');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=name');
@@ -8533,7 +8533,7 @@
 				.setCheck('Emoji')
 				.appendField('get requiresColons of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this emoji requires colons surrounding it');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=requiresColons');
@@ -8552,7 +8552,7 @@
 				.setCheck('Emoji')
 				.appendField('get managed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this emoji is managed by an external service');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=managed');
@@ -8571,7 +8571,7 @@
 				.setCheck('Emoji')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the emoji was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=createdTimestamp');
@@ -8590,7 +8590,7 @@
 				.setCheck('Emoji')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the emoji was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=createdAt');
@@ -8609,7 +8609,7 @@
 				.setCheck('Emoji')
 				.appendField('get roles of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Role"]);
+			this.setOutput(true, ["Collection","Snowflake","Role","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of roles this emoji is active for (empty if all), mapped by role ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=roles');
@@ -8628,7 +8628,7 @@
 				.setCheck('Emoji')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to the emoji file');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=url');
@@ -8647,7 +8647,7 @@
 				.setCheck('Emoji')
 				.appendField('get identifier of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The identifier of this emoji, used for message reactions');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=identifier');
@@ -8851,7 +8851,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically returns the emoji mention rather than the object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=toString');
@@ -8878,7 +8878,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this emoji is the same as another one.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Emoji?scrollTo=equals');
@@ -8898,7 +8898,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this Group DM, can be null if one isn\'t set');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=name');
@@ -8917,7 +8917,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get icon of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A hash of this Group DM icon');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=icon');
@@ -8936,7 +8936,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get ownerID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The user ID of this Group DM\'s owner');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=ownerID');
@@ -8955,7 +8955,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get managed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the DM is managed by an application');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=managed');
@@ -8974,7 +8974,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get applicationID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Application ID of the application that made this Group DM, if applicable');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=applicationID');
@@ -8993,7 +8993,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get nicks of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","String"]);
+			this.setOutput(true, ["Collection","Snowflake","String","*"]);
 			this.setColour(230);
 			this.setTooltip('Nicknames for group members');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=nicks');
@@ -9012,7 +9012,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get recipients of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of the recipients of this DM, mapped by their ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=recipients');
@@ -9031,7 +9031,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get owner of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of this Group DM');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=owner');
@@ -9050,7 +9050,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get iconURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to this guild\'s icon');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=iconURL');
@@ -9069,7 +9069,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get messages of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Message"]);
+			this.setOutput(true, ["Collection","Snowflake","Message","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection containing the messages sent to this channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=messages');
@@ -9088,7 +9088,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message in the channel, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=lastMessageID');
@@ -9107,7 +9107,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get typing of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=typing');
@@ -9126,7 +9126,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get typingCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Number of times `startTyping` has been called');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=typingCount');
@@ -9145,7 +9145,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the Channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=client');
@@ -9164,7 +9164,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=type');
@@ -9183,7 +9183,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The unique ID of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=id');
@@ -9202,7 +9202,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the channel was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createdTimestamp');
@@ -9221,7 +9221,7 @@
 				.setCheck('GroupDMChannel')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the channel was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createdAt');
@@ -9247,7 +9247,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this channel equals another channel. It compares all properties, so for most operations\nit is advisable to just compare `channel.id === channel2.id` as it is much faster and is often\nwhat most users need.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=equals');
@@ -9332,7 +9332,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the channel\'s name instead of the Channel object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=toString');
@@ -9566,7 +9566,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'MessageCollector');
+										this.setOutput(true, ["MessageCollector","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a Message Collector');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GroupDMChannel?scrollTo=createCollector');
@@ -9854,7 +9854,7 @@
 				.setCheck('Guild')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the instance of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=client');
@@ -9873,7 +9873,7 @@
 				.setCheck('Guild')
 				.appendField('get members of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildMember"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of members that are in this guild. The key is the member\'s ID, the value is the member');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=members');
@@ -9892,7 +9892,7 @@
 				.setCheck('Guild')
 				.appendField('get channels of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildChannel"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of channels that are in this guild. The key is the channel\'s ID, the value is the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=channels');
@@ -9911,7 +9911,7 @@
 				.setCheck('Guild')
 				.appendField('get roles of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Role"]);
+			this.setOutput(true, ["Collection","Snowflake","Role","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of roles that are in this guild. The key is the role\'s ID, the value is the role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=roles');
@@ -9930,7 +9930,7 @@
 				.setCheck('Guild')
 				.appendField('get presences of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Presence"]);
+			this.setOutput(true, ["Collection","Snowflake","Presence","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of presences in this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=presences');
@@ -9949,7 +9949,7 @@
 				.setCheck('Guild')
 				.appendField('get available of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the guild is available to access. If it is not available, it indicates a server outage');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=available');
@@ -9968,7 +9968,7 @@
 				.setCheck('Guild')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The Unique ID of the guild, useful for comparisons');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=id');
@@ -9987,7 +9987,7 @@
 				.setCheck('Guild')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=name');
@@ -10006,7 +10006,7 @@
 				.setCheck('Guild')
 				.appendField('get icon of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hash of the guild icon');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=icon');
@@ -10025,7 +10025,7 @@
 				.setCheck('Guild')
 				.appendField('get splash of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hash of the guild splash image (VIP only)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=splash');
@@ -10044,7 +10044,7 @@
 				.setCheck('Guild')
 				.appendField('get region of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The region the guild is located in');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=region');
@@ -10063,7 +10063,7 @@
 				.setCheck('Guild')
 				.appendField('get memberCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The full amount of members in this guild as of `READY`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=memberCount');
@@ -10082,7 +10082,7 @@
 				.setCheck('Guild')
 				.appendField('get large of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the guild is "large" (has more than 250 members)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=large');
@@ -10101,7 +10101,7 @@
 				.setCheck('Guild')
 				.appendField('get features of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Object"]);
+			this.setOutput(true, ["Array","Object","*"]);
 			this.setColour(230);
 			this.setTooltip('An array of guild features');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=features');
@@ -10120,7 +10120,7 @@
 				.setCheck('Guild')
 				.appendField('get applicationID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the application that created this guild (if applicable)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=applicationID');
@@ -10139,7 +10139,7 @@
 				.setCheck('Guild')
 				.appendField('get afkTimeout of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The time in seconds before a user is counted as "away from keyboard"');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=afkTimeout');
@@ -10158,7 +10158,7 @@
 				.setCheck('Guild')
 				.appendField('get afkChannelID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the voice channel where AFK members are moved');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=afkChannelID');
@@ -10177,7 +10177,7 @@
 				.setCheck('Guild')
 				.appendField('get systemChannelID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the system channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=systemChannelID');
@@ -10196,7 +10196,7 @@
 				.setCheck('Guild')
 				.appendField('get embedEnabled of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether embedded images are enabled on this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=embedEnabled');
@@ -10215,7 +10215,7 @@
 				.setCheck('Guild')
 				.appendField('get verificationLevel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The verification level of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=verificationLevel');
@@ -10234,7 +10234,7 @@
 				.setCheck('Guild')
 				.appendField('get explicitContentFilter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The explicit content filter level of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=explicitContentFilter');
@@ -10253,7 +10253,7 @@
 				.setCheck('Guild')
 				.appendField('get joinedTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the client user joined the guild at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=joinedTimestamp');
@@ -10272,7 +10272,7 @@
 				.setCheck('Guild')
 				.appendField('get ownerID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The user ID of this guild\'s owner');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=ownerID');
@@ -10291,7 +10291,7 @@
 				.setCheck('Guild')
 				.appendField('get emojis of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Emoji"]);
+			this.setOutput(true, ["Collection","Snowflake","Emoji","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of emojis that are in this guild\nThe key is the emoji\'s ID, the value is the emoji');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=emojis');
@@ -10310,7 +10310,7 @@
 				.setCheck('Guild')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the guild was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createdTimestamp');
@@ -10329,7 +10329,7 @@
 				.setCheck('Guild')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the guild was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=createdAt');
@@ -10348,7 +10348,7 @@
 				.setCheck('Guild')
 				.appendField('get joinedAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the client user joined the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=joinedAt');
@@ -10367,7 +10367,7 @@
 				.setCheck('Guild')
 				.appendField('get iconURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to this guild\'s icon');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=iconURL');
@@ -10386,7 +10386,7 @@
 				.setCheck('Guild')
 				.appendField('get nameAcronym of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The acronym that shows up in place of a guild icon.');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=nameAcronym');
@@ -10405,7 +10405,7 @@
 				.setCheck('Guild')
 				.appendField('get splashURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to this guild\'s splash');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=splashURL');
@@ -10424,7 +10424,7 @@
 				.setCheck('Guild')
 				.appendField('get owner of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildMember');
+			this.setOutput(true, ["GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=owner');
@@ -10443,7 +10443,7 @@
 				.setCheck('Guild')
 				.appendField('get afkChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceChannel');
+			this.setOutput(true, ["VoiceChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('AFK voice channel for this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=afkChannel');
@@ -10462,7 +10462,7 @@
 				.setCheck('Guild')
 				.appendField('get systemChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildChannel');
+			this.setOutput(true, ["GuildChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('System channel for this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=systemChannel');
@@ -10481,7 +10481,7 @@
 				.setCheck('Guild')
 				.appendField('get voiceConnection of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceConnection');
+			this.setOutput(true, ["VoiceConnection","*"]);
 			this.setColour(230);
 			this.setTooltip('If the client is connected to any voice channel in this guild, this will be the relevant VoiceConnection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=voiceConnection');
@@ -10500,7 +10500,7 @@
 				.setCheck('Guild')
 				.appendField('get position of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of this guild\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=position');
@@ -10519,7 +10519,7 @@
 				.setCheck('Guild')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the guild is muted\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=muted');
@@ -10538,7 +10538,7 @@
 				.setCheck('Guild')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=messageNotifications');
@@ -10557,7 +10557,7 @@
 				.setCheck('Guild')
 				.appendField('get mobilePush of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether to receive mobile push notifications\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=mobilePush');
@@ -10576,7 +10576,7 @@
 				.setCheck('Guild')
 				.appendField('get suppressEveryone of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether to suppress everyone messages\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=suppressEveryone');
@@ -10595,7 +10595,7 @@
 				.setCheck('Guild')
 				.appendField('get defaultRole of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Role');
+			this.setOutput(true, ["Role","*"]);
 			this.setColour(230);
 			this.setTooltip('The `@everyone` role of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=defaultRole');
@@ -10614,7 +10614,7 @@
 				.setCheck('Guild')
 				.appendField('get me of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildMember');
+			this.setOutput(true, ["GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('The client user as a GuildMember of this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=me');
@@ -10633,7 +10633,7 @@
 				.setCheck('Guild')
 				.appendField('get defaultChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'TextChannel');
+			this.setOutput(true, ["TextChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The `#general` TextChannel of the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=defaultChannel');
@@ -10659,7 +10659,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'GuildMember');
+										this.setOutput(true, ["GuildMember","*"]);
 										this.setColour(40);
 										this.setTooltip('Returns the GuildMember form of a User object, if the user is present in the guild.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=member');
@@ -10732,7 +10732,7 @@
 											.appendField('fetchWebhooks');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Collection","Snowflake","Webhook"]);
+										this.setOutput(true, ["Collection","Snowflake","Webhook","*"]);
 										this.setColour(40);
 										this.setTooltip('Fetch all webhooks for the guild.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchWebhooks');
@@ -10755,7 +10755,7 @@
 											.appendField('fetchVoiceRegions');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Collection","String","VoiceRegion"]);
+										this.setOutput(true, ["Collection","String","VoiceRegion","*"]);
 										this.setColour(40);
 										this.setTooltip('Fetch available voice regions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=fetchVoiceRegions');
@@ -11744,7 +11744,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this guild equals another guild. It compares all properties, so for most operations\nit is advisable to just compare `guild.id === guild2.id` as it is much faster and is often\nwhat most users need.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=equals');
@@ -11767,7 +11767,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the guild\'s name instead of the guild object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Guild?scrollTo=toString');
@@ -11861,7 +11861,7 @@
 				.setCheck('GuildAuditLogs')
 				.appendField('get entries of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildAuditLogsEntry"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildAuditLogsEntry","*"]);
 			this.setColour(230);
 			this.setTooltip('The entries for this guild\'s audit logs');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=entries');
@@ -11912,7 +11912,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('Find target type from entry action.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=targetType');
@@ -11939,7 +11939,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('Find action type from entry action.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogs?scrollTo=actionType');
@@ -11959,7 +11959,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get targetType of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The target type of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=targetType');
@@ -11978,7 +11978,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get actionType of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The action type of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=actionType');
@@ -11997,7 +11997,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get action of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Specific action type of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=action');
@@ -12016,7 +12016,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get reason of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The reason of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=reason');
@@ -12035,7 +12035,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get executor of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The user that executed this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=executor');
@@ -12054,7 +12054,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get changes of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","AuditLogChange"]);
+			this.setOutput(true, ["Array","AuditLogChange","*"]);
 			this.setColour(230);
 			this.setTooltip('Specific property changes');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=changes');
@@ -12073,7 +12073,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=id');
@@ -12092,7 +12092,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get extra of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Any extra data from the entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=extra');
@@ -12111,7 +12111,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get target of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The target of this entry');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=target');
@@ -12130,7 +12130,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp this entry was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=createdTimestamp');
@@ -12149,7 +12149,7 @@
 				.setCheck('GuildAuditLogsEntry')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time this entry was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildAuditLogsEntry?scrollTo=createdAt');
@@ -12168,7 +12168,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the channel is in');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=guild');
@@ -12187,7 +12187,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the guild channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=name');
@@ -12206,7 +12206,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get position of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel in the list');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=position');
@@ -12225,7 +12225,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get permissionOverwrites of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites"]);
+			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites","*"]);
 			this.setColour(230);
 			this.setTooltip('A map of permission overwrites in this channel for roles and users');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=permissionOverwrites');
@@ -12244,7 +12244,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get calculatedPosition of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=calculatedPosition');
@@ -12263,7 +12263,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get deletable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is deletable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=deletable');
@@ -12282,7 +12282,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=muted');
@@ -12301,7 +12301,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=messageNotifications');
@@ -12320,7 +12320,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the Channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=client');
@@ -12339,7 +12339,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the channel, either:\n* `dm` - a DM channel\n* `group` - a Group DM channel\n* `text` - a guild text channel\n* `voice` - a guild voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=type');
@@ -12358,7 +12358,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The unique ID of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=id');
@@ -12377,7 +12377,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the channel was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=createdTimestamp');
@@ -12396,7 +12396,7 @@
 				.setCheck('GuildChannel')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the channel was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=createdAt');
@@ -12422,7 +12422,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=permissionsFor');
@@ -12692,7 +12692,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=equals');
@@ -12715,7 +12715,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildChannel?scrollTo=toString');
@@ -12760,7 +12760,7 @@
 				.setCheck('GuildMember')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this GuildMember');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=client');
@@ -12779,7 +12779,7 @@
 				.setCheck('GuildMember')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild that this member is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=guild');
@@ -12798,7 +12798,7 @@
 				.setCheck('GuildMember')
 				.appendField('get user of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The user that this guild member instance Represents');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=user');
@@ -12817,7 +12817,7 @@
 				.setCheck('GuildMember')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message sent by the member in their guild, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=lastMessageID');
@@ -12836,7 +12836,7 @@
 				.setCheck('GuildMember')
 				.appendField('get lastMessage of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The Message object of the last message sent by the member in their guild, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=lastMessage');
@@ -12855,7 +12855,7 @@
 				.setCheck('GuildMember')
 				.appendField('get serverDeaf of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is deafened server-wide');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=serverDeaf');
@@ -12874,7 +12874,7 @@
 				.setCheck('GuildMember')
 				.appendField('get serverMute of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is muted server-wide');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=serverMute');
@@ -12893,7 +12893,7 @@
 				.setCheck('GuildMember')
 				.appendField('get selfMute of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is self-muted');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=selfMute');
@@ -12912,7 +12912,7 @@
 				.setCheck('GuildMember')
 				.appendField('get selfDeaf of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is self-deafened');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=selfDeaf');
@@ -12931,7 +12931,7 @@
 				.setCheck('GuildMember')
 				.appendField('get voiceSessionID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice session ID of this member, if any');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=voiceSessionID');
@@ -12950,7 +12950,7 @@
 				.setCheck('GuildMember')
 				.appendField('get voiceChannelID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice channel ID of this member, if any');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=voiceChannelID');
@@ -12969,7 +12969,7 @@
 				.setCheck('GuildMember')
 				.appendField('get speaking of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is speaking');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=speaking');
@@ -12988,7 +12988,7 @@
 				.setCheck('GuildMember')
 				.appendField('get nickname of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The nickname of this guild member, if they have one');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=nickname');
@@ -13007,7 +13007,7 @@
 				.setCheck('GuildMember')
 				.appendField('get joinedTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the member joined the guild at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=joinedTimestamp');
@@ -13026,7 +13026,7 @@
 				.setCheck('GuildMember')
 				.appendField('get joinedAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the member joined the guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=joinedAt');
@@ -13045,7 +13045,7 @@
 				.setCheck('GuildMember')
 				.appendField('get presence of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Presence');
+			this.setOutput(true, ["Presence","*"]);
 			this.setColour(230);
 			this.setTooltip('The presence of this guild member');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=presence');
@@ -13064,7 +13064,7 @@
 				.setCheck('GuildMember')
 				.appendField('get roles of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Role"]);
+			this.setOutput(true, ["Collection","Snowflake","Role","*"]);
 			this.setColour(230);
 			this.setTooltip('A list of roles that are applied to this GuildMember, mapped by the role ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=roles');
@@ -13083,7 +13083,7 @@
 				.setCheck('GuildMember')
 				.appendField('get highestRole of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Role');
+			this.setOutput(true, ["Role","*"]);
 			this.setColour(230);
 			this.setTooltip('The role of the member with the highest position');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=highestRole');
@@ -13102,7 +13102,7 @@
 				.setCheck('GuildMember')
 				.appendField('get colorRole of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Role');
+			this.setOutput(true, ["Role","*"]);
 			this.setColour(230);
 			this.setTooltip('The role of the member used to set their color');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=colorRole');
@@ -13121,7 +13121,7 @@
 				.setCheck('GuildMember')
 				.appendField('get displayColor of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The displayed color of the member in base 10');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayColor');
@@ -13140,7 +13140,7 @@
 				.setCheck('GuildMember')
 				.appendField('get displayHexColor of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The displayed color of the member in hexadecimal');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayHexColor');
@@ -13159,7 +13159,7 @@
 				.setCheck('GuildMember')
 				.appendField('get hoistRole of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Role');
+			this.setOutput(true, ["Role","*"]);
 			this.setColour(230);
 			this.setTooltip('The role of the member used to hoist them in a separate category in the users list');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hoistRole');
@@ -13178,7 +13178,7 @@
 				.setCheck('GuildMember')
 				.appendField('get mute of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is muted in any way');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=mute');
@@ -13197,7 +13197,7 @@
 				.setCheck('GuildMember')
 				.appendField('get deaf of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this member is deafened in any way');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=deaf');
@@ -13216,7 +13216,7 @@
 				.setCheck('GuildMember')
 				.appendField('get voiceChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceChannel');
+			this.setOutput(true, ["VoiceChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice channel this member is in, if any');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=voiceChannel');
@@ -13235,7 +13235,7 @@
 				.setCheck('GuildMember')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=id');
@@ -13254,7 +13254,7 @@
 				.setCheck('GuildMember')
 				.appendField('get displayName of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The nickname of the member, or their username if they don\'t have one');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=displayName');
@@ -13273,7 +13273,7 @@
 				.setCheck('GuildMember')
 				.appendField('get permissions of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Permissions');
+			this.setOutput(true, ["Permissions","*"]);
 			this.setColour(230);
 			this.setTooltip('The overall set of permissions for the guild member, taking only roles into account');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=permissions');
@@ -13292,7 +13292,7 @@
 				.setCheck('GuildMember')
 				.appendField('get kickable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the member is kickable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=kickable');
@@ -13311,7 +13311,7 @@
 				.setCheck('GuildMember')
 				.appendField('get bannable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the member is bannable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=bannable');
@@ -13337,7 +13337,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Returns `channel.permissionsFor(guildMember)`. Returns permissions for a member in a guild channel,\ntaking into account roles and permission overwrites.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=permissionsIn');
@@ -13376,7 +13376,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if any of the member\'s roles have a permission.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermission');
@@ -13407,7 +13407,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the roles of the member allows them to perform specific actions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=hasPermissions');
@@ -13438,7 +13438,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Array","PermissionResolvable"]);
+										this.setOutput(true, ["Array","PermissionResolvable","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the roles of the member allows them to perform specific actions, and lists any missing permissions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=missingPermissions');
@@ -13895,7 +13895,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the Member object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/GuildMember?scrollTo=toString');
@@ -14096,7 +14096,7 @@
 				.setCheck('Collector')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=client');
@@ -14115,7 +14115,7 @@
 				.setCheck('Collector')
 				.appendField('get filter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorFilter');
+			this.setOutput(true, ["CollectorFilter","*"]);
 			this.setColour(230);
 			this.setTooltip('The filter applied to this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=filter');
@@ -14134,7 +14134,7 @@
 				.setCheck('Collector')
 				.appendField('get options of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorOptions');
+			this.setOutput(true, ["CollectorOptions","*"]);
 			this.setColour(230);
 			this.setTooltip('The options of this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=options');
@@ -14153,7 +14153,7 @@
 				.setCheck('Collector')
 				.appendField('get collected of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Collection');
+			this.setOutput(true, ["Collection","*"]);
 			this.setColour(230);
 			this.setTooltip('The items collected by this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=collected');
@@ -14172,7 +14172,7 @@
 				.setCheck('Collector')
 				.appendField('get ended of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this collector has finished collecting');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=ended');
@@ -14191,7 +14191,7 @@
 				.setCheck('Collector')
 				.appendField('get next of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Promise');
+			this.setOutput(true, ["Promise","*"]);
 			this.setColour(230);
 			this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=next');
@@ -14246,7 +14246,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Object');
+										this.setOutput(true, ["Object","*"]);
 										this.setColour(40);
 										this.setTooltip('Handles incoming events from the `listener` function. Returns null if the event should not be collected,\nor returns an object describing the data that should be stored.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=handle');
@@ -14273,7 +14273,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('This method runs after collection to see if the collector should finish.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collector?scrollTo=postCheck');
@@ -14372,7 +14372,7 @@
 				.setCheck('Invite')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the invite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=client');
@@ -14391,7 +14391,7 @@
 				.setCheck('Invite')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the invite is for. If this guild is already known, this will be a guild object. If the guild is\nunknown, this will be a PartialGuild object');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=guild');
@@ -14410,7 +14410,7 @@
 				.setCheck('Invite')
 				.appendField('get code of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The code for this invite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=code');
@@ -14429,7 +14429,7 @@
 				.setCheck('Invite')
 				.appendField('get presenceCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The approximate number of online members of the guild this invite is for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=presenceCount');
@@ -14448,7 +14448,7 @@
 				.setCheck('Invite')
 				.appendField('get memberCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The approximate total number of members of the guild this invite is for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=memberCount');
@@ -14467,7 +14467,7 @@
 				.setCheck('Invite')
 				.appendField('get textChannelCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The number of text channels the guild this invite goes to has');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=textChannelCount');
@@ -14486,7 +14486,7 @@
 				.setCheck('Invite')
 				.appendField('get voiceChannelCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The number of voice channels the guild this invite goes to has');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=voiceChannelCount');
@@ -14505,7 +14505,7 @@
 				.setCheck('Invite')
 				.appendField('get temporary of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this invite is temporary');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=temporary');
@@ -14524,7 +14524,7 @@
 				.setCheck('Invite')
 				.appendField('get maxAge of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The maximum age of the invite, in seconds');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=maxAge');
@@ -14543,7 +14543,7 @@
 				.setCheck('Invite')
 				.appendField('get uses of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('How many times this invite has been used');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=uses');
@@ -14562,7 +14562,7 @@
 				.setCheck('Invite')
 				.appendField('get maxUses of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The maximum uses of this invite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=maxUses');
@@ -14581,7 +14581,7 @@
 				.setCheck('Invite')
 				.appendField('get inviter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The user who created this invite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=inviter');
@@ -14600,7 +14600,7 @@
 				.setCheck('Invite')
 				.appendField('get channel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildChannel');
+			this.setOutput(true, ["GuildChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The channel the invite is for. If this channel is already known, this will be a GuildChannel object.\nIf the channel is unknown, this will be a PartialGuildChannel object.');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=channel');
@@ -14619,7 +14619,7 @@
 				.setCheck('Invite')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the invite was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=createdTimestamp');
@@ -14638,7 +14638,7 @@
 				.setCheck('Invite')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the invite was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=createdAt');
@@ -14657,7 +14657,7 @@
 				.setCheck('Invite')
 				.appendField('get expiresTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the invite will expire at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=expiresTimestamp');
@@ -14676,7 +14676,7 @@
 				.setCheck('Invite')
 				.appendField('get expiresAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the invite will expire');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=expiresAt');
@@ -14695,7 +14695,7 @@
 				.setCheck('Invite')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to the invite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=url');
@@ -14746,7 +14746,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the invite\'s URL instead of the object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Invite?scrollTo=toString');
@@ -14766,7 +14766,7 @@
 				.setCheck('Message')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the Message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=client');
@@ -14785,7 +14785,7 @@
 				.setCheck('Message')
 				.appendField('get channel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'TextChannel');
+			this.setOutput(true, ["TextChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The channel that the message was sent in');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=channel');
@@ -14804,7 +14804,7 @@
 				.setCheck('Message')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=id');
@@ -14823,7 +14823,7 @@
 				.setCheck('Message')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=type');
@@ -14842,7 +14842,7 @@
 				.setCheck('Message')
 				.appendField('get content of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The content of the message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=content');
@@ -14861,7 +14861,7 @@
 				.setCheck('Message')
 				.appendField('get author of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The author of the message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=author');
@@ -14880,7 +14880,7 @@
 				.setCheck('Message')
 				.appendField('get member of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildMember');
+			this.setOutput(true, ["GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('Represents the author of the message as a guild member\nOnly available if the message comes from a guild where the author is still a member');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=member');
@@ -14899,7 +14899,7 @@
 				.setCheck('Message')
 				.appendField('get pinned of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this message is pinned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pinned');
@@ -14918,7 +14918,7 @@
 				.setCheck('Message')
 				.appendField('get tts of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the message was Text-To-Speech');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=tts');
@@ -14937,7 +14937,7 @@
 				.setCheck('Message')
 				.appendField('get nonce of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A random number or string used for checking message delivery');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=nonce');
@@ -14956,7 +14956,7 @@
 				.setCheck('Message')
 				.appendField('get system of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not this message was sent by Discord, not actually a user (e.g. pin notifications)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=system');
@@ -14975,7 +14975,7 @@
 				.setCheck('Message')
 				.appendField('get embeds of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","MessageEmbed"]);
+			this.setOutput(true, ["Array","MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('A list of embeds in the message - e.g. YouTube Player');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=embeds');
@@ -14994,7 +14994,7 @@
 				.setCheck('Message')
 				.appendField('get attachments of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","MessageAttachment"]);
+			this.setOutput(true, ["Collection","Snowflake","MessageAttachment","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of attachments in the message - e.g. Pictures - mapped by their ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=attachments');
@@ -15013,7 +15013,7 @@
 				.setCheck('Message')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the message was sent at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createdTimestamp');
@@ -15032,7 +15032,7 @@
 				.setCheck('Message')
 				.appendField('get editedTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the message was last edited at (if applicable)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editedTimestamp');
@@ -15051,7 +15051,7 @@
 				.setCheck('Message')
 				.appendField('get reactions of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","MessageReaction"]);
+			this.setOutput(true, ["Collection","Snowflake","MessageReaction","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of reactions to this message, mapped by the reaction ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=reactions');
@@ -15070,7 +15070,7 @@
 				.setCheck('Message')
 				.appendField('get mentions of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageMentions');
+			this.setOutput(true, ["MessageMentions","*"]);
 			this.setColour(230);
 			this.setTooltip('All valid mentions that the message contains');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=mentions');
@@ -15089,7 +15089,7 @@
 				.setCheck('Message')
 				.appendField('get webhookID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('ID of the webhook that sent the message, if applicable');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=webhookID');
@@ -15108,7 +15108,7 @@
 				.setCheck('Message')
 				.appendField('get hit of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this message is a hit in a search');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=hit');
@@ -15127,7 +15127,7 @@
 				.setCheck('Message')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the message was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createdAt');
@@ -15146,7 +15146,7 @@
 				.setCheck('Message')
 				.appendField('get editedAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the message was last edited at (if applicable)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editedAt');
@@ -15165,7 +15165,7 @@
 				.setCheck('Message')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the message was sent in (if in a guild channel)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=guild');
@@ -15184,7 +15184,7 @@
 				.setCheck('Message')
 				.appendField('get cleanContent of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The message contents with all mentions replaced by the equivalent text.\nIf mentions cannot be resolved to a name, the relevant mention in the message content will not be converted.');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=cleanContent');
@@ -15203,7 +15203,7 @@
 				.setCheck('Message')
 				.appendField('get edits of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Message"]);
+			this.setOutput(true, ["Array","Message","*"]);
 			this.setColour(230);
 			this.setTooltip('An array of cached versions of the message, including the current version\nSorted from latest (first) to oldest (last)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=edits');
@@ -15222,7 +15222,7 @@
 				.setCheck('Message')
 				.appendField('get editable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the message is editable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=editable');
@@ -15241,7 +15241,7 @@
 				.setCheck('Message')
 				.appendField('get deletable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the message is deletable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=deletable');
@@ -15260,7 +15260,7 @@
 				.setCheck('Message')
 				.appendField('get pinnable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the message is pinnable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=pinnable');
@@ -15290,7 +15290,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'ReactionCollector');
+										this.setOutput(true, ["ReactionCollector","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a reaction collector.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=createReactionCollector');
@@ -15350,7 +15350,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether or not a user, channel or role is mentioned in this message.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMentioned');
@@ -15377,7 +15377,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether or not a guild member is mentioned in this message. Takes into account\nuser mentions, role mentions, and @everyone/@here mentions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=isMemberMentioned');
@@ -15690,7 +15690,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Used mainly internally. Whether two messages are identical in properties. If you want to compare messages\nwithout checking all the properties, use `message.id === message2.id`, which is much more efficient. This\nmethod allows you to see if there are differences in content, embeds, attachments, nonce and tts properties.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=equals');
@@ -15713,7 +15713,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the message\'s content instead of the object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Message?scrollTo=toString');
@@ -15733,7 +15733,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this MessageAttachment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=client');
@@ -15752,7 +15752,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get message of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The message this attachment is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=message');
@@ -15771,7 +15771,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this attachment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=id');
@@ -15790,7 +15790,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get filename of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The file name of this attachment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=filename');
@@ -15809,7 +15809,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get filesize of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The size of this attachment in bytes');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=filesize');
@@ -15828,7 +15828,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL to this attachment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=url');
@@ -15847,7 +15847,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get proxyURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The Proxy URL to this attachment');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=proxyURL');
@@ -15866,7 +15866,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get height of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The height of this attachment (if an image)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=height');
@@ -15885,7 +15885,7 @@
 				.setCheck('MessageAttachment')
 				.appendField('get width of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The width of this attachment (if an image)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageAttachment?scrollTo=width');
@@ -15935,7 +15935,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get channel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'TextBasedChannel');
+			this.setOutput(true, ["TextBasedChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=channel');
@@ -15954,7 +15954,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get received of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Total number of messages that were received in the channel during message collection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=received');
@@ -15973,7 +15973,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=client');
@@ -15992,7 +15992,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get filter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorFilter');
+			this.setOutput(true, ["CollectorFilter","*"]);
 			this.setColour(230);
 			this.setTooltip('The filter applied to this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=filter');
@@ -16011,7 +16011,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get options of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorOptions');
+			this.setOutput(true, ["CollectorOptions","*"]);
 			this.setColour(230);
 			this.setTooltip('The options of this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=options');
@@ -16030,7 +16030,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get collected of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Collection');
+			this.setOutput(true, ["Collection","*"]);
 			this.setColour(230);
 			this.setTooltip('The items collected by this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=collected');
@@ -16049,7 +16049,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get ended of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this collector has finished collecting');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=ended');
@@ -16068,7 +16068,7 @@
 				.setCheck('MessageCollector')
 				.appendField('get next of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Promise');
+			this.setOutput(true, ["Promise","*"]);
 			this.setColour(230);
 			this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageCollector?scrollTo=next');
@@ -16197,7 +16197,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=client');
@@ -16216,7 +16216,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get message of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The message this embed is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=message');
@@ -16235,7 +16235,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=type');
@@ -16254,7 +16254,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get title of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The title of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=title');
@@ -16273,7 +16273,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get description of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The description of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=description');
@@ -16292,7 +16292,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=url');
@@ -16311,7 +16311,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get color of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The color of the embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=color');
@@ -16330,7 +16330,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get fields of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","MessageEmbedField"]);
+			this.setOutput(true, ["Array","MessageEmbedField","*"]);
 			this.setColour(230);
 			this.setTooltip('The fields of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=fields');
@@ -16349,7 +16349,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=createdTimestamp');
@@ -16368,7 +16368,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get thumbnail of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedThumbnail');
+			this.setOutput(true, ["MessageEmbedThumbnail","*"]);
 			this.setColour(230);
 			this.setTooltip('The thumbnail of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=thumbnail');
@@ -16387,7 +16387,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get image of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedImage');
+			this.setOutput(true, ["MessageEmbedImage","*"]);
 			this.setColour(230);
 			this.setTooltip('The image of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=image');
@@ -16406,7 +16406,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get video of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedVideo');
+			this.setOutput(true, ["MessageEmbedVideo","*"]);
 			this.setColour(230);
 			this.setTooltip('The video of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=video');
@@ -16425,7 +16425,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get author of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedAuthor');
+			this.setOutput(true, ["MessageEmbedAuthor","*"]);
 			this.setColour(230);
 			this.setTooltip('The author of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=author');
@@ -16444,7 +16444,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get provider of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedProvider');
+			this.setOutput(true, ["MessageEmbedProvider","*"]);
 			this.setColour(230);
 			this.setTooltip('The provider of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=provider');
@@ -16463,7 +16463,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get footer of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbedFooter');
+			this.setOutput(true, ["MessageEmbedFooter","*"]);
 			this.setColour(230);
 			this.setTooltip('The footer of this embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=footer');
@@ -16482,7 +16482,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The date this embed was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=createdAt');
@@ -16501,7 +16501,7 @@
 				.setCheck('MessageEmbed')
 				.appendField('get hexColor of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hexadecimal version of the embed color, with a leading hash');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=hexColor');
@@ -16520,7 +16520,7 @@
 				.setCheck('MessageEmbedThumbnail')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this thumbnail is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=embed');
@@ -16539,7 +16539,7 @@
 				.setCheck('MessageEmbedThumbnail')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL for this thumbnail');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=url');
@@ -16558,7 +16558,7 @@
 				.setCheck('MessageEmbedThumbnail')
 				.appendField('get proxyURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The Proxy URL for this thumbnail');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=proxyURL');
@@ -16577,7 +16577,7 @@
 				.setCheck('MessageEmbedThumbnail')
 				.appendField('get height of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The height of the thumbnail');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=height');
@@ -16596,7 +16596,7 @@
 				.setCheck('MessageEmbedThumbnail')
 				.appendField('get width of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The width of the thumbnail');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedThumbnail?scrollTo=width');
@@ -16615,7 +16615,7 @@
 				.setCheck('MessageEmbedImage')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this image is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=embed');
@@ -16634,7 +16634,7 @@
 				.setCheck('MessageEmbedImage')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL for this image');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=url');
@@ -16653,7 +16653,7 @@
 				.setCheck('MessageEmbedImage')
 				.appendField('get proxyURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The Proxy URL for this image');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=proxyURL');
@@ -16672,7 +16672,7 @@
 				.setCheck('MessageEmbedImage')
 				.appendField('get height of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The height of the image');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=height');
@@ -16691,7 +16691,7 @@
 				.setCheck('MessageEmbedImage')
 				.appendField('get width of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The width of the image');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedImage?scrollTo=width');
@@ -16710,7 +16710,7 @@
 				.setCheck('MessageEmbedVideo')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this video is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=embed');
@@ -16729,7 +16729,7 @@
 				.setCheck('MessageEmbedVideo')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The source URL for this video');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=url');
@@ -16748,7 +16748,7 @@
 				.setCheck('MessageEmbedVideo')
 				.appendField('get height of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The height of the video');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=height');
@@ -16767,7 +16767,7 @@
 				.setCheck('MessageEmbedVideo')
 				.appendField('get width of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The width of the video');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedVideo?scrollTo=width');
@@ -16786,7 +16786,7 @@
 				.setCheck('MessageEmbedProvider')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this provider is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedProvider?scrollTo=embed');
@@ -16805,7 +16805,7 @@
 				.setCheck('MessageEmbedProvider')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this provider');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedProvider?scrollTo=name');
@@ -16824,7 +16824,7 @@
 				.setCheck('MessageEmbedProvider')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL of this provider');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedProvider?scrollTo=url');
@@ -16843,7 +16843,7 @@
 				.setCheck('MessageEmbedAuthor')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this author is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=embed');
@@ -16862,7 +16862,7 @@
 				.setCheck('MessageEmbedAuthor')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this author');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=name');
@@ -16881,7 +16881,7 @@
 				.setCheck('MessageEmbedAuthor')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The URL of this author');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=url');
@@ -16900,7 +16900,7 @@
 				.setCheck('MessageEmbedAuthor')
 				.appendField('get iconURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The icon URL of this author');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedAuthor?scrollTo=iconURL');
@@ -16919,7 +16919,7 @@
 				.setCheck('MessageEmbedField')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this footer is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=embed');
@@ -16938,7 +16938,7 @@
 				.setCheck('MessageEmbedField')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this field');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=name');
@@ -16957,7 +16957,7 @@
 				.setCheck('MessageEmbedField')
 				.appendField('get value of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The value of this field');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=value');
@@ -16976,7 +16976,7 @@
 				.setCheck('MessageEmbedField')
 				.appendField('get inline of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If this field is displayed inline');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedField?scrollTo=inline');
@@ -16995,7 +16995,7 @@
 				.setCheck('MessageEmbedFooter')
 				.appendField('get embed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageEmbed');
+			this.setOutput(true, ["MessageEmbed","*"]);
 			this.setColour(230);
 			this.setTooltip('The embed this footer is part of');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=embed');
@@ -17014,7 +17014,7 @@
 				.setCheck('MessageEmbedFooter')
 				.appendField('get text of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The text in this footer');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=text');
@@ -17033,7 +17033,7 @@
 				.setCheck('MessageEmbedFooter')
 				.appendField('get iconURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The icon URL of this footer');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=iconURL');
@@ -17052,7 +17052,7 @@
 				.setCheck('MessageEmbedFooter')
 				.appendField('get proxyIconUrl of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The proxy icon URL of this footer');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageEmbedFooter?scrollTo=proxyIconUrl');
@@ -17071,7 +17071,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get everyone of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether `@everyone` or `@here` were mentioned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=everyone');
@@ -17090,7 +17090,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get users of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('Any users that were mentioned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=users');
@@ -17109,7 +17109,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get roles of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Role"]);
+			this.setOutput(true, ["Collection","Snowflake","Role","*"]);
 			this.setColour(230);
 			this.setTooltip('Any roles that were mentioned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=roles');
@@ -17128,7 +17128,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get members of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildMember"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('Any members that were mentioned (only in {@link TextChannel}s)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=members');
@@ -17147,7 +17147,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get channels of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildChannel"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('Any channels that were mentioned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=channels');
@@ -17166,7 +17166,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get EVERYONE_PATTERN of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'RegExp');
+			this.setOutput(true, ["RegExp","*"]);
 			this.setColour(230);
 			this.setTooltip('Regular expression that globally matches `@everyone` and `@here`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=EVERYONE_PATTERN');
@@ -17185,7 +17185,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get USERS_PATTERN of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'RegExp');
+			this.setOutput(true, ["RegExp","*"]);
 			this.setColour(230);
 			this.setTooltip('Regular expression that globally matches user mentions like `<@81440962496172032>`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=USERS_PATTERN');
@@ -17204,7 +17204,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get ROLES_PATTERN of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'RegExp');
+			this.setOutput(true, ["RegExp","*"]);
 			this.setColour(230);
 			this.setTooltip('Regular expression that globally matches role mentions like `<@&297577916114403338>`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=ROLES_PATTERN');
@@ -17223,7 +17223,7 @@
 				.setCheck('MessageMentions')
 				.appendField('get CHANNELS_PATTERN of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'RegExp');
+			this.setOutput(true, ["RegExp","*"]);
 			this.setColour(230);
 			this.setTooltip('Regular expression that globally matches channel mentions like `<#222079895583457280>`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageMentions?scrollTo=CHANNELS_PATTERN');
@@ -17242,7 +17242,7 @@
 				.setCheck('MessageReaction')
 				.appendField('get message of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The message that this reaction refers to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=message');
@@ -17261,7 +17261,7 @@
 				.setCheck('MessageReaction')
 				.appendField('get me of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the client has given this reaction');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=me');
@@ -17280,7 +17280,7 @@
 				.setCheck('MessageReaction')
 				.appendField('get count of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The number of people that have given the same reaction');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=count');
@@ -17299,7 +17299,7 @@
 				.setCheck('MessageReaction')
 				.appendField('get users of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","User"]);
+			this.setOutput(true, ["Collection","Snowflake","User","*"]);
 			this.setColour(230);
 			this.setTooltip('The users that have given this reaction, mapped by their ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=users');
@@ -17318,7 +17318,7 @@
 				.setCheck('MessageReaction')
 				.appendField('get emoji of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Emoji');
+			this.setOutput(true, ["Emoji","*"]);
 			this.setColour(230);
 			this.setTooltip('The emoji of this reaction, either an Emoji object for known custom emojis, or a ReactionEmoji\nobject which has fewer properties. Whatever the prototype of the emoji, it will still have\n`name`, `id`, `identifier` and `toString()`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/MessageReaction?scrollTo=emoji');
@@ -17395,7 +17395,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the application');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=client');
@@ -17414,7 +17414,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the app');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=id');
@@ -17433,7 +17433,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the app');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=name');
@@ -17452,7 +17452,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get description of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The app\'s description');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=description');
@@ -17471,7 +17471,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get icon of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The app\'s icon hash');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=icon');
@@ -17490,7 +17490,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get iconURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The app\'s icon URL');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=iconURL');
@@ -17509,7 +17509,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get rpcOrigins of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","String"]);
+			this.setOutput(true, ["Array","String","*"]);
 			this.setColour(230);
 			this.setTooltip('The app\'s RPC origins');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=rpcOrigins');
@@ -17528,7 +17528,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get redirectURIs of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","String"]);
+			this.setOutput(true, ["Array","String","*"]);
 			this.setColour(230);
 			this.setTooltip('The app\'s redirect URIs');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=redirectURIs');
@@ -17547,7 +17547,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get botRequireCodeGrant of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If this app\'s bot requires a code grant when using the OAuth2 flow');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=botRequireCodeGrant');
@@ -17566,7 +17566,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get botPublic of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If this app\'s bot is public');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=botPublic');
@@ -17585,7 +17585,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get rpcApplicationState of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If this app can use rpc');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=rpcApplicationState');
@@ -17604,7 +17604,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get bot of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Object containing basic info about this app\'s bot');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=bot');
@@ -17623,7 +17623,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get flags of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The flags for the app');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=flags');
@@ -17642,7 +17642,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get secret of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('OAuth2 secret for the application');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=secret');
@@ -17661,7 +17661,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get owner of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of this OAuth application');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=owner');
@@ -17680,7 +17680,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the app was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=createdTimestamp');
@@ -17699,7 +17699,7 @@
 				.setCheck('OAuth2Application')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the app was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=createdAt');
@@ -17721,7 +17721,7 @@
 											.appendField('reset');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'OAuth2Application');
+										this.setOutput(true, ["OAuth2Application","*"]);
 										this.setColour(40);
 										this.setTooltip('Reset the app\'s secret and bot token.\n<warn>This is only available when using a user account.</warn>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=reset');
@@ -17744,7 +17744,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the app name rather than the app object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/OAuth2Application?scrollTo=toString');
@@ -17764,7 +17764,7 @@
 				.setCheck('PartialGuild')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this PartialGuild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=client');
@@ -17783,7 +17783,7 @@
 				.setCheck('PartialGuild')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=id');
@@ -17802,7 +17802,7 @@
 				.setCheck('PartialGuild')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this guild');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=name');
@@ -17821,7 +17821,7 @@
 				.setCheck('PartialGuild')
 				.appendField('get icon of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hash of this guild\'s icon');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=icon');
@@ -17840,7 +17840,7 @@
 				.setCheck('PartialGuild')
 				.appendField('get splash of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hash of the guild splash image (VIP only)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuild?scrollTo=splash');
@@ -17859,7 +17859,7 @@
 				.setCheck('PartialGuildChannel')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated this PartialGuildChannel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=client');
@@ -17878,7 +17878,7 @@
 				.setCheck('PartialGuildChannel')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this guild channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=id');
@@ -17897,7 +17897,7 @@
 				.setCheck('PartialGuildChannel')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this guild channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=name');
@@ -17916,7 +17916,7 @@
 				.setCheck('PartialGuildChannel')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of this guild channel - `text` or `voice`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PartialGuildChannel?scrollTo=type');
@@ -17935,7 +17935,7 @@
 				.setCheck('PermissionOverwrites')
 				.appendField('get channel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildChannel');
+			this.setOutput(true, ["GuildChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The GuildChannel this overwrite is for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PermissionOverwrites?scrollTo=channel');
@@ -17954,7 +17954,7 @@
 				.setCheck('PermissionOverwrites')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this overwrite, either a user ID or a role ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PermissionOverwrites?scrollTo=id');
@@ -17973,7 +17973,7 @@
 				.setCheck('PermissionOverwrites')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of this overwrite');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/PermissionOverwrites?scrollTo=type');
@@ -18021,7 +18021,7 @@
 				.setCheck('Presence')
 				.appendField('get status of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The status of the presence:\n\n* **`online`** - user is online\n* **`offline`** - user is offline or invisible\n* **`idle`** - user is AFK\n* **`dnd`** - user is in Do not Disturb');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=status');
@@ -18040,7 +18040,7 @@
 				.setCheck('Presence')
 				.appendField('get game of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Game');
+			this.setOutput(true, ["Game","*"]);
 			this.setColour(230);
 			this.setTooltip('The game that the user is playing');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=game');
@@ -18066,7 +18066,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this presence is equal to another');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Presence?scrollTo=equals');
@@ -18086,7 +18086,7 @@
 				.setCheck('Game')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the game being played');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=name');
@@ -18105,7 +18105,7 @@
 				.setCheck('Game')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the game status');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=type');
@@ -18124,7 +18124,7 @@
 				.setCheck('Game')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('If the game is being streamed, a link to the stream');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=url');
@@ -18143,7 +18143,7 @@
 				.setCheck('Game')
 				.appendField('get streaming of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the game is being streamed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=streaming');
@@ -18169,7 +18169,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this game is equal to another game');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Game?scrollTo=equals');
@@ -18220,7 +18220,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get message of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The message');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=message');
@@ -18239,7 +18239,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get users of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Collection');
+			this.setOutput(true, ["Collection","*"]);
 			this.setColour(230);
 			this.setTooltip('The users which have reacted');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=users');
@@ -18258,7 +18258,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get total of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The total number of reactions collected');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=total');
@@ -18277,7 +18277,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=client');
@@ -18296,7 +18296,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get filter of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorFilter');
+			this.setOutput(true, ["CollectorFilter","*"]);
 			this.setColour(230);
 			this.setTooltip('The filter applied to this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=filter');
@@ -18315,7 +18315,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get options of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'CollectorOptions');
+			this.setOutput(true, ["CollectorOptions","*"]);
 			this.setColour(230);
 			this.setTooltip('The options of this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=options');
@@ -18334,7 +18334,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get collected of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Collection');
+			this.setOutput(true, ["Collection","*"]);
 			this.setColour(230);
 			this.setTooltip('The items collected by this collector');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=collected');
@@ -18353,7 +18353,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get ended of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether this collector has finished collecting');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=ended');
@@ -18372,7 +18372,7 @@
 				.setCheck('ReactionCollector')
 				.appendField('get next of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Promise');
+			this.setOutput(true, ["Promise","*"]);
 			this.setColour(230);
 			this.setTooltip('Return a promise that resolves with the next collected element;\nrejects with collected elements if the collector finishes without receving a next element');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionCollector?scrollTo=next');
@@ -18474,7 +18474,7 @@
 				.setCheck('ReactionEmoji')
 				.appendField('get reaction of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageReaction');
+			this.setOutput(true, ["MessageReaction","*"]);
 			this.setColour(230);
 			this.setTooltip('The message reaction this emoji refers to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=reaction');
@@ -18493,7 +18493,7 @@
 				.setCheck('ReactionEmoji')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of this reaction emoji');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=name');
@@ -18512,7 +18512,7 @@
 				.setCheck('ReactionEmoji')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of this reaction emoji');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=id');
@@ -18531,7 +18531,7 @@
 				.setCheck('ReactionEmoji')
 				.appendField('get identifier of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The identifier of this emoji, used for message reactions');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=identifier');
@@ -18553,7 +18553,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates the text required to form a graphical emoji on Discord.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/ReactionEmoji?scrollTo=toString');
@@ -18596,7 +18596,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get title of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Title for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=title');
@@ -18615,7 +18615,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get description of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Description for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=description');
@@ -18634,7 +18634,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get url of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('URL for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=url');
@@ -18653,7 +18653,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get color of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Color for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=color');
@@ -18672,7 +18672,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get author of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Author for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=author');
@@ -18691,7 +18691,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get timestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('Timestamp for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=timestamp');
@@ -18710,7 +18710,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get fields of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Object"]);
+			this.setOutput(true, ["Array","Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Fields for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=fields');
@@ -18729,7 +18729,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get thumbnail of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Thumbnail for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=thumbnail');
@@ -18748,7 +18748,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get image of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Image for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=image');
@@ -18767,7 +18767,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get footer of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Footer for this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=footer');
@@ -18786,7 +18786,7 @@
 				.setCheck('RichEmbed')
 				.appendField('get file of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('File to upload alongside this Embed');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=file');
@@ -18812,7 +18812,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the title of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTitle');
@@ -18839,7 +18839,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the description of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setDescription');
@@ -18866,7 +18866,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the URL of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setURL');
@@ -18893,7 +18893,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the color of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setColor');
@@ -18928,7 +18928,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the author of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setAuthor');
@@ -18955,7 +18955,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the timestamp of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setTimestamp');
@@ -18990,7 +18990,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Adds a field to the embed (max 25).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addField');
@@ -19017,7 +19017,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Convenience function for `<RichEmbed>.addField(\'\u200B\', \'\u200B\', inline)`.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=addBlankField');
@@ -19044,7 +19044,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the thumbnail of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setThumbnail');
@@ -19071,7 +19071,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Set the image of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setImage');
@@ -19102,7 +19102,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the footer of this embed.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=setFooter');
@@ -19129,7 +19129,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'RichEmbed');
+										this.setOutput(true, ["RichEmbed","*"]);
 										this.setColour(40);
 										this.setTooltip('Sets the file to upload alongside the embed. This file can be accessed via `attachment://fileName.extension` when\nsetting an embed image or author/footer icons. Only one file may be attached.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/RichEmbed?scrollTo=attachFile');
@@ -19149,7 +19149,7 @@
 				.setCheck('Role')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=client');
@@ -19168,7 +19168,7 @@
 				.setCheck('Role')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild that the role belongs to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=guild');
@@ -19187,7 +19187,7 @@
 				.setCheck('Role')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the role (unique to the guild it is part of)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=id');
@@ -19206,7 +19206,7 @@
 				.setCheck('Role')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=name');
@@ -19225,7 +19225,7 @@
 				.setCheck('Role')
 				.appendField('get color of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The base 10 color of the role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=color');
@@ -19244,7 +19244,7 @@
 				.setCheck('Role')
 				.appendField('get hoist of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If true, users that are part of this role will appear in a separate category in the users list');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hoist');
@@ -19263,7 +19263,7 @@
 				.setCheck('Role')
 				.appendField('get position of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the role from the API');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=position');
@@ -19282,7 +19282,7 @@
 				.setCheck('Role')
 				.appendField('get permissions of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The permissions bitfield of the role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=permissions');
@@ -19301,7 +19301,7 @@
 				.setCheck('Role')
 				.appendField('get managed of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the role is managed by an external service');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=managed');
@@ -19320,7 +19320,7 @@
 				.setCheck('Role')
 				.appendField('get mentionable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the role can be mentioned by anyone');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=mentionable');
@@ -19339,7 +19339,7 @@
 				.setCheck('Role')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the role was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=createdTimestamp');
@@ -19358,7 +19358,7 @@
 				.setCheck('Role')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the role was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=createdAt');
@@ -19377,7 +19377,7 @@
 				.setCheck('Role')
 				.appendField('get hexColor of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The hexadecimal version of the role color, with a leading hashtag');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hexColor');
@@ -19396,7 +19396,7 @@
 				.setCheck('Role')
 				.appendField('get members of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildMember"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('The cached guild members that have this role');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=members');
@@ -19415,7 +19415,7 @@
 				.setCheck('Role')
 				.appendField('get editable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the role is editable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=editable');
@@ -19434,7 +19434,7 @@
 				.setCheck('Role')
 				.appendField('get calculatedPosition of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the role in the role manager');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=calculatedPosition');
@@ -19456,7 +19456,7 @@
 											.appendField('serialize');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Object","String","Boolean"]);
+										this.setOutput(true, ["Object","String","Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Get an object mapping permission names to whether or not the role enables that permission.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=serialize');
@@ -19491,7 +19491,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if the role has a permission.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermission');
@@ -19522,7 +19522,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if the role has all specified permissions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=hasPermissions');
@@ -19549,7 +19549,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Compares this role\'s position to another role\'s.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositionTo');
@@ -19836,7 +19836,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Whether this role equals another role. It compares all properties, so for most operations\nit is advisable to just compare `role.id === role2.id` as it is much faster and is often\nwhat most users need.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=equals');
@@ -19859,7 +19859,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the role mention rather than the Role object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=toString');
@@ -19890,7 +19890,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Compares the positions of two roles.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Role?scrollTo=comparePositions');
@@ -19910,7 +19910,7 @@
 				.setCheck('TextChannel')
 				.appendField('get topic of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The topic of the text channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=topic');
@@ -19929,7 +19929,7 @@
 				.setCheck('TextChannel')
 				.appendField('get nsfw of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the Discord considers this channel NSFW');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=nsfw');
@@ -19948,7 +19948,7 @@
 				.setCheck('TextChannel')
 				.appendField('get members of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildMember"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection of members that can see this channel, mapped by their ID');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=members');
@@ -19967,7 +19967,7 @@
 				.setCheck('TextChannel')
 				.appendField('get messages of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Message"]);
+			this.setOutput(true, ["Collection","Snowflake","Message","*"]);
 			this.setColour(230);
 			this.setTooltip('A collection containing the messages sent to this channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=messages');
@@ -19986,7 +19986,7 @@
 				.setCheck('TextChannel')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message in the channel, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=lastMessageID');
@@ -20005,7 +20005,7 @@
 				.setCheck('TextChannel')
 				.appendField('get typing of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the typing indicator is being shown in the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=typing');
@@ -20024,7 +20024,7 @@
 				.setCheck('TextChannel')
 				.appendField('get typingCount of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Number of times `startTyping` has been called');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=typingCount');
@@ -20043,7 +20043,7 @@
 				.setCheck('TextChannel')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the channel is in');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=guild');
@@ -20062,7 +20062,7 @@
 				.setCheck('TextChannel')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the guild channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=name');
@@ -20081,7 +20081,7 @@
 				.setCheck('TextChannel')
 				.appendField('get position of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel in the list');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=position');
@@ -20100,7 +20100,7 @@
 				.setCheck('TextChannel')
 				.appendField('get permissionOverwrites of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites"]);
+			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites","*"]);
 			this.setColour(230);
 			this.setTooltip('A map of permission overwrites in this channel for roles and users');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=permissionOverwrites');
@@ -20119,7 +20119,7 @@
 				.setCheck('TextChannel')
 				.appendField('get calculatedPosition of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=calculatedPosition');
@@ -20138,7 +20138,7 @@
 				.setCheck('TextChannel')
 				.appendField('get deletable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is deletable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=deletable');
@@ -20157,7 +20157,7 @@
 				.setCheck('TextChannel')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=muted');
@@ -20176,7 +20176,7 @@
 				.setCheck('TextChannel')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=messageNotifications');
@@ -20471,7 +20471,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'MessageCollector');
+										this.setOutput(true, ["MessageCollector","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a Message Collector');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createCollector');
@@ -20502,7 +20502,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'MessageCollector');
+										this.setOutput(true, ["MessageCollector","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates a Message Collector.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=createMessageCollector');
@@ -20805,7 +20805,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=permissionsFor');
@@ -21075,7 +21075,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=equals');
@@ -21098,7 +21098,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/TextChannel?scrollTo=toString');
@@ -21118,7 +21118,7 @@
 				.setCheck('User')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the instance of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=client');
@@ -21137,7 +21137,7 @@
 				.setCheck('User')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=id');
@@ -21156,7 +21156,7 @@
 				.setCheck('User')
 				.appendField('get username of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The username of the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=username');
@@ -21175,7 +21175,7 @@
 				.setCheck('User')
 				.appendField('get discriminator of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A discriminator based on username for the user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=discriminator');
@@ -21194,7 +21194,7 @@
 				.setCheck('User')
 				.appendField('get avatar of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the user\'s avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=avatar');
@@ -21213,7 +21213,7 @@
 				.setCheck('User')
 				.appendField('get bot of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether or not the user is a bot');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=bot');
@@ -21232,7 +21232,7 @@
 				.setCheck('User')
 				.appendField('get lastMessageID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the last message sent by the user, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=lastMessageID');
@@ -21251,7 +21251,7 @@
 				.setCheck('User')
 				.appendField('get lastMessage of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Message');
+			this.setOutput(true, ["Message","*"]);
 			this.setColour(230);
 			this.setTooltip('The Message object of the last message sent by the user, if one was sent');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=lastMessage');
@@ -21270,7 +21270,7 @@
 				.setCheck('User')
 				.appendField('get createdTimestamp of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The timestamp the user was created at');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=createdTimestamp');
@@ -21289,7 +21289,7 @@
 				.setCheck('User')
 				.appendField('get createdAt of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The time the user was created');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=createdAt');
@@ -21308,7 +21308,7 @@
 				.setCheck('User')
 				.appendField('get presence of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Presence');
+			this.setOutput(true, ["Presence","*"]);
 			this.setColour(230);
 			this.setTooltip('The presence of this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=presence');
@@ -21327,7 +21327,7 @@
 				.setCheck('User')
 				.appendField('get avatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=avatarURL');
@@ -21346,7 +21346,7 @@
 				.setCheck('User')
 				.appendField('get defaultAvatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s default avatar');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=defaultAvatarURL');
@@ -21365,7 +21365,7 @@
 				.setCheck('User')
 				.appendField('get displayAvatarURL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A link to the user\'s avatar if they have one. Otherwise a link to their default avatar will be returned');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=displayAvatarURL');
@@ -21384,7 +21384,7 @@
 				.setCheck('User')
 				.appendField('get tag of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The Discord "tag" for this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=tag');
@@ -21403,7 +21403,7 @@
 				.setCheck('User')
 				.appendField('get note of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The note that is set for the user\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=note');
@@ -21422,7 +21422,7 @@
 				.setCheck('User')
 				.appendField('get dmChannel of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'DMChannel');
+			this.setOutput(true, ["DMChannel","*"]);
 			this.setColour(230);
 			this.setTooltip('The DM between the client\'s user and this user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=dmChannel');
@@ -21448,7 +21448,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Check whether the user is typing in a channel.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingIn');
@@ -21475,7 +21475,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Date');
+										this.setOutput(true, ["Date","*"]);
 										this.setColour(40);
 										this.setTooltip('Get the time that the user started typing.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingSinceIn');
@@ -21502,7 +21502,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Get the amount of time the user has been typing in a channel for (in milliseconds), or -1 if they\'re not typing.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=typingDurationIn');
@@ -21733,7 +21733,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if the user is equal to another. It compares ID, username, discriminator, avatar, and bot flags.\nIt is recommended to compare equality by using `user.id === user2.id` unless you want to compare all properties.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=equals');
@@ -21756,7 +21756,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically concatenates the user\'s mention instead of the User object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/User?scrollTo=toString');
@@ -21957,7 +21957,7 @@
 				.setCheck('UserConnection')
 				.appendField('get user of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The user that owns the connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=user');
@@ -21976,7 +21976,7 @@
 				.setCheck('UserConnection')
 				.appendField('get type of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of the connection');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=type');
@@ -21995,7 +21995,7 @@
 				.setCheck('UserConnection')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The username of the connection account');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=name');
@@ -22014,7 +22014,7 @@
 				.setCheck('UserConnection')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The id of the connection account');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=id');
@@ -22033,7 +22033,7 @@
 				.setCheck('UserConnection')
 				.appendField('get revoked of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the connection is revoked');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=revoked');
@@ -22052,7 +22052,7 @@
 				.setCheck('UserConnection')
 				.appendField('get integrations of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Array","Object"]);
+			this.setOutput(true, ["Array","Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Partial server integrations (not yet implemented)');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserConnection?scrollTo=integrations');
@@ -22071,7 +22071,7 @@
 				.setCheck('UserProfile')
 				.appendField('get user of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of the profile');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=user');
@@ -22090,7 +22090,7 @@
 				.setCheck('UserProfile')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that created the instance of the UserProfile');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=client');
@@ -22109,7 +22109,7 @@
 				.setCheck('UserProfile')
 				.appendField('get mutualGuilds of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","Guild"]);
+			this.setOutput(true, ["Collection","Snowflake","Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guilds that the client user and the user share');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=mutualGuilds');
@@ -22128,7 +22128,7 @@
 				.setCheck('UserProfile')
 				.appendField('get connections of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","UserConnection"]);
+			this.setOutput(true, ["Collection","Snowflake","UserConnection","*"]);
 			this.setColour(230);
 			this.setTooltip('The user\'s connections');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=connections');
@@ -22147,7 +22147,7 @@
 				.setCheck('UserProfile')
 				.appendField('get premium of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('If the user has Discord Premium');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=premium');
@@ -22166,7 +22166,7 @@
 				.setCheck('UserProfile')
 				.appendField('get premiumSince of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Date');
+			this.setOutput(true, ["Date","*"]);
 			this.setColour(230);
 			this.setTooltip('The date since which the user has had Discord Premium');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/UserProfile?scrollTo=premiumSince');
@@ -22185,7 +22185,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get members of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","GuildMember"]);
+			this.setOutput(true, ["Collection","Snowflake","GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('The members in this voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=members');
@@ -22204,7 +22204,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get bitrate of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The bitrate of this voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=bitrate');
@@ -22223,7 +22223,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get userLimit of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The maximum amount of users allowed in this channel - 0 means unlimited.');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=userLimit');
@@ -22242,7 +22242,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get connection of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'VoiceConnection');
+			this.setOutput(true, ["VoiceConnection","*"]);
 			this.setColour(230);
 			this.setTooltip('The voice connection for this voice channel, if the client is connected');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=connection');
@@ -22261,7 +22261,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get full of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Checks if the voice channel is full');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=full');
@@ -22280,7 +22280,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get joinable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Checks if the client has permission join the voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=joinable');
@@ -22299,7 +22299,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get speakable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Checks if the client has permission to send audio to the voice channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=speakable');
@@ -22318,7 +22318,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get guild of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Guild');
+			this.setOutput(true, ["Guild","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the channel is in');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=guild');
@@ -22337,7 +22337,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the guild channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=name');
@@ -22356,7 +22356,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get position of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel in the list');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=position');
@@ -22375,7 +22375,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get permissionOverwrites of');
 			this.setInputsInline(true);
-			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites"]);
+			this.setOutput(true, ["Collection","Snowflake","PermissionOverwrites","*"]);
 			this.setColour(230);
 			this.setTooltip('A map of permission overwrites in this channel for roles and users');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=permissionOverwrites');
@@ -22394,7 +22394,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get calculatedPosition of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('The position of the channel');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=calculatedPosition');
@@ -22413,7 +22413,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get deletable of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is deletable by the client user');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=deletable');
@@ -22432,7 +22432,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get muted of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the channel is muted\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=muted');
@@ -22451,7 +22451,7 @@
 				.setCheck('VoiceChannel')
 				.appendField('get messageNotifications of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'MessageNotificationType');
+			this.setOutput(true, ["MessageNotificationType","*"]);
 			this.setColour(230);
 			this.setTooltip('The type of message that should notify you\n<warn>This is only available when using a user account.</warn>');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=messageNotifications');
@@ -22593,7 +22593,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Gets the overall set of permissions for a user in this channel, taking into account roles and permission\noverwrites.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=permissionsFor');
@@ -22863,7 +22863,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if this channel has the same type, topic, position, name, overwrites and ID as another channel.\nIn most cases, a simple `channel.id === channel2.id` will do, and is much faster too.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=equals');
@@ -22886,7 +22886,7 @@
 											.appendField('toString');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('When concatenated with a string, this automatically returns the channel\'s mention instead of the Channel object.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceChannel?scrollTo=toString');
@@ -22906,7 +22906,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the region');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=id');
@@ -22925,7 +22925,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('Name of the region');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=name');
@@ -22944,7 +22944,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get vip of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the region is VIP-only');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=vip');
@@ -22963,7 +22963,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get deprecated of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the region is deprecated');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=deprecated');
@@ -22982,7 +22982,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get optimal of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the region is optimal');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=optimal');
@@ -23001,7 +23001,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get custom of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Boolean');
+			this.setOutput(true, ["Boolean","*"]);
 			this.setColour(230);
 			this.setTooltip('Whether the region is custom');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=custom');
@@ -23020,7 +23020,7 @@
 				.setCheck('VoiceRegion')
 				.appendField('get sampleHostname of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('A sample hostname for what a connection might look like');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/VoiceRegion?scrollTo=sampleHostname');
@@ -23039,7 +23039,7 @@
 				.setCheck('Webhook')
 				.appendField('get client of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Client');
+			this.setOutput(true, ["Client","*"]);
 			this.setColour(230);
 			this.setTooltip('The client that instantiated the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=client');
@@ -23058,7 +23058,7 @@
 				.setCheck('Webhook')
 				.appendField('get name of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The name of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=name');
@@ -23077,7 +23077,7 @@
 				.setCheck('Webhook')
 				.appendField('get token of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The token for the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=token');
@@ -23096,7 +23096,7 @@
 				.setCheck('Webhook')
 				.appendField('get avatar of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'String');
+			this.setOutput(true, ["String","*"]);
 			this.setColour(230);
 			this.setTooltip('The avatar for the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=avatar');
@@ -23115,7 +23115,7 @@
 				.setCheck('Webhook')
 				.appendField('get id of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The ID of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=id');
@@ -23134,7 +23134,7 @@
 				.setCheck('Webhook')
 				.appendField('get guildID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The guild the webhook belongs to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=guildID');
@@ -23153,7 +23153,7 @@
 				.setCheck('Webhook')
 				.appendField('get channelID of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Snowflake');
+			this.setOutput(true, ["Snowflake","*"]);
 			this.setColour(230);
 			this.setTooltip('The channel the webhook belongs to');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=channelID');
@@ -23172,7 +23172,7 @@
 				.setCheck('Webhook')
 				.appendField('get owner of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'User');
+			this.setOutput(true, ["User","*"]);
 			this.setColour(230);
 			this.setTooltip('The owner of the webhook');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Webhook?scrollTo=owner');
@@ -23429,7 +23429,7 @@
 											.appendField('array');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Array');
+										this.setOutput(true, ["Array","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates an ordered array of the values of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.values())` instead.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=array');
@@ -23452,7 +23452,7 @@
 											.appendField('keyArray');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Array');
+										this.setOutput(true, ["Array","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates an ordered array of the keys of this collection, and caches it internally. The array will only be\nreconstructed if an item is added to or removed from the collection, or if you change the length of the array\nitself. If you don\'t want this caching behaviour, use `Array.from(collection.keys())` instead.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=keyArray');
@@ -23479,7 +23479,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains the first value(s) in this collection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=first');
@@ -23506,7 +23506,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains the first key(s) in this collection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=firstKey');
@@ -23533,7 +23533,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains the last value(s) in this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=last');
@@ -23560,7 +23560,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains the last key(s) in this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=lastKey');
@@ -23587,7 +23587,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains random value(s) from this collection. This relies on {@link Collection#array}, and thus the caching\nmechanism applies here as well.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=random');
@@ -23614,7 +23614,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Obtains random key(s) from this collection. This relies on {@link Collection#keyArray}, and thus the caching\nmechanism applies here as well.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=randomKey');
@@ -23645,7 +23645,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Array');
+										this.setOutput(true, ["Array","*"]);
 										this.setColour(40);
 										this.setTooltip('Searches for all items where their specified property\'s value is identical to the given value\n(`item[prop] === value`).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findAll');
@@ -23676,7 +23676,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Searches for a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find).\n<warn>All collections used in Discord.js are mapped using their `id` property, and if you want to find by id you\nshould use the `get` method. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get) for details.</warn>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=find');
@@ -23707,7 +23707,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Searches for the key of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`), or the given function returns a truthy value. In the latter case, this is identical to\n[Array.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=findKey');
@@ -23738,7 +23738,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Searches for the existence of a single item where its specified property\'s value is identical to the given value\n(`item[prop] === value`).\n<warn>Do not use this to check for an item by its ID. Instead, use `collection.has(id)`. See\n[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has) for details.</warn>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=exists');
@@ -23769,7 +23769,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Collection');
+										this.setOutput(true, ["Collection","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter),\nbut returns a Collection instead of an Array.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filter');
@@ -23800,7 +23800,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Array');
+										this.setOutput(true, ["Array","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=filterArray');
@@ -23831,7 +23831,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Array');
+										this.setOutput(true, ["Array","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=map');
@@ -23862,7 +23862,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=some');
@@ -23893,7 +23893,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=every');
@@ -23924,7 +23924,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, '*');
+										this.setOutput(true, ["*","*"]);
 										this.setColour(40);
 										this.setTooltip('Identical to\n[Array.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=reduce');
@@ -23947,7 +23947,7 @@
 											.appendField('clone');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Collection');
+										this.setOutput(true, ["Collection","*"]);
 										this.setColour(40);
 										this.setTooltip('Creates an identical shallow copy of this collection.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=clone');
@@ -23974,7 +23974,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Collection');
+										this.setOutput(true, ["Collection","*"]);
 										this.setColour(40);
 										this.setTooltip('Combines this collection with others into a new collection. None of the source collections are modified.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=concat');
@@ -23997,7 +23997,7 @@
 											.appendField('deleteAll');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Array","Promise"]);
+										this.setOutput(true, ["Array","Promise","*"]);
 										this.setColour(40);
 										this.setTooltip('Calls the `delete()` method on all items that have it.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=deleteAll');
@@ -24024,7 +24024,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks if this collection shares identical key-value pairings with another.\nThis is different to checking for equality using equal-signs, because\nthe collections may be different objects, but contain the same data.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=equals');
@@ -24051,7 +24051,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Collection');
+										this.setOutput(true, ["Collection","*"]);
 										this.setColour(40);
 										this.setTooltip('The sort() method sorts the elements of a collection in place and returns the collection.\nThe sort is not necessarily stable. The default sort order is according to string Unicode code points.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Collection?scrollTo=sort');
@@ -24098,7 +24098,7 @@
 				.setCheck('Permissions')
 				.appendField('get _member of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'GuildMember');
+			this.setOutput(true, ["GuildMember","*"]);
 			this.setColour(230);
 			this.setTooltip('Member the permissions are for');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=_member');
@@ -24117,7 +24117,7 @@
 				.setCheck('Permissions')
 				.appendField('get bitfield of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Bitfield of the packed permissions');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=bitfield');
@@ -24136,7 +24136,7 @@
 				.setCheck('Permissions')
 				.appendField('get raw of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Bitfield of the packed permissions');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=raw');
@@ -24155,7 +24155,7 @@
 				.setCheck('Permissions')
 				.appendField('get FLAGS of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Object');
+			this.setOutput(true, ["Object","*"]);
 			this.setColour(230);
 			this.setTooltip('Numeric permission flags. All available properties:\n- `ADMINISTRATOR` (implicitly has *all* permissions, and bypasses all channel overwrites)\n- `CREATE_INSTANT_INVITE` (create invitations to the guild)\n- `KICK_MEMBERS`\n- `BAN_MEMBERS`\n- `MANAGE_CHANNELS` (edit and reorder channels)\n- `MANAGE_GUILD` (edit the guild information, region, etc.)\n- `ADD_REACTIONS` (add new reactions to messages)\n- `VIEW_AUDIT_LOG`\n- `READ_MESSAGES`\n- `SEND_MESSAGES`\n- `SEND_TTS_MESSAGES`\n- `MANAGE_MESSAGES` (delete messages and reactions)\n- `EMBED_LINKS` (links posted will have a preview embedded)\n- `ATTACH_FILES`\n- `READ_MESSAGE_HISTORY` (view messages that were posted prior to opening Discord)\n- `MENTION_EVERYONE`\n- `USE_EXTERNAL_EMOJIS` (use emojis from different guilds)\n- `EXTERNAL_EMOJIS` **(deprecated)**\n- `CONNECT` (connect to a voice channel)\n- `SPEAK` (speak in a voice channel)\n- `MUTE_MEMBERS` (mute members across all voice channels)\n- `DEAFEN_MEMBERS` (deafen members across all voice channels)\n- `MOVE_MEMBERS` (move members between voice channels)\n- `USE_VAD` (use voice activity detection)\n- `CHANGE_NICKNAME`\n- `MANAGE_NICKNAMES` (change other members\' nicknames)\n- `MANAGE_ROLES`\n- `MANAGE_ROLES_OR_PERMISSIONS` **(deprecated)**\n- `MANAGE_WEBHOOKS`\n- `MANAGE_EMOJIS`');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=FLAGS');
@@ -24174,7 +24174,7 @@
 				.setCheck('Permissions')
 				.appendField('get ALL of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Bitfield representing every permission combined');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=ALL');
@@ -24193,7 +24193,7 @@
 				.setCheck('Permissions')
 				.appendField('get DEFAULT of');
 			this.setInputsInline(true);
-			this.setOutput(true, 'Number');
+			this.setOutput(true, ["Number","*"]);
 			this.setColour(230);
 			this.setTooltip('Bitfield representing the default permissions for users');
 			this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=DEFAULT');
@@ -24223,7 +24223,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the bitfield has a permission, or multiple permissions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=has');
@@ -24254,7 +24254,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Array","PermissionResolvable"]);
+										this.setOutput(true, ["Array","PermissionResolvable","*"]);
 										this.setColour(40);
 										this.setTooltip('Gets all given permissions that are missing from the bitfield.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missing');
@@ -24281,7 +24281,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Adds permissions to this one, creating a new instance to represent the new bitfield.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=add');
@@ -24308,7 +24308,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Permissions');
+										this.setOutput(true, ["Permissions","*"]);
 										this.setColour(40);
 										this.setTooltip('Removes permissions to this one, creating a new instance to represent the new bitfield.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=remove');
@@ -24335,7 +24335,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Object');
+										this.setOutput(true, ["Object","*"]);
 										this.setColour(40);
 										this.setTooltip('Gets an object mapping permission name (like `VIEW_CHANNEL`) to a {@link boolean} indicating whether the\npermission is available.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=serialize');
@@ -24366,7 +24366,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the user has a certain permission, e.g. `READ_MESSAGES`.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermission');
@@ -24397,7 +24397,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Boolean');
+										this.setOutput(true, ["Boolean","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the user has all specified permissions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=hasPermissions');
@@ -24428,7 +24428,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, ["Array","PermissionResolvable"]);
+										this.setOutput(true, ["Array","PermissionResolvable","*"]);
 										this.setColour(40);
 										this.setTooltip('Checks whether the user has all specified permissions, and lists any missing permissions.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=missingPermissions');
@@ -24455,7 +24455,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Number');
+										this.setOutput(true, ["Number","*"]);
 										this.setColour(40);
 										this.setTooltip('Resolves permissions to their numeric form.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=resolve');
@@ -24478,7 +24478,7 @@
 											.appendField('generate');
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'Snowflake');
+										this.setOutput(true, ["Snowflake","*"]);
 										this.setColour(40);
 										this.setTooltip('Generates a Discord snowflake.\n<info>This hardcodes the worker ID as 1 and the process ID as 0.</info>');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=generate');
@@ -24505,7 +24505,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'DeconstructedSnowflake');
+										this.setOutput(true, ["DeconstructedSnowflake","*"]);
 										this.setColour(40);
 										this.setTooltip('Deconstructs a Discord snowflake.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/SnowflakeUtil?scrollTo=deconstruct');
@@ -24536,7 +24536,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('Splits a string into multiple chunks at a designated character that do not exceed a specific length.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=splitMessage');
@@ -24571,7 +24571,7 @@
 												.setCheck(null);
 										
 										this.setInputsInline(true);
-										this.setOutput(true, 'String');
+										this.setOutput(true, ["String","*"]);
 										this.setColour(40);
 										this.setTooltip('Escapes any Discord-flavour markdown in a string.');
 										this.setHelpUrl('https://discord.js.org/#/docs/main/stable/class/Util?scrollTo=escapeMarkdown');
