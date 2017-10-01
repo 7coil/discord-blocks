@@ -31,11 +31,16 @@ function runCode() {
 	w.js = Blockly.JavaScript.workspaceToCode(workspace);
 }
 
-function loadCode() {
-	const xml_text = prompt('Insert your XML saved extract');
-	if (!xml_text) return;
-	const xml = Blockly.Xml.textToDom(xml_text);
-	Blockly.Xml.domToWorkspace(xml, workspace);
+function loadCode(evt) {
+	const [file] = evt.target.files;
+	const reader = new FileReader();
+	reader.onload = (e) => {
+		const xml_text = e.target.result;
+		if (!xml_text) return;
+		const xml = Blockly.Xml.textToDom(xml_text);
+		Blockly.Xml.domToWorkspace(xml, workspace);
+	};
+	reader.readAsText(file);
 }
 
 window.addEventListener('beforeunload', (e) => {

@@ -12,14 +12,15 @@
 		<nav class="light-blue lighten-1" role="navigation" id="header">
 			<div class="nav-wrapper container">
 				<div class="brand-logo white-text"><a href="index.html">DiscordBlocks</a></div>
+				<input onchange="loadCode(event)" hidden type="file" id="load-code" accept=".xml">
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#" onclick="loadCode()">Open</a></li>
+					<li><label for="load-code"><a>Open</a></li></label></li>
 					<li><a href="#" onclick="saveCode()">Save</a></li>
 					<li><a href="#" onclick="getCode()">Export</a></li>
 					<li><a href="#" onclick="runCode()">Execute</a></li>
 				</ul>
 				<ul id="nav-mobile" class="side-nav">
-					<li><a href="#" onclick="loadCode()">Open</a></li>
+					<li><label for="load-code"><a>Open</a></li></label></li>
 					<li><a href="#" onclick="saveCode()">Save</a></li>
 					<li><a href="#" onclick="getCode()">Export</a></li>
 					<li><a href="#" onclick="runCode()">Execute</a></li>
