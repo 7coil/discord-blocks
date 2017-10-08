@@ -1,0 +1,61 @@
+* {
+    font-family: 'Roboto', 'Noto Sans', 'Ubuntu', 'Arial', sans-serif;
+}
+
+body {
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+	overflow: hidden;
+}
+
+nav {
+    padding: 10px;
+    background-color: #29B6F6;
+    display: flex;
+    flex-direction: row;
+}
+
+nav * {
+    padding: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5px;
+	display: inline-block;
+}
+
+nav a:link, nav a:visited, nav a:hover, nav a:active {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+main {
+    padding: 0px;
+    flex: 1 0 auto;
+}
+
+.title {
+	color: #FFFFFF;
+	margin-left: auto;
+	text-align: right;
+}
+
+#discordblocksarea {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 53px);
+}
+
+#discordblocks {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#toolbox {
+	display: none;
+	visibility: hidden;
+}
