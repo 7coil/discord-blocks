@@ -23,7 +23,7 @@ ${Blockly.JavaScript.workspaceToCode(workspace)}`;
 function saveCode() {
 	const xml = Blockly.Xml.workspaceToDom(workspace);
 	const xmlText = Blockly.Xml.domToPrettyText(xml);
-	save(xmlText, 'project.xml');
+	save(xmlText, 'project.🅱');
 }
 
 function runCode() {
