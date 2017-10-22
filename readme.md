@@ -7,6 +7,10 @@ For examples, view the `/examples` folder.
 
 For the DiscordBlocks Bot, go [here](https://github.com/moustacheminer/discord-blocks-bot)
 
+## File Format
+
+DiscordBlocks uses the `.🅱` file format to store DiscordBlocks compatible XML code for Blockly. This file should not be manipulated without a compatible DiscordBlocks client.
+
 ## Why?
 Being part of the Discord Bots (and Discord Bot List) servers made me see the amount of people who do not understand how to code, want to code, and get into learning how to make a bot.  
 DiscordBlocks is moustacheminer.com's mission to make Discord bots more accessable to more people than ever, using the power of Google's Blockly code transpiler to allow easy creation and deployment for beginners, with code exports for intermediate users.
