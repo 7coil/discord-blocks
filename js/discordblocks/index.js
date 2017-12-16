@@ -55,10 +55,10 @@ window.addEventListener('load', () => {
 		$.ajax(url, {
 			dataType: 'text'
 		})
-		.done((data) => {
-			console.dir(data);
-			const xml = Blockly.Xml.textToDom(data);
-			Blockly.Xml.domToWorkspace(xml, workspace);
-		});
+			.done((data) => {
+				console.dir(data);
+				const xml = Blockly.Xml.textToDom(data);
+				Blockly.Xml.domToWorkspace(xml, workspace);
+			});
 	}
-})
+});

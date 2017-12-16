@@ -83,11 +83,13 @@ Blockly.JavaScript.mss_object_set = (block) => {
 
 Blockly.Blocks.mss_property_get = {
 	init() {
+		this.appendValueInput('key')
+			.setCheck('String')
+			.appendField('get key');
 		this.appendValueInput('object')
 			.setCheck(null)
-			.appendField('get key')
-			.appendField(new Blockly.FieldTextInput('key'), 'key')
 			.appendField('of');
+		this.setInputsInline(false);
 		this.setOutput(true, null);
 		this.setColour(300);
 		this.setTooltip('');
@@ -96,9 +98,9 @@ Blockly.Blocks.mss_property_get = {
 };
 
 Blockly.JavaScript.mss_property_get = (block) => {
-	const text_key = block.getFieldValue('key');
+	const value_key = Blockly.JavaScript.valueToCode(block, 'key', Blockly.JavaScript.ORDER_ATOMIC);
 	const value_object = Blockly.JavaScript.valueToCode(block, 'object', Blockly.JavaScript.ORDER_ATOMIC);
-	const code = `${value_object}['${text_key.replace(/'/g, '\\\'')}']`;
+	const code = `${value_object}['${value_key.replace(/'/g, '\\\'')}']`;
 	return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -139,7 +141,7 @@ Blockly.JavaScript.mss_client_post = (block) => {
 		success: (data) => {
 			console.log(data);
 		}
-	})
+	});
 } else {
 	const postData = JSON.stringify({
 		server_count: ${value_client}.guilds.size
@@ -172,4 +174,40 @@ Blockly.JavaScript.mss_client_post = (block) => {
 }
 `;
 	return code;
+};
+
+Blockly.Blocks.mss_json_stringify = {
+	init() {
+		this.appendValueInput('json')
+			.setCheck('String')
+			.appendField('stringify');
+		this.setOutput(true, null);
+		this.setColour(300);
+		this.setTooltip('The JSON.stringify() method converts a JavaScript value to a JSON string, optionally replacing values if a replacer function is specified, or optionally including only the specified properties if a replacer array is specified.');
+		this.setHelpUrl('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify');
+	}
+};
+
+Blockly.Blocks.mss_json_parse = {
+	init() {
+		this.appendValueInput('json')
+			.setCheck('String')
+			.appendField('parse');
+		this.setOutput(true, null);
+		this.setColour(300);
+		this.setTooltip('The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned.');
+		this.setHelpUrl('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse');
+	}
+};
+
+Blockly.JavaScript.mss_json_stringify = (block) => {
+	const value_json = Blockly.JavaScript.valueToCode(block, 'json', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `JSON.stringify(${value_json})`;
+	return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript.mss_json_parse = (block) => {
+	const value_json = Blockly.JavaScript.valueToCode(block, 'json', Blockly.JavaScript.ORDER_ATOMIC);
+	const code = `JSON.parse(${value_json})`;
+	return [code, Blockly.JavaScript.ORDER_NONE];
 };
