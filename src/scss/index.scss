@@ -1,0 +1,34 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+xml {
+  display: none;
+}
+
+input[class*=blocklyHtmlInput] {
+  border: none !important;
+  border-radius: 4px !important;
+  font-family: sans-serif !important;
+  height: 100% !important;
+  margin: 0 !important;
+  outline: none !important;
+  padding: 0 1px !important;
+  width: 100% !important;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div[id*=blockly] {
+  color: black;
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+}
+

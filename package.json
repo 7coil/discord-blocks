@@ -1,0 +1,29 @@
+{
+  "name": "discord-blocks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/moustacheminer/discord-blocks",
+  "author": "7coil <katie@discordmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "autoprefixer": "^9.5.1",
+    "blockly": "^1.0.0",
+    "node-blockly": "^1.0.36",
+    "postcss-modules": "^1.4.1",
+    "react": ">=15",
+    "react-app-polyfill": "^1.0.0",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^7.0.2",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "sass": "^1.19.0"
+  }
+}
