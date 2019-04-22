@@ -25,6 +25,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "parcel": "^1.12.3",
     "sass": "^1.19.0"
   }
 }
