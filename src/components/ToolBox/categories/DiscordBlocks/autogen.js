@@ -27,7 +27,7 @@ docs.classes.forEach((discordjsClass) => {
                   .appendField(`create a new ${discordjsClass.construct.name}`)
               this.setOutput(true, null)
               this.setColour(colours.class)
-              this.setTooltip('')
+              this.setTooltip(discordjsClass.description)
               this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}`);
               for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                 this.appendValueInput(discordjsClass.props[paramNumber].name)
@@ -56,8 +56,8 @@ docs.classes.forEach((discordjsClass) => {
                     .appendField(`get ${prop.name}`);
                 this.setOutput(true, null);
                 this.setColour(colours.props);
-                this.setTooltip('');
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${prop.name}`);
+                this.setTooltip(prop.description);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${prop.name}`);
               }
             },
             generator: function() {
@@ -75,12 +75,12 @@ docs.classes.forEach((discordjsClass) => {
             block: {
               init: function() {
                 this.appendValueInput(method.name)
-                    .setCheck(null)
+                    .setCheck(method.description)
                     .appendField(`${method.name}`);
                 this.setOutput(true, null);
                 this.setColour(colours.method);
                 this.setTooltip('');
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${method.name}`);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
               }
             },
             generator: function() {
@@ -109,8 +109,8 @@ docs.classes.forEach((discordjsClass) => {
                           .appendField(`${method.name}`);
                       this.setOutput(true, null);
                       this.setColour(colours.method);
-                      this.setTooltip('');
-                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${method.name}`);
+                      this.setTooltip(method.description);
+                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
                       for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                         this.appendValueInput(method.params[paramNumber].name)
                           .setCheck(null)
