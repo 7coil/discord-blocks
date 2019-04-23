@@ -28,7 +28,7 @@ docs.classes.forEach((discordjsClass) => {
               this.setOutput(true, null)
               this.setColour(colours.class)
               this.setTooltip('')
-              this.setHelpUrl('');
+              this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}`);
               for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                 this.appendValueInput(discordjsClass.props[paramNumber].name)
                   .setCheck(null)
@@ -57,7 +57,7 @@ docs.classes.forEach((discordjsClass) => {
                 this.setOutput(true, null);
                 this.setColour(colours.props);
                 this.setTooltip('');
-                this.setHelpUrl('');
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${prop.name}`);
               }
             },
             generator: function() {
@@ -80,7 +80,7 @@ docs.classes.forEach((discordjsClass) => {
                 this.setOutput(true, null);
                 this.setColour(colours.method);
                 this.setTooltip('');
-                this.setHelpUrl('');
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${method.name}`);
               }
             },
             generator: function() {
@@ -110,7 +110,7 @@ docs.classes.forEach((discordjsClass) => {
                       this.setOutput(true, null);
                       this.setColour(colours.method);
                       this.setTooltip('');
-                      this.setHelpUrl('');
+                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}?scrollTo=${method.name}`);
                       for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                         this.appendValueInput(method.params[paramNumber].name)
                           .setCheck(null)
