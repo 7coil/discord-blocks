@@ -1,6 +1,3 @@
-[submodule "src/scss/ModestaCSS"]
-	path = src/scss/ModestaCSS
-	url = https://github.com/AlexFlipnote/ModestaCSS
 [submodule "src/components/ToolBox/categories/DiscordBlocks/discord.js"]
 	path = src/components/ToolBox/categories/DiscordBlocks/discord.js
 	url = https://github.com/discordjs/discord.js
