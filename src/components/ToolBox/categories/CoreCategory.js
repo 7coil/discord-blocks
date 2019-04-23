@@ -1,223 +1,223 @@
 import React from 'react';
 
 const CoreCategory = () => (
-  <category name="Core" className="hidden">
-    <category name="Logic">
-      <category name="If">
-        <block type="controls_if"></block>
-        <block type="controls_if">
-          <mutation else="1"></mutation>
+  <category is="category" name="Core" className="hidden">
+    <category is="category" name="Logic">
+      <category is="category" name="If">
+        <block is="block" type="controls_if"></block>
+        <block is="block" type="controls_if">
+          <mutation is="mutation" else="1"></mutation>
         </block>
-        <block type="controls_if">
-          <mutation elseif="1" else="1"></mutation>
+        <block is="block" type="controls_if">
+          <mutation is="mutation" elseif="1" else="1"></mutation>
         </block>
       </category>
-      <category name="Boolean">
-        <block type="logic_compare"></block>
-        <block type="logic_operation"></block>
-        <block type="logic_negate"></block>
-        <block type="logic_boolean"></block>
-        <block type="logic_null"></block>
-        <block type="logic_ternary"></block>
+      <category is="category" name="Boolean">
+        <block is="block" type="logic_compare"></block>
+        <block is="block" type="logic_operation"></block>
+        <block is="block" type="logic_negate"></block>
+        <block is="block" type="logic_boolean"></block>
+        <block is="block" type="logic_null"></block>
+        <block is="block" type="logic_ternary"></block>
       </category>
     </category>
-    <category name="Loops">
-      <block type="controls_repeat_ext">
-        <value name="TIMES">
-          <block type="math_number">
-            <field name="NUM">10</field>
+    <category is="category" name="Loops">
+      <block is="block" type="controls_repeat_ext">
+        <value is="value" name="TIMES">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">10</field>
           </block>
         </value>
       </block>
-      <block type="controls_whileUntil"></block>
-      <block type="controls_for">
-        <field name="VAR">i</field>
-        <value name="FROM">
-          <block type="math_number">
-            <field name="NUM">1</field>
+      <block is="block" type="controls_whileUntil"></block>
+      <block is="block" type="controls_for">
+        <field is="field" name="VAR">i</field>
+        <value is="value" name="FROM">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">1</field>
           </block>
         </value>
-        <value name="TO">
-          <block type="math_number">
-            <field name="NUM">10</field>
+        <value is="value" name="TO">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">10</field>
           </block>
         </value>
-        <value name="BY">
-          <block type="math_number">
-            <field name="NUM">1</field>
+        <value is="value" name="BY">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">1</field>
           </block>
         </value>
       </block>
-      <block type="controls_forEach"></block>
-      <block type="controls_flow_statements"></block>
+      <block is="block" type="controls_forEach"></block>
+      <block is="block" type="controls_flow_statements"></block>
     </category>
-    <category name="Mathematics">
-      <block type="math_number"></block>
-      <block type="math_arithmetic"></block>
-      <block type="math_single"></block>
-      <block type="math_trig"></block>
-      <block type="math_constant"></block>
-      <block type="math_number_property"></block>
-      <block type="math_round"></block>
-      <block type="math_on_list"></block>
-      <block type="math_modulo"></block>
-      <block type="math_constrain">
-        <value name="LOW">
-          <block type="math_number">
-            <field name="NUM">1</field>
+    <category is="category" name="Mathematics">
+      <block is="block" type="math_number"></block>
+      <block is="block" type="math_arithmetic"></block>
+      <block is="block" type="math_single"></block>
+      <block is="block" type="math_trig"></block>
+      <block is="block" type="math_constant"></block>
+      <block is="block" type="math_number_property"></block>
+      <block is="block" type="math_round"></block>
+      <block is="block" type="math_on_list"></block>
+      <block is="block" type="math_modulo"></block>
+      <block is="block" type="math_constrain">
+        <value is="value" name="LOW">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">1</field>
           </block>
         </value>
-        <value name="HIGH">
-          <block type="math_number">
-            <field name="NUM">100</field>
-          </block>
-        </value>
-      </block>
-      <block type="math_random_int">
-        <value name="FROM">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="TO">
-          <block type="math_number">
-            <field name="NUM">100</field>
+        <value is="value" name="HIGH">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">100</field>
           </block>
         </value>
       </block>
-      <block type="math_random_float"></block>
+      <block is="block" type="math_random_int">
+        <value is="value" name="FROM">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">1</field>
+          </block>
+        </value>
+        <value is="value" name="TO">
+          <block is="block" type="math_number">
+            <field is="field" name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block is="block" type="math_random_float"></block>
     </category>
-    <category name="Arrays">
-      <block type="lists_create_with">
-        <mutation items="0"></mutation>
+    <category is="category" name="Arrays">
+      <block is="block" type="lists_create_with">
+        <mutation is="mutation" items="0"></mutation>
       </block>
-      <block type="lists_create_with"></block>
-      <block type="lists_repeat">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">5</field>
+      <block is="block" type="lists_create_with"></block>
+      <block is="block" type="lists_repeat">
+        <value is="value" name="NUM">
+          <shadow is="shadow" type="math_number">
+            <field is="field" name="NUM">5</field>
           </shadow>
         </value>
       </block>
-      <block type="lists_length"></block>
-      <block type="lists_isEmpty"></block>
-      <block type="lists_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">&#123;listVariable&#125;</field>
+      <block is="block" type="lists_length"></block>
+      <block is="block" type="lists_isEmpty"></block>
+      <block is="block" type="lists_indexOf">
+        <value is="value" name="VALUE">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;listVariable&#125;</field>
           </block>
         </value>
       </block>
-      <block type="lists_getIndex">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">&#123;listVariable&#125;</field>
+      <block is="block" type="lists_getIndex">
+        <value is="value" name="VALUE">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;listVariable&#125;</field>
           </block>
         </value>
       </block>
-      <block type="lists_setIndex">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">&#123;listVariable&#125;</field>
+      <block is="block" type="lists_setIndex">
+        <value is="value" name="LIST">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;listVariable&#125;</field>
           </block>
         </value>
       </block>
-      <block type="lists_getSublist">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">&#123;listVariable&#125;</field>
+      <block is="block" type="lists_getSublist">
+        <value is="value" name="LIST">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;listVariable&#125;</field>
           </block>
         </value>
       </block>
-      <block type="lists_split">
-        <value name="DELIM">
-          <shadow type="text">
-            <field name="TEXT">,</field>
+      <block is="block" type="lists_split">
+        <value is="value" name="DELIM">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">,</field>
           </shadow>
         </value>
       </block>
-      <block type="lists_sort"></block>
+      <block is="block" type="lists_sort"></block>
     </category>
-    <category name="Strings">
-      <block type="text"></block>
-      <block type="text_join"></block>
-      <block type="text_append">
-        <value name="TEXT">
-          <shadow type="text"></shadow>
+    <category is="category" name="Strings">
+      <block is="block" type="text"></block>
+      <block is="block" type="text_join"></block>
+      <block is="block" type="text_append">
+        <value is="value" name="TEXT">
+          <shadow is="shadow" type="text"></shadow>
         </value>
       </block>
-      <block type="text_length">
-        <value name="VALUE">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      <block is="block" type="text_length">
+        <value is="value" name="VALUE">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      <block type="text_isEmpty">
-        <value name="VALUE">
-          <shadow type="text">
-            <field name="TEXT"></field>
+      <block is="block" type="text_isEmpty">
+        <value is="value" name="VALUE">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT"></field>
           </shadow>
         </value>
       </block>
-      <block type="text_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">&#123;textVariable&#125;</field>
+      <block is="block" type="text_indexOf">
+        <value is="value" name="VALUE">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;textVariable&#125;</field>
           </block>
         </value>
-        <value name="FIND">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+        <value is="value" name="FIND">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      <block type="text_charAt">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">&#123;textVariable&#125;</field>
-          </block>
-        </value>
-      </block>
-      <block type="text_getSubstring">
-        <value name="STRING">
-          <block type="variables_get">
-            <field name="VAR">&#123;textVariable&#125;</field>
+      <block is="block" type="text_charAt">
+        <value is="value" name="VALUE">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;textVariable&#125;</field>
           </block>
         </value>
       </block>
-      <block type="text_changeCase">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      <block is="block" type="text_getSubstring">
+        <value is="value" name="STRING">
+          <block is="block" type="variables_get">
+            <field is="field" name="VAR">&#123;textVariable&#125;</field>
+          </block>
+        </value>
+      </block>
+      <block is="block" type="text_changeCase">
+        <value is="value" name="TEXT">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      <block type="text_trim">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      <block is="block" type="text_trim">
+        <value is="value" name="TEXT">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      {/* <block type="console_log">
-        <value name="text">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      {/* <block is="block" type="console_log">
+        <value is="value" name="text">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block> */}
-      <block type="text_print">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      <block is="block" type="text_print">
+        <value is="value" name="TEXT">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      <block type="text_prompt_ext">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
+      <block is="block" type="text_prompt_ext">
+        <value is="value" name="TEXT">
+          <shadow is="shadow" type="text">
+            <field is="field" name="TEXT">abc</field>
           </shadow>
         </value>
       </block>

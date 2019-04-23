@@ -1,59 +1,34 @@
-.navbar {
-  background-color: rgba(45, 45, 45, 0.8) !important;
+.tab {
+  height: 30px;
+  background-color: #3c3c3c;
+  display: flex;
+  font-family: sans-serif;
+  color: #eeeeee;
 }
 
-.mobileNavContent {
-  padding-left: 0 !important;
-  min-height: 4em;
-  height: auto !important;
+.logo {
+  width: 30px;
+  height: 30px;
 }
 
-.mobileNavbar {
-  display: block;
-  min-height: 4em;
-  height: auto;
+.right {
+  display: flex;
+  // flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 138px;
 }
 
-.mobileHeading {
-  text-align: right;
-  display: block;
-  width: fit-content;
-  margin-left: auto !important;
-  padding-left: 62px;
-  margin-right: 1em !important;
+.title {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.darken {
-  position: absolute;
-  background-color: black;
-  transition: opacity 0.3s ease-in-out;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 99;
-}
-
-.mobile {
-  @media (min-width: 651px) {
-    display: none !important;
-  }
-}
-
-.desktop {
-  @media (max-width: 650px) {
-    display: none !important;
-  }
-}
-
-.hidden {
-  height: 0 !important;
-  width: 0 !important;
-  font-size: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  visibility: hidden !important;
+.closeButton:hover {
+  background-color: #e81123 !important;
 }

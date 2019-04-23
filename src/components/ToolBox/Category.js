@@ -10,7 +10,7 @@ if (typeof Blockly.JavaScript !== 'undefined') {
 }
 
 const Category = (props) => (
-  <category name={props.name || props.blocks.name}>
+  <category is="category" name={props.name || props.blocks.name}>
     {props.blocks.blocks ? Object.keys(props.blocks.blocks).map((name) => {
       let id = name
       if (typeof props.prefix === 'string') {
@@ -42,7 +42,7 @@ const Category = (props) => (
 
       // Add the block to the list of blocks in the category
       return (
-        <block type={id} key={id}></block>
+        <block is="block" type={id} key={id}></block>
       )
     }) : null}
     {props.children}

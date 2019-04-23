@@ -6,13 +6,13 @@ import StarterCategory from './categories/DiscordBlocks/StarterCategory';
 
 
 const ToolBox = () => (
-  <xml id="toolbox">
+  <xml is="xml" id="toolbox">
     <CoreCategory />
-    <category name="Variables" custom="VARIABLE"></category>
-    <category name="Functions" custom="PROCEDURE"></category>
-    <category name="Discord.js" >
+    <category is="category" name="Variables" custom="VARIABLE"></category>
+    <category is="category" name="Functions" custom="PROCEDURE"></category>
+    <category is="category" name="Discord.js" >
       <Category blocks={StarterCategory} />
-      <category name="Difficult">
+      <category is="category" name="Difficult">
         {categoryDefinitions.map(category => <Category key={category.name} blocks={category} />)}
       </category>
     </category>
