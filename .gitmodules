@@ -1,4 +1,4 @@
 [submodule "src/components/ToolBox/categories/DiscordBlocks/discord.js"]
-	path = src/components/ToolBox/categories/DiscordBlocks/discord.js
-	url = https://github.com/discordjs/discord.js
-	branch = docs
+  path = src/components/ToolBox/categories/DiscordBlocks/discord.js
+  url = https://github.com/discordjs/discord.js
+  branch = docs

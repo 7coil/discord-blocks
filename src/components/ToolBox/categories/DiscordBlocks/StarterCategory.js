@@ -3,32 +3,54 @@ import Blockly from 'node-blockly/browser';
 const StarterCategory = {
   name: 'Starter',
   blocks: {
-    on_message: {
+    'com_moustacheminer_discordblocks_client_login': {
       block: {
-        init: function() {
+        init() {
+          this.appendValueInput("token")
+            .setCheck("String")
+            .appendField("connect with token");
+          this.setColour(230);
+          this.setTooltip("");
+          this.setHelpUrl("");
+        },
+        generator(block) {
+          var value_name = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
+          var code = `discordblocks.client.login('${value_name}');\n`;
+          return code;
+        }
+      }
+    },
+    'com_moustacheminer_discordblocks_on_message': {
+      block: {
+        init() {
           this.appendDummyInput()
               .appendField("on message");
           this.appendStatementInput("statements")
               .setCheck(null);
-          this.setNextStatement(true, null);
           this.setColour(230);
           this.setTooltip("");
           this.setHelpUrl("");
         }
       },
-      generator: function(block) {
+      generator(block) {
         var statements = Blockly.JavaScript.statementToCode(block, 'statements');
         // TODO: Assemble JavaScript into code variable.
         var code = `discordblocks.client.on('message', () => {\n${statements}\n});\n`;
         return code;
       }
     },
-    message_reply: {
+    'com_moustacheminer_discordblocks_message_reply_then_but': {
       block: {
-        init: function() {
+        init() {
           this.appendValueInput('input')
               .setCheck("String")
               .appendField("reply to message");
+          this.appendStatementInput("then")
+              .setCheck(null)
+              .appendField("then");
+          this.appendStatementInput("but")
+              .setCheck(null)
+              .appendField("but on error");
           this.setPreviousStatement(true, null);
           this.setNextStatement(true, null);
           this.setColour(230);
@@ -36,11 +58,28 @@ const StarterCategory = {
           this.setHelpUrl("");
         }
       },
-      generator: function(block) {
+      generator(block) {
         var value = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
+        var statements_then = Blockly.JavaScript.statementToCode(block, 'then');
+        var statements_but = Blockly.JavaScript.statementToCode(block, 'but');
         // TODO: Assemble JavaScript into code variable.
-        var code = `discordblocks.message.reply('${value}')`;
+        var code = `discordblocks.message.reply('${value}')\n.then(() => {\n${statements_then}\n})\n.catch(() => {\n${statements_but}\n})\n`;
         return code;
+      }
+    },
+    'com_moustacheminer_discordblocks_message_contents': {
+      block: {
+        init: function() {
+          this.appendDummyInput()
+            .appendField("message contents");
+          this.setOutput(true, null);
+          this.setColour(230);
+          this.setTooltip("");
+          this.setHelpUrl("");
+        }
+      },
+      generator(block) {
+        return ['discordblocks.message.contents', Blockly.JavaScript.ORDER_NONE]
       }
     }
   }

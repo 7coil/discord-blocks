@@ -1,4 +1,5 @@
 import React from 'react';
+import { Block } from '../Block';
 
 const CoreCategory = () => (
   <category is="category" name="Core" className="hidden">
@@ -221,6 +222,33 @@ const CoreCategory = () => (
           </shadow>
         </value>
       </block>
+      <Block name="com_moustacheminer_blockly_string_begins" func={{
+        block: {
+          init() {
+            this.appendDummyInput()
+              .appendField("in text");
+            this.appendValueInput("string")
+              .setCheck("String");
+            this.appendDummyInput()
+              .appendField("contains");
+            this.appendValueInput("substring")
+              .setCheck("String");
+            this.setInputsInline(true);
+            this.setOutput(true, null);
+            this.setColour('%{BKY_TEXTS_HUE}');
+            this.setTooltip("");
+            this.setHelpUrl("");
+          }
+        },
+        generator(block) {
+          var value_string = Blockly.JavaScript.valueToCode(block, 'string', Blockly.JavaScript.ORDER_ATOMIC);
+          var value_substring = Blockly.JavaScript.valueToCode(block, 'substring', Blockly.JavaScript.ORDER_ATOMIC);
+          // TODO: Assemble JavaScript into code variable.
+          var code = `${value_string}.includes('${value_substring}')`;
+          // TODO: Change ORDER_NONE to the correct strength.
+          return [code, Blockly.JavaScript.ORDER_NONE];
+        }
+      }} />
     </category>
   </category>
 )

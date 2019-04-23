@@ -4,6 +4,11 @@
   display: flex;
   font-family: sans-serif;
   color: #eeeeee;
+
+  a {
+    color: #eeeeee;
+    text-decoration: none;
+  }
 }
 
 .logo {
@@ -29,6 +34,12 @@
   overflow: hidden;
 }
 
+.windowButton {
+  width: 46px;
+  box-sizing: border-box;
+}
+
 .closeButton:hover {
   background-color: #e81123 !important;
 }
+

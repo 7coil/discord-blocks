@@ -10,12 +10,11 @@ const ToolBox = () => (
     <CoreCategory />
     <category is="category" name="Variables" custom="VARIABLE"></category>
     <category is="category" name="Functions" custom="PROCEDURE"></category>
-    <category is="category" name="Discord.js" >
-      <Category blocks={StarterCategory} />
-      <category is="category" name="Difficult">
+    <Category blocks={StarterCategory} name="Discord.js">
+      <category is="category" name="For Elite Developers">
         {categoryDefinitions.map(category => <Category key={category.name} blocks={category} />)}
       </category>
-    </category>
+    </Category>
   </xml>
 );
 

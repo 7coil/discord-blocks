@@ -3,13 +3,13 @@ import styles from './index.module.scss';
 import ConstructCSS from '../../../data/ConstructCSS';
 
 class NavButton extends Component {
-	render() {
-		return (
-			<div className={ConstructCSS(styles.button, this.props.className)}>
+  render() {
+    return (
+      <div className={ConstructCSS(styles.button, this.props.className)}>
         {this.props.children}
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
 export default NavButton;

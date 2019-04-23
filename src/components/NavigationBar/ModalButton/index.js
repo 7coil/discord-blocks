@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styles from './index.module.scss';
-import ConstructCSS from '../../../data/ConstructCSS';
 
-class Menu extends Component {
+class ModalButton extends Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +12,7 @@ class Menu extends Component {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.menu = React.createRef();
+    this.dialog = React.createRef();
   }
   toggle() {
     this.setState({
@@ -31,7 +30,7 @@ class Menu extends Component {
     })
   }
   handleClickOutside(e) {
-    if (!this.menu.current.contains(e.target)) {
+    if (!this.dialog.current.contains(e.target)) {
       this.setState({
         open: false
       })
@@ -45,16 +44,17 @@ class Menu extends Component {
   }
   render() {
     return (
-      <div ref={this.menu}>
+      <div>
         <div onClick={this.toggle}>
           {this.props.button}
         </div>
-        <div onClick={this.close} className={styles.menu} style={this.state.open ? {} : { visibility: 'hidden' }}>
+        <dialog className={styles.dialog} onClick={this.close} open={this.state.open} ref={this.dialog}>
           {this.props.children}
-        </div>
+          <button onClick={this.close}>Oh, ok</button>
+        </dialog>
       </div>
     );
   }
 }
 
-export default Menu;
+export default ModalButton;
