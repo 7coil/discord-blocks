@@ -8,15 +8,15 @@ import Menu from './Menu';
 import MenuButton from './Menu/MenuButton';
 import ConstructCSS from '../../data/ConstructCSS';
 import HelpMenu from './HelpMenu';
+import FileMenu from './FileMenu';
 
 class NavigationBar extends Component {
   render() {
+    const { workspace } = this.props;
     return (
       <div className={styles.tab}>
         <img className={styles.logo} src={logo} />
-        <NavButton>
-          File
-        </NavButton>
+        <FileMenu workspace={workspace} />
         <NavButton>
           Edit
         </NavButton>

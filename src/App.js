@@ -11,6 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.workspace = null;
+    this.state = {
+      workspace: null
+    }
   }
   componentDidMount() {
     this.workspace = Blockly.inject(document.getElementById('blockly'), {
@@ -23,6 +26,10 @@ class App extends Component {
       window.addEventListener('beforeunload', this.unload);
       this.resize();
     }
+
+    this.setState({
+      workspace: this.workspace
+    })
   }
   componentWillUnmount() {
     if (this.workspace) {
@@ -47,6 +54,7 @@ class App extends Component {
     return true;
   }
   render() {
+    const { workspace } = this.state;
     return (
       <div>
         <Helmet
@@ -55,7 +63,7 @@ class App extends Component {
         >
           <title>{this.props.document.name}</title>
         </Helmet>
-        <NavigationBar />
+        <NavigationBar workspace={workspace} />
         <ToolBox />
       </div>
     )
