@@ -3,7 +3,7 @@ import Blockly from 'node-blockly/browser';
 const StarterCategory = {
   name: 'Starter',
   blocks: {
-    'com_moustacheminer_discordblocks_client_login': {
+    'com_moustacheminer_discordblocks_client-login': {
       block: {
         init() {
           this.appendValueInput("token")
@@ -20,7 +20,7 @@ const StarterCategory = {
         }
       }
     },
-    'com_moustacheminer_discordblocks_on_message': {
+    'com_moustacheminer_discordblocks_on-message': {
       block: {
         init() {
           this.appendDummyInput()
@@ -39,15 +39,15 @@ const StarterCategory = {
         return code;
       }
     },
-    'com_moustacheminer_discordblocks_message_reply_then_but': {
+    'com_moustacheminer_discordblocks_message-reply-then-but': {
       block: {
         init() {
           this.appendValueInput('input')
               .setCheck("String")
-              .appendField("reply to message");
+              .appendField("reply to message with the text");
           this.appendStatementInput("then")
               .setCheck(null)
-              .appendField("then");
+              .appendField("afterwards");
           this.appendStatementInput("but")
               .setCheck(null)
               .appendField("but on error");
@@ -67,7 +67,7 @@ const StarterCategory = {
         return code;
       }
     },
-    'com_moustacheminer_discordblocks_message_contents': {
+    'com_moustacheminer_discordblocks_message-contents': {
       block: {
         init: function() {
           this.appendDummyInput()

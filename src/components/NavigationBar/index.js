@@ -9,6 +9,7 @@ import MenuButton from './Menu/MenuButton';
 import ConstructCSS from '../../data/ConstructCSS';
 import HelpMenu from './HelpMenu';
 import FileMenu from './FileMenu';
+import EditMenu from './EditMenu';
 
 class NavigationBar extends Component {
   render() {
@@ -17,9 +18,7 @@ class NavigationBar extends Component {
       <div className={styles.tab}>
         <img className={styles.logo} src={logo} />
         <FileMenu workspace={workspace} />
-        <NavButton>
-          Edit
-        </NavButton>
+        <EditMenu workspace={workspace} />
         <HelpMenu />
         <span className={styles.title}>{this.props.document.name} - DiscordBlocks</span>
         <div className={styles.right}>

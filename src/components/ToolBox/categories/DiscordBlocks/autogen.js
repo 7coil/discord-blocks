@@ -20,11 +20,11 @@ docs.classes.forEach((discordjsClass) => {
     if (discordjsClass.construct) {
       // Add blocks with an increasing number of parameters
       for (let numberOfParams = 0; numberOfParams <= discordjsClass.construct.params.length; numberOfParams += 1) {
-        categoryDefinition.blocks[`constructor-${numberOfParams}`] = {
+        categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-constructor-${numberOfParams}`] = {
           block: {
             init: function() {
               this.appendDummyInput()
-                  .appendField(`create a new ${discordjsClass.construct.name}`)
+                  .appendField(`create a new ${discordjsClass.name}`)
               this.setOutput(true, null)
               this.setColour(colours.class)
               this.setTooltip(discordjsClass.description)
@@ -48,7 +48,7 @@ docs.classes.forEach((discordjsClass) => {
       discordjsClass.props
         .filter(method => method.access !== 'private')
         .forEach((prop) => {
-          categoryDefinition.blocks[`prop-${prop.name}`] = {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-prop-${prop.name}`] = {
             block: {
               init: function() {
                 this.appendValueInput(prop.name)
@@ -71,7 +71,7 @@ docs.classes.forEach((discordjsClass) => {
       discordjsClass.methods
         .filter(method => method.access !== 'private')
         .forEach((method) => {
-          categoryDefinition.blocks[`method-${method.name}`] = {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-method-${method.name}`] = {
             block: {
               init: function() {
                 this.appendValueInput(method.name)
@@ -101,7 +101,7 @@ docs.classes.forEach((discordjsClass) => {
               }
 
               if (!skip) {
-                categoryDefinition.blocks[`method-${method.name}-${numberOfParams}`] = {
+                categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-method-${method.name}-with-${numberOfParams}-params`] = {
                   block: {
                     init: function() {
                       this.appendValueInput(method.name)
@@ -123,6 +123,37 @@ docs.classes.forEach((discordjsClass) => {
                   }
                 }
               }
+            }
+          }
+        });
+    }
+
+    if (discordjsClass.events) {
+      // For each property of the class...
+      discordjsClass.events
+        .filter(method => method.access !== 'private')
+        .forEach((event) => {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-event-${event.name}`] = {
+            block: {
+              init: function() {
+                this.appendValueInput("thing")
+                  .setCheck(null)
+                  .appendField("when");
+                this.appendDummyInput()
+                  .appendField(`emits '${event.name}'`);
+                this.appendStatementInput('statement')
+                  .setCheck(null);
+                this.setPreviousStatement(true, null);
+                this.setNextStatement(true, null);
+                this.setColour(colours.props);
+                this.setTooltip(event.description);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=e-${event.name}`);
+              }
+            },
+            generator: function() {
+              const thing = Blockly.JavaScript.valueToCode(block, 'thing', Blockly.JavaScript.ORDER_ATOMIC);
+              const statement = Blockly.JavaScript.statementToCode(block, 'statement');
+              return `${thing}.on('${event.name}', () => {\n${statement}\n})\n`;
             }
           }
         });
