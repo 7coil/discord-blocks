@@ -32,7 +32,6 @@ class App extends Component {
     }
 
     this.workspace.addChangeListener((e) => {
-      console.log(e)
       if (e.recordUndo === true) {
         dispatch(changedDocument())
       }
