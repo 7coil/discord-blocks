@@ -16,7 +16,7 @@ class FileMenu extends Component {
     const { workspace, dispatch } = this.props
     const xml = Blockly.Xml.workspaceToDom(workspace);
     const data = Blockly.Xml.domToPrettyText(xml);
-    const name = 'project.dbl4';
+    const name = 'project.dbl';
 
     const a = document.createElement('a');
     a.style = 'display: none';
@@ -55,7 +55,7 @@ class FileMenu extends Component {
         )}>
         <MenuButton>
           <label htmlFor="load-code">Open File...</label>
-          <input onChange={this.load} hidden type="file" id="load-code" accept=".dbl4"></input>
+          <input onChange={this.load} hidden type="file" id="load-code" accept=".dbl"></input>
         </MenuButton>
         <MenuButton onClick={this.save}>
           Save
