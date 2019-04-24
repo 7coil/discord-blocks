@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import './scss/index.scss';
 import NavigationBar from './components/NavigationBar';
+import { changedDocument } from './redux/actions/document';
 
 class App extends Component {
   constructor(props) {
@@ -14,18 +15,28 @@ class App extends Component {
     this.state = {
       workspace: null
     }
+    this.unload = this.unload.bind(this);
   }
   componentDidMount() {
+    const { dispatch } = this.props;
     this.workspace = Blockly.inject(document.getElementById('blockly'), {
       toolbox: document.getElementById('toolbox')
     }, {
 
     })
+
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', this.resize);
       window.addEventListener('beforeunload', this.unload);
       this.resize();
     }
+
+    this.workspace.addChangeListener((e) => {
+      console.log(e)
+      if (e.recordUndo === true) {
+        dispatch(changedDocument())
+      }
+    })
 
     this.setState({
       workspace: this.workspace
@@ -49,9 +60,11 @@ class App extends Component {
     }
   }
   unload(e) {
-    e.preventDefault();
-    e.returnValue = '';
-    return true;
+    if (this.props.document.saved === false) {
+      e.preventDefault();
+      e.returnValue = '';
+      return true;
+    }
   }
   render() {
     const { workspace } = this.state;

@@ -3,6 +3,8 @@ import Menu from '../Menu';
 import MenuButton from '../Menu/MenuButton';
 import NavButton from '../NavButton';
 import { Blockly } from '../../ToolBox/Category';
+import { connect } from 'react-redux';
+import { saveDocument } from '../../../redux/actions/document';
 
 class FileMenu extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class FileMenu extends Component {
     this.load = this.load.bind(this);
   }
   save() {
-    const { workspace } = this.props
+    const { workspace, dispatch } = this.props
     const xml = Blockly.Xml.workspaceToDom(workspace);
     const data = Blockly.Xml.domToPrettyText(xml);
     const name = 'project.dbl4';
@@ -26,6 +28,8 @@ class FileMenu extends Component {
     a.click();
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
+
+    dispatch(saveDocument());
   }
   load(event) {
     const { workspace } = this.props
@@ -56,10 +60,14 @@ class FileMenu extends Component {
         <MenuButton onClick={this.save}>
           Save
         </MenuButton>
+        <hr />
+        <MenuButton onClick={window.close}>
+          Exit
+        </MenuButton>
       </Menu>
     );
   }
 }
 
-export default FileMenu;
+export default connect()(FileMenu);
 
