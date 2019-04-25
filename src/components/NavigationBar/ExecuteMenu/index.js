@@ -50,9 +50,6 @@ class ExecuteMenu extends Component {
             Go
           </NavButton>
         )}>
-        <MenuButton onClick={this.execute}>
-          Execute
-        </MenuButton>
         <ModalButton
           button={(
             <MenuButton>
