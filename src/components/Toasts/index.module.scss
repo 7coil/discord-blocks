@@ -1,0 +1,16 @@
+.toastContainer {
+  position: fixed;
+  text-align: right;
+  right: 5px;
+  top: 40px;
+  z-index: 2000;
+  .toastDiv {
+    margin-bottom: 20px;
+  }
+  .toast {
+    padding: 5px;
+    color: white;
+    // font-family: 'Comic Sans MS', 'Comic Sans', serif;
+    font-family: "Segoe WPC", "Segoe UI", sans-serif;
+  }
+}

@@ -7,12 +7,14 @@ import { Blockly } from '../../ToolBox/Category';
 import { connect } from 'react-redux';
 import ModalButton from '../ModalButton';
 import { js as beautify } from 'js-beautify';
+import { createToast } from '../../../redux/actions/toasts';
 
 class ExecuteMenu extends Component {
   constructor(props) {
     super(props);
     this.execute = this.execute.bind(this);
     this.exportCode = this.exportCode.bind(this);
+    this.saveCode = this.saveCode.bind(this);
 
     this.state = {
       code: null,
@@ -36,10 +38,34 @@ class ExecuteMenu extends Component {
         code,
         error: null
       });
+      return code;
     } catch(e) {
       this.setState({
         error: e.message
       });
+    }
+  }
+  saveCode() {
+    const code = this.exportCode();
+
+    if (code) {
+      const name = 'project.js';
+
+      const a = document.createElement('a');
+      a.style = 'display: none';
+      document.body.appendChild(a);
+      const blob = new Blob([code], { type: 'octet/stream' });
+      const url = window.URL.createObjectURL(blob);
+      a.href = url;
+      a.download = name;
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } else {
+      const { dispatch } = this.props;
+      dispatch(createToast({
+        content: 'There is no code in your workspace to export!'
+      }))
     }
   }
   render() {
@@ -47,7 +73,7 @@ class ExecuteMenu extends Component {
       <Menu
         button={(
           <NavButton>
-            Go
+            JavaScript
           </NavButton>
         )}>
         <ModalButton
@@ -62,6 +88,10 @@ class ExecuteMenu extends Component {
           )}
           <pre><code>{this.state.code}</code></pre>
         </ModalButton>
+        <MenuButton
+          onClick={this.saveCode}>
+          Export JavaScript for Node.js
+        </MenuButton>
       </Menu>
     );
   }

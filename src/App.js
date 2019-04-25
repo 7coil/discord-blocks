@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import './scss/index.scss';
 import NavigationBar from './components/NavigationBar';
 import { changedDocument } from './redux/actions/document';
+import FooterBar from './components/FooterBar';
+import Toasts from './components/Toasts';
 
 class App extends Component {
   constructor(props) {
@@ -77,6 +79,8 @@ class App extends Component {
         </Helmet>
         <NavigationBar workspace={workspace} />
         <ToolBox />
+        <FooterBar workspace={workspace} />
+        <Toasts />
       </div>
     )
   }
