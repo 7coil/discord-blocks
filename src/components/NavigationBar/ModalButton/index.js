@@ -45,7 +45,10 @@ class ModalButton extends Component {
   render() {
     return (
       <div>
-        <div onClick={this.toggle}>
+        <div onClick={(e) => {
+          this.toggle(e);
+          if (this.props.onClick) this.props.onClick(e);
+        }}>
           {this.props.button}
         </div>
         <dialog className={styles.dialog} onClick={this.close} open={this.state.open} ref={this.dialog}>

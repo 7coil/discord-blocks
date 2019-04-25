@@ -10,6 +10,7 @@ import ConstructCSS from '../../data/ConstructCSS';
 import HelpMenu from './HelpMenu';
 import FileMenu from './FileMenu';
 import EditMenu from './EditMenu';
+import ExecuteMenu from './ExecuteMenu';
 
 class NavigationBar extends Component {
   render() {
@@ -19,6 +20,7 @@ class NavigationBar extends Component {
         <img className={styles.logo} src={logo} />
         <FileMenu workspace={workspace} />
         <EditMenu workspace={workspace} />
+        <ExecuteMenu workspace={workspace} />
         <HelpMenu />
         <span className={styles.title}>{this.props.document.name} - DiscordBlocks</span>
         <div className={styles.right}>
@@ -50,4 +52,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(NavigationBar);
-

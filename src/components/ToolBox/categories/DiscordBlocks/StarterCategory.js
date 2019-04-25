@@ -12,12 +12,12 @@ const StarterCategory = {
           this.setColour(230);
           this.setTooltip("");
           this.setHelpUrl("");
-        },
-        generator(block) {
-          var value_name = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
-          var code = `discordblocks.client.login('${value_name}');\n`;
-          return code;
         }
+      },
+      generator(block) {
+        var value_name = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
+        var code = `discordblocks.client.login('${value_name}');\n`;
+        return code;
       }
     },
     'com_moustacheminer_discordblocks_on-message': {
