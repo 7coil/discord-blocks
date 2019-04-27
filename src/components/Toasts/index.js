@@ -4,13 +4,6 @@ import styles from './index.module.scss';
 import { incrementToastCounter, createToast, deleteToast } from '../../redux/actions/toasts';
 
 class Toasts extends Component {
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(incrementToastCounter());
-    dispatch(createToast({
-      content: 'Bleh'
-    }));
-  }
   render() {
     const { toasts } = this.props.toasts;
     return (

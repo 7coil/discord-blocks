@@ -28,17 +28,20 @@ const createToast = ({
 }) => {
   return (dispatch, getState) => {
     dispatch(incrementToastCounter());
+    const id = getState().toasts.counter;
     dispatch(pushToast({
-      id: getState().toasts.counter,
+      id,
       content,
       colour
     }))
 
-    setTimeout(() => {
-      dispatch(deleteToast(getState().toasts.counter));
-    }, timeout);
+    if (timeout !== 0) {
+      setTimeout(() => {
+        dispatch(deleteToast(id));
+      }, timeout);
+    }
 
-    return getState().toasts.counter;
+    return id;
   }
 }
 
