@@ -8,6 +8,7 @@ if (typeof Blockly.BlockSvg !== 'undefined') {
 
 if (typeof Blockly.JavaScript !== 'undefined') {
   Blockly.JavaScript.addReservedWords('discordblocks');
+  Blockly.JavaScript.addReservedWords('param1');
 }
 
 const Category = (props) => (

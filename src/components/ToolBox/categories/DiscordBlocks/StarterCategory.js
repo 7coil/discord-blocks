@@ -1,8 +1,25 @@
 import Blockly from 'node-blockly/browser';
+import { readFileSync } from 'fs'
+import * as path from 'fs'
+const initScript = readFileSync(__dirname + '/initScript.js', 'utf-8');
 
 const StarterCategory = {
   name: 'Starter',
   blocks: {
+    'com_moustacheminer_discordblocks_init': {
+      block: {
+        init() {
+          this.appendDummyInput()
+              .appendField("import Discord.js");
+          this.setColour(230);
+       this.setTooltip("");
+       this.setHelpUrl("");
+        }
+      },
+      generator() {
+        return initScript
+      }
+    },
     'com_moustacheminer_discordblocks_client-login': {
       block: {
         init() {
@@ -35,7 +52,7 @@ const StarterCategory = {
       generator(block) {
         var statements = Blockly.JavaScript.statementToCode(block, 'statements');
         // TODO: Assemble JavaScript into code variable.
-        var code = `discordblocks.client.on('message', () => {\n${statements}\n});\n`;
+        var code = `discordblocks.client.on('message', (param1) => {\ndiscordblocks.message = param1;\n${statements}discordblocks.message = null\n});\n`;
         return code;
       }
     },
@@ -63,7 +80,7 @@ const StarterCategory = {
         var statements_then = Blockly.JavaScript.statementToCode(block, 'then');
         var statements_but = Blockly.JavaScript.statementToCode(block, 'but');
         // TODO: Assemble JavaScript into code variable.
-        var code = `discordblocks.message.reply(${value})\n.then(() => {\n${statements_then}\n})\n.catch(() => {\n${statements_but}\n})\n`;
+        var code = `discordblocks.checkMessageExists()\ndiscordblocks.message.reply(${value})\n.then(() => {\n${statements_then}\n})\n.catch(() => {\n${statements_but}\n})\n`;
         return code;
       }
     },
