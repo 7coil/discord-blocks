@@ -7,18 +7,9 @@ import { connect } from 'react-redux';
 class EditMenu extends Component {
   constructor(props) {
     super(props);
-    this.undo = this.undo.bind(this);
-    this.redo = this.redo.bind(this);
-  }
-  undo() {
-    const { workspace } = this.props
-    workspace.undo(false);
-  }
-  redo() {
-    const { workspace } = this.props
-    workspace.undo(true);
   }
   render() {
+    const { workspace } = this.props
     return (
       <Menu
         button={(
@@ -26,11 +17,15 @@ class EditMenu extends Component {
             Edit
           </NavButton>
         )}>
-        <MenuButton onClick={this.undo}>
+        <MenuButton onClick={() => workspace.undo(false)}>
           Undo
         </MenuButton>
-        <MenuButton onClick={this.redo}>
+        <MenuButton onClick={() => workspace.undo(true)}>
           Redo
+        </MenuButton>
+        <hr />
+        <MenuButton onClick={() => workspace.cleanUp()}>
+          Clean up Blocks
         </MenuButton>
       </Menu>
     );

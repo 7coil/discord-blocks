@@ -26,7 +26,7 @@ class ExecuteMenu extends Component {
     workspace.undo(true);
   }
   exportCode() {
-    const { workspace } = this.props
+    const { workspace, dispatch } = this.props
     try {
       const code = beautify(
         Blockly.JavaScript.workspaceToCode(workspace),
@@ -40,12 +40,14 @@ class ExecuteMenu extends Component {
       });
       return code;
     } catch(e) {
-      this.setState({
-        error: e.message
-      });
+      dispatch(createToast({
+        content: e.message,
+        timeout: 10000
+      }))
     }
   }
   saveCode() {
+    const { dispatch } = this.props;
     const code = this.exportCode();
 
     if (code) {
@@ -62,7 +64,6 @@ class ExecuteMenu extends Component {
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
     } else {
-      const { dispatch } = this.props;
       dispatch(createToast({
         content: 'There is no code in your workspace to export!'
       }))
@@ -90,7 +91,7 @@ class ExecuteMenu extends Component {
         </ModalButton>
         <MenuButton
           onClick={this.saveCode}>
-          Export JavaScript for Node.js
+          Export for Node.js
         </MenuButton>
       </Menu>
     );

@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     const { workspace } = this.state;
     return (
-      <div>
+      <>
         <Helmet
           defaultTitle="DiscordBlocks"
           titleTemplate="%s - DiscordBlocks"
@@ -81,7 +81,7 @@ class App extends Component {
         <ToolBox />
         <FooterBar workspace={workspace} />
         <Toasts />
-      </div>
+      </>
     )
   }
 }
