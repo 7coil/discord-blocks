@@ -63,7 +63,7 @@ const StarterCategory = {
         var statements_then = Blockly.JavaScript.statementToCode(block, 'then');
         var statements_but = Blockly.JavaScript.statementToCode(block, 'but');
         // TODO: Assemble JavaScript into code variable.
-        var code = `discordblocks.message.reply('${value}')\n.then(() => {\n${statements_then}\n})\n.catch(() => {\n${statements_but}\n})\n`;
+        var code = `discordblocks.message.reply(${value})\n.then(() => {\n${statements_then}\n})\n.catch(() => {\n${statements_but}\n})\n`;
         return code;
       }
     },

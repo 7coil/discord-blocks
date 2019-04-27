@@ -2,7 +2,7 @@ import React from 'react';
 import { Block } from '../Block';
 
 const CoreCategory = () => (
-  <category is="category" name="Core" className="hidden">
+  <>
     <category is="category" name="Logic">
       <category is="category" name="If">
         <block is="block" type="controls_if"></block>
@@ -250,7 +250,7 @@ const CoreCategory = () => (
         }
       }} />
     </category>
-  </category>
+  </>
 )
 
 export default CoreCategory;

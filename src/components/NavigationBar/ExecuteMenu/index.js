@@ -38,6 +38,7 @@ class ExecuteMenu extends Component {
         code,
         error: null
       });
+
       return code;
     } catch(e) {
       dispatch(createToast({
