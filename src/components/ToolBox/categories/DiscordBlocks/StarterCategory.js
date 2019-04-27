@@ -33,7 +33,7 @@ const StarterCategory = {
       },
       generator(block) {
         var value_name = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
-        var code = `discordblocks.client.login('${value_name}');\n`;
+        var code = `discordblocks.client.login(${value_name});\n`;
         return code;
       }
     },
