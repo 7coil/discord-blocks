@@ -1,6 +1,5 @@
-import Blockly from 'node-blockly/browser';
 import { readFileSync } from 'fs'
-import * as path from 'fs'
+import Blockly from '../../../../modules/Blockly';
 const initScript = readFileSync(__dirname + '/initScript.js', 'utf-8');
 
 const StarterCategory = {

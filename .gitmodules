@@ -2,3 +2,6 @@
   path = src/components/ToolBox/categories/DiscordBlocks/discord.js
   url = https://github.com/discordjs/discord.js
   branch = docs
+[submodule "src/modules/blockly"]
+	path = src/modules/blockly
+	url = https://github.com/google/blockly

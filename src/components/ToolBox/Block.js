@@ -1,5 +1,5 @@
 import React from 'react';
-import Blockly from 'node-blockly/browser';
+import Blockly from '../../modules/Blockly';
 
 const Block = (props) => {
   const id = props.name.replace(/[ .]/g, '-').toLowerCase() || Math.random().toString().replace('.', '');

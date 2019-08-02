@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import logo from './logo.png';
 import Menu from './Menu';
 import MenuButton from './Menu/MenuButton';
-import ConstructCSS from '../../data/ConstructCSS';
+import ConstructCSS from '../../modules/ConstructCSS';
 import HelpMenu from './HelpMenu';
 import FileMenu from './FileMenu';
 import EditMenu from './EditMenu';

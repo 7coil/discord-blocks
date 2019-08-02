@@ -1,6 +1,6 @@
 import React from 'react';
-import Blockly from 'node-blockly/browser';
 import { Block } from './Block';
+import Blockly from '../../modules/Blockly';
 
 if (typeof Blockly.BlockSvg !== 'undefined') {
   Blockly.BlockSvg.START_HAT = true;

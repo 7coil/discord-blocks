@@ -14,7 +14,6 @@
     "autoprefixer": "^9.5.1",
     "blockly": "^1.0.0",
     "discord.js": "^11.4.2",
-    "node-blockly": "^1.0.36",
     "postcss-modules": "^1.4.1",
     "react": ">=15",
     "react-app-polyfill": "^1.0.0",
