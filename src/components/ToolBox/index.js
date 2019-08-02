@@ -11,7 +11,7 @@ const ToolBox = () => (
     <category is="category" name="Variables" custom="VARIABLE"></category>
     <category is="category" name="Functions" custom="PROCEDURE"></category>
     <Category blocks={StarterCategory} name="Discord.js">
-      <category is="category" name="For Elite Developers">
+      <category is="category" name="For Pro Developers">
         {categoryDefinitions.map(category => <Category key={category.name} blocks={category} />)}
       </category>
     </Category>
