@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import Menu from '../Menu';
 import NavButton from '../NavButton';
 import MenuButton from '../Menu/MenuButton';
-import {readFileSync} from 'fs'
+import { readFileSync } from 'fs'
 import ModalButton from '../ModalButton';
-const LICENCE = readFileSync(__dirname + '../../../../../LICENCE', 'utf-8')
+const discordBlocksLicence = readFileSync(__dirname + '../../../../../LICENCE', 'utf-8')
+const blocklyLicence = readFileSync(__dirname + '../../../../modules/blockly/LICENSE', {
+  encoding: 'utf-8'
+})
 
 class HelpMenu extends Component {
   render() {
@@ -27,7 +30,15 @@ class HelpMenu extends Component {
               DiscordBlocks Licence
             </MenuButton>
           )}>
-        {LICENCE}  
+          {discordBlocksLicence}  
+        </ModalButton>
+        <ModalButton
+          button={(
+            <MenuButton>
+              Blockly Licence
+            </MenuButton>
+          )}>
+          {blocklyLicence}  
         </ModalButton>
         <a href="https://github.com/7coil/discord-blocks" target="_blank">
           <MenuButton>
