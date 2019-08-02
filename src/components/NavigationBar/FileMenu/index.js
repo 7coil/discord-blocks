@@ -16,7 +16,7 @@ class FileMenu extends Component {
     const { workspace, dispatch } = this.props
     const xml = Blockly.Xml.workspaceToDom(workspace);
     const data = Blockly.Xml.domToPrettyText(xml);
-    const name = 'project.dbl';
+    const name = `${encodeURIComponent(this.props.document.name).replace(/%20/g, ' ')}.dbl`;
 
     const a = document.createElement('a');
     a.style = 'display: none';
@@ -69,5 +69,10 @@ class FileMenu extends Component {
   }
 }
 
-export default connect()(FileMenu);
+const mapStateToProps = (state) => {
+  const { document } = state;
+  return { document };
+}
+
+export default connect(mapStateToProps)(FileMenu);
 
