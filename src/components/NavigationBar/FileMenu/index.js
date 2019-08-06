@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import JSZip from 'jszip';
 import Menu from '../Menu';
 import MenuButton from '../Menu/MenuButton';
 import NavButton from '../NavButton';
@@ -14,20 +15,27 @@ class FileMenu extends Component {
   }
   save() {
     const { workspace, dispatch } = this.props
-    const xml = Blockly.Xml.workspaceToDom(workspace);
-    const data = Blockly.Xml.domToPrettyText(xml);
-    const name = `${encodeURIComponent(this.props.document.name).replace(/%20/g, ' ')}.dbl`;
+    const xmlContent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(workspace));
+    const fileName = `${encodeURIComponent(this.props.document.name).replace(/%20/g, ' ')}.dbl`;
 
-    const a = document.createElement('a');
-    a.style = 'display: none';
-    document.body.appendChild(a);
-    const blob = new Blob([data], { type: 'octet/stream' });
-    const url = window.URL.createObjectURL(blob);
-    a.href = url;
-    a.download = name;
-    a.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
+    const zip = new JSZip();
+
+    zip.file('blocks.xml', xmlContent);
+    
+    zip.generateAsync({
+      type: 'blob'
+    })
+      .then((blob) => {
+        const a = document.createElement('a');
+        a.style = 'display: none';
+        document.body.appendChild(a);
+        const url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      })
 
     dispatch(saveDocument());
   }
@@ -36,13 +44,22 @@ class FileMenu extends Component {
     const [file] = event.target.files;
     const reader = new FileReader();
     reader.onload = (e) => {
-      const xml_text = e.target.result;
-      if (!xml_text) return;
-      const xml = Blockly.Xml.textToDom(xml_text);
-      Blockly.Xml.domToWorkspace(xml, workspace);
+      // Open the zip file
+      JSZip.loadAsync(e.target.result)
+        .then((data) => {
+          // If there is a blocks.xml file, open it
+          if (data.file('blocks.xml')) {
+            return data.file('blocks.xml').async('string')
+          }
+        })
+        .then((text) => {
+          // With the blocks.xml file, import it to Blockly.
+          const xml = Blockly.Xml.textToDom(text);
+          Blockly.Xml.domToWorkspace(xml, workspace);
+        })
     };
     if (file) {
-      reader.readAsText(file);
+      reader.readAsArrayBuffer(file);
     }
   }
   render() {
