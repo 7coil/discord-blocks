@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/moustacheminer/discord-blocks",
-  "author": "7coil <katie@discordmail.com>",
+  "author": "Leondro Lio <github@leondrolio.com>",
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
@@ -13,7 +13,8 @@
     "@babel/polyfill": "^7.4.3",
     "autoprefixer": "^9.5.1",
     "blockly": "^1.0.0",
-    "discord.js": "^11.4.2",
+    "discord.js": "^12.1.1",
+    "js-beautify": "^1.10.3",
     "jszip": "^3.2.2",
     "postcss-modules": "^1.4.1",
     "react": ">=15",

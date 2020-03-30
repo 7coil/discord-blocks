@@ -1,4 +1,4 @@
-import docs from './discord.js/11.4.2.json';
+import docs from './discord.js/12.1.1.json';
 
 const categoryDefinitions = [];
 

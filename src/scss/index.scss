@@ -24,9 +24,8 @@ main {
   flex-direction: column;
 }
 
-div[id*=blockly] {
+div[id=blockly] {
   color: black;
-  height: 100vh;
-  height: -webkit-fill-available;
+  height: calc(100vh - 30px - 20px);
   margin-bottom: 20px;
 }
