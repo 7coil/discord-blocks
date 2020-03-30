@@ -24,8 +24,9 @@ main {
   flex-direction: column;
 }
 
-div[id=blockly] {
-  color: black;
-  height: calc(100vh - 30px - 20px);
-  margin-bottom: 20px;
+#blockly {
+  background-color: var(--vscode-editor-background);
+  height: 100vh;
 }
+
+@import 'blockly';

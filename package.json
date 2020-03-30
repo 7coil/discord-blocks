@@ -1,14 +1,34 @@
 {
   "name": "discord-blocks",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/moustacheminer/discord-blocks",
+  "repository": "https://github.com/7coil/discord-blocks",
   "author": "Leondro Lio <github@leondrolio.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html -d dist/client --public-url /"
+    "vscode:prepublish": "npm-run-all build:*",
+    "build:webpage": "parcel build src/index.html -d dist/client --public-url .",
+    "build:extension": "parcel build ext/index.ts -d dist/extension --target node",
+    "compile": "npm-run-all --parallel compile:*",
+    "compile:webpage": "parcel watch src/index.html -d dist/client --public-url .",
+    "compile:extension": "parcel watch ext/index.ts -d dist/extension --target node",
+    "postinstall": "node ./node_modules/vscode/bin/install"
   },
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "activationEvents": [
+    "onCommand:catCoding.start"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "catCoding.start",
+        "title": "Start new cat coding session",
+        "category": "Cat Coding"
+      }
+    ]
+  },
+  "main": "./dist/extension/index.js",
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
     "autoprefixer": "^9.5.1",
@@ -16,6 +36,7 @@
     "discord.js": "^12.1.1",
     "js-beautify": "^1.10.3",
     "jszip": "^3.2.2",
+    "npm-run-all": "^4.1.5",
     "postcss-modules": "^1.4.1",
     "react": ">=15",
     "react-app-polyfill": "^1.0.0",
@@ -24,10 +45,12 @@
     "react-redux": "^7.0.2",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "vscode": "*"
   },
   "devDependencies": {
     "parcel": "^1.12.3",
-    "sass": "^1.19.0"
+    "sass": "^1.19.0",
+    "typescript": "^3.8.3"
   }
 }

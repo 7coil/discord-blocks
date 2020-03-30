@@ -1,4 +1,4 @@
-# DiscordBlocks v3.0
+# DiscordBlocks v4.0
 A Google Blockly (like MIT Scratch) to Discord.js compiler
 
 ## File Format

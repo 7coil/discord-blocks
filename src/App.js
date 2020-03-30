@@ -1,94 +1,70 @@
 import React, { Component } from 'react';
 import ToolBox from './components/ToolBox';
 import { Blockly } from './components/ToolBox/Category';
-import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-
 import './scss/index.scss';
-import NavigationBar from './components/NavigationBar';
-import { changedDocument } from './redux/actions/document';
-import FooterBar from './components/FooterBar';
-import Toasts from './components/Toasts';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.workspace = null;
     this.state = {
       workspace: null
     }
-    this.unload = this.unload.bind(this);
+    this.vscode = acquireVsCodeApi();
+    this.onChange = this.onChange.bind(this);
   }
   componentDidMount() {
-    const { dispatch } = this.props;
-    this.workspace = Blockly.inject(document.getElementById('blockly'), {
-      toolbox: document.getElementById('toolbox')
-    }, {
-
+    const workspace = Blockly.inject(document.getElementById('blockly'), {
+      toolbox: document.getElementById('toolbox'),
+      css: false
     })
+
+    workspace.addChangeListener(this.onChange);
 
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', this.resize);
-      window.addEventListener('beforeunload', this.unload);
       this.resize();
     }
 
-    this.workspace.addChangeListener((e) => {
-      if (e.recordUndo === true) {
-        dispatch(changedDocument())
-      }
-    })
+    const previousState = this.vscode.getState();
+    if (previousState && previousState.xml) {
+      const xml = Blockly.Xml.textToDom(previousState.xml);
+      Blockly.Xml.domToWorkspace(xml, workspace)
+    }
 
     this.setState({
-      workspace: this.workspace
+      workspace
     })
+
+    console.log(Blockly.Css)
   }
   componentWillUnmount() {
-    if (this.workspace) {
-      this.workspace.dispose();
+    if (this.state.workspace) {
+      this.state.workspace.removeChangeListener(this.onChange)
+      this.state.workspace.dispose();
     }
     if (typeof window !== 'undefined') {
       window.removeEventListener('resize', this.resize);
-      window.removeEventListener('beforeunload', this.unload);
     }
   }
+  onChange() {
+    const xmlContent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(this.state.workspace))
+    this.vscode.setState({
+      xml: xmlContent
+    })
+  }
   resize() {
-    if (this.workspace) {
-      Blockly.svgResize(this.workspace);
+    if (this.state.workspace) {
+      Blockly.svgResize(this.state.workspace);
       setTimeout(() => {
-        Blockly.svgResize(this.workspace);
+        Blockly.svgResize(this.state.workspace);
       }, 10)
     }
   }
-  unload(e) {
-    if (this.props.document.saved === false) {
-      e.preventDefault();
-      e.returnValue = '';
-      return true;
-    }
-  }
   render() {
-    const { workspace } = this.state;
     return (
-      <>
-        <Helmet
-          defaultTitle="DiscordBlocks"
-          titleTemplate="%s - DiscordBlocks"
-        >
-          <title>{this.props.document.name}</title>
-        </Helmet>
-        <NavigationBar workspace={workspace} />
-        <ToolBox />
-        <FooterBar workspace={workspace} />
-        <Toasts />
-      </>
+      <ToolBox />
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  const { document } = state;
-  return { document };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
