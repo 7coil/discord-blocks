@@ -18,14 +18,8 @@ input[class*=blocklyHtmlInput] {
   width: 100% !important;
 }
 
-main {
-  height: 100%;
+div[id=app] {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-div[id=blockly] {
-  color: black;
-  height: calc(100vh - 30px - 20px);
-  margin-bottom: 20px;
 }

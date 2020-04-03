@@ -14,6 +14,7 @@
     "autoprefixer": "^9.5.1",
     "blockly": "^1.0.0",
     "discord.js": "^12.1.1",
+    "electron-react-titlebar": "^0.8.2",
     "js-beautify": "^1.10.3",
     "jszip": "^3.2.2",
     "postcss-modules": "^1.4.1",
@@ -22,12 +23,20 @@
     "react-dom": "^16.8.6",
     "react-helmet": "6.0.0-beta",
     "react-redux": "^7.0.2",
-    "react-router-dom": "^5.0.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
     "parcel": "^1.12.3",
     "sass": "^1.19.0"
+  },
+  "alias": {
+    "electron": "./alias/electron"
   }
 }
