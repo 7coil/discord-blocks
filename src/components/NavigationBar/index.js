@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-// import { TitleBar } from 'electron-react-titlebar'
 import TitleBar from 'frameless-titlebar';
-import logo from './logo.png'
-
 import JSZip from 'jszip';
+import React, { Component } from 'react';
 import Blockly from '../../modules/Blockly';
+import logo from './logo.png';
 
 class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.save = this.save.bind(this);
-    this.load = this.load.bind(this);
+    this.loadWithJSZip = this.loadWithJSZip.bind(this);
+    this.loadFromFile = this.loadFromFile.bind(this);
+    this.loadFromText = this.loadFromText.bind(this);
     this.export = this.export.bind(this);
     this.loadButton = React.createRef();
     this.temporarySaveFile = React.createRef();
@@ -28,7 +28,7 @@ class NavigationBar extends Component {
     const zip = new JSZip();
 
     zip.file('blocks.xml', xmlContent);
-    
+
     zip.generateAsync({
       type: 'blob'
     })
@@ -44,30 +44,39 @@ class NavigationBar extends Component {
         document.body.removeChild(a);
       })
   }
-  load(event) {
-    const { workspace } = this.props
+  loadWithJSZip(data) {
+    // If there is a blocks.xml file, open it
+    if (data.file('blocks.xml')) {
+      data.file('blocks.xml').async('string')
+        .then((text) => {
+          this.loadFromText({ text })
+        })
+    }
+  }
+  loadFromFile(event) {
     const [file] = event.target.files;
     const reader = new FileReader();
     reader.onload = (e) => {
       // Open the zip file
       JSZip.loadAsync(e.target.result)
-        .then((data) => {
-          // If there is a blocks.xml file, open it
-          if (data.file('blocks.xml')) {
-            return data.file('blocks.xml').async('string')
-          }
-
-          return Promise.reject()
-        })
-        .then((text) => {
-          // With the blocks.xml file, import it to Blockly.
-          const xml = Blockly.Xml.textToDom(text);
-          Blockly.Xml.domToWorkspace(xml, workspace);
-        })
+        .then(this.loadWithJSZip)
     };
     if (file) {
       reader.readAsArrayBuffer(file);
     }
+  }
+  loadFromUrl(url) {
+    fetch(url)
+      .then(res => res.blob())
+      .then(res => {
+        JSZip.loadAsync(res)
+          .then(this.loadWithJSZip)
+      })
+  }
+  loadFromText({ text }) {
+    const { workspace } = this.props
+    const xml = Blockly.Xml.textToDom(text);
+    Blockly.Xml.domToWorkspace(xml, workspace);
   }
   export() {
     const { workspace } = this.props
@@ -88,7 +97,7 @@ class NavigationBar extends Component {
     const workspace = this.props.workspace
     return (
       <>
-        <input ref={this.loadButton} onChange={this.load} hidden type="file" id="load-code" accept=".dbl"></input>
+        <input ref={this.loadButton} onChange={this.loadFromFile} hidden type="file" id="load-code" accept=".dbl"></input>
         <a ref={this.temporarySaveFile} href={this.state.temporarySaveLink} download={this.state.temporarySaveFilename}></a>
         <TitleBar icon={logo} menu={[
           {
@@ -110,9 +119,14 @@ class NavigationBar extends Component {
           {
             label: 'Help',
             submenu: [
-              { label: 'Discord.js Documentation', click: () => window.open('https://discord.js.org/')},
+              { label: 'Discord.js Documentation', click: () => window.open('https://discord.js.org/') },
+              {
+                label: 'Examples', submenu: [
+                  { label: 'Broken Example', click: () => this.loadFromUrl('/example1.dbl') },
+                ]
+              },
               { type: 'separator' },
-              { label: 'DiscordBlocks on GitHub', click: () => window.open('https://github.com/7coil/discord-blocks')},
+              { label: 'DiscordBlocks on GitHub', click: () => window.open('https://github.com/7coil/discord-blocks') },
             ]
           },
         ]} />
