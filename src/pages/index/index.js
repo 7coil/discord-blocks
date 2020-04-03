@@ -5,6 +5,9 @@ import TransportSignTitle from '../../components/TransportSignTitle';
 import TransportSignBadge from '../../components/TransportSignBadge';
 import TransportSign from '../../components/TransportSign';
 
+import styles from './index.scss';
+import picture from './firefox_PRVJSwMtRm.png';
+
 const places = [
   {
     label: 'Shopmobility',
@@ -51,24 +54,32 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div style={{
-        width: '100%',
-        fontSize: '1.3em',
-        padding: '1em',
-      }}>
-        <TransportSign>
-          <TransportSignTitle>
-            <h2>DiscordBlocks (Alpha)</h2>
-          </TransportSignTitle>
-          <Link to="/edit">Enter the Editor →</Link>
-          <a href="https://github.com/7coil/discord-blocks">Source Code <TransportSignBadge type="a">github.com</TransportSignBadge> →</a>
-          {this.state.label &&
-            this.state.link ?
-              <a href={this.state.link}><TransportSignBadge type={this.state.style}>← {this.state.label}</TransportSignBadge></a> :
-              <TransportSignBadge type={this.state.style}>← {this.state.label}</TransportSignBadge>
-          }
-        </TransportSign>
-      </div>
+      <main>
+        <header>
+          <span>// TODO: Enter a header for the user to navigate between pages</span>
+        </header>
+        <div className={styles.jumbotron}>
+          <div className={styles.jumbotronContent}>
+            <h1>DiscordBlocks</h1>
+            <p>
+              An easy to use* block based Discord Bot creator and editor, based on Discord.js and Google Blockly<br />
+              <small>*citation needed</small>
+            </p>
+          </div>
+          <img src={picture} className={styles.jumbotronImage}/>
+          <div className={styles.jumbotronLinks}>
+            <Link to="/edit">Enter the Editor</Link>
+          </div>
+        </div>
+        <div>
+          <span>// TODO: Enter some examples that users can click on here</span>
+        </div>
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            Copyright Leondro Lio, 2017 - 2019
+          </div>
+        </footer>
+      </main>
     )
   }
 }

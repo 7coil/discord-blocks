@@ -1,0 +1,61 @@
+@use 'settings';
+
+.jumbotron {
+  font-family: settings.$main-font;
+  max-width: settings.$page-width;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-areas: 'content image'
+                       'links   image';
+  grid-template-columns: 50% 50%;
+
+  @include settings.mobile {
+    grid-template-areas: 'content'
+                         'links'
+                         'image';
+    grid-template-columns: 1fr;
+  }
+
+  .jumbotronContent {
+    grid-area: content;
+  }
+
+  .jumbotronImage {
+    grid-area: image;
+    max-width: 100%;
+  }
+
+  .jumbotronLinks {
+    grid-area: links;
+    a {
+      @include settings.motorway;
+      text-decoration: none;
+      padding: 1em;
+      border-radius: 0.5em;
+      display: inline-block;
+
+      &::after {
+        content: '→';
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.footer {
+  font-size: 1.3em;
+  margin-top: 2em;
+  padding: 2em;
+  @include settings.primary-road;
+  .footerContent {
+    font-family: settings.$main-font;
+    max-width: settings.$page-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
