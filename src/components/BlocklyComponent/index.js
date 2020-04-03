@@ -1,4 +1,3 @@
-import 'electron-react-titlebar/assets/style.css';
 import React, { Component } from 'react';
 import { Blockly } from '../../components/ToolBox/Category';
 

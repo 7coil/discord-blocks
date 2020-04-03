@@ -1,5 +1,6 @@
 import React from 'react';
 import { Block } from '../Block';
+import Blockly from '../../../modules/Blockly'
 
 const CoreCategory = () => (
   <>

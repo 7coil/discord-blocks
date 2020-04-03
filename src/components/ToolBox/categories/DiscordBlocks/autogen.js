@@ -1,4 +1,5 @@
 import docs from './discord.js/12.1.1.json';
+import Blockly from '../../../../modules/Blockly';
 
 const categoryDefinitions = [];
 
@@ -150,7 +151,7 @@ docs.classes.forEach((discordjsClass) => {
                 this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=e-${event.name}`);
               }
             },
-            generator: function() {
+            generator: function(block) {
               const thing = Blockly.JavaScript.valueToCode(block, 'thing', Blockly.JavaScript.ORDER_ATOMIC);
               const statement = Blockly.JavaScript.statementToCode(block, 'statement');
               return `${thing}.on('${event.name}', () => {\n${statement}\n})\n`;

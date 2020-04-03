@@ -1,5 +1,7 @@
 class ElectronWindow {
-  maximised = true;
+  constructor() {
+    this.maximised = true;
+  }
 
   isMaximized() {
     return this.maximised;

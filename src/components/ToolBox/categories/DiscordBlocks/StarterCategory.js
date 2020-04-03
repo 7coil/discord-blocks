@@ -1,6 +1,4 @@
-import { readFileSync } from 'fs'
 import Blockly from '../../../../modules/Blockly';
-const initScript = readFileSync(__dirname + '/initScript.js', 'utf-8');
 
 const StarterCategory = {
   name: 'Starter',
@@ -9,14 +7,14 @@ const StarterCategory = {
       block: {
         init() {
           this.appendDummyInput()
-              .appendField("import Discord.js");
+            .appendField("import Discord.js");
           this.setColour(230);
-       this.setTooltip("");
-       this.setHelpUrl("");
+          this.setTooltip("");
+          this.setHelpUrl("");
         }
       },
       generator() {
-        return initScript
+        return '# TODO: Init Script'
       }
     },
     'com_moustacheminer_discordblocks_client-login': {
@@ -40,9 +38,9 @@ const StarterCategory = {
       block: {
         init() {
           this.appendDummyInput()
-              .appendField("on message");
+            .appendField("on message");
           this.appendStatementInput("statements")
-              .setCheck(null);
+            .setCheck(null);
           this.setColour(230);
           this.setTooltip("");
           this.setHelpUrl("");
@@ -59,14 +57,14 @@ const StarterCategory = {
       block: {
         init() {
           this.appendValueInput('input')
-              .setCheck("String")
-              .appendField("reply to message with the text");
+            .setCheck("String")
+            .appendField("reply to message with the text");
           this.appendStatementInput("then")
-              .setCheck(null)
-              .appendField("afterwards");
+            .setCheck(null)
+            .appendField("afterwards");
           this.appendStatementInput("but")
-              .setCheck(null)
-              .appendField("but on error");
+            .setCheck(null)
+            .appendField("but on error");
           this.setPreviousStatement(true, null);
           this.setNextStatement(true, null);
           this.setColour(230);
@@ -85,7 +83,7 @@ const StarterCategory = {
     },
     'com_moustacheminer_discordblocks_message-contents': {
       block: {
-        init: function() {
+        init: function () {
           this.appendDummyInput()
             .appendField("message contents");
           this.setOutput(true, null);
@@ -94,7 +92,7 @@ const StarterCategory = {
           this.setHelpUrl("");
         }
       },
-      generator(block) {
+      generator() {
         return ['discordblocks.message.contents', Blockly.JavaScript.ORDER_NONE]
       }
     }

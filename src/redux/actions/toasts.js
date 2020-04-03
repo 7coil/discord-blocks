@@ -1,5 +1,3 @@
-import { timeout } from "q";
-
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const CREATE_TOAST = 'CREATE_TOAST';
 export const DELETE_TOAST = 'DELETE_TOAST';

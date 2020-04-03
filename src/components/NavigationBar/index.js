@@ -103,7 +103,7 @@ class NavigationBar extends Component {
           {
             label: 'File',
             submenu: [
-              { label: 'Open', click: (a, b, event) => this.loadButton.current.click() },
+              { label: 'Open', click: () => this.loadButton.current.click() },
               { label: 'Save', click: () => this.save() },
               { label: 'Export', click: () => this.export() },
             ]

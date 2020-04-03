@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './index.module.scss';
-import { incrementToastCounter, createToast, deleteToast } from '../../redux/actions/toasts';
 
 class Toasts extends Component {
   render() {

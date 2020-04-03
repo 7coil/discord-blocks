@@ -14,7 +14,6 @@
     "autoprefixer": "^9.5.1",
     "blockly": "^1.0.0",
     "discord.js": "^12.1.1",
-    "electron-react-titlebar": "^0.8.2",
     "frameless-titlebar": "^1.0.8",
     "js-beautify": "^1.10.3",
     "jszip": "^3.2.2",
@@ -34,6 +33,8 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "parcel": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "sass": "^1.19.0"
