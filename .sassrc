@@ -1,0 +1,5 @@
+{
+  "includePaths": [
+    "src/scss/"
+  ]
+}

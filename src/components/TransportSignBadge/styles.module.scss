@@ -1,0 +1,22 @@
+@use 'settings';
+
+.white, .brown, .green {
+  padding: 0.2em;
+  border-radius: 0.2em;
+}
+
+.green {
+  @include settings.primary-road
+}
+
+.brown {
+  @include settings.attraction;
+}
+
+.white {
+  @include settings.non-primary-road;
+}
+
+.blue {
+  @include settings.motorway;
+}
