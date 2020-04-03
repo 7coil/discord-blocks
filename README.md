@@ -1,8 +1,13 @@
 # DiscordBlocks v3.0
 A Google Blockly (like MIT Scratch) to Discord.js compiler
 
-## File Format
-DiscordBlocks uses the `.dbl` file format to store DiscordBlocks compatible XML code for Blockly. This file should not be manipulated without a compatible DiscordBlocks client.
+## What is the `DBL` file format?
+The DBL file format is simply a `.zip` archive containing a `blocks.xml` file, which defines the blocks that are stored in the workspace.
+In the future, additional files, such as images and metadata can be included.
+
+## To Implement
+- [ ] Additional modules
+- [ ] Example bot
 
 ## Thanks
 - **google**/Blockly - https://github.com/google/blockly/blob/master/LICENSE
