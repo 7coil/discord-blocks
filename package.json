@@ -15,6 +15,7 @@
     "blockly": "^1.0.0",
     "discord.js": "^12.1.1",
     "electron-react-titlebar": "^0.8.2",
+    "frameless-titlebar": "^1.0.8",
     "js-beautify": "^1.10.3",
     "jszip": "^3.2.2",
     "postcss-modules": "^1.4.1",

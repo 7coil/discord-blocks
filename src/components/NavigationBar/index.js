@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { TitleBar } from 'electron-react-titlebar'
+// import { TitleBar } from 'electron-react-titlebar'
+import TitleBar from 'frameless-titlebar';
 import logo from './logo.png'
 
 import JSZip from 'jszip';
