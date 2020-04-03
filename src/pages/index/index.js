@@ -6,7 +6,7 @@ class IndexPage extends Component {
   render() {
     return (
       <div>
-        <h1>LeoBlocks</h1>
+        <h1>DiscordBlocks</h1>
         <h2>Block Based Programming Software</h2>
         <p>Learn how code! (not guaranteed)</p>
         <Link to="/edit">Get Started</Link>
