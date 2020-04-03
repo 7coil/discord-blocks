@@ -1,17 +1,11 @@
+import 'electron-react-titlebar/assets/style.css';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import FooterBar from '../../components/FooterBar';
+import BlocklyComponent from '../../components/BlocklyComponent';
 import NavigationBar from '../../components/NavigationBar';
 import Toasts from '../../components/Toasts';
 import ToolBox from '../../components/ToolBox';
-import { Blockly } from '../../components/ToolBox/Category';
-import { changedDocument } from '../../redux/actions/document';
-
-import { TitleBar } from 'electron-react-titlebar'
-import 'electron-react-titlebar/assets/style.css'
-import NewNavigationBar from '../../components/NewNavigationBar';
-import BlocklyComponent from '../../components/BlocklyComponent';
 
 class EditPage extends Component {
   constructor(props) {
@@ -39,7 +33,7 @@ class EditPage extends Component {
         >
           <title>{this.props.document.name}</title>
         </Helmet>
-        <NewNavigationBar workspace={this.state.workspace} />
+        <NavigationBar workspace={this.state.workspace} />
         <ToolBox ref={this.toolbox}/>
         <BlocklyComponent toolbox={this.toolbox} onCreated={this.onCreated}/>
         <Toasts />

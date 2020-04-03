@@ -1,54 +1,123 @@
 import React, { Component } from 'react';
-import styles from './index.module.scss';
-import NavButton from './NavButton';
-import { connect } from 'react-redux';
+import { TitleBar } from 'electron-react-titlebar'
+import logo from './logo.png'
 
-import logo from './logo.png';
-import Menu from './Menu';
-import MenuButton from './Menu/MenuButton';
-import ConstructCSS from '../../modules/ConstructCSS';
-import HelpMenu from './HelpMenu';
-import FileMenu from './FileMenu';
-import EditMenu from './EditMenu';
-import ExecuteMenu from './ExecuteMenu';
+import JSZip from 'jszip';
+import Blockly from '../../modules/Blockly';
 
 class NavigationBar extends Component {
+  constructor(props) {
+    super(props);
+    this.save = this.save.bind(this);
+    this.load = this.load.bind(this);
+    this.export = this.export.bind(this);
+    this.loadButton = React.createRef();
+    this.temporarySaveFile = React.createRef();
+
+    this.state = {
+      temporarySaveLink: '',
+      temporarySaveFilename: ''
+    }
+  }
+  save() {
+    const { workspace } = this.props
+    const xmlContent = Blockly.Xml.domToPrettyText(Blockly.Xml.workspaceToDom(workspace));
+    const fileName = `Untitled.dbl`;
+
+    const zip = new JSZip();
+
+    zip.file('blocks.xml', xmlContent);
+    
+    zip.generateAsync({
+      type: 'blob'
+    })
+      .then((blob) => {
+        const a = document.createElement('a');
+        a.style = 'display: none';
+        document.body.appendChild(a);
+        const url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+      })
+  }
+  load(event) {
+    const { workspace } = this.props
+    const [file] = event.target.files;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      // Open the zip file
+      JSZip.loadAsync(e.target.result)
+        .then((data) => {
+          // If there is a blocks.xml file, open it
+          if (data.file('blocks.xml')) {
+            return data.file('blocks.xml').async('string')
+          }
+
+          return Promise.reject()
+        })
+        .then((text) => {
+          // With the blocks.xml file, import it to Blockly.
+          const xml = Blockly.Xml.textToDom(text);
+          Blockly.Xml.domToWorkspace(xml, workspace);
+        })
+    };
+    if (file) {
+      reader.readAsArrayBuffer(file);
+    }
+  }
+  export() {
+    const { workspace } = this.props
+    const code = Blockly.JavaScript.workspaceToCode(workspace);
+
+    const blob = new Blob([code], { type: 'text/javascript' });
+    const url = window.URL.createObjectURL(blob);
+
+    this.setState({
+      temporarySaveLink: url,
+      temporarySaveFilename: 'untitled.js'
+    }, () => {
+      this.temporarySaveFile.current.click();
+      window.URL.revokeObjectURL(url);
+    })
+  }
   render() {
-    const { workspace } = this.props;
+    const workspace = this.props.workspace
     return (
-      <div className={styles.tab}>
-        <img className={styles.logo} src={logo} />
-        <FileMenu workspace={workspace} />
-        <EditMenu workspace={workspace} />
-        <ExecuteMenu workspace={workspace} />
-        <HelpMenu />
-        <span className={styles.title}>{this.props.document.name} - DiscordBlocks</span>
-        <div className={styles.right}>
-          <NavButton className={styles.windowButton}>
-            <svg width='12' height='11' viewBox='0 0 11 12' xmlns='http://www.w3.org/2000/svg'>
-              <path fill="#FFF" d='M11 4.399V5.5H0V4.399h11z'/>
-            </svg>
-          </NavButton>
-          <NavButton className={styles.windowButton}>
-            <svg width='11' height='11' viewBox='0 0 11 11' xmlns='http://www.w3.org/2000/svg'>
-              <path fill="#FFF" d='M11 0v11H0V0h11zM9.899 1.101H1.1V9.9h8.8V1.1z'/>
-            </svg>
-          </NavButton>
-          <NavButton className={ConstructCSS(styles.closeButton, styles.windowButton)}>
-            <svg width='11' height='11' viewBox='0 0 11 11' xmlns='http://www.w3.org/2000/svg'>
-              <path fill="#FFF" d='M6.279 5.5L11 10.221l-.779.779L5.5 6.279.779 11 0 10.221 4.721 5.5 0 .779.779 0 5.5 4.721 10.221 0 11 .779 6.279 5.5z'/>
-            </svg>
-          </NavButton>
-        </div>
-      </div>
-    );
+      <>
+        <input ref={this.loadButton} onChange={this.load} hidden type="file" id="load-code" accept=".dbl"></input>
+        <a ref={this.temporarySaveFile} href={this.state.temporarySaveLink} download={this.state.temporarySaveFilename}></a>
+        <TitleBar icon={logo} menu={[
+          {
+            label: 'File',
+            submenu: [
+              { label: 'Open', click: (a, b, event) => this.loadButton.current.click() },
+              { label: 'Save', click: () => this.save() },
+              { label: 'Export', click: () => this.export() },
+            ]
+          },
+          {
+            label: 'Edit',
+            submenu: [
+              { label: 'Undo', click: () => workspace.undo(false) },
+              { label: 'Redo', click: () => workspace.undo(true) },
+              { label: 'Clean up Workspace', click: () => workspace.cleanUp() },
+            ]
+          },
+          {
+            label: 'Help',
+            submenu: [
+              { label: 'Discord.js Documentation', click: () => window.open('https://discord.js.org/')},
+              { type: 'separator' },
+              { label: 'DiscordBlocks on GitHub', click: () => window.open('https://github.com/7coil/discord-blocks')},
+            ]
+          },
+        ]} />
+      </>
+    )
   }
 }
 
-
-const mapStateToProps = (state) => {
-  const { document } = state;
-  return { document };
-}
-
-export default connect(mapStateToProps)(NavigationBar);
+export default NavigationBar;
