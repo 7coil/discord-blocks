@@ -60,7 +60,7 @@ class IndexPage extends Component {
         </header>
         <div className={styles.jumbotron}>
           <div className={styles.jumbotronContent}>
-            <h1>DiscordBlocks</h1>
+            <h1>DiscordBlocks (Alpha)</h1>
             <p>
               An easy to use* block based Discord Bot creator and editor, based on Discord.js and Google Blockly<br />
               <small>*citation needed</small>
