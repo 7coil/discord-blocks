@@ -16,31 +16,126 @@ docs.classes.forEach((discordjsClass) => {
     blocks: {}
   }
 
-  if (discordjsClass.access !== 'private') {
+  if (discordjsClass.access !== 'private' || discordjsClass.name === 'MessageEmbed') {
     // If the class is a constructor, add a block for constructing
     if (discordjsClass.construct) {
+
       // Add blocks with an increasing number of parameters
-      for (let numberOfParams = 0; numberOfParams <= discordjsClass.construct.params.length; numberOfParams += 1) {
-        categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-constructor-${numberOfParams}`] = {
-          block: {
-            init: function() {
-              this.appendDummyInput()
-                  .appendField(`create a new ${discordjsClass.name}`)
-              this.setOutput(true, null)
-              this.setColour(colours.class)
-              this.setTooltip(discordjsClass.description)
-              this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}`);
-              for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
-                this.appendValueInput(discordjsClass.props[paramNumber].name)
+      categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor`] = {
+        block: {
+          init() {
+            this.appendDummyInput()
+              .appendField(`create a new ${discordjsClass.name.toLowerCase()}`)
+            this.setOutput(true, null)
+            this.setColour(colours.class)
+            this.setTooltip(discordjsClass.description)
+            this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.construct.name}`);
+            this._enabledParams = []
+            this._updateShape()
+            this.setMutator(new Blockly.Mutator(discordjsClass.construct.params.map((val, index) => `com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-${index}`)))
+          },
+          mutationToDom() {
+            const mutation = document.createElement('mutation');
+            mutation.setAttribute('enabled-params', JSON.stringify(this._enabledParams))
+            return mutation;
+          },
+          domToMutation(xml) {
+            this._enabledParams = JSON.parse(xml.getAttribute('enabled-params'))
+            this._updateShape()
+          },
+          decompose(workspace) {
+            const containerBlock = workspace.newBlock(`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-container`);
+            containerBlock.initSvg();
+            let connection = containerBlock.getInput('STACK').connection;
+
+            for (let enabledParam in this._enabledParams) {
+              const itemBlock = workspace.newBlock(`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-${enabledParam}`);
+              itemBlock.initSvg();
+              connection.connect(itemBlock.previousConnection);
+              connection = itemBlock.nextConnection;
+            }
+            return containerBlock
+          },
+          compose(containerBlock) {
+            let itemBlock = containerBlock.getInputTargetBlock('STACK');
+            this._enabledParams = [];
+
+            while (itemBlock) {
+              let numberString = /(\d+)$/.exec(itemBlock.type);
+              if (numberString) {
+                let number = parseInt(numberString[0], 10);
+                if (!this._enabledParams.includes(number)) {
+                  this._enabledParams.push(number)
+                }
+              }
+              itemBlock = itemBlock.nextConnection && itemBlock.nextConnection.targetBlock();
+            }
+
+            console.log(this._enabledParams);
+            this._updateShape();
+          },
+          _updateShape() {
+            console.log('update', this._enabledParams)
+            for (let i = 0; i < discordjsClass.construct.params.length; i += 1) {
+              const currentInput = this.getInput(`${i}`)
+
+              if (!currentInput && this._enabledParams.includes(i)) {
+                this.appendValueInput(`${i}`)
                   .setCheck(null)
-                  .appendField(`${paramNumber > 0 ? 'and ' : ''}with ${discordjsClass.props[paramNumber].name}`);
+                  .appendField(`${discordjsClass.props[i].name}`);
+              }
+              if (currentInput && !this._enabledParams.includes(i)) {
+                this.removeInput(`${i}`)
               }
             }
-          },
-          generator: function() {
-            return `new Discord.${discordjsClass.construct.name}()`;
           }
-        };
+        },
+        generator: function (block) {
+          const enabledParams = block._enabledParams;
+          let paramArray = [];
+          
+          for (let i = 0; i < discordjsClass.construct.params.length; i += 1) {
+            if (enabledParams.includes(i)) {
+              paramArray.push(Blockly.JavaScript.valueToCode(block, `${i}`, Blockly.JavaScript.ORDER_ATOMIC) || 'undefined');
+            } else {
+              paramArray.push('undefined')
+            }
+          }
+
+          return [
+            `new Discord.${discordjsClass.construct.name}(${paramArray.join(',')})`,
+            Blockly.JavaScript.ORDER_NONE
+          ];
+        }
+      };
+
+      categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-container`] = {
+        block: {
+          init() {
+            this.setStyle('list_blocks');
+            this.appendDummyInput()
+              .appendField(Blockly.Msg['LISTS_CREATE_WITH_CONTAINER_TITLE_ADD']);
+            this.appendStatementInput('STACK');
+            this.setTooltip(Blockly.Msg['LISTS_CREATE_WITH_CONTAINER_TOOLTIP']);
+            this.contextMenu = false;
+          }
+        }
+      }
+
+      for (let paramNumber = 0; paramNumber < discordjsClass.construct.params.length; paramNumber += 1) {
+        categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-${paramNumber}`] = {
+          block: {
+            init() {
+              this.setStyle('list_blocks');
+              this.appendDummyInput()
+                .appendField(discordjsClass.props[paramNumber].name);
+              this.setPreviousStatement(true);
+              this.setNextStatement(true);
+              this.setTooltip(Blockly.Msg['LISTS_CREATE_WITH_ITEM_TOOLTIP']);
+              this.contextMenu = false;
+            }
+          }
+        }
       }
     }
 
@@ -49,19 +144,19 @@ docs.classes.forEach((discordjsClass) => {
       discordjsClass.props
         .filter(method => method.access !== 'private')
         .forEach((prop) => {
-          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-prop-${prop.name}`] = {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-prop-${prop.name}`] = {
             block: {
-              init: function() {
+              init: function () {
                 this.appendValueInput(prop.name)
-                    .setCheck(null)
-                    .appendField(`get ${prop.name}`);
+                  .setCheck(null)
+                  .appendField(`get ${prop.name}`);
                 this.setOutput(true, null);
                 this.setColour(colours.props);
                 this.setTooltip(prop.description);
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${prop.name}`);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=${prop.name}`);
               }
             },
-            generator: function() {
+            generator: function () {
               return `.${prop.name}`;
             }
           }
@@ -72,19 +167,19 @@ docs.classes.forEach((discordjsClass) => {
       discordjsClass.methods
         .filter(method => method.access !== 'private')
         .forEach((method) => {
-          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-method-${method.name}`] = {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-method-${method.name}`] = {
             block: {
-              init: function() {
+              init: function () {
                 this.appendValueInput(method.name)
-                    .setCheck(method.description)
-                    .appendField(`${method.name}`);
+                  .setCheck(method.description)
+                  .appendField(`${method.name}`);
                 this.setOutput(true, null);
                 this.setColour(colours.method);
                 this.setTooltip('');
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=${method.name}`);
               }
             },
-            generator: function() {
+            generator: function () {
               return `.${method.name}()`;
             }
           }
@@ -102,16 +197,16 @@ docs.classes.forEach((discordjsClass) => {
               }
 
               if (!skip) {
-                categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-method-${method.name}-with-${numberOfParams}-params`] = {
+                categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-method-${method.name}-with-${numberOfParams}-params`] = {
                   block: {
-                    init: function() {
+                    init: function () {
                       this.appendValueInput(method.name)
-                          .setCheck(null)
-                          .appendField(`${method.name}`);
+                        .setCheck(null)
+                        .appendField(`${method.name}`);
                       this.setOutput(true, null);
                       this.setColour(colours.method);
                       this.setTooltip(method.description);
-                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
+                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=${method.name}`);
                       for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                         this.appendValueInput(method.params[paramNumber].name)
                           .setCheck(null)
@@ -119,7 +214,7 @@ docs.classes.forEach((discordjsClass) => {
                       }
                     }
                   },
-                  generator: function() {
+                  generator: function () {
                     return `.${method.name}()`;
                   }
                 }
@@ -134,9 +229,9 @@ docs.classes.forEach((discordjsClass) => {
       discordjsClass.events
         .filter(method => method.access !== 'private')
         .forEach((event) => {
-          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name}-event-${event.name}`] = {
+          categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-event-${event.name}`] = {
             block: {
-              init: function() {
+              init: function () {
                 this.appendValueInput("thing")
                   .setCheck(null)
                   .appendField("when");
@@ -148,10 +243,10 @@ docs.classes.forEach((discordjsClass) => {
                 this.setNextStatement(true, null);
                 this.setColour(colours.props);
                 this.setTooltip(event.description);
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=e-${event.name}`);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=e-${event.name}`);
               }
             },
-            generator: function(block) {
+            generator: function (block) {
               const thing = Blockly.JavaScript.valueToCode(block, 'thing', Blockly.JavaScript.ORDER_ATOMIC);
               const statement = Blockly.JavaScript.statementToCode(block, 'statement');
               return `${thing}.on('${event.name}', () => {\n${statement}\n})\n`;
