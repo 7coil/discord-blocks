@@ -2,7 +2,7 @@ import React from 'react';
 import Blockly from '../../modules/Blockly';
 
 const Block = (props) => {
-  const id = props.name.replace(/[ .]/g, '-').toLowerCase() || Math.random().toString().replace('.', '');
+  const id = props.name.replace(/[ .]/g, '-').toLowerCase()
   
   const func = props.func;
   // If the block is truthy
