@@ -111,6 +111,7 @@ docs.classes.forEach((discordjsClass) => {
       };
 
       categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-container`] = {
+        hidden: true,
         block: {
           init() {
             this.setStyle('list_blocks');
@@ -125,6 +126,7 @@ docs.classes.forEach((discordjsClass) => {
 
       for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
         categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-${paramNumber}`] = {
+          hidden: true,
           block: {
             init() {
               this.setStyle('list_blocks');

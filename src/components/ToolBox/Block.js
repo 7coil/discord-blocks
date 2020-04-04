@@ -16,12 +16,17 @@ const Block = (props) => {
     if (func.generator && typeof Blockly.JavaScript !== 'undefined') {
       Blockly.JavaScript[id] = func.generator;
     }
+
+    // If hidden, don't add to the inventory.
+    if (func.hidden === true) return null;
+
+    // Add the block to the list of blocks in the category
+    return (
+      <block is="block" type={id} key={id}></block>
+    )
   }
 
-  // Add the block to the list of blocks in the category
-  return (
-    <block is="block" type={id} key={id}></block>
-  )
+  return null;
 }
 
 export {
