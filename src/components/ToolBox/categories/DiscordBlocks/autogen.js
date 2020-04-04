@@ -188,36 +188,30 @@ docs.classes.forEach((discordjsClass) => {
           // If there are any params, add them as well
           if (method.params) {
             for (let numberOfParams = 1; numberOfParams < method.params.length; numberOfParams += 1) {
-              let skip = false;
-
               // If any of the potential parameters has a "." in it, skip it entirely
               for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
-                if (method.params[paramNumber].name.includes('.')) {
-                  skip = true;
-                }
+                if (method.params[paramNumber].name.includes('.')) continue;
               }
 
-              if (!skip) {
-                categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-method-${method.name}-with-${numberOfParams}-params`] = {
-                  block: {
-                    init: function () {
-                      this.appendValueInput(method.name)
+              categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-method-${method.name}-with-${numberOfParams}-params`] = {
+                block: {
+                  init: function () {
+                    this.appendValueInput(method.name)
+                      .setCheck(null)
+                      .appendField(`${method.name}`);
+                    this.setOutput(true, null);
+                    this.setColour(colours.method);
+                    this.setTooltip(method.description);
+                    this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
+                    for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
+                      this.appendValueInput(method.params[paramNumber].name)
                         .setCheck(null)
-                        .appendField(`${method.name}`);
-                      this.setOutput(true, null);
-                      this.setColour(colours.method);
-                      this.setTooltip(method.description);
-                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
-                      for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
-                        this.appendValueInput(method.params[paramNumber].name)
-                          .setCheck(null)
-                          .appendField(`${paramNumber > 0 ? 'and ' : ''}with ${method.params[paramNumber].name}`);
-                      }
+                        .appendField(`${paramNumber > 0 ? 'and ' : ''}with ${method.params[paramNumber].name}`);
                     }
-                  },
-                  generator: function () {
-                    return `.${method.name}()`;
                   }
+                },
+                generator: function () {
+                  return `.${method.name}()`;
                 }
               }
             }
