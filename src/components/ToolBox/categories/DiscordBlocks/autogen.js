@@ -72,11 +72,9 @@ docs.classes.forEach((discordjsClass) => {
               itemBlock = itemBlock.nextConnection && itemBlock.nextConnection.targetBlock();
             }
 
-            console.log(this._enabledParams);
             this._updateShape();
           },
           _updateShape() {
-            console.log('update', this._enabledParams)
             for (let i = 0; i < numberOfParams; i += 1) {
               const currentInput = this.getInput(`${i}`)
 
