@@ -19,6 +19,7 @@ docs.classes.forEach((discordjsClass) => {
   if (discordjsClass.access !== 'private' || discordjsClass.name === 'MessageEmbed') {
     // If the class is a constructor, add a block for constructing
     if (discordjsClass.construct) {
+      let numberOfParams = discordjsClass.construct.params.length;
 
       // Add blocks with an increasing number of parameters
       categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor`] = {
@@ -76,7 +77,7 @@ docs.classes.forEach((discordjsClass) => {
           },
           _updateShape() {
             console.log('update', this._enabledParams)
-            for (let i = 0; i < discordjsClass.construct.params.length; i += 1) {
+            for (let i = 0; i < numberOfParams; i += 1) {
               const currentInput = this.getInput(`${i}`)
 
               if (!currentInput && this._enabledParams.includes(i)) {
@@ -94,7 +95,7 @@ docs.classes.forEach((discordjsClass) => {
           const enabledParams = block._enabledParams;
           let paramArray = [];
           
-          for (let i = 0; i < discordjsClass.construct.params.length; i += 1) {
+          for (let i = 0; i < numberOfParams; i += 1) {
             if (enabledParams.includes(i)) {
               paramArray.push(Blockly.JavaScript.valueToCode(block, `${i}`, Blockly.JavaScript.ORDER_ATOMIC) || 'undefined');
             } else {
@@ -122,7 +123,7 @@ docs.classes.forEach((discordjsClass) => {
         }
       }
 
-      for (let paramNumber = 0; paramNumber < discordjsClass.construct.params.length; paramNumber += 1) {
+      for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
         categoryDefinition.blocks[`com_moustacheminer_discordjs_${discordjsClass.name.toLowerCase()}-constructor-mutator-${paramNumber}`] = {
           block: {
             init() {
@@ -206,7 +207,7 @@ docs.classes.forEach((discordjsClass) => {
                       this.setOutput(true, null);
                       this.setColour(colours.method);
                       this.setTooltip(method.description);
-                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=${method.name}`);
+                      this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=${method.name}`);
                       for (let paramNumber = 0; paramNumber < numberOfParams; paramNumber += 1) {
                         this.appendValueInput(method.params[paramNumber].name)
                           .setCheck(null)
@@ -243,7 +244,7 @@ docs.classes.forEach((discordjsClass) => {
                 this.setNextStatement(true, null);
                 this.setColour(colours.props);
                 this.setTooltip(event.description);
-                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name.toLowerCase()}?scrollTo=e-${event.name}`);
+                this.setHelpUrl(`https://discord.js.org/#/docs/main/stable/class/${discordjsClass.name}?scrollTo=e-${event.name}`);
               }
             },
             generator: function (block) {
