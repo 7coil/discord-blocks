@@ -3,6 +3,8 @@ import JSZip from 'jszip';
 import React, { Component } from 'react';
 import Blockly from '../../modules/Blockly';
 import logo from './logo.png';
+import { modifyModules } from '../../redux/actions/document';
+import { connect } from 'react-redux';
 
 class NavigationBar extends Component {
   constructor(props) {
@@ -95,6 +97,7 @@ class NavigationBar extends Component {
   }
   render() {
     const workspace = this.props.workspace
+    const { dispatch } = this.props;
     return (
       <>
         <input ref={this.loadButton} onChange={this.loadFromFile} hidden type="file" id="load-code" accept=".dbl"></input>
@@ -135,4 +138,10 @@ class NavigationBar extends Component {
   }
 }
 
-export default NavigationBar;
+const mapStateToProps = (state) => {
+  const { document } = state;
+  return { document };
+}
+
+export default connect(mapStateToProps)(NavigationBar);
+

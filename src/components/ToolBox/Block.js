@@ -7,18 +7,8 @@ const Block = (props) => {
   const func = props.func;
   // If the block is truthy
   if (func) {
-    // If it has a block generator, add the block
-    if (func.block && typeof Blockly.Blocks !== 'undefined') {
-      Blockly.Blocks[id] = func.block;
-    }
-
-    // If it has a javascript generator, add the generator
-    if (func.generator && typeof Blockly.JavaScript !== 'undefined') {
-      Blockly.JavaScript[id] = func.generator;
-    }
-
     // If hidden, don't add to the inventory.
-    if (func.hidden === true) return null;
+    if (func.hidden === true || props.hidden === true) return null;
 
     // Add the block to the list of blocks in the category
     return (

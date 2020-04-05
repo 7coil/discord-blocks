@@ -1,6 +1,7 @@
 export const SAVE_DOCUMENT = 'SAVE_DOCUMENT';
 export const SET_DOCUMENT_NAME = 'SET_DOCUMENT_NAME';
 export const CHANGED_DOCUMENT = 'CHANGED_DOCUMENT';
+export const MODIFY_MODULES = 'MODIFY_MODULES';
 
 function saveDocument() {
   return {
@@ -21,8 +22,17 @@ function setDocumentName(name) {
   }
 }
 
+function modifyModules(module, enabled) {
+  return {
+    type: MODIFY_MODULES,
+    module,
+    enabled,
+  }
+}
+
 export {
   saveDocument,
   changedDocument,
-  setDocumentName
+  setDocumentName,
+  modifyModules
 }

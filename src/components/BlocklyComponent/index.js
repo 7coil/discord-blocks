@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Blockly } from '../../components/ToolBox/Category';
+import Blockly from '../../modules/Blockly';
 
 import styles from './index.scss';
 
@@ -17,7 +17,9 @@ class BlocklyComponent extends Component {
     const blocklyDiv = document.createElement('div');
     blocklyDiv.classList.add(styles.blockly)
 
-    if (typeof window !== 'undefined') window.document.body.appendChild(blocklyDiv);
+    if (typeof window !== 'undefined') {
+      window.document.body.appendChild(blocklyDiv);
+    }
 
     const workspace = Blockly.inject(blocklyDiv, {
       toolbox: this.props.toolbox.current
@@ -31,6 +33,9 @@ class BlocklyComponent extends Component {
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', this.resize);
       this.resize();
+
+      window.workspace = workspace;
+      window.toolbox = this.props.toolbox.current;
     }
 
     if (typeof this.props.onCreated === 'function') {

@@ -1,25 +1,13 @@
 import React from 'react';
 import { Block } from './Block';
-import Blockly from '../../modules/Blockly';
 
-if (typeof Blockly.BlockSvg !== 'undefined') {
-  Blockly.BlockSvg.START_HAT = true;
-}
-
-if (typeof Blockly.JavaScript !== 'undefined') {
-  Blockly.JavaScript.addReservedWords('discordblocks');
-  Blockly.JavaScript.addReservedWords('param1');
-}
-
-const Category = (props) => (
-  <category is="category" name={props.name || props.blocks.name}>
-    {props.blocks && props.blocks.blocks ? Object.keys(props.blocks.blocks).map((name) => {
+const Category = (props) => props.hidden === true ? null : (
+  <category is="category" name={props.name}>
+    {props.blocks ? Object.entries(props.blocks).map(([name, func]) => {
       let id = name.replace(/[ .]/g, '-').toLowerCase();
-      
-      const func = props.blocks.blocks[name];
 
       return (
-        <Block key={id} name={id} func={func} />
+        <Block key={id} name={name} func={func} hidden={props.hidden === true} />
       )
     }) : null}
     {props.children}
@@ -27,6 +15,3 @@ const Category = (props) => (
 )
 
 export default Category;
-export {
-  Blockly
-}
